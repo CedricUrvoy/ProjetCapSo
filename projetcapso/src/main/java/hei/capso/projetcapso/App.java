@@ -1,7 +1,7 @@
 package hei.capso.projetcapso;
 
 /**
- * Hello world!
+ * Hello world! bla bla 
  *
  */
 public class App 
