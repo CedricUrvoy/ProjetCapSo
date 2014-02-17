@@ -44,17 +44,61 @@
     font-style: italic;
 }
 
-/**** Body ****/
-body
-{
-	font-family: "bariol",helvitica,sans-serif;
-	font-weight: bold;
+/**Login**/
+
+
+#boite_1
+{	position:absolute;
+	background: #26C4EC;
+	width:40%;
+	vertical-align: middle;
+	height:7%;
+	font-size:25px;
+	left: 30%;
+	top: 25%;
+	text-align: center;
+	color: white;
 }
 
-h1.titre
-{
-	color: #26C4EC;
-	font-size: 20px;
+#boite_2
+{	position: absolute;
+	background: #766F64;
+	width:40%;
+	height:270px;
+	font-size:25px;
+	left: 30%;
+	top: 32%;
 	text-align: center;
-	padding-top: 20px;
+	color: white;
+}
+input
+{
+	padding: 15px 15px 15px 30px;
+	margin: 0 0 10px 0;
+	width: 353px;
+	border: 1px solid #ffffff;
+	-moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+	-webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+	box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+}
+#username
+{
+	margin-top: 5%;
+}
+
+a.text_form 
+{	
+	text-decoration: none;
+	color: #26C4EC;
+	padding: 3%;
+	font-style: normal;
+	font-size: 20px;
+	
+}
+
+#submit
+{
+	margin-top: 5%;
+	background-color: #26C4EC;
+	border-color: #26C4EC;
 }

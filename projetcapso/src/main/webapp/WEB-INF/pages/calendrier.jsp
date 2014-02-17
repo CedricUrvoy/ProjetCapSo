@@ -15,4 +15,5 @@
 
 	<body>
 		<jsp:include page="header.jsp" />
+		<h1 class="titre">Calendrier - Nom du groupe</h1>
 	</body>

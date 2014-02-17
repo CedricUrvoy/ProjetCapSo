@@ -9,11 +9,27 @@
 		<meta name="***********" content="******" />
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/login_style.css"/>
 		<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
 	</head>
 
 	<body>
 	
-	<h1>Login</h1>
+	<div id="boite_1">nomDuSite</div>
+	<div id="boite_2">
+		<form id="login">
+    <fieldset id="inputs">
+        <input id="username" type="text" placeholder="Email" autofocus required>   
+        <input id="password" type="password" placeholder="Mot de passe" required>
+    </fieldset>
+    <fieldset id="actions">
+    	<a class="text_form" href="">Mot de Passe oublié ? </a>
+    	<a class="text_form" href="">Pas encore inscrit ?</a>
+        <input type="submit" id="submit" value="Connexion">
+        
+    </fieldset>
+</form>
+	</div>
+	
 	
 	</body>
