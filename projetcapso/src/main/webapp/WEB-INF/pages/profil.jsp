@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<meta name="***********" content="******" />
+		<meta name="votre profil" content="******" />
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="css/header-style.css"/>
@@ -16,5 +16,8 @@
 		<jsp:include page="header.jsp" />
 		
 		
-		<h1>Profil</h1>
+		<h1 class = "titre">Profil</h1>
+		<h1>Nom</h1>
+		<H1>Prenom</H1>
+		<h1>Mes dernieres séances</h1>
 	</body>

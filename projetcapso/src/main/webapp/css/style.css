@@ -58,3 +58,60 @@ h1.titre
 	text-align: center;
 	padding-top: 20px;
 }
+
+/***Page Blog***/
+
+article.article
+{
+	border-style:solid;
+	border-color: #26C4EC;
+	border-width: 5px;
+	height: 300px;
+	width: 80%;
+	margin-left: 10%;
+	margin-top : 3%;
+	margin-right: 10%
+}
+
+h1.titre_art
+{
+		color: #26C4EC;
+		text-align: center;
+		padding-top: 10px;
+		font-size: 25px;
+}
+
+div.image
+{
+	height: 250px;
+	width: 25%;
+}
+
+p.legende
+{
+	display: inline-block;
+	color: black;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+div.text-art
+{
+	position: relative;
+	left: 25%;
+	bottom: 220px;
+	width: 73%;
+	text-align: justify;
+	height: 240px;
+	
+}
+
+div.suite
+{
+	background-color: #26C4EC;
+	padding: 10px;
+	width: 15%;
+	position: relative;
+	left : 80%;
+	top: 40%;
+	
+}
