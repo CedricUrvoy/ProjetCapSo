@@ -71,7 +71,7 @@
 	text-align: center;
 	color: white;
 }
-input
+input.input
 {
 	padding: 15px 15px 15px 30px;
 	margin: 0 0 10px 0;
@@ -101,4 +101,48 @@ a.text_form
 	margin-top: 5%;
 	background-color: #26C4EC;
 	border-color: #26C4EC;
+}
+
+/**Page Création de profil**/ 
+
+#boite_1_ajout
+{	position:absolute;
+	background: #26C4EC;
+	width:40%;
+	vertical-align: middle;
+	height:7%;
+	font-size:25px;
+	left: 30%;
+	top: 8%;
+	text-align: center;
+	color: white;
+}
+
+#boite_2_ajout
+{	position: absolute;
+	background: #766F64;
+	width:40%;
+	height:600px;
+	font-size:25px;
+	left: 30%;
+	top: 15%;
+	text-align : center;
+	color: white;
+}
+
+label
+{
+	margin-top: 2%;
+}
+
+fieldset.groupe
+{
+	position: relative;
+	width: 20%;
+	display: inline-block;
+}
+
+input.groupe_input
+{
+	width: 90%;
 }

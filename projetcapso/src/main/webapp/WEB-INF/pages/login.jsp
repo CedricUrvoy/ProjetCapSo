@@ -19,13 +19,13 @@
 	<div id="boite_2">
 		<form id="login">
     <fieldset id="inputs">
-        <input id="username" type="text" placeholder="Email" autofocus required>   
-        <input id="password" type="password" placeholder="Mot de passe" required>
+        <input class="input" id="username" type="text" placeholder="Email" autofocus required>   
+        <input class="input"  id="password" type="password" placeholder="Mot de passe" required>
     </fieldset>
     <fieldset id="actions">
     	<a class="text_form" href="">Mot de Passe oublié ? </a>
     	<a class="text_form" href="">Pas encore inscrit ?</a>
-        <input type="submit" id="submit" value="Connexion">
+        <input class="input" type="submit" id="submit" value="Connexion">
         
     </fieldset>
 </form>

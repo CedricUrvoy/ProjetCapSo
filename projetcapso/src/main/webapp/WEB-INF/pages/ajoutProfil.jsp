@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>******</title>
-		<meta name="***********" content="******" />
+		<meta name="Crée ton profil" content="Crée ton profil" />
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="css/login_style.css"/>
@@ -15,18 +15,35 @@
 
 	<body>
 	
-	<div id="boite_1">nomDuSite</div>
-	<div id="boite_2">
-		<form id="login">
-    <fieldset id="inputs">
-        <input id="username" type="text" placeholder="Email" autofocus required>   
-        <input id="password" type="password" placeholder="Mot de passe" required>
+	<div id="boite_1_ajout">Nouveau Profil</div>
+	<div id="boite_2_ajout">
+		<form id="ajout">
+    <fieldset id="inputs_ajout">
+    	<label>Nom : </label></br>
+        <input class="input" id="nom" type="text" placeholder="Nom" autofocus required></br>
+		 <label>Prénom : </label></br>
+        <input class="input" id="prenom" type="text" placeholder="Prénom" required></br>
+        <label>Mail : </label></br>
+        <input class="input" id="mail" type="email" placeholder="prenom.nom@hei.fr" required></br>
+        <label>Mot de passe : </label></br>
+        <input class="input" id="password" type="password" placeholder="Mot de passe" required></br>
     </fieldset>
-    <fieldset id="actions">
-    	<a class="text_form" href="">Mot de Passe oublié ? </a>
-    	<a class="text_form" href="">Pas encore inscrit ?</a>
-        <input type="submit" id="submit" value="Connexion">
-        
+    <fieldset class="groupe">
+    	<label>Classe</label>
+        <input class="input" type=text list=classe >
+			<datalist id=classe >
+  				 <option> 41
+  				 <option> 42
+			</datalist>
+		<label>Domaine</label>
+		<input class="input" type=text list=domaine >
+			<datalist id=domaine >
+  				 <option> ITI
+  				 <option> PCE
+			</datalist>
+    </fieldset>
+    <fieldset id="ajout">
+        <input class="input" type="submit" id="submit" value="Valider"> 
     </fieldset>
 </form>
 	</div>
