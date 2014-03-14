@@ -19,14 +19,18 @@
 		<!--jQuery-->
 		<script src='js/jquery.min.js'></script>
 		<script src='js/jquery-ui.custom.min.js'></script>
+		<script src='js/moment.min.js'></script>
 		
 		<!--FullCalendar-->
 		<script src='fullcalendar/fullcalendar.js'></script>
+		<script src='fullcalendar/lang/fr.js'></script>
 		<script src="js/calendar.js"></script>
-		<style type="text/css">
+		
+		<!--  A ajouter dans le style -->
+		<style type="text/css">	
 			#calendar
 			{
-				width: 900px;
+				width: 900px;	
 				margin: 0 auto;
 			}
 		</style>
