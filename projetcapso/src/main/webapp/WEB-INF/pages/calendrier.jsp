@@ -163,13 +163,6 @@
 	
 		</script>
 		<style type="text/css">
-			body
-			{
-				margin-top: 40px;
-				text-align: center;
-				font-size: 14px;
-				font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-			}
 			#calendar
 			{
 				width: 900px;
@@ -183,6 +176,6 @@
 	<body>
 		<jsp:include page="header.jsp" />
 		<h1 class="titre">Calendrier - Nom du groupe</h1>
-		
-		<div id='calendar'></div>
+		<!--FullCalendar container div-->
+		<div id='calendar'></div>>
 	</body>
