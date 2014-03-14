@@ -1,0 +1,148 @@
+@charset "utf-8";
+/**** CSS Document ****/
+
+/**** Fonts ****/
+
+@font-face {
+    font-family: "bariol";
+    src: url('../fonts/bariol_bold-webfont.eot');
+    src: url('../fonts/bariol_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/bariol_bold-webfont.woff') format('woff'),
+         url('../fonts/bariol_bold-webfont.ttf') format('truetype'),
+         url('../fonts/bariol_bold-webfont.svg#bariol_boldbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "../fonts/bariol";
+    src: url('../fonts/bariol_bold_italic-webfont.eot');
+    src	: url('../fonts/bariol_bold_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/bariol_bold_italic-webfont.woff') format('woff'),
+         url('../fonts/bariol_bold_italic-webfont.ttf') format('truetype'),
+         url('../fonts/bariol_bold_italic-webfont.svg#bariol_boldbold_italic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: "bariol";
+    src: url('../fonts/bariol_light-webfont.eot');
+    src: url('../fonts/bariol_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/bariol_light-webfont.woff') format('woff'),
+         url('../fonts/bariol_light-webfont.ttf') format('truetype'),
+         url('../fonts/bariol_light-webfont.svg#bariol_lightlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "bariol";
+    src: url('../fonts/bariol_light	_italic-webfont.eot');
+    src: url('../fonts/bariol_light_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/bariol_light_italic-webfont.woff') format('woff'),
+         url('../fonts/bariol_light_italic-webfont.ttf') format('truetype'),
+         url('../fonts/bariol_light_italic-webfont.svg#bariollight_italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+/**Login**/
+
+
+#boite_1
+{	position:absolute;
+	background: #26C4EC;
+	width:40%;
+	vertical-align: middle;
+	height:7%;
+	font-size:25px;
+	left: 30%;
+	top: 25%;
+	text-align: center;
+	color: white;
+}
+
+#boite_2
+{	position: absolute;
+	background: #766F64;
+	width:40%;
+	height:270px;
+	font-size:25px;
+	left: 30%;
+	top: 32%;
+	text-align: center;
+	color: white;
+}
+input.input
+{
+	padding: 15px 15px 15px 30px;
+	margin: 0 0 10px 0;
+	width: 353px;
+	border: 1px solid #ffffff;
+	-moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+	-webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+	box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+}
+#username
+{
+	margin-top: 5%;
+}
+
+a.text_form 
+{	
+	text-decoration: none;
+	color: #26C4EC;
+	padding: 3%;
+	font-style: normal;
+	font-size: 20px;
+	
+}
+
+#submit
+{
+	margin-top: 5%;
+	background-color: #26C4EC;
+	border-color: #26C4EC;
+}
+
+/**Page Création de profil**/ 
+
+#boite_1_ajout
+{	position:absolute;
+	background: #26C4EC;
+	width:40%;
+	vertical-align: middle;
+	height:7%;
+	font-size:25px;
+	left: 30%;
+	top: 8%;
+	text-align: center;
+	color: white;
+}
+
+#boite_2_ajout
+{	position: absolute;
+	background: #766F64;
+	width:40%;
+	height:600px;
+	font-size:25px;
+	left: 30%;
+	top: 15%;
+	text-align : center;
+	color: white;
+}
+
+label
+{
+	margin-top: 2%;
+}
+
+fieldset.groupe
+{
+	position: relative;
+	width: 20%;
+	display: inline-block;
+}
+
+input.groupe_input
+{
+	width: 90%;
+}

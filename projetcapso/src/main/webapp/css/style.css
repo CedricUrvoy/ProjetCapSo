@@ -129,3 +129,79 @@ article.article_uni
 	margin-top : 3%;
 	margin-right: 10%
 }
+
+.bloc-commentaire{
+	width: 90%;
+	margin:auto;
+	height: 30px;
+	border-top: 1px solid #44c0c2;
+	border-bottom: 1px solid #44c0c2;
+	margin-bottom: 30px;
+}
+.bloc-commentaire p{
+	display: inline-block;
+	text-align:center;
+	line-height: 30px;
+	height: 30px;
+	font-family:'bariol' ,Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size:1em;
+	width: 100%;
+}
+#formCommentaire{
+	width: 100%;
+}
+.ajoutCommentaire{
+	display: block;
+	margin:auto;
+	border: 1px solid #e9e9e9; 
+	margin-bottom: 20px;
+	width:40%;
+}
+.commentaires{
+	margin-top: 20px;
+}
+.commentaire{
+	width: 80%;
+	margin-left: 10%;	
+	min-height: 40px;
+	border-bottom: 1px solid #e9e9e9;
+	margin-top: 10px;
+	
+}
+.commentaire:last-child{
+	border-bottom: none;
+	
+}
+.commentaire h4{
+	font-family:'bariol' ,Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size:1em;
+	display: inline-block;
+	margin-right: 10px;
+}
+.commentaire p{
+	display: inline-block;
+	font-family: Arial, sans-serif;
+	font-weight: lighter;
+	font-style: normal;
+	font-size:0.9em;
+	color:#414a5a;
+	text-align:justify; 
+	line-height: 20px;
+}
+
+.divBoutonCommentaire{
+	width: 100px;
+	margin:auto;
+}
+
+.boutonCommentaire
+{
+	background-color: #26C4EC;
+	padding: 10px;
+	width: 100px;
+	margin:auto;
+}

@@ -30,9 +30,28 @@
 			
 			
 		</article>
-		<div>
-			<label>Commentaire</label>
-			
-			<textarea > 
+		<div class="commentaires" id="commentaires">
+				<div class="bloc-commentaire">
+				  <p> Commentaires</p>	
+				</div>
+				<ul id="listeCommentaires">
+						<li class="commentaire">
+							<h4 class="nom">vieonvoernvebn jvnef</h4>
+							<h4>c,kslncv,kdlnvkfld</h4>
+							<p>nfjzk,slkc,qmsl</p>
+						</li>
+				</ul>
 			</div>
+			<div class="bloc-commentaire">
+				  <p> Ajouter un commentaire</p>	
+			</div>
+			<form  id="formCommentaire" method="post">
+	            <fieldset> 
+	                <textarea class="ajoutCommentaire"  name="text" id="text" rows="10" cols="50" required placeholder="Message"></textarea>
+	            	<div id="${article.id}" class="divBoutonCommentaire">
+                    	<input class="boutonCommentaire" type="button" value="Envoyer"/>
+		            </div>
+	            </fieldset>
+		    </form>
+		
 	</body>

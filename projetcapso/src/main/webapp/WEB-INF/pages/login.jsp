@@ -24,7 +24,7 @@
     </fieldset>
     <fieldset id="actions">
     	<a class="text_form" href="">Mot de Passe oublié ? </a>
-    	<a class="text_form" href="">Pas encore inscrit ?</a>
+    	<a class="text_form" href="ajoutProfil">Pas encore inscrit ?</a>
         <input class="input" type="submit" id="submit" value="Connexion">
         
     </fieldset>
