@@ -5,6 +5,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
+		<title>Profil</title>
 		<meta name="votre profil" content="******" />
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>

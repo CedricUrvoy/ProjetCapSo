@@ -115,3 +115,17 @@ div.suite
 	top: 40%;
 	
 }
+
+/**Style article**/ 
+
+article.article_uni
+{
+	border-style:solid;
+	border-color: #26C4EC;
+	border-width: 5px;
+	min-height : 150px ;
+	width: 80%;
+	margin-left: 10%;
+	margin-top : 3%;
+	margin-right: 10%
+}
