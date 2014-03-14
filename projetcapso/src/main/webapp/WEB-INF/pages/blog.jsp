@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>******</title>
+		<title>Blog</title>
 		<meta name="Blog" content="Blog" />
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
