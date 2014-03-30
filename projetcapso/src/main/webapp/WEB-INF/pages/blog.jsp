@@ -46,4 +46,22 @@
 			</div>
 			
 		</article>
+		
+		<c:forEach var="article" items="${articles}">
+		
+		<article class = "article">			
+			<h1 class="titre_art">Titre de l'article</h1>
+			<div class = "image">
+				<img alt="" src="${article.image_Article}"/>
+				<p class="legende"> Publié le 21/02/2014</p>
+				<p class="legende">[ ] Commentaire(s)</p>
+			</div>
+			<div class = "text-art">
+				<p class="text">${article.text_Article}</p>
+			
+			<div class="suite">Suite de l'article</div>
+			</div>
+			
+		</article>
+					</c:forEach>
 	</body>
