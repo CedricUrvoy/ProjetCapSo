@@ -28,6 +28,10 @@
     <servlet-name>AjoutSeance</servlet-name>
     <servlet-class>hei.capso.projetcapso.controllers.AjoutSeanceServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>AdminArticle</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.AdminArticleServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>Calendrier</servlet-name>
     <url-pattern>/calendrier</url-pattern>
@@ -55,6 +59,10 @@
   <servlet-mapping>
     <servlet-name>AjoutSeance</servlet-name>
     <url-pattern>/ajoutSeance</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminArticle</servlet-name>
+    <url-pattern>/adminArticle</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>calendrier</welcome-file>
