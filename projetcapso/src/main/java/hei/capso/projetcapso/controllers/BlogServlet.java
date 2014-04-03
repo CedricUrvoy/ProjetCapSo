@@ -1,7 +1,7 @@
 package hei.capso.projetcapso.controllers;
 
 
-import hei.capso.projetcapso.manager.Manager;
+import hei.capso.projetcapso.manager.ArticleManager;
 import hei.capso.projetcapso.model.Article;
 
 import java.io.IOException;
@@ -24,7 +24,7 @@ public class BlogServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
-		List<Article> articles = Manager.getInstance().listerArticles();
+		List<Article> articles = ArticleManager.getInstance().listerArticles();
 		req.setAttribute("articles", articles);
 		
 	RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/blog.jsp");

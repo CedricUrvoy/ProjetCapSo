@@ -6,22 +6,22 @@ import hei.capso.projetcapso.model.Article;
 
 import java.util.List;
 
-public class Manager {
+public class ArticleManager {
 
-	private static Manager instance;
+	private static ArticleManager instance;
 	
 	private ArticleDao articleDao;
 
-	public static Manager getInstance() {
+	public static ArticleManager getInstance() {
 		if(instance == null) 
 		{
-			instance = new Manager();
+			instance = new ArticleManager();
 		}
 		return instance;
 	}
 	
 	
-	private Manager() {
+	private ArticleManager() {
 
 		articleDao = new ArticleDao();
 

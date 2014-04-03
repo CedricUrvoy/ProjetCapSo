@@ -32,14 +32,16 @@
     	<label>Classe</label>
         <input class="input" type=text list=classe >
 			<datalist id=classe >
-  				 <option> 41
-  				 <option> 42
+  				 <c:forEach var="groupe" items="${groupes}">
+  				 <option> ${groupe.nom_Groupe}
+  				 </c:forEach>
 			</datalist>
 		<label>Domaine</label>
 		<input class="input" type=text list=domaine >
 			<datalist id=domaine >
-  				 <option> ITI
-  				 <option> PCE
+				<c:forEach var="domaine" items="${groupes}">
+  					 <option> ${groupe.nom_Groupe}
+  				 </c:forEach>
 			</datalist>
     </fieldset>
     <fieldset id="ajout">
