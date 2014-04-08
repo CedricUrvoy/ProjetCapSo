@@ -27,6 +27,10 @@ public class AjoutProfilServlet extends HttpServlet{
 		// Liste classes dans formulaire
 				List<Groupe> groupes = GroupeManager.getInstance().listerClasses();
 				req.setAttribute("groupes", groupes);
+				
+		// Liste domaines dans formulaire
+				List<Groupe> domaines = GroupeManager.getInstance().listerDomaines();
+				req.setAttribute("domaines", domaines);
 		
 	RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/ajoutProfil.jsp");
 	view.forward(req, resp);

@@ -22,8 +22,9 @@
     	<label>Matière</label></br>
         <input class="input" type=text list=matiere >
 			<datalist id=matiere >
-  				 <option> Transfert Thermique
-  				 <option> Fabrication mécanique
+				<c:forEach var="matiere" items="${matieres}">
+  				 	<option> ${matiere.nom_Matiere}
+  				 </c:forEach>
   			</datalist></br>
 		 <label>Date : </label></br>
         <input class="input" id="date" type="date" placeholder="date" required></br>

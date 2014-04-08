@@ -39,8 +39,8 @@
 		<label>Domaine</label>
 		<input class="input" type=text list=domaine >
 			<datalist id=domaine >
-				<c:forEach var="domaine" items="${groupes}">
-  					 <option> ${groupe.nom_Groupe}
+				<c:forEach var="domaine" items="${domaines}">
+  					 <option> ${domaine.nom_Groupe}
   				 </c:forEach>
 			</datalist>
     </fieldset>
