@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>******</title>
+		<title>Créer ton profil</title>
 		<meta name="Crée ton profil" content="Crée ton profil" />
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -17,7 +17,7 @@
 	
 	<div id="boite_1_ajout">Nouveau Profil</div>
 	<div id="boite_2_ajout">
-		<form id="ajout">
+		<form id="ajout" method="post" action="ajoutProfil">
     <fieldset id="inputs_ajout">
     	<label>Nom : </label></br>
         <input class="input" id="nom" type="text" placeholder="Nom" autofocus required></br>
