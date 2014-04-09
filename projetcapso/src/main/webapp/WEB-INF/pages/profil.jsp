@@ -18,7 +18,23 @@
 		
 		
 		<h1 class = "titre">Profil</h1>
-		<h1>Nom</h1>
-		<H1>Prenom</H1>
-		<h1>Mes dernieres séances</h1>
+		<div class="profil">
+			<div id=nom>
+				<H2 class ="info_profil">Marie</H2>
+				<H2 class ="info_profil">Fievet</H2>
+			</div>
+		<div id="groupe">
+			<h1 class="titre">Groupes</h1>
+			<div id="liste-=_groupe">
+				<h2 class="groupe_perso">Classe : H44</h2>
+				<h2 class="groupe_perso">Domaine : ITI</h2>
+				<h2 id="autre_groupe">Autres groupes</h2>
+				<h2 class="groupe_perso">Marqueting</h2>
+				<h2 class="groupe_perso">Projet Piste</h2>
+				<h2 class="groupe_perso">Dev WEB</h2>
+			</div>
+			
+		</div>
+
+		</div>
 	</body>
