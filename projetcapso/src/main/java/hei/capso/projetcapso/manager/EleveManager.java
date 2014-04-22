@@ -4,7 +4,6 @@ package hei.capso.projetcapso.manager ;
 import hei.capso.projetcapso.dao.EleveDao;
 import hei.capso.projetcapso.model.Eleve;
 
-import java.util.List;
 
 public class  EleveManager {
 
@@ -27,6 +26,7 @@ public class  EleveManager {
 
 	}
 
+	// AJOUTER ELEVE
 	public void ajouterEleve(Eleve eleve) {
 		eleveDao.ajouterEleve(eleve);
 	}

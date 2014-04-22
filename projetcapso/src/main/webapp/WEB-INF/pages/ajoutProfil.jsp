@@ -20,27 +20,27 @@
 		<form id="ajout" method="post" action="ajoutProfil">
     <fieldset id="inputs_ajout">
     	<label>Nom : </label></br>
-        <input class="input" id="nom" type="text" placeholder="Nom" autofocus required></br>
+        <input class="input" id="nom" type="text" placeholder="Nom" name="nom_Eleve" autofocus required></br>
 		 <label>Prénom : </label></br>
-        <input class="input" id="prenom" type="text" placeholder="Prénom" required></br>
+        <input class="input" id="prenom" type="text" placeholder="Prénom" name="prenom_Eleve" required></br>
         <label>Mail : </label></br>
-        <input class="input" id="mail" type="email" placeholder="prenom.nom@hei.fr" required></br>
+        <input class="input" id="mail" type="email" placeholder="prenom.nom@hei.fr" name="email_Eleve" required></br>
         <label>Mot de passe : </label></br>
         <input class="input" id="password" type="password" placeholder="Mot de passe" required></br>
     </fieldset>
     <fieldset class="groupe">
     	<label>Classe</label>
-        <input class="input" type=text list=classe >
+        <input class="input" type=text list=classe name="id_Classe">
 			<datalist id=classe >
   				 <c:forEach var="groupe" items="${groupes}">
-  				 <option> ${groupe.nom_Groupe}
+  				 <option value ="${groupe.id_Groupe}"> ${groupe.nom_Groupe}
   				 </c:forEach>
 			</datalist>
 		<label>Domaine</label>
-		<input class="input" type=text list=domaine >
+		<input class="input" type=text list=domaine name="id_Domaine" >
 			<datalist id=domaine >
 				<c:forEach var="domaine" items="${domaines}">
-  					 <option> ${domaine.nom_Groupe}
+  					 <option value ="${domaine.id_Groupe}" > ${domaine.nom_Groupe}
   				 </c:forEach>
 			</datalist>
     </fieldset>

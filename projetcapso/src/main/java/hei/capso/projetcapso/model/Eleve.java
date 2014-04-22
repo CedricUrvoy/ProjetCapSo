@@ -11,24 +11,25 @@ public class Eleve {
 		private String email_Eleve;
 		private String password_eleve;
 		private Date date;
+		private Integer id_Classe;
+		private Integer id_Domaine;
+		
 
-		
-		
 
 
 		//CONSTRUCTEUR
-		public Eleve(Integer id_Eleve, String nom_Eleve, String prenom_Eleve, String image_Eleve, String email_Eleve) {
+		public Eleve(Integer id_Eleve, String nom_Eleve, String prenom_Eleve, String image_Eleve, String email_Eleve, Integer id_Classe, Integer id_Domaine) {
 			super();
 			this.id_Eleve = id_Eleve;
 			this.nom_Eleve = nom_Eleve;
 			this.prenom_Eleve = prenom_Eleve;
 			this.image_Eleve = image_Eleve;
 			this.email_Eleve = email_Eleve;
+			this.id_Classe = id_Classe;
+			this.id_Domaine = id_Domaine;
 		}
 
-
-
-
+// GETTER & SETTER
 
 		public Integer getId_Eleve() {
 			return id_Eleve;
@@ -138,7 +139,21 @@ public class Eleve {
 			this.date = date;
 		}
 
+		public Integer getId_Classe() {
+			return id_Classe;
+		}
 
+		public void setId_Classe(Integer id_Classe) {
+			this.id_Classe = id_Classe;
+		}
+
+		public Integer getId_Domaine() {
+			return id_Domaine;
+		}
+
+		public void setId_Domaine(Integer id_Domaine) {
+			this.id_Domaine = id_Domaine;
+		}
 		
 
 

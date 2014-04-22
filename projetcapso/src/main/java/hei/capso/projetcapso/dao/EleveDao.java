@@ -20,10 +20,12 @@ public class EleveDao {
 
 				// Utiliser la connexion
 				PreparedStatement stmt = connection
-						.prepareStatement("INSERT INTO `eleve`(`nom_Eleve`,`prenom_Eleve`,`image_Eleve`) VALUES(?, ?, ?)");
+						.prepareStatement("INSERT INTO `eleve`(`nom_Eleve`,`prenom_Eleve`,`image_Eleve`,`id_Classe`,`id_Domaine`) VALUES(?, ?, ?, ?, ?)");
 				stmt.setString(1, eleve.getNom_Eleve());
 				stmt.setString(2, eleve.getPrenom_Eleve());
 				stmt.setString(3, eleve.getImage_Eleve());
+				stmt.setInt(4, eleve.getId_Classe());
+				stmt.setInt(5, eleve.getId_Eleve());
 
 				stmt.executeUpdate();
 

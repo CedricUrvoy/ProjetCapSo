@@ -33,9 +33,10 @@ public class AjoutProfilServlet extends HttpServlet{
 		// Liste domaines dans formulaire
 				List<Groupe> domaines = GroupeManager.getInstance().listerDomaines();
 				req.setAttribute("domaines", domaines);
-		
-	RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/ajoutProfil.jsp");
-	view.forward(req, resp);
+				
+		//AFFICHER LA PAGE
+				RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/ajoutProfil.jsp");
+				view.forward(req, resp);
 	}
 	
 	@Override
@@ -47,10 +48,11 @@ public class AjoutProfilServlet extends HttpServlet{
 	EleveManager.getInstance().ajouterEleve(
 			new Eleve(null, 
 						request.getParameter("nom_Eleve"), 
-						request.getParameter("prenom_Eleve"), 
+				    	request.getParameter("prenom_Eleve"), 
 						request.getParameter("image_Eleve"),
-						request.getParameter("email_Eleve")
-						));
+						request.getParameter("email_Eleve"),
+						Integer.parseInt(request.getParameter("id_Classe")), 
+						Integer.parseInt(request.getParameter("id_Domaine"))));
 		
 		response.sendRedirect("eleve");
 	}
