@@ -28,6 +28,8 @@
 		<script src='fullcalendar/fullcalendar.js'></script>
 		<script src='fullcalendar/lang/fr.js'></script>
 		<script src="js/calendar.js"></script>
+		
+		<script src="js/app.js"></script>
 
 		
 	</head>
@@ -51,10 +53,10 @@
 	    		<div class="popup">
 			    	<div id="boite_1_ajout">Nouvelle séance</div>
 					<div id="boite_2_ajout">
-						<form id="ajout">
+						<form id="ajout" name="DForm" method="POST">s
 						    <fieldset id="inputs_ajout">
 						    	<label>Matière</label></br>
-						        <input class="input" type=text list=matiere >
+						         <input class="input" type=text list=matiere >
 									<datalist id=matiere >
 										<c:forEach var="matiere" items="${matieres}">
 						  				 	<option> ${matiere.nom_Matiere}
@@ -71,7 +73,8 @@
 						    </fieldset>
 						    
 						    <fieldset id="ajout">
-						        <input class="input" type="submit" id="submit" value="Valider"> 
+						        <input type="Submit" class="turquoise-button" name="VALIDER" value="Valider" onclick="doAct(this);"> 
+						        <input type="Submit" class="turquoise-button" name="ANNULER" value="Annuler" onclick="doAct(this);">
 						    </fieldset>
 						</form>
 					</div>
