@@ -1,8 +1,6 @@
 package hei.capso.projetcapso.model;
 
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 public class Seance {
     public int id;
@@ -13,7 +11,6 @@ public class Seance {
     public String infos;
     public int idGroupe;
     public int idMatiere;
-    public String nameMatiere;
     public String nameGroupe;
 	
     
@@ -31,8 +28,7 @@ public class Seance {
 
 
 	public Seance(int id, String title, Date start, Date end, String place,
-			String infos, int idGroupe, int idMatiere, String nameMatiere,
-			String nameGroupe) {
+			String infos, int idGroupe, int idMatiere,String nameGroupe) {
 		this.id = id;
 		this.title = title;
 		this.start = start;
@@ -41,7 +37,6 @@ public class Seance {
 		this.infos = infos;
 		this.idGroupe = idGroupe;
 		this.idMatiere = idMatiere;
-		this.nameMatiere = nameMatiere;
 		this.nameGroupe = nameGroupe;
 	}
 
@@ -123,16 +118,6 @@ public class Seance {
 
 	public void setIdMatiere(int idMatiere) {
 		this.idMatiere = idMatiere;
-	}
-
-
-	public String getNameMatiere() {
-		return nameMatiere;
-	}
-
-
-	public void setNameMatiere(String nameMatiere) {
-		this.nameMatiere = nameMatiere;
 	}
 
 
