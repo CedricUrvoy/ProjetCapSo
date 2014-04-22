@@ -1,7 +1,9 @@
 package hei.capso.projetcapso.controllers;
 
 
+import hei.capso.projetcapso.manager.EleveManager;
 import hei.capso.projetcapso.manager.GroupeManager;
+import hei.capso.projetcapso.model.Eleve;
 import hei.capso.projetcapso.model.Groupe;
 
 import java.io.IOException;
@@ -31,8 +33,27 @@ public class AjoutProfilServlet extends HttpServlet{
 		// Liste domaines dans formulaire
 				List<Groupe> domaines = GroupeManager.getInstance().listerDomaines();
 				req.setAttribute("domaines", domaines);
+				
+		//AFFICHER LA PAGE
+				RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/ajoutProfil.jsp");
+				view.forward(req, resp);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		
-	RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/ajoutProfil.jsp");
-	view.forward(req, resp);
+		//AJOUTER UN JOUEUR
+		
+	EleveManager.getInstance().ajouterEleve(
+			new Eleve(null, 
+						request.getParameter("nom_Eleve"), 
+				    	request.getParameter("prenom_Eleve"), 
+						request.getParameter("image_Eleve"),
+						request.getParameter("email_Eleve"),
+						Integer.parseInt(request.getParameter("id_Classe")), 
+						Integer.parseInt(request.getParameter("id_Domaine"))));
+		
+		response.sendRedirect("eleve");
 	}
 }
