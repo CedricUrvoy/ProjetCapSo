@@ -5,6 +5,10 @@
     <servlet-class>hei.capso.projetcapso.controllers.CalendrierServlet</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>CalendrierPerso</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.CalendrierPersoServlet</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>Blog</servlet-name>
     <servlet-class>hei.capso.projetcapso.controllers.BlogServlet</servlet-class>
   </servlet>
@@ -20,7 +24,7 @@
     <servlet-name>Login</servlet-name>
     <servlet-class>hei.capso.projetcapso.controllers.LoginServlet</servlet-class>
   </servlet>
-   <servlet>
+  <servlet>
     <servlet-name>AjoutProfil</servlet-name>
     <servlet-class>hei.capso.projetcapso.controllers.AjoutProfilServlet</servlet-class>
   </servlet>
@@ -35,6 +39,10 @@
   <servlet-mapping>
     <servlet-name>Calendrier</servlet-name>
     <url-pattern>/calendrier</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CalendrierPerso</servlet-name>
+    <url-pattern>/calendrierPerso</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>Blog</servlet-name>
@@ -67,4 +75,14 @@
   <welcome-file-list>
     <welcome-file>calendrier</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>CalendrierPersoServlet</display-name>
+    <servlet-name>CalendrierPersoServlet</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.CalendrierPersoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CalendrierPersoServlet</servlet-name>
+    <url-pattern>/CalendrierPersoServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

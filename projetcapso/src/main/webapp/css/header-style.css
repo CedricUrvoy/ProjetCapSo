@@ -45,32 +45,45 @@
 }
 
 /**** Barre de Menu ****/
+
 nav.navigation
 {
 	font-family: "bariol",helvitica,sans-serif;
 	font-weight: bold;
-	background-color: #766F64;
+	background-color: #55606e;
 	width: 100%;
 	padding-top:10px;	
 	padding-bottom: 10px;
 	font-size: 25px;
+	height: 50px;
 	
-	
-	
-	/**display: inline-block;
-	text-decoration: none;*/
 	
 }
 
-ul.onglet
+.centrer{
+    max-width: 1000px;
+    margin: auto;
+}
+
+.logo{
+    float: left;
+    width: 250px;
+}
+
+.onglet{
+    float: right;
+    padding-top: 10px;
+}
+
+ul.onglet	
 {
 	color : #FFFFFF;
 	text-align: center;
 }
 li{
 	display: inline;
-	color: #777;
-	padding : 25px;
+	color: #FFFFFF;
+	padding : 30px;
 
 }
 
@@ -79,4 +92,12 @@ a
 	text-decoration: none;
 	color: white;
 }
+.logo img{
+    display:inline-block;
+}
+.logo a{
+    display:inline-block;
+}
+
+
 
