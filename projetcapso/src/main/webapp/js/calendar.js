@@ -1,7 +1,31 @@
-		
+function hideDiv() { 
+    if (document.getElementById) { // DOM3 = IE5, NS6 
+        document.getElementById('hideshow').style.visibility = 'hidden'; 
+    } else { 
+        if (document.layers) { // Netscape 4 
+            document.hideshow.visibility = 'hidden'; 
+        } else { // IE 4 
+            document.all.hideshow.style.visibility = 'hidden'; 
+        } 
+    } 
+}
+ 
+function showDiv() { 
+    if (document.getElementById) { // DOM3 = IE5, NS6 
+        document.getElementById('hideshow').style.visibility = 'visible'; 
+    } else { 
+        if (document.layers) { // Netscape 4 
+            document.hideshow.visibility = 'visible'; 
+        } else { // IE 4 
+            document.all.hideshow.style.visibility = 'visible'; 
+        } 
+    } 
+}
+
 /*
 	jQuery document ready
 */
+
 
 $(document).ready(function()
 {
@@ -22,31 +46,32 @@ $(document).ready(function()
 		Because doing so we can use it inside other function.
 		In order to modify its option later.
 	*/
+
+	/***** Creation du calendrier *****/
 	
 	var calendar = $('#calendar').fullCalendar(
 	{
-		/*
-			header option will define our calendar header.
-			left define what will be at left position in calendar
-			center define what will be at center position in calendar
-			right define what will be at right position in calendar
-		*/
+
 		header:
 		{
 			left: 'prev,next today',
 			center: 'title',
 			right: 'month,agendaWeek,agendaDay'
 		},
-		/*
-			defaultView option used to define which view to show by default,
-			for example we have used agendaWeek.
-		*/
+
 		defaultView: 'agendaWeek',
+		
+		height: 600,
+		
+		
+		/**** Gestion de l'ajout d'un event automatique ****/
+		
+		
 		/*
 			selectable:true will enable user to select datetime slot
 			selectHelper will add helpers for selectable.
 		*/
-		selectable: true,
+		selectable: false,
 		selectHelper: true,
 		/*
 			when user select timeslot this option code will execute.
@@ -78,60 +103,30 @@ $(document).ready(function()
 			}
 			calendar.fullCalendar('unselect');
 		},
-		/*
-			editable: true allow user to edit events.
-		*/
-		editable: true,
-		/*
-			events is the main option for calendar.
-			for demo we have added predefined events in json object.
-		*/
-		events: [
-			{
-				title: 'All Day Event',
-				start: new Date(y, m, 1)
-			},
-			{
-				title: 'Long Event',
-				start: new Date(y, m, d-5),
-				end: new Date(y, m, d-2)
-			},
-			{
-				id: 999,
-				title: 'Repeating Event',
-				start: new Date(y, m, d-3, 16, 0),
-				allDay: false
-			},
-			{
-				id: 999,
-				title: 'Repeating Event',
-				start: new Date(y, m, d+4, 16, 0),
-				allDay: false
-			},
-			{
-				title: 'Meeting',
-				start: new Date(y, m, d, 10, 30),
-				allDay: false
-			},
-			{
-				title: 'Lunch',
-				start: new Date(y, m, d, 12, 0),
-				end: new Date(y, m, d, 14, 0),
-				allDay: false
-			},
-			{
-				title: 'Birthday Party',
-				start: new Date(y, m, d+1, 19, 0),
-				end: new Date(y, m, d+1, 22, 30),
-				allDay: false
-			},
-			{
-				title: 'Click for Google',
-				start: new Date(y, m, 28),
-				end: new Date(y, m, 29),
-				url: 'http://google.com/'
-			}
-		]
+		
+		
+		/**** Pour editer les evenements ****/
+		
+		editable: false,
+
+		/**** Recupere les evenements du calendrier perso ****/
+		
+		events: {
+			url: 'calendrierPerso',
+	        type:"GET",
+	        success: function(data) {console.log(data);return data;}
+		},
+		
+		/**** Infos sur l'evenement ****/
+		
+	    eventClick: function(event) {
+	    	window.open('http://www.google.fr');
+	    }
+		
+		
+		
 	});
+	
+	
 	
 });

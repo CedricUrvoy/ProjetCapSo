@@ -15,9 +15,12 @@ public class CalendrierServlet extends HttpServlet{
 	 */
 	private static final long serialVersionUID = 800409617440767322L;
 	
+	
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+		
 		
 		
 	RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/calendrier.jsp");
