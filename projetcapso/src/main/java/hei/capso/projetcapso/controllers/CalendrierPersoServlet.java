@@ -51,18 +51,18 @@ public class CalendrierPersoServlet extends HttpServlet{
 		
 		
 		
-		/*List l = new ArrayList();
+		List l = new ArrayList();
 		 
 		 Seance c = new Seance(1,"Test", genererDate(2014,3,21,11,00),genererDate(2014,3,21,12,00),"hei","autres infos",1,1);
 		 Seance d = new Seance(2,"Test2", genererDate(2014,3,22,14,00),genererDate(2014,3,22,16,00),"hei","autres infos",1,1);
 
 		l.add(c);
-		l.add(d);*/
+		l.add(d);
 		
-		List<Seance> seances = SeanceManager.getInstance().listeSeancePersonnel(1);
+		/*List<Seance> seances = SeanceManager.getInstance().listeSeancePersonnel(1);*/
 		 
 		Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").create(); 
-		String calendrierJson = gson.toJson(seances);
+		String calendrierJson = gson.toJson(l);
 		
 		resp.setCharacterEncoding("UTF-8"); 
 		resp.setContentType("application/json");
