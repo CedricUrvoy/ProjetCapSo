@@ -1,7 +1,6 @@
 function hideDiv() { 
     if (document.getElementById) { // DOM3 = IE5, NS6 
         document.getElementById('hideshow').style.visibility = 'hidden'; 
-        document.getElementById('hideshow2').style.visibility = 'hidden'; 
     } else { 
         if (document.layers) { // Netscape 4 
             document.hideshow.visibility = 'hidden'; 
@@ -35,6 +34,18 @@ function showDiv2() {
     } 
 }
 
+function hideDiv2() { 
+    if (document.getElementById) { // DOM3 = IE5, NS6 
+        document.getElementById('hideshow2').style.visibility = 'hidden'; 
+    } else { 
+        if (document.layers) { // Netscape 4 
+            document.hideshow.visibility = 'hidden'; 
+        } else { // IE 4 
+            document.all.hideshow.style.visibility = 'hidden'; 
+        } 
+    } 
+}
+
 function doAct(bouton)
 {
 if (bouton.name=="VALIDER" )
@@ -47,8 +58,15 @@ else if (bouton.name=="ANNULER" )
      document.DForm.action="javascript:hideDiv()";
      document.DForm.submit();
 }
-else
+else if (bouton.name=="ANNULER2" )
 {
-     alert("Ouais, mais là, faut cliquer sur un bouton\nSinon, je sais pas ce que tu veux pauvre nain !" );
+     document.DForm2.action="javascript:hideDiv2()";
+     document.DForm2.submit();
+}
+else if (bouton.name=="REJOINDRE" )
+{
+     document.DForm2.action="";
+     document.DForm2.submit();
 }
 }
+

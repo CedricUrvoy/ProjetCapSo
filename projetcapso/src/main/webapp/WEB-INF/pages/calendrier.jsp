@@ -47,42 +47,8 @@
 			</div>
 		</div>
 		
+		<!--Pop UP ajout seance-->
 		<div id="hideshow" style="visibility: hidden;">
-		    <div id="fade"></div> 
-	    	<div class="popup_block">
-	    		<div class="popup">
-			    	<div id="boite_1_ajout">Nouvelle séance</div>
-					<div id="boite_2_ajout">
-						<form id="ajout" name="DForm" method="POST">s
-						    <fieldset id="inputs_ajout">
-						    	<label>Matière</label></br>
-						         <input class="input" type=text list=matiere >
-									<datalist id=matiere >
-										<c:forEach var="matiere" items="${matieres}">
-						  				 	<option> ${matiere.nom_Matiere}
-						  				 </c:forEach>
-						  			</datalist></br>
-								 <label>Date : </label></br>
-						        <input class="input" id="date" type="date" placeholder="date" required></br>
-						        <label>Heure de début : </label></br>
-						        <input class="input" id="mail" type="time" placeholder="prenom.nom@hei.fr" required></br>
-						        <label>Heure de fin : </label></br>
-						        <input class="input" id="password" type="time" placeholder="Mot de passe" required></br>
-						        <label>Commentaires</label>
-						        <textarea rows="8" cols="50"></textarea>
-						    </fieldset>
-						    
-						    <fieldset id="ajout">
-						        <input type="Submit" class="turquoise-button" name="VALIDER" value="Valider" onclick="doAct(this);"> 
-						        <input type="Submit" class="turquoise-button" name="ANNULER" value="Annuler" onclick="doAct(this);">
-						    </fieldset>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div id="hideshow2" style="visibility: hidden;">
 		    <div id="fade"></div> 
 	    	<div class="popup_block">
 	    		<div class="popup">
@@ -98,11 +64,11 @@
 						  				 </c:forEach>
 						  			</datalist></br>
 								 <label>Date : </label></br>
-						        <input class="input" id="date" type="date" placeholder="date" required></br>
+						        <input class="input" id="date" type="date" placeholder="" required></br>
 						        <label>Heure de début : </label></br>
-						        <input class="input" id="mail" type="time" placeholder="prenom.nom@hei.fr" required></br>
+						        <input class="input" id="heure_debut" type="time" placeholder="" required></br>
 						        <label>Heure de fin : </label></br>
-						        <input class="input" id="password" type="time" placeholder="Mot de passe" required></br>
+						        <input class="input" id="heure_fin" type="time" placeholder="" required></br>
 						        <label>Commentaires</label>
 						        <textarea rows="8" cols="50"></textarea>
 						    </fieldset>
@@ -110,6 +76,36 @@
 						    <fieldset id="ajout">
 						        <input type="Submit" class="turquoise-button" name="VALIDER" value="Valider" onclick="doAct(this);"> 
 						        <input type="Submit" class="turquoise-button" name="ANNULER" value="Annuler" onclick="doAct(this);">
+						    </fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	<!--Pop UP detail seance-->
+		
+		<div id="hideshow2" style="visibility: hidden;">
+		    <div id="fade"></div> 
+	    	<div class="popup_block">
+	    		<div class="popup">
+			    	<div id="boite_1_ajout">Nouvelle séance</div>
+					<div id="boite_2_ajout">
+						<form id="ajout" name="DForm2" method="POST">
+						    	<label>Matière :</label></br>
+						    	<p class="info_seance">Matière :</p>
+								<label>Date :</label></br>
+								<p class="info_seance">Matière :</p>
+						        <label>Heure de début : </label></br>
+						        <p class="info_seance">Matière :</p>
+						        <label>Heure de fin : </label></br>
+						        <p class="info_seance">Matière :</p>
+						        <label>Informations de la séance</label>
+						        <p class="info_seance">Matière :</p>			    
+						    <fieldset id="ajout">
+						        <input type="Submit" class="turquoise-button" name="REJOINDRE" value="Rejoindre" onclick="doAct(this);"> 
+						        <input type="Submit" class="turquoise-button" name="ANNULER2" value="Annuler" onclick="doAct(this);">
 						    </fieldset>
 						</form>
 					</div>
