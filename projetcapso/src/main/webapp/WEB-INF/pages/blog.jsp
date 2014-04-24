@@ -30,7 +30,7 @@
 			<div class = "text-art">
 				<p class="text">${article.texte}</p>
 			
-			<div class="suite">Suite de l'article</div>
+			<a href="article" class="suite">Suite de l'article</a>
 			</div>
 			
 		</article>
