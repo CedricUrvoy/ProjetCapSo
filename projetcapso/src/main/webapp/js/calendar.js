@@ -98,7 +98,7 @@ $(document).ready(function()
 		/**** Infos sur l'evenement ****/
 		
 	    eventClick: function(event) {
-	    	window.open('http://www.google.fr');
+	    	showDiv2();
 	    }
 		
 		

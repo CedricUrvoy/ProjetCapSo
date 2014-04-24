@@ -1,6 +1,7 @@
 function hideDiv() { 
     if (document.getElementById) { // DOM3 = IE5, NS6 
         document.getElementById('hideshow').style.visibility = 'hidden'; 
+        document.getElementById('hideshow2').style.visibility = 'hidden'; 
     } else { 
         if (document.layers) { // Netscape 4 
             document.hideshow.visibility = 'hidden'; 
@@ -13,6 +14,18 @@ function hideDiv() {
 function showDiv() { 
     if (document.getElementById) { // DOM3 = IE5, NS6 
         document.getElementById('hideshow').style.visibility = 'visible'; 
+    } else { 
+        if (document.layers) { // Netscape 4 
+            document.hideshow.visibility = 'visible'; 
+        } else { // IE 4 
+            document.all.hideshow.style.visibility = 'visible'; 
+        } 
+    } 
+}
+
+function showDiv2() { 
+    if (document.getElementById) { // DOM3 = IE5, NS6 
+        document.getElementById('hideshow2').style.visibility = 'visible'; 
     } else { 
         if (document.layers) { // Netscape 4 
             document.hideshow.visibility = 'visible'; 
