@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>******</title>
+		<title>SoliCours</title>
 		<meta name="***********" content="******" />
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -15,7 +15,7 @@
 
 	<body>
 	
-	<div id="boite_1">nomDuSite</div>
+	<div id="boite_1">SoliCours</div>
 	<div id="boite_2">
 		<form id="login">
     <fieldset id="inputs">

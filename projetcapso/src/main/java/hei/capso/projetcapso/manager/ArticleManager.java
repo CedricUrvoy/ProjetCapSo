@@ -27,10 +27,15 @@ public class ArticleManager {
 
 	}
 
-
+	//LISTER ARTICLE
 	public List<Article> listerArticles() {
 		List<Article> liste = articleDao.listerArticles();
 		return liste;
+	}
+	
+	//AJOUTER ARTICLE
+	public void ajouterArticle(Article article) {
+		articleDao.ajouterArticle(article);
 	}
 	
 

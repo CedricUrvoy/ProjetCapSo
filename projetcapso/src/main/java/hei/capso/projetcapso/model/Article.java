@@ -9,20 +9,31 @@ public class Article {
 		private String titre;
 		private String image;
 		private Date date;
+		private Integer eleve;
 
 		
 		
 
 
-		//CONSTRUCTEUR
-		public Article(Integer id_Article, String titre_Article, String text_Article, String image_Article) {
+		//CONSTRUCTEUR pour ajout
+		public Article(Integer id_Article, String titre_Article, String text_Article, String image_Article, Integer eleve, Date date_Article) {
 			super();
 			this.id_article = id_Article;
 			this.titre = titre_Article;
 			this.texte = text_Article;
 			this.image = image_Article;
+			this.eleve=eleve;
+			this.date=date_Article;
 		}
 
+		//CONSTRUCTEUR pour liste
+				public Article(Integer id_Article, String titre_Article, String text_Article, String image_Article) {
+					super();
+					this.id_article = id_Article;
+					this.titre = titre_Article;
+					this.texte = text_Article;
+					this.image = image_Article;
+				}
 
 		public Integer getId_article() {
 			return id_article;
@@ -71,6 +82,17 @@ public class Article {
 		public void setDate(Date date) {
 			this.date = date;
 		}
+
+
+		public Integer getEleve() {
+			return eleve;
+		}
+
+
+		public void setEleve(Integer eleve) {
+			this.eleve = eleve;
+		}
+		
 
 
 		

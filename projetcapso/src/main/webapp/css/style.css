@@ -261,14 +261,26 @@ a.suite
 	
 }
 
-div.suite_valider
+input.valider_article
 {
 	background-color: #24afb2;
 	padding: 10px;
 	width: 15%;
-	position: relative;
-	left : 80%;
-	top: 25%;
+	position: absolute;
+	left : 40%;
+	top: 60%;
+	text-align: center;
+	
+}
+
+input.reinitialiser_article
+{
+	background-color: #24afb2;
+	padding: 10px;
+	width: 15%;
+	position: absolute;
+	left : 20%;
+	top: 60%;
 	text-align: center;
 	
 }

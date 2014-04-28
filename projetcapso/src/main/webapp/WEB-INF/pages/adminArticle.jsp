@@ -15,23 +15,25 @@
 
 	<body>
 		<jsp:include page="header.jsp" />
-			
+		
 		<h1 class="titre">Ajouter un article</h1>
+		<form method="post" action="adminArticle">	
 		<article class = "article">			
 			<h1 class="titre_art">Titre de l'article :
-			<input size="100" type="text" id="name" placeholder="Titre de l'article " />
+			<input size="100" type="text" name="titre_Article" id="name" placeholder="Titre de l'article " />
 			</h1>
 			<div class = "image">
-				<img alt="" src="">
+				<input type="file" name = "image_joueur">
 			</div>
 			<div class = "text-art">
 				<h1 class="titre_art">Texte de l'article :
 			
 			</h1>
-				<textarea placeholder=" Entrer ici le texte de l'article " rows="5" cols="80"></textarea>
-			<div class="suite_valider">Valider</div>
+				<textarea placeholder=" Entrer ici le texte de l'article " rows="5" cols="80" name="text_Article"></textarea>
+			<input type="submit" value="Valider" class = "valider_article" name ="ajouter_article">
+			<input type="reset" value="Réinitialiser" class = "reinitialiser_article">
 			</div>
 			
 		</article>
-		
+		</form>
 	</body>

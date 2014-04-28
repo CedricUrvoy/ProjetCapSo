@@ -3,7 +3,9 @@ package hei.capso.projetcapso.dao ;
 import hei.capso.projetcapso.model.Article;
 
 
+import java.sql.Date;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -41,5 +43,28 @@ public class ArticleDao {
 		}
 
 		return liste;
+	}
+	
+	//AJOUTER UN ARTICLE
+	public void ajouterArticle(Article article) {
+		try {
+			Connection connection = DataSourceProvider.getDataSource()
+					.getConnection();
+
+			// Utiliser la connexion
+			PreparedStatement stmt = connection
+					.prepareStatement("INSERT INTO `article`(`titre_Article`,`text_Article`,`date_Article`) VALUES(?, ?, ?)");
+			stmt.setString(1, article.getTitre());
+			stmt.setString(2, article.getTexte());
+			stmt.setDate(3, new Date(article.getDate().getTime()));
+			stmt.executeUpdate();
+
+			// Fermer la connexion
+			stmt.close();
+			connection.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }
