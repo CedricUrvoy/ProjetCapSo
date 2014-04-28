@@ -28,6 +28,10 @@ public class Eleve {
 			this.id_Classe = id_Classe;
 			this.id_Domaine = id_Domaine;
 		}
+		
+		public Eleve() {
+			// TODO Auto-generated constructor stub
+		}
 
 // GETTER & SETTER
 
