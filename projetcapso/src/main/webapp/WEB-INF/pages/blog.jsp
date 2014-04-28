@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="pageSelectionnee" value="blog" scope="request"></c:set>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -24,14 +25,15 @@
 			<h1 class="titre_art">${article.titre}</h1>
 			<div class = "image">
 				<img alt="" src="${article.image}"/>
-				<p class="legende"> Publié le 21/02/2014</p>
+				<p class="legende"> Publié le < fmt:formatDate value="${article.date_Article}" pattern="dd MMMM yyyy"/></p></br>
 				<p class="legende">[ ] Commentaire(s)</p>
 			</div>
 			<div class = "text-art">
 				<p class="text">${article.texte}</p>
 			
-			<a href="article" class="suite">Suite de l'article</a>
+			<a href="article?id=${article.id_article}" class="suite">Suite de l'article</a>
 			</div>
+			
 			
 		</article>
 		

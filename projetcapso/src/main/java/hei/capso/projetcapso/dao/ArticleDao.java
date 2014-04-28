@@ -29,7 +29,8 @@ public class ArticleDao {
 						results.getInt("id_Article"),
 						results.getString("titre_Article"),
 						results.getString("text_Article"),
-						results.getString("image_Article"));
+						results.getString("image_Article"),
+						results.getDate("date_Article"));
 				liste.add(article);
 			}
 
@@ -45,6 +46,38 @@ public class ArticleDao {
 		return liste;
 	}
 	
+	//DETAILS ARTICLE
+	public Article getArticle(Integer id_Article) {
+		Article article = null;
+		try {
+			Connection connection = DataSourceProvider.getDataSource()
+					.getConnection();
+
+			// Utiliser la connexion
+			PreparedStatement stmt = connection
+					.prepareStatement("SELECT * FROM article WHERE id_Article=?");
+			stmt.setInt(1, id_Article);
+			ResultSet result = stmt.executeQuery();
+			if (result.next()) {
+				article = new Article(
+						result.getInt("id_Article"),
+						result.getString("titre_Article"),
+						result.getString("text_Article"),
+						result.getString("image_Article"),
+						result.getDate("date_Article"));
+
+			}
+			
+			// Fermer la connexion
+			stmt.close();
+			connection.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return article;
+	}
+	
 	//AJOUTER UN ARTICLE
 	public void ajouterArticle(Article article) {
 		try {
@@ -56,7 +89,7 @@ public class ArticleDao {
 					.prepareStatement("INSERT INTO `article`(`titre_Article`,`text_Article`,`date_Article`) VALUES(?, ?, ?)");
 			stmt.setString(1, article.getTitre());
 			stmt.setString(2, article.getTexte());
-			stmt.setDate(3, new Date(article.getDate().getTime()));
+			stmt.setDate(3, new Date(article.getDate_Article().getTime()));
 			stmt.executeUpdate();
 
 			// Fermer la connexion

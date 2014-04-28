@@ -38,5 +38,13 @@ public class ArticleManager {
 		articleDao.ajouterArticle(article);
 	}
 	
+	//DETAILS ARTICLE
+	public Article getArticle(Integer id) {
+		if (id == null) {
+			throw new IllegalArgumentException(
+					"L'identifiant de l'artilcle doit �tre renseign�.");
+		}
+		return articleDao.getArticle(id);
+	}
 
 }
