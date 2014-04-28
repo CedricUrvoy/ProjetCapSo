@@ -28,19 +28,19 @@ public class SeanceDaoImpl implements SeanceDao{
 			
 			/**** Utilisation de la connection ****/
 			
-			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Seance"
-					+ "INNER JOIN Seance_Eleve ON Seance_id_Seance = id_Seance"
-					+ "INNER JOIN Matiere ON Matiere_id_Matiere = id_Matiere"
-					+ "INNER JOIN Groupe ON  Groupe_id_Groupe = id_Groupe"
-					+ "Where Eleve_id_Eleve=?");
+			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Seance "
+					+ "INNER JOIN Seance_Eleve ON Seance_id_Seance = id_Seance "
+					+ "INNER JOIN Matiere ON Matiere_id_Matiere = id_Matiere "
+					+ "INNER JOIN Groupe ON  Groupe_id_Groupe = id_Groupe "
+					+ "WHERE Eleve_id_Eleve=?");
 			stmt.setInt(1, idEleve);
 			ResultSet results = stmt.executeQuery();
 			while (results.next()){
 				Seance seance = new Seance(
 						results.getInt("id_Seance"),
 						results.getString("nom_Matiere"),
-						results.getDate("date_Debut_Seance"),
-						results.getDate("date_Fin_Seance"), 
+						results.getTimestamp("date_Debut_Seance"),
+						results.getTimestamp("date_Fin_Seance"), 
 						results.getString("lieu_Seance"),
 						results.getString("info_Seance"),
 						results.getInt("id_Seance"),
