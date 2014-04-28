@@ -50,6 +50,12 @@ public class ConnexionServlet extends HttpServlet {
         req.setAttribute( "form", form );
         req.setAttribute( "utilisateur", eleve );
 
-        this.getServletContext().getRequestDispatcher( "/WEB-INF/pages/login.jsp").forward( req, resp);
+        if ( session.getAttribute( "sessionEleve" ) == null ) {
+            /* Redirection vers la page publique */
+        	this.getServletContext().getRequestDispatcher( "/WEB-INF/pages/login.jsp" ).forward( req, resp );
+        } else {
+            /* Affichage de la page restreinte */
+            this.getServletContext().getRequestDispatcher( "/WEB-INF/pages/calendrier.jsp" ).forward( req, resp );
+        }
     }
 }
