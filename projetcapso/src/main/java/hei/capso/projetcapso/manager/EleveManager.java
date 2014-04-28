@@ -1,7 +1,10 @@
 package hei.capso.projetcapso.manager ;
 
 
+import java.util.List;
+
 import hei.capso.projetcapso.dao.EleveDao;
+import hei.capso.projetcapso.dao.impl.EleveDaoImpl;
 import hei.capso.projetcapso.model.Eleve;
 
 
@@ -9,7 +12,7 @@ public class  EleveManager {
 
 	private static EleveManager instance;
 	
-	private EleveDao eleveDao;
+	private EleveDao eleveDao = new EleveDaoImpl();
 
 	public static EleveManager getInstance() {
 		if(instance == null) 
@@ -21,14 +24,21 @@ public class  EleveManager {
 	
 	
 	private EleveManager() {
-
-		eleveDao = new EleveDao();
-
 	}
-
+	
+	/**** Lister les emails des eleves pour la connexion ****/
+	
+	public List<Eleve> listerEmailEleve(){
+		return eleveDao.listerIdEmailEleve();
+	}
+	
+	public Eleve getEleve(int idEleve){
+		return eleveDao.getEleve(idEleve);
+	}
+	
 	// AJOUTER ELEVE
-	public void ajouterEleve(Eleve eleve) {
-		eleveDao.ajouterEleve(eleve);
+	public void addEleve(Eleve eleve) {
+		eleveDao.addEleve(eleve);
 	}
 	
 }

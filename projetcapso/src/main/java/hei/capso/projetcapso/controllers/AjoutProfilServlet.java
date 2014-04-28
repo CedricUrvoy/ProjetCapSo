@@ -43,9 +43,9 @@ public class AjoutProfilServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		//AJOUTER UN JOUEUR
+		//AJOUTER UN ELEVE
 		
-	EleveManager.getInstance().ajouterEleve(
+	EleveManager.getInstance().addEleve(
 			new Eleve(null, 
 						request.getParameter("nom_Eleve"), 
 				    	request.getParameter("prenom_Eleve"), 

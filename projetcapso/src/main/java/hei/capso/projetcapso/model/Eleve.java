@@ -19,7 +19,6 @@ public class Eleve {
 
 		//CONSTRUCTEUR
 		public Eleve(Integer id_Eleve, String nom_Eleve, String prenom_Eleve, String image_Eleve, String email_Eleve, Integer id_Classe, Integer id_Domaine) {
-			super();
 			this.id_Eleve = id_Eleve;
 			this.nom_Eleve = nom_Eleve;
 			this.prenom_Eleve = prenom_Eleve;
@@ -32,6 +31,23 @@ public class Eleve {
 		public Eleve() {
 			// TODO Auto-generated constructor stub
 		}
+		
+		public Eleve(Integer id_Eleve, String email_Eleve) {
+			this.id_Eleve = id_Eleve;
+			this.email_Eleve = email_Eleve;
+		}
+		
+		
+
+		public Eleve(Integer id_Eleve, String nom_Eleve, String prenom_Eleve,
+						String image_Eleve, String email_Eleve, String password_eleve) {
+					this.id_Eleve = id_Eleve;
+					this.nom_Eleve = nom_Eleve;
+					this.prenom_Eleve = prenom_Eleve;
+					this.image_Eleve = image_Eleve;
+					this.email_Eleve = email_Eleve;
+					this.password_eleve = password_eleve;
+				}
 
 // GETTER & SETTER
 

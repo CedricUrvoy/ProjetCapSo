@@ -17,7 +17,7 @@
 	
 	<div id="boite_1">SoliCours</div>
 	<div id="boite_2">
-	<form method="post"  action="connexion" id="login">
+	<form method="post"  action="<c:url value="/connexion" />" id="login">
 	    <fieldset id="inputs">
 	        <input class="input" id="email" name="email" type="text" placeholder="Email" autofocus required>   
 	        <span class="erreur">${form.erreurs['email']}</span>

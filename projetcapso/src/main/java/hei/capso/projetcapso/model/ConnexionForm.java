@@ -1,6 +1,9 @@
 package hei.capso.projetcapso.model;
 
+import hei.capso.projetcapso.manager.EleveManager;
+
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,24 +26,34 @@ public final class ConnexionForm {
     	/* Récupération des champs du formulaire */
         String email = req.getParameter("email");
         String password = req.getParameter("password");
+        String passwordReel = null;
+        
+        List<Eleve> emailEleve = EleveManager.getInstance().listerEmailEleve();
+        
+        Integer idEleve = null;
       
-        Eleve eleve = new Eleve();
+        Eleve eleveConnexion = new Eleve();
 
         /* Validation du champ email. */
         try {
-            validationEmail( email );
+          idEleve = validationEmail( email, emailEleve);
+          System.out.print("l'idEleve est: "+idEleve);
+          Eleve elevePotentiel = EleveManager.getInstance().getEleve(idEleve);
+          passwordReel = elevePotentiel.getPassword_eleve();
+          System.out.print(passwordReel);
+          
         } catch ( Exception e ) {	
             setErreur( "email", e.getMessage() );
         }
-        eleve.setEmail_Eleve(email);
-
+        eleveConnexion.setEmail_Eleve(email);
+        
         /* Validation du champ mot de passe. */
         try {
-            validationMotDePasse( password );
+            validationMotDePasse( password , passwordReel);
         } catch ( Exception e ) {
             setErreur( "password", e.getMessage() );
         }
-        eleve.setPassword_eleve(password);
+        eleveConnexion.setPassword_eleve(password);
 
         /* Initialisation du résultat global de la validation. */
         if ( erreurs.isEmpty() ) {
@@ -49,26 +62,44 @@ public final class ConnexionForm {
             resultat = "Échec de la connexion.";
         }
 
-        return eleve;
+        return eleveConnexion;
     }
 
     /**
      * Valide l'adresse email saisie.
      */
-    private void validationEmail( String email ) throws Exception {
-        if ( email != null && !email.matches( "([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)" ) ) {
-            throw new Exception( "Merci de saisir une adresse mail valide." );
+    private Integer validationEmail( String email, List<Eleve> emailEleve) throws Exception {
+        
+    	boolean emailValide = false;
+    	
+    	if ( email != null && !email.matches( "([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)" ) ) {
+            throw new Exception( "Merci de saisir une adresse mail valide" );
         }
+        
+        for (int i = 0; i < emailEleve.size(); i++) {
+			if (emailEleve.get(i).getEmail_Eleve().matches(email)){emailValide = true;return i+1;}
+		}
+        
+        if (emailValide==false){
+        	throw new Exception ("Compte non crée");
+        }
+		return 0;
     }
 
     /**
      * Valide le mot de passe saisi.
      */
-    private void validationMotDePasse( String password ) throws Exception {
-        if ( password != null ) {
-            if ( password.length() < 3 ) {
+    private void validationMotDePasse( String passwordPotentiel,String passwordReel) throws Exception {
+        if ( passwordPotentiel != null ) {
+            
+        	if ( passwordPotentiel.length() < 3 ) {
                 throw new Exception( "Le mot de passe doit contenir au moins 3 caractères." );
             }
+        	if ( passwordPotentiel.matches(passwordReel)) {
+        		
+        	}else{
+        		throw new Exception( "Le mot de passe est incorrect" );
+        	}
         } else {
             throw new Exception( "Merci de saisir votre mot de passe." );
         }
