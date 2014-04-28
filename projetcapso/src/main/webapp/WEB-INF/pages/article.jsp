@@ -24,7 +24,7 @@
 			<h1 class="titre_art">${article.titre}</h1>
 			<div class = "image">
 				<img alt="" src="">
-				<p class="legende"> Publié le < fmt:formatDate value="${article.date_Article}" pattern="dd MMMM yyyy"/></p>
+				<p class="legende"> Publié le <fmt:formatDate value="${article.date_Article}" pattern="dd MMMM yyyy"/></p>
 			</div>
 			<div class = "text-art">
 				<p class="text">${article.texte}</p>

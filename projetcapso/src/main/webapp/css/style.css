@@ -162,6 +162,8 @@ body
 .popup p { 
     padding:5px 10px; 
     margin:5px 0; 
+    
+    
 } 
 
 #boite_1_ajout
@@ -176,14 +178,14 @@ body
 #boite_2_ajout
 {
 	background: #766F64;
-	font-size:25px;
-	text-align : center;
+	font-size:20px;
 	color: white;
+	text-align:center;
+	padding-bottom: 2%;
 } 
 
  .turquoise-button{
  
-  
   padding: 0;
   font-size: 18px;
   color: white;
@@ -202,7 +204,14 @@ body
   margin:auto;
 }
 
+p.info_seance
+{
+	color: #ffffff;
+	font-size: 20px;
+	display: inline-block;
+	
 
+}
 
 /***Page Blog***/
 

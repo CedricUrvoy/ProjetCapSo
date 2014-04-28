@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="pageSelectionnee" value="calendrier" scope="request"></c:set>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -36,7 +37,7 @@
 
 	<body>
 		<jsp:include page="header.jsp" />
-		<h1 class="big titre">Calendrier - Nom du groupe</h1>
+		<h1 class="big titre" >Calendrier - Nom du groupe</h1>
 		<!--FullCalendar container div-->
 		<div id='calendar'></div>
 		
@@ -84,6 +85,7 @@
 		</div>
 		
 		
+		
 	<!--Pop UP detail seance-->
 		
 		<div id="hideshow2" style="visibility: hidden;">
@@ -93,16 +95,18 @@
 			    	<div id="boite_1_ajout">Nouvelle séance</div>
 					<div id="boite_2_ajout">
 						<form id="ajout" name="DForm2" method="POST">
-						    	<label>Matière :</label></br>
-						    	<p class="info_seance">Matière :</p>
-								<label>Date :</label></br>
-								<p class="info_seance">Matière :</p>
-						        <label>Heure de début : </label></br>
-						        <p class="info_seance">Matière :</p>
-						        <label>Heure de fin : </label></br>
-						        <p class="info_seance">Matière :</p>
-						        <label>Informations de la séance</label>
-						        <p class="info_seance">Matière :</p>			    
+						    	<label >Matière :</label>
+						    	<p class="info_seance" id="info_matiere"></p></br>
+								<label >Date :</label>
+								<p class="info_seance" id="info_dateStart"></p></br>
+						        <label>Heure de début : </label>
+						        <p class="info_seance" id="start"></p></br>
+						        <label>Heure de fin : </label>
+						        <p class="info_seance" id="end"></p></br>
+						        <label>Lieu : </label>
+						        <p class="info_seance" id="place"></p></br>
+						        <label>Informations de la séance :</label>
+						        <p class="info_seance" id="infos"></p>		    
 						    <fieldset id="ajout">
 						        <input type="Submit" class="turquoise-button" name="REJOINDRE" value="Rejoindre" onclick="doAct(this);"> 
 						        <input type="Submit" class="turquoise-button" name="ANNULER2" value="Annuler" onclick="doAct(this);">
