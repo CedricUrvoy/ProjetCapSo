@@ -55,7 +55,7 @@ public class ConnexionServlet extends HttpServlet {
         	this.getServletContext().getRequestDispatcher( "/WEB-INF/pages/login.jsp" ).forward( req, resp );
         } else {
             /* Affichage de la page restreinte */
-            this.getServletContext().getRequestDispatcher( "/WEB-INF/pages/calendrier.jsp" ).forward( req, resp );
+        	resp.sendRedirect("calendrier");
         }
     }
 }
