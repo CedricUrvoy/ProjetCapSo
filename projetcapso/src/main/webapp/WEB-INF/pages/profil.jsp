@@ -23,8 +23,8 @@
 		<div class="profil">
 			<img id ="img_profil" alt="" src="img/Logo.png">
 			<div id=identite>
-				<H2 class ="info_profil">Marie</H2>
-				<H2 class ="info_profil">Fievet</H2>
+				<H2 class ="info_profil">${eleve.prenom_Eleve}</H2>
+				<H2 class ="info_profil">${eleve.nom_Eleve}</H2>
 			</div>
 			<div class="boite_profil" id="groupe">
 				<h1 class="titre">Groupes</h1>
@@ -50,4 +50,45 @@
 			
 			</div>
 		</div>
+		
+		<!--Pop UP ajout groupe-->
+			<div class="hideshow" id="ajoutSeance" style="visibility: hidden;">
+			    <div id="fade"></div> 
+		    	<div class="popup_block">
+			    	<div id="titrePopup">Nouvelle séance</div>
+					<div id="contentPopup">
+						<form id="ajout" name="DForm" method="POST">
+						    <fieldset id="inputs_ajout">
+						    	<label>Matière</label>
+						         <input class="input" type="text" list=matiere >
+									<datalist id=matiere >
+										<c:forEach var="matiere" items="${matieres}">
+						  				 	<option> ${matiere.nom_Matiere}
+						  				</c:forEach>
+						  			</datalist><br/>
+								 <label>Date : </label>
+						        <input class="input" id="date" type="date" placeholder="" required>
+						        <span class="horaire">
+						        	<label>Heure de début : </label>
+						        	<input class="input" id="heure_debut" type="time" placeholder="" required>
+
+						        </span>
+						        <span class="horaire">
+						        	<label>Heure de fin : </label>
+						        	<input class="input" id="heure_fin" type="time" placeholder="" required>
+						        </span>
+						        <label>Lieu</label>
+						        <input class="input" type="text" id="place">
+						        <label>Commentaires</label>
+						        <textarea class= "input" id="infosSeance" rows="8" cols="50"></textarea>
+						    </fieldset>
+						    
+						    <fieldset id="boutons">
+						        <input type="Submit" class="turquoise-button" name="VALIDER" value="Valider" onclick="doAct(this);"> 
+						        <input type="Submit" class="turquoise-button" name="ANNULER" value="Annuler" onclick="doAct(this);">
+						    </fieldset>
+						</form>	
+					</div>
+				</div>
+			</div>
 	</body>
