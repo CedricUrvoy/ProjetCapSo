@@ -394,6 +394,8 @@ article.article_uni
 }
 
 
+
+
 /**Style profil**/ 
 
 div.profil
@@ -406,13 +408,6 @@ div.profil
 	margin-left: 10%;
 	margin-top : 3%;
 	margin-right: 10%
-}
-
-#nom2
-{
-	margin-top: 20px;
-	margin-left: 150px;
-
 }
 
 div.boite_profil
@@ -430,7 +425,6 @@ div.boite_profil
 #groupe
 {
 	left: 25%;
-	
 }
 
 #modification
@@ -438,25 +432,26 @@ div.boite_profil
 	left:50%;
 }
 
+h2{
+	color: #4E3D28;
+	font-size: 20px;
+	padding-top: 10px;
+}
+
 h2.groupe_perso
 {
-	color: #4E3D28;
-	font-size: 15px;
 	text-align: center;
-	padding-top: 10px;
 }
 
 #autre_groupe
 {
 	color: #26C4EC;
-	font-size: 15px;
 	text-align: center;
-	padding-top: 10px;
 }
 
 h2.info_profil
 {
-	color: #4E3D28;
+	color: #24afb2;
 	font-size: 20px;
 	padding-top: 10px;
 }
@@ -471,13 +466,57 @@ h2.info_profil
 
 #identite
 {
-	position: relative;
-	left: 20%;
-	top: -20%;
+	position: absolute;
+	left: 30%;
+	top: 200px;
 }
 
 input.modif_group
 {
-	width: 200px;
+	width: 80%;
 	margin-top: 4%;
+}
+
+/**Style sideBar**/ 
+
+div.sidebar
+{
+	background-color: #55606e;
+	width: 200px;
+	height: 60%;
+	position: fixed;
+	top: 25%;
+	bottom:25%;
+	z-index: 10;
+}
+
+#img_side
+{
+	margin-left: 5%;
+	margin-top: 5%;
+	overflow:hidden;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius:50px;
+    width:80px;
+    height:80px;
+}
+
+#identite_side
+{
+	margin-left: 3%;
+	position: absolute;
+	top: 15px;
+	left: 50%;
+}
+
+#groupe_side
+{
+	margin-left: 10%;
+	margin-top: 10%;
+}
+
+p.cal_group
+{
+	color:white;
 }

@@ -18,6 +18,8 @@
 		
 		
 		<h1 class = "titre">Profil</h1>
+		
+		<!-- cadre profil --> 
 		<div class="profil">
 			<img id ="img_profil" alt="" src="img/Logo.png">
 			<div id=identite>
