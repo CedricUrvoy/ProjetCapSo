@@ -101,8 +101,8 @@ $(document).ready(function()
 
 	    	$("#info_matiere").html(event.title);
 	    	$("#info_dateStart").html(event.start.format("dddd Do MMMM "));
-	    	$("#start").html(event.start.format(" h:mm"));
-	    	$("#end").html(event.end.format(" h:mm"));
+	    	$("#start").html(event.start.format(" HH:mm"));
+	    	$("#end").html(event.end.format(" HH:mm"));
 	    	$("#place").html(event.place);
 	    	$("#infos").html(event.infos);
 	    	showDiv2();

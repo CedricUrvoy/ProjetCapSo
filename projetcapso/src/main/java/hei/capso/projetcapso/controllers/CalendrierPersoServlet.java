@@ -29,7 +29,7 @@ public class CalendrierPersoServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
-		List<Seance> seances = SeanceManager.getInstance().listeSeancePersonnel(2);
+		List<Seance> seances = SeanceManager.getInstance().listeSeancePersonnel(1);
 		 
 		Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").create(); 
 		String calendrierJson = gson.toJson(seances);
