@@ -126,10 +126,8 @@
 				</div>
 			</div>
 		</div>
-<<<<<<< HEAD
 
 		<jsp:include page="sidebar.jsp" />
-=======
->>>>>>> 0a871a90abbb3ac6bcfb793ba1ef2b9cf876e1a4
+
 		<jsp:include page="footer.jsp" />
 	</body>
