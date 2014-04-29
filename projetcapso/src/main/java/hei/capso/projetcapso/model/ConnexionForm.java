@@ -33,14 +33,13 @@ public final class ConnexionForm {
         Integer idEleve = null;
       
         Eleve eleveConnexion = new Eleve();
+        Eleve eleve = null;
 
         /* Validation du champ email. */
         try {
           idEleve = validationEmail( email, emailEleve);
-          System.out.print("l'idEleve est: "+idEleve);
           Eleve elevePotentiel = EleveManager.getInstance().getEleve(idEleve);
           passwordReel = elevePotentiel.getPassword_eleve();
-          System.out.print(passwordReel);
           
         } catch ( Exception e ) {	
             setErreur( "email", e.getMessage() );
@@ -58,11 +57,13 @@ public final class ConnexionForm {
         /* Initialisation du résultat global de la validation. */
         if ( erreurs.isEmpty() ) {
             resultat = "Succès de la connexion.";
+            eleve = EleveManager.getInstance().getEleve(idEleve);
         } else {
             resultat = "Échec de la connexion.";
         }
 
-        return eleveConnexion;
+        
+		return eleve;
     }
 
     /**
