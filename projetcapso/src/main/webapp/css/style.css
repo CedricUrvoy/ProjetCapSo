@@ -445,6 +445,7 @@ article.article_uni
 
 
 /**Style profil**/ 
+
 div.profil
 {
 	border-style:solid;
@@ -463,16 +464,32 @@ div.profil
 	margin-left: 150px;
 
 }
+<<<<<<< HEAD
 #groupe
+=======
+
+div.boite_profil
+>>>>>>> b0608e641aa57210f5dd08b205928ba958dbc16f
 {
 	border-style:solid;
 	border-color: #4E3D28;
 	border-width: 2px;
 	height: 300px;
-	width: 25%;
-	margin-left: 5%;
-	margin-top : 100px;
-	margin-right: 10%
+	width: 20%;
+	top : 300px;
+	text-align: center;
+	position: absolute;
+}
+
+#groupe
+{
+	left: 25%;
+	
+}
+
+#modification
+{
+	left:50%;
 }
 h2.groupe_perso
 {
@@ -493,4 +510,25 @@ h2.info_profil
 	color: #4E3D28;
 	font-size: 20px;
 	padding-top: 10px;
+}
+
+#img_profil
+{
+	margin-left: 5%;
+	margin-top: 3%;
+	width: 100px;
+	height: 100px;
+}
+
+#identite
+{
+	position: relative;
+	left: 20%;
+	top: -20%;
+}
+
+input.modif_group
+{
+	width: 200px;
+	margin-top: 4%;
 }

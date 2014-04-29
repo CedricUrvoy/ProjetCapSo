@@ -23,10 +23,6 @@ public class AdminArticleServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-	
-	
-		
-		
 		
 	// AFFICHE LA PAGE	
 	RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/adminArticle.jsp");
