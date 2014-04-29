@@ -1,6 +1,6 @@
 function hideDiv() { 
     if (document.getElementById) { // DOM3 = IE5, NS6 
-        document.getElementById('hideshow').style.visibility = 'hidden'; 
+        document.getElementById('ajoutSeance').style.visibility = 'hidden'; 
     } else { 
         if (document.layers) { // Netscape 4 
             document.hideshow.visibility = 'hidden'; 
@@ -12,7 +12,7 @@ function hideDiv() {
  
 function showDiv() { 
     if (document.getElementById) { // DOM3 = IE5, NS6 
-        document.getElementById('hideshow').style.visibility = 'visible'; 
+        document.getElementById('ajoutSeance').style.visibility = 'visible'; 
     } else { 
         if (document.layers) { // Netscape 4 
             document.hideshow.visibility = 'visible'; 
@@ -24,7 +24,7 @@ function showDiv() {
 
 function showDiv2() { 
     if (document.getElementById) { // DOM3 = IE5, NS6 
-        document.getElementById('hideshow2').style.visibility = 'visible'; 
+        document.getElementById('detailSeance').style.visibility = 'visible'; 
     } else { 
         if (document.layers) { // Netscape 4 
             document.hideshow.visibility = 'visible'; 
@@ -36,7 +36,7 @@ function showDiv2() {
 
 function hideDiv2() { 
     if (document.getElementById) { // DOM3 = IE5, NS6 
-        document.getElementById('hideshow2').style.visibility = 'hidden'; 
+        document.getElementById('detailSeance').style.visibility = 'hidden'; 
     } else { 
         if (document.layers) { // Netscape 4 
             document.hideshow.visibility = 'hidden'; 
