@@ -26,8 +26,13 @@ public class RestrictionFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) res;
 
         /* Non-filtrage des ressources statiques */
-        String chemin = request.getRequestURI().substring( request.getContextPath().length() );
-        if ( chemin.startsWith( "/css" ) ) {
+        String cheminStyle = request.getRequestURI().substring( request.getContextPath().length() );
+        if ( cheminStyle.startsWith( "/css" ) ) {
+            chain.doFilter( request, response );
+            return;
+        }
+        String cheminFont = request.getRequestURI().substring( request.getContextPath().length() );
+        if ( cheminFont.startsWith( "/font" ) ) {
             chain.doFilter( request, response );
             return;
         }

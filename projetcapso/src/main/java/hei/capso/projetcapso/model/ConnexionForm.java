@@ -92,10 +92,7 @@ public final class ConnexionForm {
      */
     private void validationMotDePasse( String passwordPotentiel,String passwordReel) throws Exception {
         if ( passwordPotentiel != null ) {
-            
-        	if ( passwordPotentiel.length() < 3 ) {
-                throw new Exception( "Le mot de passe doit contenir au moins 3 caractères." );
-            }
+      
         	if ( passwordPotentiel.matches(passwordReel)) {
         		
         	}else{

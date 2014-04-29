@@ -14,7 +14,7 @@
     font-style: normal;
 }
 @font-face {
-    font-family: "../fonts/bariol";
+    font-family: "bariol";
     src: url('../fonts/bariol_bold_italic-webfont.eot');
     src	: url('../fonts/bariol_bold_italic-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/bariol_bold_italic-webfont.woff') format('woff'),
@@ -46,62 +46,58 @@
 
 /**Login**/
 
-
-#boite_1
-{	position:absolute;
-	background: #26C4EC;
-	width:40%;
-	vertical-align: middle;
-	height:7%;
-	font-size:25px;
-	left: 30%;
-	top: 25%;
-	text-align: center;
-	color: white;
-}
-
-#boite_2
-{	position: absolute;
-	background: #766F64;
-	width:40%;
-	height:270px;
-	font-size:25px;
-	left: 30%;
-	top: 32%;
-	text-align: center;
-	color: white;
+#blockLogin{
+	padding:20px 20px; 
+    float:left; 
+    width:600px;
+    position:absolute; 
+    top:20%; 
+    left:50%; 
+    margin:0 0 0 -300px; 
+    z-index:100; 
 }
 input.input
 {
 	padding: 15px 15px 15px 30px;
-	margin: 0 0 10px 0;
-	width: 353px;
-	border: 1px solid #ffffff;
+	margin: 30px 0 10px 0;
+	width: 80%;
+	text-align: left;
+	/*border: 1px solid #ffffff;
 	-moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
 	-webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
-	box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+	box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;*/
 }
-#username
-{
-	margin-top: 5%;
+.bouton{
+	background-color: #24afb2;
+	text-align: center;
+	font-family: "bariol";
+	font-style: normal;
+	font-weight: bold;
+	font-size: 1.3em;
+	color: #ffffff;
+	display: block;
+	width: 50%;
+	margin: auto;
+	margin-top: 20px;
+	border:0px;
 }
-
 a.text_form 
 {	
 	text-decoration: none;
-	color: #26C4EC;
+	color: #24afb2;
 	padding: 3%;
-	font-style: normal;
-	font-size: 20px;
+	font-family:"bariol";
+	font-weight:bold;
+	font-style:italic;
+	font-size: 18px;
+	position: relative;
+	top: 8px;
 	
 }
-
-#submit
-{
-	margin-top: 5%;
-	background-color: #26C4EC;
-	border-color: #26C4EC;
+span.erreur{
+	display: block;
 }
+
 
 /**Page Création de profil**/ 
 
