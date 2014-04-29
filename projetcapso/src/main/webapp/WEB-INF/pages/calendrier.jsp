@@ -6,14 +6,14 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Calendrier domaine</title>
+		<title>Calendrier</title>
 		<meta name="***********" content="******" />
+		
+		
+		<!-- Fichiers styles -->
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-		<link rel="stylesheet" type="text/css" href="css/header-style.css"/>
-		<!-- <link rel="stylesheet" type="text/css" href="css/login_style2.css"/> -->
-		
-		
+		<link rel="stylesheet" type="text/css" href="css/header-style.css"/>	
 		
 		<!--FullCalendar Dependencies-->
 		<link href='fullcalendar/fullcalendar.css' rel='stylesheet' />
@@ -28,8 +28,9 @@
 		<script src='js/moment-with-langs.js'></script>
 		<script src='fullcalendar/fullcalendar.js'></script>
 		<script src='fullcalendar/lang/fr.js'></script>
-		<script src="js/calendar.js"></script>
 		
+		<!-- Scripts JS -->
+		<script src="js/calendar.js"></script>		
 		<script src="js/app.js"></script>
 
 		
@@ -37,77 +38,86 @@
 
 	<body>
 		<jsp:include page="header.jsp" />
-		<h1 class="big titre" >Calendrier - Nom du groupe</h1>
-		<!--FullCalendar container div-->
-		<div id='calendar'></div>
-		
-		<div class="centrer">
-			<div class="centrerBouton">
-				<form action="javascript:showDiv()">
-				<input type="submit" value="Ajouter une Seance" class="turquoise-flat-button"></form>
+		<div class=content>
+			
+			<h1 class="big titre" >Calendrier - Nom du groupe</h1>
+			
+			<!--FullCalendar container div-->
+			<div id='calendar'></div>
+			
+			
+			<!-- Bouton d'ajout de seance -->
+			<div id="boutonAjout" class="centrer">
+				<div class="centrerBouton">
+					<form action="javascript:showDiv()">
+					<input type="submit" value="Ajouter une Seance" class="turquoise-flat-button"></form>
+				</div>
 			</div>
-		</div>
-		
-		<!--Pop UP ajout seance-->
-		<div id="hideshow" style="visibility: hidden;">
-		    <div id="fade"></div> 
-	    	<div class="popup_block">
-	    		<div class="popup">
-			    	<div id="boite_1_ajout">Nouvelle séance</div>
-					<div id="boite_2_ajout">
+			
+			<!--Pop UP ajout seance-->
+			<div class="hideshow" id="ajoutSeance" style="visibility: hidden;">
+			    <div id="fade"></div> 
+		    	<div class="popup_block">
+			    	<div id="titrePopup">Nouvelle séance</div>
+					<div id="contentPopup">
 						<form id="ajout" name="DForm" method="POST">
 						    <fieldset id="inputs_ajout">
-						    	<label>Matière</label></br>
-						         <input class="input" type=text list=matiere >
+						    	<label>Matière</label>
+						         <input class="input" type="text" list=matiere >
 									<datalist id=matiere >
 										<c:forEach var="matiere" items="${matieres}">
 						  				 	<option> ${matiere.nom_Matiere}
-						  				 </c:forEach>
-						  			</datalist></br>
-								 <label>Date : </label></br>
-						        <input class="input" id="date" type="date" placeholder="" required></br>
-						        <label>Heure de début : </label></br>
-						        <input class="input" id="heure_debut" type="time" placeholder="" required></br>
-						        <label>Heure de fin : </label></br>
-						        <input class="input" id="heure_fin" type="time" placeholder="" required></br>
+						  				</c:forEach>
+						  			</datalist><br/>
+								 <label>Date : </label>
+						        <input class="input" id="date" type="date" placeholder="" required>
+						        <span class="horaire">
+						        	<label>Heure de début : </label>
+						        	<input class="input" id="heure_debut" type="time" placeholder="" required>
+
+						        </span>
+						        <span class="horaire">
+						        	<label>Heure de fin : </label>
+						        	<input class="input" id="heure_fin" type="time" placeholder="" required>
+						        </span>
+						        <label>Lieu</label>
+						        <input class="input" type="text" id="place">
 						        <label>Commentaires</label>
-						        <textarea rows="8" cols="50"></textarea>
+						        <textarea class= "input" id="infosSeance" rows="8" cols="50"></textarea>
 						    </fieldset>
 						    
-						    <fieldset id="ajout">
+						    <fieldset id="boutons">
 						        <input type="Submit" class="turquoise-button" name="VALIDER" value="Valider" onclick="doAct(this);"> 
 						        <input type="Submit" class="turquoise-button" name="ANNULER" value="Annuler" onclick="doAct(this);">
 						    </fieldset>
-						</form>
+						</form>	
 					</div>
 				</div>
 			</div>
-		</div>
-		
-		
-		
-	<!--Pop UP detail seance-->
-		
-		<div id="hideshow2" style="visibility: hidden;">
-		    <div id="fade"></div> 
-	    	<div class="popup_block">
-	    		<div class="popup">
-			    	<div id="boite_1_ajout">Nouvelle séance</div>
-					<div id="boite_2_ajout">
+			
+			
+			
+		<!--Pop UP detail seance-->
+			
+			<div class="hideshow" id="detailSeance" style="visibility: hidden;">
+			    <div id="fade"></div> 
+		    	<div class="popup_block">
+			    	<div id="titrePopup">Nouvelle séance</div>
+					<div id="contentPopup">
 						<form id="ajout" name="DForm2" method="POST">
 						    	<label >Matière :</label>
-						    	<p class="info_seance" id="info_matiere"></p></br>
+						    	<p class="info_seance" id="info_matiere"></p>
 								<label >Date :</label>
-								<p class="info_seance" id="info_dateStart"></p></br>
+								<p class="info_seance" id="info_dateStart"></p>
 						        <label>Heure de début : </label>
-						        <p class="info_seance" id="start"></p></br>
+						        <p class="info_seance" id="start"></p>
 						        <label>Heure de fin : </label>
-						        <p class="info_seance" id="end"></p></br>
-						        <label>Lieu : </label>
-						        <p class="info_seance" id="place"></p></br>
+						        <p class="info_seance" id="end"></p>
+						        	<label>Lieu : </label>
+						        <p class="info_seance" id="place"></p>
 						        <label>Informations de la séance :</label>
 						        <p class="info_seance" id="infos"></p>		    
-						    <fieldset id="ajout">
+						    <fieldset class="boutons">
 						        <input type="Submit" class="turquoise-button" name="REJOINDRE" value="Rejoindre" onclick="doAct(this);"> 
 						        <input type="Submit" class="turquoise-button" name="ANNULER2" value="Annuler" onclick="doAct(this);">
 						    </fieldset>
@@ -116,6 +126,5 @@
 				</div>
 			</div>
 		</div>
-
 		<jsp:include page="footer.jsp" />
 	</body>
