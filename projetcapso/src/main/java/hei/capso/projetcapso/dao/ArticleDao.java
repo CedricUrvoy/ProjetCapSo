@@ -14,6 +14,7 @@ import java.util.List;
 
 public class ArticleDao {
 
+	//LISTER LES ARTICLES
 	
 	public List<Article> listerArticles() {
 		List<Article> liste = new ArrayList<Article>();
@@ -47,6 +48,7 @@ public class ArticleDao {
 	}
 	
 	//DETAILS ARTICLE
+	
 	public Article getArticle(Integer id_Article) {
 		Article article = null;
 		try {
