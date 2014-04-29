@@ -1,6 +1,10 @@
-<aside class="sidebar">
+<aside >
 
-	<div class="sidebar">
+	
+	
+	<div class="sidebar close" >
+		<p id="chevron">&gt</p>
+		<div class="sidebar open">
 		<img id="img_side" alt="" src="img/photo_profil/cedric.jpg">
 		<div id="identite_side">
 			<H2 class ="info_profil">Marie</H2>
@@ -14,5 +18,7 @@
 			<p class="cal_group">Projet ITI</p>
 			<p class="cal_group">Marketing</p>
 		</div>
+		<p id="chevron">&lt</p>
+	</div>
 	</div>
 </aside>

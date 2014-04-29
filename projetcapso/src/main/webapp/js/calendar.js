@@ -98,9 +98,7 @@ $(document).ready(function()
 		/**** Infos sur l'evenement ****/
 		
 	    eventClick: function(event) {
-	    
-	    	
-	    	console.log(event.start);
+
 	    	$("#info_matiere").html(event.title);
 	    	$("#info_dateStart").html(event.start.format("dddd Do MMMM "));
 	    	$("#start").html(event.start.format(" h:mm"));

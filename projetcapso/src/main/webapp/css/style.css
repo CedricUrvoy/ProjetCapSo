@@ -168,7 +168,7 @@ a
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; /*--Transparence sous IE 8--*/
     left:0; 
     top:0; 
-    z-index:10;
+    z-index:15;
 }		
 .hideshow { 
     position:absolute; 
@@ -435,7 +435,6 @@ article.article_uni
 }
 
 
-
 /*** Footer ***/
 
 .footer {
@@ -460,15 +459,8 @@ div.profil
 	margin-right: 10%
 }
 
-#nom2
-{
-	margin-top: 20px;
-	margin-left: 150px;
-
-}
-
-
 div.boite_profil
+
 {
 	border-style:solid;
 	border-color: #4E3D28;
@@ -489,7 +481,6 @@ div.boite_profil
 {
 	left:50%;
 }
-<<<<<<< HEAD
 
 h2{
 	color: #4E3D28;
@@ -497,8 +488,6 @@ h2{
 	padding-top: 10px;
 }
 
-=======
->>>>>>> 0a871a90abbb3ac6bcfb793ba1ef2b9cf876e1a4
 h2.groupe_perso
 {
 	text-align: center;
@@ -541,7 +530,7 @@ input.modif_group
 div.sidebar
 {
 	background-color: #55606e;
-	width: 200px;
+
 	height: 60%;
 	position: fixed;
 	top: 25%;
@@ -549,6 +538,23 @@ div.sidebar
 	z-index: 10;
 }
 
+div.open
+{
+	display :none;
+	width: 200px;
+	z-index: 10;
+}
+
+div.close
+{
+	width: 50px;
+	z-index: 9;
+}
+
+.close:hover .open
+{
+	display: block;
+}
 #img_side
 {
 	margin-left: 5%;
@@ -578,4 +584,16 @@ div.sidebar
 p.cal_group
 {
 	color:white;
+	margin-top: 6%;
+	font-size: 150%;
 }
+
+#chevron
+{
+	color : white;
+	font-size: 300%;
+	position: absolute;
+	right: 5%;
+	top:40%;
+}
+
