@@ -27,6 +27,7 @@ $(document).ready(function()
 	
 	var idGroupe = 0;
 	var nomGroupe='Personnel';
+	$("#groupe_"+idGroupe).addClass("active");
 	
 	$("ul#listeGroupes").on("click",".cal_group", function() {
 		
@@ -45,6 +46,11 @@ $(document).ready(function()
    				data: {idGroupe:idGroupe},
    				success: function(data) {console.log(data);return data;}});
 		$("#titreCalendrier").html('Calendrier - '+nomGroupe);
+		
+		for (var int = 0; int < 100; int++) {
+			$("#groupe_"+int).removeClass("active");
+		}
+		$("#groupe_"+idGroupe).addClass("active");
 		
 		
 	});
