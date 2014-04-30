@@ -155,5 +155,59 @@ public class GroupeDao {
 				e.printStackTrace();
 			}
 		}
-	
+		
+		
+		//QUITTER UN GROUPE
+		public void quitterGroupe(Integer id_Eleve,Integer id_Groupe) {
+			try {
+				Connection connection = DataSourceProvider.getDataSource()
+						.getConnection();
+
+				// Utiliser la connexion
+				PreparedStatement stmt = connection
+						.prepareStatement("DELETE FROM eleve_groupe WHERE Eleve_id_Eleve= ? AND Groupe_id_Groupe=? ");
+				stmt.setInt(1, id_Eleve);
+				stmt.setInt(2, id_Groupe);
+				stmt.executeUpdate();
+
+				// Fermer la connexion
+				stmt.close();
+				connection.close();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
+		//CHERCHER UN GROUPE AVEC NOM 
+		public List<Groupe> chercherGroupeNom(String nom_Groupe) {
+			List<Groupe> liste = new ArrayList<Groupe>();
+			try {
+				Connection connection = DataSourceProvider.getDataSource()
+						.getConnection();
+
+				PreparedStatement stmt = connection.prepareStatement("SELECT groupe.nom_Groupe, groupe.id_Groupe FROM groupe WHERE groupe.nom_Groupe=?");
+				stmt.setString(1,nom_Groupe);
+				ResultSet results = stmt.executeQuery();
+				
+				while (results.next()) {
+					Groupe groupecherche = new Groupe(
+							results.getInt("id_Groupe"),
+							results.getString("nom_Groupe"),
+							results.getString("type_Groupe"));
+					liste.add(groupecherche);
+				}
+
+				// Fermer la connexion
+				results.close();
+				stmt.close();
+				connection.close();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+			return liste;
+		}
 }

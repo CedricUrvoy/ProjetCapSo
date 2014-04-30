@@ -50,4 +50,13 @@ public class  GroupeManager {
 	public void ajouterGroupe(Groupe groupe) {
 		groupeDao.ajouterGroupe(groupe);
 	}
+	
+	public void quitterGroupe(int id_Eleve, int id_Groupe) {
+		groupeDao.quitterGroupe(id_Eleve, id_Groupe);
+	}
+	
+	public List<Groupe> chercherGroupeNom(String nom_Groupe) {
+		List<Groupe> liste = groupeDao.chercherGroupeNom(nom_Groupe);
+		return liste
+	}
 }

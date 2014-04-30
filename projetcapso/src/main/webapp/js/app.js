@@ -100,7 +100,7 @@ else if (bouton.name=="REJOINDREGROUPE" )
 }
 else if (bouton.name=="REJOINDREOK" )
 {
-     document.DFormRG.action="";
+     document.DFormRG.action="rejoindregroupe";
      document.DFormRG.submit();
 }
 else if (bouton.name=="ANNULERREJOINDRE" )

@@ -48,6 +48,14 @@
 	<servlet-name>AjoutGroupe</servlet-name>
 	<servlet-class>hei.capso.projetcapso.controllers.AjoutGroupeServlet</servlet-class>
 </servlet>
+<servlet>
+	<servlet-name>RejoindreGroupe</servlet-name>
+	<servlet-class>hei.capso.projetcapso.controllers.RejoindreGroupeServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>QuitterGroupe</servlet-name>
+	<servlet-class>hei.capso.projetcapso.controllers.QuitterGroupeServlet</servlet-class>
+</servlet>
   
   <servlet-mapping>
     <servlet-name>Calendrier</servlet-name>
@@ -106,6 +114,14 @@
   <servlet-mapping>
     <servlet-name>AjoutGroupe</servlet-name>
     <url-pattern>/ajoutgroupe</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RejoindreGroupe</servlet-name>
+    <url-pattern>/rejoindregroupe</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QuitterGroupe</servlet-name>
+    <url-pattern>/quittergroupe</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>

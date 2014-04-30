@@ -80,8 +80,9 @@
 						    <label>Groupe à quitter</label>
 						        <input class="input" type=text list=groupeQuitter >
 									<datalist id=groupeQuitter >
-									   <option> PROJET
-									   <option> MATHS
+									   <c:forEach var="groupe" items="${groupes}">
+											<option> ${groupe.nom_Groupe}
+										</c:forEach>
 									</datalist>
 						         
 						    <fieldset id="boutons">
