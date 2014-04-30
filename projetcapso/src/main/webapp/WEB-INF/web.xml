@@ -56,6 +56,10 @@
 	<servlet-name>QuitterGroupe</servlet-name>
 	<servlet-class>hei.capso.projetcapso.controllers.QuitterGroupeServlet</servlet-class>
 </servlet>
+<servlet>
+	<servlet-name>RejoindreSeance</servlet-name>
+	<servlet-class>hei.capso.projetcapso.controllers.RejoindreSeanceServlet</servlet-class>
+</servlet>
   
   <servlet-mapping>
     <servlet-name>Calendrier</servlet-name>
@@ -122,6 +126,10 @@
   <servlet-mapping>
     <servlet-name>QuitterGroupe</servlet-name>
     <url-pattern>/quittergroupe</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RejoindreSeance</servlet-name>
+    <url-pattern>/rejoindreseance</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>

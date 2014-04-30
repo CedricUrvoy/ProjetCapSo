@@ -58,7 +58,7 @@ else if (bouton.name=="REJOINDRE" )
 {
 	var id = $('div.seance').attr('id');
 	console.log(id);
-	document.DForm2.action="rejoindreSeance?idSeance="+id;
+	document.DForm2.action="rejoindreseance?idSeance="+id;
      document.DForm2.submit();
 }
 
