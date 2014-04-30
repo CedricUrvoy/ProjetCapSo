@@ -55,7 +55,7 @@
 		    	<div class="popup_block">
 			    	<div id="titrePopup">Nouveau Groupe</div>
 					<div id="contentPopup">
-						<form id="ajout" name="DFormNG" method="POST"  action="ajoutgroupe">
+						<form id="ajout" name="DFormNG" method="POST"  >
 						    <fieldset  id="inputs_ajout">
 						    <label>Nom du groupe</label>
 						         <input name="nom_Groupe" class="input" type="text"  >

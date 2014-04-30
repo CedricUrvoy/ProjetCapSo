@@ -68,7 +68,7 @@ else if (bouton.name=="CREER" )
 }
 else if (bouton.name=="VALIDERAJOUTGROUPE" )
 {
-     document.DFormNG.action="";
+     document.DFormNG.action="ajoutgroupe";
      document.DFormNG.submit();
 }
 else if (bouton.name=="ANNULERAJOUT" )

@@ -112,7 +112,7 @@ public class GroupeDao {
 
 				// Utiliser la connexion
 				PreparedStatement stmt = connection
-						.prepareStatement("INSERT INTO `groupe`(`id_Groupe`,`nom_Groupe`,`type_Groupe`) VALUES(null,?,Groupe)");
+						.prepareStatement("INSERT INTO `groupe`(`nom_Groupe`,`type_Groupe`) VALUES(?,'Groupe')");
 				stmt.setString(1, groupe.getNom_Groupe());
 				stmt.executeUpdate();
 

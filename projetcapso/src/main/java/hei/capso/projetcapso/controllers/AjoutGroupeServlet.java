@@ -6,12 +6,18 @@ import hei.capso.projetcapso.model.Groupe;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class AjoutGroupeServlet {
+public class AjoutGroupeServlet extends HttpServlet{
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -146760442169637960L;
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
@@ -22,6 +28,6 @@ public class AjoutGroupeServlet {
 						request.getParameter("nom_Groupe"),
 						null));
 		
-		response.sendRedirect("groupe");
+		response.sendRedirect("profil");
 	}
 }
