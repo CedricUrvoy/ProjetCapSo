@@ -48,7 +48,7 @@
 			<!-- Bouton d'ajout de seance -->
 			<div id="boutonAjout" class="centrer">
 				<div class="centrerBouton">
-					<form action="javascript:showDiv()">
+					<form action="javascript:showDiv('ajoutSeance')">
 					<input type="submit" value="Ajouter une Seance" class="turquoise-flat-button"></form>
 				</div>
 			</div>

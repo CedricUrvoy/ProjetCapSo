@@ -124,7 +124,7 @@ $(document).ready(function()
 	    	$("#end").html(event.end.format(" HH:mm"));
 	    	$("#place").html(event.place);
 	    	$("#infos").html(event.infos);
-	    	showDiv2();
+	    	showDiv('detailSeance');
 	    	
 	    }
 		

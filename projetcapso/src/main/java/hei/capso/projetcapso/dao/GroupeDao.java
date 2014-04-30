@@ -22,7 +22,7 @@ public class GroupeDao {
 					.getConnection();
 
 			Statement stmt = connection.createStatement();
-			ResultSet results = stmt.executeQuery("SELECT * FROM groupe WHERE type_Groupe = 'classe'");
+			ResultSet results = stmt.executeQuery("SELECT * FROM groupe WHERE type_Groupe = 'Classe'");
 
 			while (results.next()) {
 				Groupe classe = new Groupe(
@@ -51,7 +51,7 @@ public class GroupeDao {
 					.getConnection();
 
 			Statement stmt = connection.createStatement();
-			ResultSet results = stmt.executeQuery("SELECT * FROM groupe WHERE type_Groupe = 'domaine'");
+			ResultSet results = stmt.executeQuery("SELECT * FROM groupe WHERE type_Groupe = 'Domaine'");
 
 			while (results.next()) {
 				Groupe domaine = new Groupe(
@@ -103,4 +103,26 @@ public class GroupeDao {
 
 		return liste;
 	}
+	
+	//AJOUTER GROUPE
+		public void ajouterGroupe(Groupe groupe) {
+			try {
+				Connection connection = DataSourceProvider.getDataSource()
+						.getConnection();
+
+				// Utiliser la connexion
+				PreparedStatement stmt = connection
+						.prepareStatement("INSERT INTO `groupe`(`id_Groupe`,`nom_Groupe`,`type_Groupe`) VALUES(null,?,Groupe)");
+				stmt.setString(1, groupe.getNom_Groupe());
+				stmt.executeUpdate();
+
+				// Fermer la connexion
+				stmt.close();
+				connection.close();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	
 }

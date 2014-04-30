@@ -242,7 +242,7 @@ a
   margin:auto;
 }
 .boutons{
-	margin-top: 10px;
+	margin-top: 20px;
 }
 	
 	/**** Popup Ajout Seance ****/
@@ -523,6 +523,26 @@ input.modif_group
 {
 	width: 80%;
 	margin-top: 4%;
+}
+
+#openclasse
+{
+	display: none;
+}
+
+#opendomaine
+{
+	display: none;
+}
+
+#openpromo
+{
+	display: none;
+}
+
+.cache
+{
+	display: none;
 }
 
 /**Style sideBar**/ 

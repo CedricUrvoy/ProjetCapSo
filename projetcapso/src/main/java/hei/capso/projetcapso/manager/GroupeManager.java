@@ -42,4 +42,8 @@ public class  GroupeManager {
 		List<Groupe> liste = groupeDao.listerGroupeEleve(id);
 		return liste;
 	}
+	
+	public void ajouterGroupe(Groupe groupe) {
+		groupeDao.ajouterGroupe(groupe);
+	}
 }

@@ -1,6 +1,6 @@
-function hideDiv() { 
+/*function hideDiv(hideshow) { 
     if (document.getElementById) { // DOM3 = IE5, NS6 
-        document.getElementById('ajoutSeance').style.visibility = 'hidden'; 
+        document.getElementById(hideshow).style.visibility = 'hidden'; 
     } else { 
         if (document.layers) { // Netscape 4 
             document.hideshow.visibility = 'hidden'; 
@@ -12,7 +12,7 @@ function hideDiv() {
  
 function showDiv() { 
     if (document.getElementById) { // DOM3 = IE5, NS6 
-        document.getElementById('ajoutSeance').style.visibility = 'visible'; 
+        document.getElementById(hideshow).style.visibility = 'visible'; 
     } else { 
         if (document.layers) { // Netscape 4 
             document.hideshow.visibility = 'visible'; 
@@ -20,34 +20,23 @@ function showDiv() {
             document.all.hideshow.style.visibility = 'visible'; 
         } 
     } 
+}*/
+
+var div;
+function hideDiv(){
+    div.style.visibility = 'hidden';
+}
+ 
+function showDiv(hideshow) {
+    div = document.getElementById(hideshow);
+    div.style.visibility = 'visible';
 }
 
-function showDiv2() { 
-    if (document.getElementById) { // DOM3 = IE5, NS6 
-        document.getElementById('detailSeance').style.visibility = 'visible'; 
-    } else { 
-        if (document.layers) { // Netscape 4 
-            document.hideshow.visibility = 'visible'; 
-        } else { // IE 4 
-            document.all.hideshow.style.visibility = 'visible'; 
-        } 
-    } 
-}
 
-function hideDiv2() { 
-    if (document.getElementById) { // DOM3 = IE5, NS6 
-        document.getElementById('detailSeance').style.visibility = 'hidden'; 
-    } else { 
-        if (document.layers) { // Netscape 4 
-            document.hideshow.visibility = 'hidden'; 
-        } else { // IE 4 
-            document.all.hideshow.style.visibility = 'hidden'; 
-        } 
-    } 
-}
 
 function doAct(bouton)
 {
+	//POP UP AJOUTER SEANCE
 if (bouton.name=="VALIDER" )
 {
      document.DForm.action="";
@@ -58,9 +47,11 @@ else if (bouton.name=="ANNULER" )
      document.DForm.action="javascript:hideDiv()";
      document.DForm.submit();
 }
+
+	//POP UP DETAILS SEANCE
 else if (bouton.name=="ANNULER2" )
 {
-     document.DForm2.action="javascript:hideDiv2()";
+     document.DForm2.action="javascript:hideDiv()";
      document.DForm2.submit();
 }
 else if (bouton.name=="REJOINDRE" )
@@ -68,5 +59,69 @@ else if (bouton.name=="REJOINDRE" )
      document.DForm2.action="";
      document.DForm2.submit();
 }
+
+	//AFFICHAGE POP UP CREER SEANCE
+else if (bouton.name=="CREER" )
+{
+     document.DFormModifGroupe.action="javascript:showDiv('creerGroupe')";
+     document.DFormModifGroupe.submit();
+}
+else if (bouton.name=="VALIDERAJOUTGROUPE" )
+{
+     document.DFormNG.action="";
+     document.DFormNG.submit();
+}
+else if (bouton.name=="ANNULERAJOUT" )
+{
+     document.DFormNG.action="javascript:hideDiv()";
+     document.DFormNG.submit();
+}
+	//AFFICHAGE POP UP QUITTER SEANCE
+else if (bouton.name=="QUITTER" )
+{
+     document.DFormModifGroupe.action="javascript:showDiv('quitterGroupe')";
+     document.DFormModifGroupe.submit();
+}
+else if (bouton.name=="QUITTERGROUPE" )
+{
+     document.DFormQG.action="";
+     document.DFormQG.submit();
+}
+else if (bouton.name=="ANNULERQUITTER" )
+{
+     document.DFormQG.action="javascript:hideDiv()";
+     document.DFormQG.submit();
+}
+	//AFFICHAGE POP UP REJOINDRE SEANCE
+else if (bouton.name=="REJOINDREGROUPE" )
+{
+     document.DFormModifGroupe.action="javascript:showDiv('rejoindreGroupe')";
+     document.DFormModifGroupe.submit();
+}
+else if (bouton.name=="REJOINDREOK" )
+{
+     document.DFormRG.action="";
+     document.DFormRG.submit();
+}
+else if (bouton.name=="ANNULERREJOINDRE" )
+{
+	 eteindre();
+     document.DFormRG.action="javascript:hideDiv()";
+     document.DFormRG.submit();
+}
 }
 
+
+//FORMULAIRE REJOINDRE SEANCE
+
+function afficher(input)
+{
+    document.getElementById(input).style.display = "block";
+}
+function eteindre()
+{
+    document.getElementById('openclasse').style.display = "none";
+    document.getElementById('opendomaine').style.display = "none";
+    document.getElementById('openpromo').style.display = "none";
+    document.getElementById('openautre').style.display = "none";
+}

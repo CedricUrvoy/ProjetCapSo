@@ -44,7 +44,10 @@
 	<servlet-name>Restriction</servlet-name>
 	<servlet-class>hei.capso.projetcapso.controllers.RestrictionServlet</servlet-class>
 </servlet>
-  
+<servlet>
+	<servlet-name>AjoutGroupe</servlet-name>
+	<servlet-class>hei.capso.projetcapso.controllers.AjoutGroupeServlet</servlet-class>
+</servlet>
   
   <servlet-mapping>
     <servlet-name>Calendrier</servlet-name>
@@ -100,7 +103,10 @@
     <servlet-name>Restriction</servlet-name>
     <url-pattern>/restriction</url-pattern>
   </servlet-mapping>
-  
+  <servlet-mapping>
+    <servlet-name>AjoutGroupe</servlet-name>
+    <url-pattern>/ajoutgroupe</url-pattern>
+  </servlet-mapping>
   
   <welcome-file-list>
     <welcome-file>restriction</welcome-file>

@@ -38,13 +38,24 @@ public class ProfilServlet extends HttpServlet{
 				List<Groupe> groupes = GroupeManager.getInstance().listerGroupeEleve(id_Eleve);
 				req.setAttribute("groupes", groupes);
 				System.out.print("marie   ");
+				
+		// Liste classes dans formulaire
+				List<Groupe> classe = GroupeManager.getInstance().listerClasses();
+				req.setAttribute("classes", classe);
+				
+		// Liste domaines dans formulaire
+				List<Groupe> domaines = GroupeManager.getInstance().listerDomaines();
+				req.setAttribute("domaines", domaines);
 
 	//AFFICHE LA PAGE
 	RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/profil.jsp");
 	view.forward(req, resp);
-	
-	//RECUPERE ELEVE CONNECTE
-	
-	
+
 	}
+	
+	
+
 }
+
+
+
