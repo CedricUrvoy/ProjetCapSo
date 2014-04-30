@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -29,7 +30,15 @@ public class CalendrierPersoServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
-		List<Seance> seances = SeanceManager.getInstance().listeSeancePersonnel(1);
+		Integer idGroupe = Integer.parseInt(req.getParameter("idGroupe"));
+		List<Seance> seances = null ;
+		System.out.print(idGroupe);
+		
+		if (idGroupe==0){
+			seances = SeanceManager.getInstance().listeSeancePersonnel(1);
+		}else{
+			seances = SeanceManager.getInstance().listeSeanceGroupe(idGroupe);
+		}
 		 
 		Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").create(); 
 		String calendrierJson = gson.toJson(seances);

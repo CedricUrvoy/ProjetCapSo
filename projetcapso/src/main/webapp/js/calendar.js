@@ -24,7 +24,25 @@ $(document).ready(function()
 		Because doing so we can use it inside other function.
 		In order to modify its option later.
 	*/
+	
+	var idGroupe = 0;
+	console.log(idGroupe);
+	
+	$("ul#listeGroupes").on("click",".cal_group", function() {
+		
+		calendar.fullCalendar( 'removeEventSource','calendrierPerso');
+		idGroupe = this.id.substring(7);
+		console.log(idGroupe);
 
+		calendar.fullCalendar( 'addEventSource', {
+				url: 'calendrierPerso',
+   				type:"GET",
+   				data: {idGroupe:idGroupe},
+   				success: function(data) {console.log(data);return data;}});
+	});
+		
+	
+	
 	/***** Creation du calendrier *****/
 	
 	var calendar = $('#calendar').fullCalendar(
@@ -92,13 +110,14 @@ $(document).ready(function()
 		events: {
 			url: 'calendrierPerso',
 	        type:"GET",
+	        data: {idGroupe:0},
 	        success: function(data) {console.log(data);return data;}
 		},
 		
 		/**** Infos sur l'evenement ****/
 		
 	    eventClick: function(event) {
-
+	    	
 	    	$("#info_matiere").html(event.title);
 	    	$("#info_dateStart").html(event.start.format("dddd Do MMMM "));
 	    	$("#start").html(event.start.format(" HH:mm"));
@@ -110,9 +129,8 @@ $(document).ready(function()
 	    }
 		
 		
-		
 	});
 	
 	
-	
+
 });

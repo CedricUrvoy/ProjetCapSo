@@ -13,8 +13,7 @@
 		<!-- Fichiers styles -->
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-		<link rel="stylesheet" type="text/css" href="css/header-style.css"/>	
-		
+
 		<!--FullCalendar Dependencies-->
 		<link href='fullcalendar/fullcalendar.css' rel='stylesheet' />
 		<link href='fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />

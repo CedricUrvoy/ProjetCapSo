@@ -10,10 +10,10 @@
 		</div>
 		
 		<div id="groupe_side">
-			<ul>
-				<li class="li_sidebar"><a  class="cal_group" href="">Personnel</a></li>
+			<ul id="listeGroupes">
+				<li class="li_sidebar"><a  class="cal_group" id="groupe_0" >Personnel</a></li>
 				<c:forEach var="groupe" items="${groupes}">
-					<li class="li_sidebar"><a  class="cal_group" href="">${groupe.nom_Groupe }</a></li>
+					<li class="li_sidebar"><a  class="cal_group" id="groupe_${groupe.id_Groupe}"  >${groupe.nom_Groupe }</a></li>
 				</c:forEach>
 			</ul>
 		</div>

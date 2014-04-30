@@ -26,5 +26,10 @@ public class SeanceManager {
 		List<Seance> listeSeances = seanceDao.listerSeancePerso(idEleve);
 		return listeSeances;
 	}
+	
+	public List<Seance> listeSeanceGroupe(int idGroupe){
+		List<Seance> listeSeances = seanceDao.listerSeanceGroupe(idGroupe);
+		return listeSeances;
+	}
 
 }

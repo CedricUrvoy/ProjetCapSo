@@ -43,8 +43,8 @@ public class SeanceDaoImpl implements SeanceDao{
 						results.getTimestamp("date_Fin_Seance"), 
 						results.getString("lieu_Seance"),
 						results.getString("info_Seance"),
-						results.getInt("id_Seance"),
-						results.getInt("id_Seance"), 
+						results.getInt("id_Groupe"),
+						results.getInt("id_Matiere"), 
 						results.getString("nom_Matiere"));
 				listeSeancePersonnel.add(seance);
 			}
@@ -69,10 +69,7 @@ public class SeanceDaoImpl implements SeanceDao{
 			
 			/**** Utilisation de la connection ****/
 			
-			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Seance"
-					+ "INNER JOIN Matiere ON Matiere_id_Matiere = id_Matiere"
-					+ "INNER JOIN Groupe ON  Groupe_id_Groupe = id_Groupe"
-					+ "Where Groupe_id_Groupe=?");
+			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Seance INNER JOIN Matiere ON Matiere_id_Matiere = id_Matiere INNER JOIN Groupe ON  Groupe_id_Groupe = id_Groupe WHERE Groupe_id_Groupe=?");
 			stmt.setInt(1, idGroupe);
 			ResultSet results = stmt.executeQuery();
 			while (results.next()){
@@ -83,8 +80,8 @@ public class SeanceDaoImpl implements SeanceDao{
 						results.getDate("date_Fin_Seance"), 
 						results.getString("lieu_Seance"),
 						results.getString("info_Seance"),
-						results.getInt("id_Seance"),
-						results.getInt("id_Seance"), 
+						results.getInt("id_Groupe"),
+						results.getInt("id_Matiere"), 
 						results.getString("nom_Matiere"));
 				listeSeanceGroupe.add(seance);
 			}
