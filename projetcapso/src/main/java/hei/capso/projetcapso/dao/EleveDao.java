@@ -21,5 +21,7 @@ public interface EleveDao {
 	
 	public void deleteEleve (int idEleve);
 	
-	public void rejoindreGroupe (int idEleve, int id_groupe);
+	public void rejoindreGroupe (int idEleve, int idGroupe);
+	
+	public void rejoindreSeance (int idEleve, int idSeance);
 }

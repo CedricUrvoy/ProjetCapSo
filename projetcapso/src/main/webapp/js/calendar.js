@@ -132,6 +132,7 @@ $(document).ready(function()
 		
 	    eventClick: function(event) {
 	    	
+	    	$("div.seance").attr('id', event.id);
 	    	$("#info_matiere").html(event.title);
 	    	$("#info_dateStart").html(event.start.format("dddd Do MMMM "));
 	    	$("#start").html(event.start.format(" HH:mm"));
@@ -144,7 +145,6 @@ $(document).ready(function()
 		
 		
 	});
-	
 	
 
 });
