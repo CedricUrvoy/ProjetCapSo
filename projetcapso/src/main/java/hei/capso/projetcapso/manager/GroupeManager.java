@@ -55,8 +55,8 @@ public class  GroupeManager {
 		groupeDao.quitterGroupe(id_Eleve, id_Groupe);
 	}
 	
-	public List<Groupe> chercherGroupeNom(String nom_Groupe) {
-		List<Groupe> liste = groupeDao.chercherGroupeNom(nom_Groupe);
-		return liste
+	public Groupe chercherGroupeNom(String nom_Groupe) {
+		Groupe groupe = groupeDao.chercherGroupeNom(nom_Groupe);
+		return groupe;
 	}
 }

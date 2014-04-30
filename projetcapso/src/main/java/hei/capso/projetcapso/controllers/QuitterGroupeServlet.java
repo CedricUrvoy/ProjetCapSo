@@ -28,10 +28,13 @@ public class QuitterGroupeServlet extends HttpServlet{
 		Eleve eleve = (Eleve) session.getAttribute("sessionEleve");
 		req.setAttribute("eleve",eleve);
 		Integer id_Eleve = eleve.getId_Eleve();
-		String nom_groupe = req.getParameter("groupeQuitter");
-		Groupe id_groupe = GroupeManager.getInstance().chercherGroupeNom(nom_groupe);
+		//String nom_groupe = req.getParameter("groupeQuitter");
+		System.out.print("marie nom"+req.getParameter("quitterGroupe"));
+		Groupe groupe =GroupeManager.getInstance().chercherGroupeNom("filou");
+		System.out.print("marie"+groupe);
+		Integer id_Groupe = groupe.getId_Groupe();
 		
-		
+		GroupeManager.getInstance().quitterGroupe(id_Eleve, id_Groupe);
 		
 		response.sendRedirect("profil");
 	}

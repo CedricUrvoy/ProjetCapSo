@@ -181,22 +181,22 @@ public class GroupeDao {
 		
 		
 		//CHERCHER UN GROUPE AVEC NOM 
-		public List<Groupe> chercherGroupeNom(String nom_Groupe) {
-			List<Groupe> liste = new ArrayList<Groupe>();
+		public Groupe chercherGroupeNom(String nom_Groupe) {
+			Groupe groupecherche = null;
 			try {
 				Connection connection = DataSourceProvider.getDataSource()
 						.getConnection();
 
-				PreparedStatement stmt = connection.prepareStatement("SELECT groupe.nom_Groupe, groupe.id_Groupe FROM groupe WHERE groupe.nom_Groupe=?");
+				PreparedStatement stmt = connection.prepareStatement("SELECT groupe.nom_Groupe, groupe.id_Groupe, groupe.type_Groupe FROM groupe WHERE groupe.nom_Groupe=?");
 				stmt.setString(1,nom_Groupe);
 				ResultSet results = stmt.executeQuery();
 				
-				while (results.next()) {
-					Groupe groupecherche = new Groupe(
+				if(results.next()){
+					groupecherche = new Groupe(
 							results.getInt("id_Groupe"),
 							results.getString("nom_Groupe"),
 							results.getString("type_Groupe"));
-					liste.add(groupecherche);
+					
 				}
 
 				// Fermer la connexion
@@ -208,6 +208,6 @@ public class GroupeDao {
 				e.printStackTrace();
 			}
 
-			return liste;
+			return groupecherche;
 		}
 }

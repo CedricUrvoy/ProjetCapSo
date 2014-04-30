@@ -16,7 +16,10 @@ public class Groupe {
 			this.nom_Groupe = nom_Groupe;
 			this.type_Groupe = type_Groupe;
 		}
+		
+		public Groupe() {
 
+		}
 
 		public Integer getId_Groupe() {
 			return id_Groupe;

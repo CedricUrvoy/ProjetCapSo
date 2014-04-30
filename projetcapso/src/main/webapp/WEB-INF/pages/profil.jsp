@@ -78,7 +78,7 @@
 						<form id="ajout" name="DFormQG" method="POST">
 						    <fieldset id="inputs_ajout">
 						    <label>Groupe à quitter</label>
-						        <input class="input" type=text list=groupeQuitter >
+						        <input class="input" type=text list=groupeQuitter name="quitterGroupe" >
 									<datalist id=groupeQuitter >
 									   <c:forEach var="groupe" items="${groupes}">
 											<option> ${groupe.nom_Groupe}

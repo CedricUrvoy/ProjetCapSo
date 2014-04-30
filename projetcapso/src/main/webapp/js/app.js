@@ -86,7 +86,7 @@ else if (bouton.name=="QUITTER" )
 }
 else if (bouton.name=="QUITTERGROUPE" )
 {
-     document.DFormQG.action="";
+     document.DFormQG.action="quittergroupe";
      document.DFormQG.submit();
 }
 else if (bouton.name=="ANNULERQUITTER" )
