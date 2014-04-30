@@ -90,7 +90,7 @@ ul.onglet
 	color : #FFFFFF;
 	text-align: center;
 }
-li{
+nav li{
 	display: inline;
 	color: #FFFFFF;
 	padding : 30px;
@@ -581,11 +581,19 @@ div.close
 	margin-top: 10%;
 }
 
-p.cal_group
+.li_sidebar{
+	display: block;
+	padding: 3%;
+}
+
+.cal_group
 {
-	color:white;
-	margin-top: 6%;
+	color:#ffffff;
 	font-size: 150%;
+}
+
+a.cal_group:HOVER{
+	color:#24afb2;
 }
 
 #chevron
