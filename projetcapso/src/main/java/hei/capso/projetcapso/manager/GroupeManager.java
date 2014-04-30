@@ -37,6 +37,10 @@ public class  GroupeManager {
 		List<Groupe> liste = groupeDao.listerDomaines();
 		return liste;
 	}
+	public List<Groupe> listerGroupes() {
+		List<Groupe> liste = groupeDao.listerGroupe();
+		return liste;
+	}
 
 	public List<Groupe> listerGroupeEleve(Integer id) {
 		List<Groupe> liste = groupeDao.listerGroupeEleve(id);

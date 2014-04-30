@@ -37,7 +37,7 @@ public class ProfilServlet extends HttpServlet{
 				Integer id_Eleve = eleve.getId_Eleve();
 				List<Groupe> groupes = GroupeManager.getInstance().listerGroupeEleve(id_Eleve);
 				req.setAttribute("groupes", groupes);
-				System.out.print("marie   ");
+			
 				
 		// Liste classes dans formulaire
 				List<Groupe> classe = GroupeManager.getInstance().listerClasses();

@@ -41,4 +41,10 @@ public class  EleveManager {
 		eleveDao.addEleve(eleve);
 	}
 	
+	// REJOINDRE UN GROUPE
+		public void rejoindreGroupe(int idEleve, int id_groupe) {
+			eleveDao.rejoindreGroupe(idEleve, id_groupe);
+		}
+	
+	
 }
