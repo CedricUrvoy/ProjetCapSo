@@ -26,19 +26,27 @@ $(document).ready(function()
 	*/
 	
 	var idGroupe = 0;
-	console.log(idGroupe);
+	var nomGroupe='Personnel';
 	
 	$("ul#listeGroupes").on("click",".cal_group", function() {
 		
 		calendar.fullCalendar( 'removeEventSource','calendrierPerso');
 		idGroupe = this.id.substring(7);
-		console.log(idGroupe);
+		
+		if(idGroupe!=0){
+			nomGroupe = this.innerHTML;
+		}else{
+			nomGroupe='Personnel';
+		}
 
 		calendar.fullCalendar( 'addEventSource', {
 				url: 'calendrierPerso',
    				type:"GET",
    				data: {idGroupe:idGroupe},
    				success: function(data) {console.log(data);return data;}});
+		$("#titreCalendrier").html('Calendrier - '+nomGroupe);
+		
+		
 	});
 		
 	

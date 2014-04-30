@@ -39,7 +39,7 @@
 		<jsp:include page="header.jsp" />
 		<div class=content>
 			
-			<h1 class="big titre" >Calendrier - Nom du groupe</h1>
+			<h1 class="big titre" id="titreCalendrier">Calendrier - Personnel</h1>
 			
 			<!--FullCalendar container div-->
 			<div id='calendar'></div>

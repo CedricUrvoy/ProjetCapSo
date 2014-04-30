@@ -76,8 +76,8 @@ public class SeanceDaoImpl implements SeanceDao{
 				Seance seance = new Seance(
 						results.getInt("id_Seance"),
 						results.getString("nom_Matiere"),
-						results.getDate("date_Debut_Seance"),
-						results.getDate("date_Fin_Seance"), 
+						results.getTimestamp("date_Debut_Seance"),
+						results.getTimestamp("date_Fin_Seance"), 
 						results.getString("lieu_Seance"),
 						results.getString("info_Seance"),
 						results.getInt("id_Groupe"),
