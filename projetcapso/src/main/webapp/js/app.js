@@ -56,7 +56,9 @@ else if (bouton.name=="ANNULER2" )
 }
 else if (bouton.name=="REJOINDRE" )
 {
-     document.DForm2.action="";
+	var id = $('div.seance').attr('id');
+	console.log(id);
+	document.DForm2.action="rejoindreSeance?idSeance="+id;
      document.DForm2.submit();
 }
 
@@ -125,3 +127,6 @@ function eteindre()
     document.getElementById('openpromo').style.display = "none";
     document.getElementById('openautre').style.display = "none";
 }
+
+
+

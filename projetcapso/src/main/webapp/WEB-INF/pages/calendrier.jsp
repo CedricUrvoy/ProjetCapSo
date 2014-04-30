@@ -100,7 +100,7 @@
 			
 			<div class="hideshow" id="detailSeance" style="visibility: hidden;">
 			    <div id="fade"></div> 
-		    	<div class="popup_block">
+		    	<div class="popup_block seance">
 			    	<div id="titrePopup">Nouvelle séance</div>
 					<div id="contentPopup">
 						<form id="ajout" name="DForm2" method="POST">

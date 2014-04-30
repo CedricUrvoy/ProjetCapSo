@@ -42,9 +42,14 @@ public class  EleveManager {
 	}
 	
 	// REJOINDRE UN GROUPE
-		public void rejoindreGroupe(int idEleve, int id_groupe) {
-			eleveDao.rejoindreGroupe(idEleve, id_groupe);
-		}
+	public void rejoindreGroupe(int idEleve, int id_groupe) {
+		eleveDao.rejoindreGroupe(idEleve, id_groupe);
+	}
+		
+	// REJOINDRE UNE SEANCE
+	public void rejoindreSeance(int idEleve, int idSeance) {
+		eleveDao.rejoindreSeance(idEleve, idSeance);
+	}	
 	
 	
 }

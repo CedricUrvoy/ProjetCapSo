@@ -141,26 +141,51 @@ public class EleveDaoImpl implements EleveDao{
 		}
 
 		//AJOUTER ELEVE
-				public  void rejoindreGroupe(int id_Eleve, int id_Groupe) {
-					try {
-						Connection connection = DataSourceProvider.getDataSource()
-								.getConnection();
+		public  void rejoindreGroupe(int idEleve, int idGroupe) {
+			try {
+				Connection connection = DataSourceProvider.getDataSource()
+						.getConnection();
 
-						// Utiliser la connexion
-						PreparedStatement stmt = connection
-								.prepareStatement("INSERT INTO `eleve_groupe`(`Eleve_id_Eleve`,`Groupe_id_Groupe`) VALUES(?, ?)");
-						stmt.setInt(1, id_Eleve);
-						stmt.setInt(2, id_Groupe);
-						stmt.executeUpdate();
+				// Utiliser la connexion
+				PreparedStatement stmt = connection
+						.prepareStatement("INSERT INTO `eleve_groupe`(`Eleve_id_Eleve`,`Groupe_id_Groupe`) VALUES(?, ?)");
+				stmt.setInt(1, idEleve);
+				stmt.setInt(2, idGroupe);
+				stmt.executeUpdate();
 
-						// Fermer la connexion
-						stmt.close();
-						connection.close();
+				// Fermer la connexion
+				stmt.close();
+				connection.close();
 
-					} catch (SQLException e) {
-						e.printStackTrace();
-					}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+
+
+
+		public void rejoindreSeance(int idEleve, int idSeance) {
+			try {
+					Connection connection = DataSourceProvider.getDataSource()
+							.getConnection();
+		
+					// Utiliser la connexion
+					PreparedStatement stmt = connection
+							.prepareStatement("INSERT INTO `seance_eleve`(`Eleve_id_Eleve`,`Seance_id_Seance`) VALUES(?, ?)");
+					stmt.setInt(1, idEleve);
+					stmt.setInt(2, idSeance);
+					stmt.executeUpdate();
+		
+					// Fermer la connexion
+					stmt.close();
+					connection.close();
+		
+				} catch (SQLException e) {
+					e.printStackTrace();
 				}
+			}
+
 
 
 
