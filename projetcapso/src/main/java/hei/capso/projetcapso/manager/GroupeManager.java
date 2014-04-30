@@ -38,4 +38,8 @@ public class  GroupeManager {
 		return liste;
 	}
 
+	public List<Groupe> listerGroupeEleve(Integer id) {
+		List<Groupe> liste = groupeDao.listerGroupeEleve(id);
+		return liste;
+	}
 }

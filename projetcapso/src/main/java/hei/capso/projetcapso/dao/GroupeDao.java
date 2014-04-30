@@ -70,4 +70,38 @@ public class GroupeDao {
 
 		return liste;
 	}
+	
+	//LISTER GROUPE ELEVE
+	public List<Groupe> listerGroupeEleve(Integer id) {
+		List<Groupe> liste = new ArrayList<Groupe>();
+		try {
+			Connection connection = DataSourceProvider.getDataSource()
+					.getConnection();
+
+			Statement stmt = connection.createStatement();
+			ResultSet results = stmt.executeQuery("SELECT groupe.id_Groupe, groupe.nom_Groupe, groupe.type_Groupe, eleve.id_eleve"
+													+"FROM eleve"
+													+"INNER JOIN eleve_groupe ON eleve_groupe.Eleve_id_Eleve = eleve.id_eleve"
+													+"INNER JOIN groupe ON groupe.id_groupe = eleve_groupe.Groupe_id_Groupe"
+													+"WHERE id_eleve ="+id);
+
+			while (results.next()) {
+				Groupe domaine = new Groupe(
+						results.getInt("id_Groupe"),
+						results.getString("nom_Groupe"),
+						results.getString("type_Groupe"));
+				liste.add(domaine);
+			}
+
+			// Fermer la connexion
+			results.close();
+			stmt.close();
+			connection.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return liste;
+	}
 }

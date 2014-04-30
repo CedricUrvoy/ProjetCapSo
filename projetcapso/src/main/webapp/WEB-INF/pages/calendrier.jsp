@@ -68,7 +68,7 @@
 										<c:forEach var="matiere" items="${matieres}">
 						  				 	<option> ${matiere.nom_Matiere}
 						  				</c:forEach>
-						  			</datalist><br/>
+						  			</datalist></br>
 								 <label>Date : </label>
 						        <input class="input" id="date" type="date" placeholder="" required>
 						        <span class="horaire">

@@ -29,12 +29,9 @@
 			<div class="boite_profil" id="groupe">
 				<h1 class="titre">Groupes</h1>
 				<div id="liste-=_groupe">
-					<h2 class="groupe_perso">Classe : H44</h2>
-					<h2 class="groupe_perso">Domaine : ITI</h2>
-					<h2 id="autre_groupe">Autres groupes</h2>
-					<h2 class="groupe_perso">Marqueting</h2>
-					<h2 class="groupe_perso">Projet Piste</h2>
-					<h2 class="groupe_perso">Dev WEB</h2>
+					<c:forEach var="groupe" items="${groupes}">
+							<h2 class="groupe_perso">${groupe.nom_Groupe}</h2>
+					</c:forEach>
 				</div>
 			
 			</div>
