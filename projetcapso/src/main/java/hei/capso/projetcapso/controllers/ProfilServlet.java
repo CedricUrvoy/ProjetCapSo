@@ -34,10 +34,10 @@ public class ProfilServlet extends HttpServlet{
 		
 		
 		//LISTER LES GROUPES DE L'ELEVE
-		Integer id_Eleve = eleve.getId_Eleve();
+				Integer id_Eleve = eleve.getId_Eleve();
 				List<Groupe> groupes = GroupeManager.getInstance().listerGroupeEleve(id_Eleve);
 				req.setAttribute("groupes", groupes);
-				//System.out.print("marie"+groupes);
+				System.out.print("marie   ");
 
 	//AFFICHE LA PAGE
 	RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/profil.jsp");
