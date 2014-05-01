@@ -4,6 +4,8 @@ package hei.capso.projetcapso.dao.impl;
 import hei.capso.projetcapso.dao.DataSourceProvider;
 import hei.capso.projetcapso.dao.EleveDao;
 import hei.capso.projetcapso.model.Eleve;
+import hei.capso.projetcapso.model.Groupe;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -58,12 +60,11 @@ public class EleveDaoImpl implements EleveDao{
 
 				// Utiliser la connexion
 				PreparedStatement stmt = connection
-						.prepareStatement("INSERT INTO `eleve`(`nom_Eleve`,`prenom_Eleve`,`image_Eleve`,`id_Classe`,`id_Domaine`) VALUES(?, ?, ?, ?, ?)");
+						.prepareStatement("INSERT INTO `eleve`(`nom_Eleve`,`prenom_Eleve`,`password_Eleve`,`email_Eleve`) VALUES(?, ?, ?, ?)");
 				stmt.setString(1, eleve.getNom_Eleve());
 				stmt.setString(2, eleve.getPrenom_Eleve());
-				stmt.setString(3, eleve.getImage_Eleve());
-				stmt.setInt(4, eleve.getId_Classe());
-				stmt.setInt(5, eleve.getId_Eleve());
+				stmt.setString(3, eleve.getPassword_eleve());
+				stmt.setString(4, eleve.getEmail_Eleve());
 
 				stmt.executeUpdate();
 
@@ -186,7 +187,35 @@ public class EleveDaoImpl implements EleveDao{
 				}
 			}
 
+		//CHERCHER UN ELEVE AVEC MAIL
+				public Eleve chercherEleveMail(String mail_Eleve) {
+					Eleve elevecherche = null;
+					try {
+						Connection connection = DataSourceProvider.getDataSource()
+								.getConnection();
 
+						PreparedStatement stmt = connection.prepareStatement("SELECT eleve.email_Eleve, eleve.id_Eleve FROM eleve WHERE eleve.email_Eleve=?");
+						stmt.setString(1,mail_Eleve);
+						ResultSet results = stmt.executeQuery();
+						
+						if(results.next()){
+							elevecherche = new Eleve(
+									results.getInt("id_Eleve"),
+									results.getString("email_Eleve"));
+							
+						}
+
+						// Fermer la connexion
+						results.close();
+						stmt.close();
+						connection.close();
+
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+
+					return elevecherche;
+				}
 
 
 	

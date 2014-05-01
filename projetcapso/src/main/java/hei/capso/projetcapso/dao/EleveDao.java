@@ -24,4 +24,6 @@ public interface EleveDao {
 	public void rejoindreGroupe (int idEleve, int idGroupe);
 	
 	public void rejoindreSeance (int idEleve, int idSeance);
+	
+	public Eleve chercherEleveMail(String mail_Eleve);
 }

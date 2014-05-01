@@ -9,7 +9,7 @@
 		<meta name="Crée ton profil" content="Crée ton profil" />
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-		<link rel="stylesheet" type="text/css" href="css/login_style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/ajout_profil_style.css"/>
 		<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
 	</head>
 
@@ -19,30 +19,37 @@
 	<div id="boite_2_ajout">
 		<form id="ajout" method="post" action="ajoutProfil">
     <fieldset id="inputs_ajout">
-    	<label>Nom : </label></br>
-        <input class="input" id="nom" type="text" placeholder="Nom" name="nom_Eleve" autofocus required></br>
-		 <label>Prénom : </label></br>
+    	<label>Nom : </label>
+        <input class="input" id="nom" type="text" placeholder="Nom" name="nom_Eleve" autofocus required>
+		 <label>Prénom : </label>
         <input class="input" id="prenom" type="text" placeholder="Prénom" name="prenom_Eleve" required></br>
-        <label>Mail : </label></br>
+        <label>Mail : </label>
         <input class="input" id="mail" type="email" placeholder="prenom.nom@hei.fr" name="email_Eleve" required></br>
-        <label>Mot de passe : </label></br>
-        <input class="input" id="password" type="password" placeholder="Mot de passe" required></br>
+        <label>Mot de passe : </label>
+        <input class="input" id="password" type="password" placeholder="Mot de passe" name="password_Eleve" required>
     </fieldset>
     <fieldset class="groupe">
     	<label>Classe</label>
-        <input class="input" type=text list=classe name="id_Classe">
-			<datalist id=classe >
+        
+			<select class="input" id=classe name="classe" >
   				 <c:forEach var="groupe" items="${groupes}">
-  				 <option value ="${groupe.id_Groupe}"> ${groupe.nom_Groupe}
+  				 <option value ="${groupe.id_Groupe}"> ${groupe.nom_Groupe}</option>
   				 </c:forEach>
-			</datalist>
+			</select>
 		<label>Domaine</label>
-		<input class="input" type=text list=domaine name="id_Domaine" >
-			<datalist id=domaine >
+		
+			<select class="input" id=domaine name="domaine" >
 				<c:forEach var="domaine" items="${domaines}">
-  					 <option value ="${domaine.id_Groupe}" > ${domaine.nom_Groupe}
+  					 <option value ="${domaine.id_Groupe}" > ${domaine.nom_Groupe}</option>
   				 </c:forEach>
-			</datalist>
+			</select>
+			<label>Promo</label>
+		
+			<select class="input" id=promo name="promo">
+				<c:forEach var="promo" items="${promos}">
+  					 <option value ="${promo.id_Groupe}" > ${promo.nom_Groupe}</option>
+  				 </c:forEach>
+			</select>
     </fieldset>
     <fieldset id="ajout">
         <input class="input" type="submit" id="submit" value="Valider"> 

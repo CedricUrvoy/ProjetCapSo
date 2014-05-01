@@ -6,6 +6,7 @@ import java.util.List;
 import hei.capso.projetcapso.dao.EleveDao;
 import hei.capso.projetcapso.dao.impl.EleveDaoImpl;
 import hei.capso.projetcapso.model.Eleve;
+import hei.capso.projetcapso.model.Groupe;
 
 
 public class  EleveManager {
@@ -50,6 +51,12 @@ public class  EleveManager {
 	public void rejoindreSeance(int idEleve, int idSeance) {
 		eleveDao.rejoindreSeance(idEleve, idSeance);
 	}	
+	
+	//RECHERCHER UN ELEVE AVEC L'EMAIL
+	public Eleve chercherEleveMail(String mail_Eleve) {
+		Eleve eleve = eleveDao.chercherEleveMail(mail_Eleve);
+		return eleve;
+	}
 	
 	
 }

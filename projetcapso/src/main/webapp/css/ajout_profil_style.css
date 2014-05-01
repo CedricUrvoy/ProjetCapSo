@@ -47,7 +47,7 @@
 /**Login**/
 
 
-#boite_1
+/*#boite_1
 {	position:absolute;
 	background: #26C4EC;
 	width:40%;
@@ -96,12 +96,7 @@ a.text_form
 	
 }
 
-#submit
-{
-	margin-top: 5%;
-	background-color: #26C4EC;
-	border-color: #26C4EC;
-}
+*/
 
 /**Page Création de profil**/ 
 
@@ -134,15 +129,13 @@ label
 {
 	margin-top: 2%;
 }
-
-fieldset.groupe
+.input
 {
-	position: relative;
-	width: 20%;
-	display: inline-block;
+	text-align: center;
 }
-
-input.groupe_input
+#submit
 {
-	width: 90%;
+	margin-top: 5%;
+	background-color: #26C4EC;
+	border-color: #26C4EC;
 }

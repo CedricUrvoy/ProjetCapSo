@@ -34,6 +34,10 @@ public class AjoutProfilServlet extends HttpServlet{
 				List<Groupe> domaines = GroupeManager.getInstance().listerDomaines();
 				req.setAttribute("domaines", domaines);
 				
+		// Liste promos dans formulaire
+				List<Groupe> promos = GroupeManager.getInstance().listerPromos();
+				req.setAttribute("promos", promos);
+				
 		//AFFICHER LA PAGE
 				RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/ajoutProfil.jsp");
 				view.forward(req, resp);
@@ -45,15 +49,29 @@ public class AjoutProfilServlet extends HttpServlet{
 		
 		//AJOUTER UN ELEVE
 		
+		
 	EleveManager.getInstance().addEleve(
 			new Eleve(null, 
 						request.getParameter("nom_Eleve"), 
 				    	request.getParameter("prenom_Eleve"), 
-						request.getParameter("image_Eleve"),
+						null,
 						request.getParameter("email_Eleve"),
-						Integer.parseInt(request.getParameter("id_Classe")), 
-						Integer.parseInt(request.getParameter("id_Domaine"))));
+						request.getParameter("password_Eleve")
+						));
+	
+	Eleve eleve=EleveManager.getInstance().chercherEleveMail(request.getParameter("email_Eleve"));
+	System.out.print("marie 2 "+request.getParameter("email_Eleve"));
+	Integer id_Eleve = eleve.getId_Eleve();
+	
+	Integer id_Classe = Integer.parseInt(request.getParameter("classe"));
+		EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_Classe);
+	Integer id_Domaine = Integer.parseInt(request.getParameter("domaine"));
+		EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_Domaine);
+	Integer id_Promo = Integer.parseInt(request.getParameter("promo"));
+	System.out.print("marie 2 "+Integer.parseInt(request.getParameter("promo")));
+		EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_Promo);
 		
-		response.sendRedirect("eleve");
+		
+		response.sendRedirect("calendrier");
 	}
 }
