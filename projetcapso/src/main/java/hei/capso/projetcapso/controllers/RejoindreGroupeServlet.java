@@ -34,18 +34,27 @@ public class RejoindreGroupeServlet extends HttpServlet {
 		Integer id_Groupe = null;
 		if(req.getParameter("groupearejoindre").equals("Classe")){
 			id_Groupe = Integer.parseInt(req.getParameter("classe"));
+			EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_Groupe);
 		}
 		else if(req.getParameter("groupearejoindre").equals("Domaine")){
 			id_Groupe = Integer.parseInt(req.getParameter("domaine"));
+			EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_Groupe);
 		}
 		else if(req.getParameter("groupearejoindre").equals("Promo")){
 			id_Groupe = Integer.parseInt(req.getParameter("promo"));
+			EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_Groupe);
 		}
 		else if(req.getParameter("groupearejoindre").equals("Autre")){
-			id_Groupe = Integer.parseInt(req.getParameter("autre"));
+			String nom_Groupe = req.getParameter("autre");
+			Groupe groupe = GroupeManager.getInstance().chercherGroupeNom(nom_Groupe);
+			if (groupe==null)
+			{System.out.print("LE nom n'existe pas");}
+			else 
+			{id_Groupe =groupe.getId_Groupe();
+			EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_Groupe);}
+			
 		}
-		
-		EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_Groupe);
+
 		
 		response.sendRedirect("profil");
 	}

@@ -125,17 +125,15 @@
 							</p>
 							
 							<p class="cache" id="openpromo">
-								    <input class="input" type=text list=groupePromo >
-									<datalist id=groupePromo >
-									   <option> H1
-									   <option> H2
-									   <option> H3
-									   <option> H4
-									   <option> H5
-									</datalist>
+								    <select class="input"  name="promo" id="choixPromo" >
+								
+									   <c:forEach var="promo" items="${promos}">
+  				 							<option value="${promo.id_Groupe}"> ${promo.nom_Groupe}</option>
+  										</c:forEach>
+									</select>
 							</p>
 							<p class="cache" id="openautre">
-								    <input class="input" type=text  id="autregroupe">	
+								    <input name="autre" class="input" type=text  id="autregroupe">	
 							</p>
 
 						     </fieldset>    

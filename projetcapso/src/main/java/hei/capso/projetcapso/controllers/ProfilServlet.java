@@ -46,6 +46,10 @@ public class ProfilServlet extends HttpServlet{
 		// Liste domaines dans formulaire
 				List<Groupe> domaines = GroupeManager.getInstance().listerDomaines();
 				req.setAttribute("domaines", domaines);
+				
+		// Liste classes dans formulaire
+				List<Groupe> promo = GroupeManager.getInstance().listerPromos();
+				req.setAttribute("promos", promo);
 
 	//AFFICHE LA PAGE
 	RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/profil.jsp");

@@ -239,4 +239,35 @@ public class GroupeDao {
 
 			return groupecherche;
 		}
+		
+		//CHERCHER SI UN NOM DE GROUPE EXISTE
+		/*public Boolean chercherGroupeExiste(String nom_Groupe) {
+			Boolean existe = false;
+			try {
+				Connection connection = DataSourceProvider.getDataSource()
+						.getConnection();
+
+				PreparedStatement stmt = connection.prepareStatement("SELECT groupe.nom_Groupe, groupe.id_Groupe, groupe.type_Groupe FROM groupe WHERE groupe.nom_Groupe=?");
+				stmt.setString(1,nom_Groupe);
+				ResultSet results = stmt.executeQuery();
+				
+				if(results.next()){
+					groupecherche = new Groupe(
+							results.getInt("id_Groupe"),
+							results.getString("nom_Groupe"),
+							results.getString("type_Groupe"));
+					
+				}
+
+				// Fermer la connexion
+				results.close();
+				stmt.close();
+				connection.close();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+			return groupecherche;
+		}*/
 }
