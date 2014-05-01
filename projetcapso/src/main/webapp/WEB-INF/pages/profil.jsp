@@ -116,12 +116,12 @@
 							</p>
 							
 							<p class="cache" id="opendomaine">
-								    <input class="input" type=text list=groupeDomaine >
-									<datalist id=groupeDomaine >
+								    <select class="input"  name="domaine" id="choixClasse" >
+								
 									   <c:forEach var="domaine" items="${domaines}">
-  				 							<option > ${domaine.nom_Groupe}
+  				 							<option value="${domaine.id_Groupe}"> ${domaine.nom_Groupe}</option>
   										</c:forEach>
-									</datalist>
+									</select>
 							</p>
 							
 							<p class="cache" id="openpromo">
