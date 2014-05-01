@@ -65,10 +65,18 @@
 						         <input class="input" type="text" list=matiere >
 									<datalist id=matiere >
 										<c:forEach var="matiere" items="${matieres}">
-						  				 	<option> ${matiere.nom_Matiere}
+						  				 	<option id="matiere_${matiere.id_Matiere}">> ${matiere.nom_Matiere}
 						  				</c:forEach>
 						  			</datalist></br>
-								 <label>Date : </label>
+						  		<label>Groupe</label>
+						  		<input class="input" type="text" list=groupe >
+									<datalist id=groupe >
+												<option id="groupe_0"> Personnel
+							  			<c:forEach var="groupe" items="${groupes}">
+							  				 	<option id="groupe_${groupe.id_Groupe}"> ${groupe.nom_Groupe}
+							  			</c:forEach>
+						  			</datalist>
+								<label>Date : </label>
 						        <input class="input" id="date" type="date" placeholder="" required>
 						        <span class="horaire">
 						        	<label>Heure de début : </label>

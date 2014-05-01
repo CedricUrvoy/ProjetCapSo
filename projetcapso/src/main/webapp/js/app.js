@@ -38,9 +38,25 @@ function doAct(bouton)
 {
 	//POP UP AJOUTER SEANCE
 if (bouton.name=="VALIDER" )
-{
-     document.DForm.action="";
-     document.DForm.submit();
+{     
+	    
+	var matiere = 1 ;
+	var groupe = 1 ;
+	
+	$.ajax({
+	       url : 'creerSeance', // La ressource ciblée
+	       type : 'POST' ,// Le type de la requête HTTP	
+	       data:{ 
+	    	   	'matiere':matiere,
+	       		'groupe':groupe,
+	       		'date':date,
+	       		'heure_debut':heure_debut,
+	       		'heure_fin':heure_fin,
+	       		'place':place,
+	       		'infosSeance':infosSeance
+	       		}
+
+	    });
 }
 else if (bouton.name=="ANNULER" )
 {

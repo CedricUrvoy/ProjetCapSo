@@ -36,6 +36,11 @@ public class RestrictionFilter implements Filter {
             chain.doFilter( request, response );
             return;
         }
+        String cheminCreerProfil = request.getRequestURI().substring( request.getContextPath().length() );
+        if ( cheminCreerProfil.startsWith( "/ajoutProfil" ) ) {
+            chain.doFilter( request, response );
+            return;
+        }
 
         /* Récupération de la session depuis la requête */
         HttpSession session = request.getSession();

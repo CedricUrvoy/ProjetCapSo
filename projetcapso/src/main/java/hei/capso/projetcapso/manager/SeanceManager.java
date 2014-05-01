@@ -31,5 +31,9 @@ public class SeanceManager {
 		List<Seance> listeSeances = seanceDao.listerSeanceGroupe(idGroupe);
 		return listeSeances;
 	}
+	
+	public void addSeance (Seance seance){
+		seanceDao.addSeance(seance);
+	}
 
 }
