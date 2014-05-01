@@ -41,6 +41,11 @@ public class  GroupeManager {
 		List<Groupe> liste = groupeDao.listerGroupe();
 		return liste;
 	}
+	
+	public List<Groupe> listerPromos() {
+		List<Groupe> liste = groupeDao.listerPromo();
+		return liste;
+	}
 
 	public List<Groupe> listerGroupeEleve(Integer id) {
 		List<Groupe> liste = groupeDao.listerGroupeEleve(id);

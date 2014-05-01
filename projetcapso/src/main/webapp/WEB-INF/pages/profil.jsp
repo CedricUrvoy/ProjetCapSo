@@ -116,7 +116,7 @@
 							</p>
 							
 							<p class="cache" id="opendomaine">
-								    <select class="input"  name="domaine" id="choixClasse" >
+								    <select class="input"  name="domaine" id="choixDomaine" >
 								
 									   <c:forEach var="domaine" items="${domaines}">
   				 							<option value="${domaine.id_Groupe}"> ${domaine.nom_Groupe}</option>

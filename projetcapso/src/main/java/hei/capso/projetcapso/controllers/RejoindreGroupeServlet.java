@@ -30,7 +30,7 @@ public class RejoindreGroupeServlet extends HttpServlet {
 		Eleve eleve = (Eleve) session.getAttribute("sessionEleve");
 		req.setAttribute("eleve",eleve);
 		Integer id_Eleve = eleve.getId_Eleve();
-		System.out.print("non ok");
+		
 		Integer id_Groupe = null;
 		if(req.getParameter("groupearejoindre").equals("Classe")){
 			id_Groupe = Integer.parseInt(req.getParameter("classe"));
