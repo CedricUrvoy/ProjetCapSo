@@ -108,12 +108,11 @@
 						    <input type=radio name="groupearejoindre" value="Promo" onclick="eteindre(); afficher('openpromo')">Promo
 						    <input type=radio name="groupearejoindre" value="Autre" onclick="eteindre(); afficher('openautre')">Autre
 						    <p class="cache" id="openclasse">
-								    <input class="input" type=text list=groupeClasse >
-									<datalist id=groupeClasse >
+									<select class="input" name="classe" id="choixClasse">
 									   <c:forEach var="classe" items="${classes}">
-  				 							<option > ${classe.nom_Groupe}
+  				 							<option value="${classe.id_Groupe}"> ${classe.nom_Groupe}</option>
   										</c:forEach>
-									</datalist>
+									</select>
 							</p>
 							
 							<p class="cache" id="opendomaine">
