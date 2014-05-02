@@ -3,7 +3,7 @@ package hei.capso.projetcapso.model;
 import java.util.Date;
 
 public class Seance {
-    public int id;
+    public Integer id;
     public String title;
     public Date start;
     public Date end;
@@ -14,7 +14,7 @@ public class Seance {
     public String nameGroupe;
 	
     
-    public Seance(int id, String title, Date start, Date end, String place,
+    public Seance(Integer id, String title, Date start, Date end, String place,
 			String infos, int idGroupe, int idMatiere) {
 		this.id = id;
 		this.title = title;
@@ -27,7 +27,7 @@ public class Seance {
 	}
 
 
-	public Seance(int id, String title, Date start, Date end, String place,
+	public Seance(Integer id, String title, Date start, Date end, String place,
 			String infos, int idGroupe, int idMatiere,String nameGroupe) {
 		this.id = id;
 		this.title = title;
@@ -41,12 +41,12 @@ public class Seance {
 	}
 
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

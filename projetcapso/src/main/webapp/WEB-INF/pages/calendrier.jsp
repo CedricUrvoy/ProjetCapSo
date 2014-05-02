@@ -13,6 +13,7 @@
 		<!-- Fichiers styles -->
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.css"/>
 
 		<!--FullCalendar Dependencies-->
 		<link href='fullcalendar/fullcalendar.css' rel='stylesheet' />
@@ -31,6 +32,8 @@
 		<!-- Scripts JS -->
 		<script src="js/calendar.js"></script>		
 		<script src="js/app.js"></script>
+	
+ 
 
 		
 	</head>
@@ -40,6 +43,7 @@
 		<div class=content>
 			
 			<h1 class="big titre" id="titreCalendrier">Calendrier - Personnel</h1>
+			
 			
 			<!--FullCalendar container div-->
 			<div id='calendar'></div>
@@ -62,35 +66,37 @@
 						<form id="ajout" name="DForm" method="POST">
 						    <fieldset id="inputs_ajout">
 						    	<label>Matière</label>
-						         <input class="input" type="text" list=matiere >
+						         <input class="input" type="text" list=matiere name="matiere" >
 									<datalist id=matiere >
 										<c:forEach var="matiere" items="${matieres}">
-						  				 	<option id="matiere_${matiere.id_Matiere}">> ${matiere.nom_Matiere}
+						  				 	<option id="matiere_${matiere.id_Matiere}"> ${matiere.nom_Matiere}
 						  				</c:forEach>
 						  			</datalist></br>
 						  		<label>Groupe</label>
-						  		<input class="input" type="text" list=groupe >
+						  		<input class="input" type="text" list=groupe name="groupe" >
 									<datalist id=groupe >
 												<option id="groupe_0"> Personnel
 							  			<c:forEach var="groupe" items="${groupes}">
 							  				 	<option id="groupe_${groupe.id_Groupe}"> ${groupe.nom_Groupe}
 							  			</c:forEach>
 						  			</datalist>
-								<label>Date : </label>
-						        <input class="input" id="date" type="date" placeholder="" required>
+						  		<label>Date début : </label>	
+
+								<!--  <label>Date : </label>
+						        <input class="input" id="date" type="date"  name="date" placeholder="" required>
 						        <span class="horaire">
-						        	<label>Heure de début : </label>
-						        	<input class="input" id="heure_debut" type="time" placeholder="" required>
+						        	<label>Date début : </label>
+						        	<input class="input" id="heure_debut" type="time" name="heure_debut" placeholder="" required>
 
 						        </span>
 						        <span class="horaire">
 						        	<label>Heure de fin : </label>
-						        	<input class="input" id="heure_fin" type="time" placeholder="" required>
-						        </span>
+						        	<input class="input" id="heure_fin" type="time" name="heure_fin" placeholder="" required>
+						        </span>-->
 						        <label>Lieu</label>
-						        <input class="input" type="text" id="place">
+						        <input class="input" type="text" id="place" name="place">
 						        <label>Commentaires</label>
-						        <textarea class= "input" id="infosSeance" rows="8" cols="50"></textarea>
+						        <textarea class= "input" id="infosSeance" name="infosSeance" rows="8" cols="50"></textarea>
 						    </fieldset>
 						    
 						    <fieldset id="boutons">
@@ -137,4 +143,6 @@
 		<jsp:include page="sidebar.jsp" />
 
 		<jsp:include page="footer.jsp" />
+		
+     
 	</body>

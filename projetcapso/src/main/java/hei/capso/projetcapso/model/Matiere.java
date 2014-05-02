@@ -10,7 +10,6 @@ public class Matiere {
 
 		//CONSTRUCTEUR
 		public Matiere(Integer id_Matiere, String nom_Matiere) {
-			super();
 			this.id_Matiere = id_Matiere;
 			this.nom_Matiere = nom_Matiere;
 

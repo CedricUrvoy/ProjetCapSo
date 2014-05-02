@@ -33,5 +33,8 @@ public class  MatiereManager {
 		return liste;
 	}
 	
-
+	public Matiere chercherMatiereNom(String nom_Matiere) {
+		Matiere matiere = matiereDao.chercherMatiereNom(nom_Matiere);
+		return matiere;
+	}
 }
