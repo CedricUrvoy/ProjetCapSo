@@ -64,4 +64,19 @@ public class  GroupeManager {
 		Groupe groupe = groupeDao.chercherGroupeNom(nom_Groupe);
 		return groupe;
 	}
+	
+	public Groupe chercherClasseEleve(Integer id_Eleve) {
+		Groupe groupe = groupeDao.listerClasseEleve(id_Eleve);
+		return groupe;
+	}
+	
+	public Groupe chercherDomaineEleve(Integer id_Eleve) {
+		Groupe groupe = groupeDao.listerDomaineEleve(id_Eleve);
+		return groupe;
+	}
+	
+	public Groupe chercherPromoEleve(Integer id_Eleve) {
+		Groupe groupe = groupeDao.listerPromoEleve(id_Eleve);
+		return groupe;
+	}
 }
