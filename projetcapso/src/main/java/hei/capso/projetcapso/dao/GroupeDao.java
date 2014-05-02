@@ -239,28 +239,55 @@ public class GroupeDao {
 
 			return groupecherche;
 		}
-
 		
-		//LISTER GROUPE TYPE ELEVE
+		//LISTER CLASSE ELEVE
+		public Groupe listerClasseEleve(Integer id) {
+			Groupe groupe = new Groupe();
+			try {
+				Connection connection = DataSourceProvider.getDataSource()
+						.getConnection();
+
+				PreparedStatement stmt = connection.prepareStatement("SELECT groupe.id_Groupe, groupe.nom_Groupe, groupe.type_Groupe, eleve.id_Eleve FROM eleve INNER JOIN eleve_groupe ON eleve_groupe.Eleve_id_Eleve = eleve.id_Eleve INNER JOIN groupe ON groupe.id_Groupe = eleve_groupe.Groupe_id_Groupe WHERE id_Eleve =? AND groupe.type_Groupe='Classe'");
+				stmt.setInt(1,id);
+				ResultSet results = stmt.executeQuery();
 				
-				
-				public List<Groupe> listerGroupeTypeEleve(Integer id, String type_Groupe) {
-					List<Groupe> liste = new ArrayList<Groupe>();
+				if(results.next()) {
+					groupe = new Groupe(
+							results.getInt("id_Groupe"),
+							results.getString("nom_Groupe"),
+							results.getString("type_Groupe"));
+					
+				}
+
+				// Fermer la connexion
+				results.close();
+				stmt.close();
+				connection.close();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+			return groupe;
+		}
+		
+		//LISTER DOMAINE ELEVE
+				public Groupe listerDomaineEleve(Integer id) {
+					Groupe groupe = new Groupe();
 					try {
 						Connection connection = DataSourceProvider.getDataSource()
 								.getConnection();
 
-						PreparedStatement stmt = connection.prepareStatement("SELECT groupe.id_Groupe, groupe.nom_Groupe, groupe.type_Groupe, eleve.id_Eleve FROM eleve INNER JOIN eleve_groupe ON eleve_groupe.Eleve_id_Eleve = eleve.id_Eleve INNER JOIN groupe ON groupe.id_Groupe = eleve_groupe.Groupe_id_Groupe WHERE id_Eleve =? AND groupe.type_Groupe=?");
+						PreparedStatement stmt = connection.prepareStatement("SELECT groupe.id_Groupe, groupe.nom_Groupe, groupe.type_Groupe, eleve.id_Eleve FROM eleve INNER JOIN eleve_groupe ON eleve_groupe.Eleve_id_Eleve = eleve.id_Eleve INNER JOIN groupe ON groupe.id_Groupe = eleve_groupe.Groupe_id_Groupe WHERE id_Eleve =? AND groupe.type_Groupe='Domaine'");
 						stmt.setInt(1,id);
-						stmt.setString(2, type_Groupe);
 						ResultSet results = stmt.executeQuery();
 						
-						while (results.next()) {
-							Groupe domaine = new Groupe(
+						if(results.next()) {
+							groupe = new Groupe(
 									results.getInt("id_Groupe"),
 									results.getString("nom_Groupe"),
 									results.getString("type_Groupe"));
-							liste.add(domaine);
+							
 						}
 
 						// Fermer la connexion
@@ -272,9 +299,38 @@ public class GroupeDao {
 						e.printStackTrace();
 					}
 
-					return liste;
+					return groupe;
 				}
 				
-				
+				//LISTER PROMO ELEVE
+				public Groupe listerPromoEleve(Integer id) {
+					Groupe groupe = new Groupe();
+					try {
+						Connection connection = DataSourceProvider.getDataSource()
+								.getConnection();
+
+						PreparedStatement stmt = connection.prepareStatement("SELECT groupe.id_Groupe, groupe.nom_Groupe, groupe.type_Groupe, eleve.id_Eleve FROM eleve INNER JOIN eleve_groupe ON eleve_groupe.Eleve_id_Eleve = eleve.id_Eleve INNER JOIN groupe ON groupe.id_Groupe = eleve_groupe.Groupe_id_Groupe WHERE id_Eleve =? AND groupe.type_Groupe='Promo'");
+						stmt.setInt(1,id);
+						ResultSet results = stmt.executeQuery();
+						
+						if(results.next()) {
+							groupe = new Groupe(
+									results.getInt("id_Groupe"),
+									results.getString("nom_Groupe"),
+									results.getString("type_Groupe"));
+							
+						}
+
+						// Fermer la connexion
+						results.close();
+						stmt.close();
+						connection.close();
+
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+
+					return groupe;
+				}
 				
 }

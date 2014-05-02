@@ -29,12 +29,9 @@
 			</div>
 			<div class="boite_profil" id="groupe">
 				<h1 class="titre">Groupes</h1>
-				<div id="liste_groupe">
-					<h2>Classe : ${classeEleve.nom_Groupe}</h2>
-					<h2>Domaine : ${domaineEleve.nom_Groupe}</h2>
-					<h2>Promo : ${promoEleve.nom_Groupe}</h2>
-					<c:forEach var="groupeEleve" items="${groupesEleve}">
-							<h2 class="groupe_perso">${groupeEleve.nom_Groupe}</h2>
+				<div id="liste-=_groupe">
+					<c:forEach var="groupe" items="${groupes}">
+							<h2 class="groupe_perso">${groupe.nom_Groupe}</h2>
 					</c:forEach>
 				</div>
 			
