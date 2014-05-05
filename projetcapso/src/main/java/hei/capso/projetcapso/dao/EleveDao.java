@@ -26,4 +26,6 @@ public interface EleveDao {
 	public void rejoindreSeance (int idEleve, int idSeance);
 	
 	public Eleve chercherEleveMail(String mail_Eleve);
+	
+	public void ChangerMDP(Integer id_Eleve,  String password_Eleve) ;
 }

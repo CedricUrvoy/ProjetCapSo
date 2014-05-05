@@ -545,6 +545,19 @@ input.modif_group
 	display: none;
 }
 
+.changement_mdp
+{
+	position: absolute;
+	width : 300px;
+	left: 72%;
+	Top:107%;
+}
+
+.mdp
+{
+	width: 100%;
+}
+
 /**Style sideBar**/ 
 
 div.sidebar

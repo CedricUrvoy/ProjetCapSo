@@ -112,6 +112,26 @@ else if (bouton.name=="ANNULERREJOINDRE" )
      document.DFormRG.action="javascript:hideDiv()";
      document.DFormRG.submit();
 }
+
+//CHANGER DE MOT DE PASSE
+else if (bouton.name=="MDP" )
+{
+	 eteindre();
+     document.DFormRG.action="javascript:showDiv('changermdp')";
+     document.DFormRG.submit();
+}
+else if (bouton.name=="CHANGER" )
+{
+	 eteindre();
+     document.DFormCMDP.action="changermdp";
+     document.DFormCMDP.submit();
+}
+else if (bouton.name=="ANNULERCHNAGER" )
+{
+	 eteindre();
+     document.DFormCMDP.action="javascript:hideDiv()";
+     document.DFormCMDP.submit();
+}
 }
 
 

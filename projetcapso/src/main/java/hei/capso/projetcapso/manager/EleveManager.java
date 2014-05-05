@@ -58,5 +58,10 @@ public class  EleveManager {
 		return eleve;
 	}
 	
+	// Changer mot de passe
+		public void changerMDP(Integer id_Eleve, String password_Eleve) {
+			eleveDao.ChangerMDP(id_Eleve, password_Eleve);
+		}
+	
 	
 }

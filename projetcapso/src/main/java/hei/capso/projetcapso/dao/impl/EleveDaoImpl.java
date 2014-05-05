@@ -218,7 +218,31 @@ public class EleveDaoImpl implements EleveDao{
 					return elevecherche;
 				}
 
+		// CHANGER LE MOT DE PASSE
+				public void ChangerMDP(Integer id_Eleve,  String password_Eleve) {
+					
+					
+				try {
+					Connection connection = DataSourceProvider.getDataSource()
+							.getConnection();
 
+					// Utiliser la connexion
+					PreparedStatement stmt = connection
+							.prepareStatement("UPDATE eleve SET eleve.password_Eleve = ? WHERE eleve.id_Eleve = ?");
+					stmt.setString(1, password_Eleve);
+					stmt.setInt(2, id_Eleve );
+					
+
+					stmt.executeUpdate();
+
+					// Fermer la connexion
+					stmt.close();
+					connection.close();
+
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}	
 	
 
 }

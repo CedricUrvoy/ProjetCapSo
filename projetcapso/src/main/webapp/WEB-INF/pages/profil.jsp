@@ -51,6 +51,11 @@
 				</form>
 			
 			</div>
+				
+			<div class= "changement_mdp">
+			<input type="submit" value="Changer de mot de passe" class="turquoise-button modif_group mdp" name="MDP" onclick="doAct(this);">
+			
+			</div>
 		</div>
 		
 		<!--Pop UP ajout groupe-->
@@ -149,4 +154,23 @@
 					</div>
 				</div>
 			</div>
+			
+			<!--Pop UP Changer MDP-->
+			<div class="hideshow" id="changermdp" style="visibility: hidden;">
+			    <div id="fade"></div> 
+		    	<div class="popup_block">
+			    	<div id="titrePopup">Changer de mot de passe </div>
+					<div id="contentPopup">
+						<form id="ajout" name="DFormCMDP" method="POST">
+						    
+						    <label>Ancien mot de passe</label>
+						    <input name="ancienmdp" class="input" type="password"  id=ancienmdp>
+						    <label>Nouveau mot de passe</label>
+						    <input name="nouveaumdp" class="input" type="password"  id="nouveaumdp">
+						    <input type="Submit" class="turquoise-button" name="CHANGER" value="Valider" onclick="doAct(this);"> 
+						    <input type="Submit" class="turquoise-button" name="ANNULERCHNAGER" value="Annuler" onclick="doAct(this);">
+						</form>
+					</div>
+				</div>
+		</div>				        
 	</body>

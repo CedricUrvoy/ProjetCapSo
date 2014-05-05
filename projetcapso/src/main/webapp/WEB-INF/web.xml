@@ -64,6 +64,10 @@
 	<servlet-name>CreerSeance</servlet-name>
 	<servlet-class>hei.capso.projetcapso.controllers.CreerSeanceServlet</servlet-class>
 </servlet>
+<servlet>
+	<servlet-name>ChangerMDP</servlet-name>
+	<servlet-class>hei.capso.projetcapso.controllers.ChangerMDPServlet</servlet-class>
+</servlet>
   
   <servlet-mapping>
     <servlet-name>Calendrier</servlet-name>
@@ -138,6 +142,10 @@
   <servlet-mapping>
     <servlet-name>CreerSeance</servlet-name>
     <url-pattern>/creerSeance</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangerMDP</servlet-name>
+    <url-pattern>/changermdp</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>
