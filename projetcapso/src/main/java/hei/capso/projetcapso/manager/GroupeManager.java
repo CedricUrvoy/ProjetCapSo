@@ -79,4 +79,9 @@ public class  GroupeManager {
 		Groupe groupe = groupeDao.listerPromoEleve(id_Eleve);
 		return groupe;
 	}
+	
+	public List<Groupe> listertypeGroupeEleve(Integer id) {
+		List<Groupe> liste = groupeDao.listertypeGroupeEleve(id);
+		return liste;
+	}
 }

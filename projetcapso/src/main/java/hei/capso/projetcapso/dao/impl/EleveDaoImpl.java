@@ -141,7 +141,8 @@ public class EleveDaoImpl implements EleveDao{
 			return null;
 		}
 
-		//AJOUTER ELEVE
+		//REJOINDRE UN GROUPE
+		
 		public  void rejoindreGroupe(int idEleve, int idGroupe) {
 			try {
 				Connection connection = DataSourceProvider.getDataSource()

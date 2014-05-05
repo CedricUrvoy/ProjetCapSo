@@ -50,7 +50,24 @@ public class ProfilServlet extends HttpServlet{
 		// Liste classes dans formulaire
 				List<Groupe> promo = GroupeManager.getInstance().listerPromos();
 				req.setAttribute("promos", promo);
+				
+		// classe de l'eleve
+				Groupe classeEleve = GroupeManager.getInstance().chercherClasseEleve(id_Eleve);
+				req.setAttribute("classeEleve", classeEleve);
 
+		// domaine de l'eleve
+				Groupe domaineEleve = GroupeManager.getInstance().chercherDomaineEleve(id_Eleve);
+				req.setAttribute("domaineEleve", domaineEleve);
+				
+		// promo de l'eleve
+				Groupe promoEleve = GroupeManager.getInstance().chercherPromoEleve(id_Eleve);
+				req.setAttribute("promoEleve", promoEleve);
+				
+		//LISTER LES GROUPES de type groupe DE L'ELEVE
+				
+				List<Groupe> groupesEleve = GroupeManager.getInstance().listertypeGroupeEleve(id_Eleve);
+				req.setAttribute("groupesEleve", groupesEleve);
+				
 	//AFFICHE LA PAGE
 	RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/profil.jsp");
 	view.forward(req, resp);

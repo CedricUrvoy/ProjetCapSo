@@ -30,12 +30,15 @@ public class AjoutGroupeServlet extends HttpServlet{
 		req.setAttribute("eleve",eleve);
 		Integer id_Eleve = eleve.getId_Eleve();
 		
+	
 		GroupeManager.getInstance().ajouterGroupe(
 				new Groupe(null, 
 						req.getParameter("nom_Groupe"),
 						null));
-		Integer id_groupe = GroupeManager.getInstance().listerGroupes().size();
+		Groupe groupe = GroupeManager.getInstance().chercherGroupeNom(req.getParameter("nom_Groupe"));
+		Integer id_groupe = groupe.getId_Groupe();
 		EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_groupe);
+		
 		
 		response.sendRedirect("profil");
 	}
