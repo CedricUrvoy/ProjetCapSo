@@ -558,6 +558,12 @@ input.modif_group
 	width: 100%;
 }
 
+#liste_groupe
+{
+	overflow: auto;
+	height: 260px;
+}
+
 /**Style sideBar**/ 
 
 div.sidebar
