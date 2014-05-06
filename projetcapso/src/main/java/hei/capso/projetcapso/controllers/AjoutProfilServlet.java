@@ -55,12 +55,12 @@ public class AjoutProfilServlet extends HttpServlet{
 						request.getParameter("nom_Eleve"), 
 				    	request.getParameter("prenom_Eleve"), 
 						null,
-						request.getParameter("email_Eleve"),
+						request.getParameter("email_Eleve")+"@hei.fr",
 						request.getParameter("password_Eleve")
 						));
 	
-	Eleve eleve=EleveManager.getInstance().chercherEleveMail(request.getParameter("email_Eleve"));
-	System.out.print("marie 2 "+request.getParameter("email_Eleve"));
+	Eleve eleve=EleveManager.getInstance().chercherEleveMail(request.getParameter("email_Eleve")+"@hei.fr");
+	System.out.print("marie 2 "+request.getParameter("email_Eleve")+"@hei.fr");
 	Integer id_Eleve = eleve.getId_Eleve();
 	
 	Integer id_Classe = Integer.parseInt(request.getParameter("classe"));
