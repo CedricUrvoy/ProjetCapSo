@@ -87,20 +87,9 @@
 							  			</c:forEach>
 						  			</datalist>
 						  		<label>Date début : </label>	
-								<input class="input" type="text" id="datetimepickerdebut"/>
+								<input class="input horaire" type="text" id="datetimepickerdebut"/>
 								<label>Date de fin : </label>	
-								<input class="input" type="text" id="datetimepickerfin"/>
-								<!--  <label>Date : </label>
-						        <input class="input" id="date" type="date"  name="date" placeholder="" required>
-						        <span class="horaire">
-						        	<label>Date début : </label>
-						        	<input class="input" id="heure_debut" type="time" name="heure_debut" placeholder="" required>
-
-						        </span>
-						        <span class="horaire">
-						        	<label>Heure de fin : </label>
-						        	<input class="input" id="heure_fin" type="time" name="heure_fin" placeholder="" required>
-						        </span>-->
+								<input class="input horaire" type="text" id="datetimepickerfin"/>
 						        <label>Lieu</label>
 						        <input class="input" type="text" id="place" name="place">
 						        <label>Commentaires</label>

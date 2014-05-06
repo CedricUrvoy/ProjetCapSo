@@ -31,7 +31,7 @@ $(document).ready(function()
 	
 	$("ul#listeGroupes").on("click",".cal_group", function() {
 		
-		calendar.fullCalendar( 'removeEventSource','calendrierPerso');
+		calendar.fullCalendar( 'removeEventSource','affichageSeances');
 		idGroupe = this.id.substring(7);
 		
 		if(idGroupe!=0){
@@ -45,7 +45,7 @@ $(document).ready(function()
 		}
 
 		calendar.fullCalendar( 'addEventSource', {
-				url: 'calendrierPerso',
+				url: 'affichageSeances',
    				type:"GET",
    				data: {idGroupe:idGroupe},
    				success: function(data) {console.log(data);return data;}});
@@ -126,7 +126,7 @@ $(document).ready(function()
 		/**** Recupere les evenements du calendrier perso ****/
 		
 		events: {
-			url: 'calendrierPerso',
+			url: 'affichageSeances',
 	        type:"GET",
 	        data: {idGroupe:0},
 	        success: function(data) {console.log(data);return data;}

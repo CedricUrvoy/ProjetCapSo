@@ -5,8 +5,8 @@
     <servlet-class>hei.capso.projetcapso.controllers.CalendrierServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>CalendrierPerso</servlet-name>
-    <servlet-class>hei.capso.projetcapso.controllers.CalendrierPersoServlet</servlet-class>
+    <servlet-name>AffichageSeances</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.AffichageSeancesServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>Blog</servlet-name>
@@ -78,8 +78,8 @@
     <url-pattern>/calendrier</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>CalendrierPerso</servlet-name>
-    <url-pattern>/calendrierPerso</url-pattern>
+    <servlet-name>AffichageSeances</servlet-name>
+    <url-pattern>/affichageSeances</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>Blog</servlet-name>

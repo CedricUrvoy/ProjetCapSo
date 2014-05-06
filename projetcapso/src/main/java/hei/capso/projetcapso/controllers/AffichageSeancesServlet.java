@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-public class CalendrierPersoServlet extends HttpServlet{
+public class AffichageSeancesServlet extends HttpServlet{
 
 	/**
 	 * 
