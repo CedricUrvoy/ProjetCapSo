@@ -141,7 +141,7 @@ $(document).ready(function()
 	    	$("#info_dateStart").html(event.start.format("dddd Do MMMM "));
 	    	$("#start").html(event.start.format(" HH:mm"));
 	    	$("#end").html(event.end.format(" HH:mm"));
-	    	$("#place").html(event.place);
+	    	$("#infosplace").html(event.place);
 	    	$("#infos").html(event.infos);
 	    	showDiv('detailSeance');
 	    	

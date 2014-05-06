@@ -87,9 +87,9 @@
 							  			</c:forEach>
 						  			</datalist>
 						  		<label>Date début : </label>	
-								<input class="input horaire" type="text" id="datetimepickerdebut"/>
+								<input class="input horaire" type="text" id="datetimepickerdebut" name="datetimepickerdebut"/>
 								<label>Date de fin : </label>	
-								<input class="input horaire" type="text" id="datetimepickerfin"/>
+								<input class="input horaire" type="text" id="datetimepickerfin" name="datetimepickerfin"/>
 						        <label>Lieu</label>
 						        <input class="input" type="text" id="place" name="place">
 						        <label>Commentaires</label>
@@ -112,11 +112,9 @@
 			<div class="hideshow" id="detailSeance" style="visibility: hidden;">
 			    <div id="fade"></div> 
 		    	<div class="popup_block seance">
-			    	<div id="titrePopup">Nouvelle séance</div>
+			    	<div id="titrePopup"><p id="info_matiere"></p></div>
 					<div id="contentPopup">
 						<form id="ajout" name="DForm2" method="POST">
-						    	<label >Matière :</label>
-						    	<p class="info_seance" id="info_matiere"></p>
 								<label >Date :</label>
 								<p class="info_seance" id="info_dateStart"></p>
 						        <label>Heure de début : </label>
@@ -124,7 +122,7 @@
 						        <label>Heure de fin : </label>
 						        <p class="info_seance" id="end"></p>
 						        	<label>Lieu : </label>
-						        <p class="info_seance" id="place"></p>
+						        <p class="info_seance" id="infosplace"></p>
 						        <label>Informations de la séance :</label>
 						        <p class="info_seance" id="infos"></p>		    
 						    <fieldset class="boutons">

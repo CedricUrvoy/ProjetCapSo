@@ -5,10 +5,10 @@ import hei.capso.projetcapso.dao.SeanceDao;
 import hei.capso.projetcapso.model.Seance;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -148,8 +148,8 @@ public class SeanceDaoImpl implements SeanceDao{
 			
 			PreparedStatement stmt = connection.prepareStatement(""
 					+ "INSERT INTO Seance(date_Debut_Seance,date_Fin_Seance,lieu_Seance,info_Seance,Groupe_id_Groupe,Matiere_id_Matiere) VALUES (?,?,?,?,?,?)");
-			stmt.setDate(1, new Date (seance.getStart().getTime()));
-			stmt.setDate(2, new Date (seance.getEnd().getTime()));
+			stmt.setTimestamp(1, new Timestamp (seance.getStart().getTime()));
+			stmt.setTimestamp(2, new Timestamp (seance.getEnd().getTime()));
 			stmt.setString(3,seance.getPlace());
 			stmt.setString(4, seance.getInfos());
 			stmt.setInt(5, seance.getIdGroupe());

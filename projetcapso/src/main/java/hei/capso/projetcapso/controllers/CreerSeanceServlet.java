@@ -13,6 +13,12 @@ import hei.capso.projetcapso.model.Seance;
 
 import java.io.IOException;
 
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -34,8 +40,24 @@ public class CreerSeanceServlet extends HttpServlet{
 		Groupe groupe = GroupeManager.getInstance().chercherGroupeNom(req.getParameter("groupe"));
 		Matiere matiere = MatiereManager.getInstance().chercherMatiereNom(req.getParameter("matiere"));
 		
+		DateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+		Date dateDebut = null;
+		try {
+			dateDebut = format.parse(req.getParameter("datetimepickerdebut"));
+			System.out.print(dateDebut);
+		} catch (ParseException e) {
+			System.err.println("Problème au parsing de la date.");
+		}
+		Date dateFin = null;
+		try {
+			dateFin = format.parse(req.getParameter("datetimepickerfin"));
+		} catch (ParseException e) {
+			System.err.println("Problème au parsing de la date.");
+		}
+		
+		
 		SeanceManager.getInstance().addSeance(
-				new Seance(null, matiere.getNom_Matiere(), null, null, req.getParameter("place"), req.getParameter("infosSeance"), groupe.getId_Groupe(), matiere.getId_Matiere()));
+				new Seance(null, matiere.getNom_Matiere(),dateDebut,dateFin, req.getParameter("place"), req.getParameter("infosSeance"), groupe.getId_Groupe(), matiere.getId_Matiere()));
 				
 		HttpSession session = req.getSession();
 		Eleve eleve = (Eleve) session.getAttribute("sessionEleve");
