@@ -13,7 +13,6 @@
 		<!-- Fichiers styles -->
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.css"/>
 
 		<!--FullCalendar Dependencies-->
 		<link href='fullcalendar/fullcalendar.css' rel='stylesheet' />
@@ -131,7 +130,7 @@
 						        <label>Informations de la séance :</label>
 						        <p class="info_seance" id="infos"></p>		    
 						    <fieldset class="boutons">
-						        <input type="Submit" class="turquoise-button" name="REJOINDRE" value="Rejoindre" onclick="doAct(this);"> 
+						        <input type="Submit" class="turquoise-button" id="rejoindre" name="QUITTERSEANCE" value="Quitter" onclick="doAct(this);"> 
 						        <input type="Submit" class="turquoise-button" name="ANNULER2" value="Annuler" onclick="doAct(this);">
 						    </fieldset>
 						</form>

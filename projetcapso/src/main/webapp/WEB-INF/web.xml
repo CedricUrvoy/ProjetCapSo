@@ -61,6 +61,10 @@
 	<servlet-class>hei.capso.projetcapso.controllers.RejoindreSeanceServlet</servlet-class>
 </servlet>
 <servlet>
+	<servlet-name>QuitterSeance</servlet-name>
+	<servlet-class>hei.capso.projetcapso.controllers.QuitterSeanceServlet</servlet-class>
+</servlet>
+<servlet>
 	<servlet-name>CreerSeance</servlet-name>
 	<servlet-class>hei.capso.projetcapso.controllers.CreerSeanceServlet</servlet-class>
 </servlet>
@@ -138,6 +142,10 @@
   <servlet-mapping>
     <servlet-name>RejoindreSeance</servlet-name>
     <url-pattern>/rejoindreseance</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>QuitterSeance</servlet-name>
+    <url-pattern>/quitterseance</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>CreerSeance</servlet-name>

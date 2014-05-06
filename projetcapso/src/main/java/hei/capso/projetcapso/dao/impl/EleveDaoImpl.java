@@ -165,7 +165,7 @@ public class EleveDaoImpl implements EleveDao{
 		}
 
 
-
+		//REJOINDRE UNE SEANCE
 
 		public void rejoindreSeance(int idEleve, int idSeance) {
 			try {
@@ -187,6 +187,30 @@ public class EleveDaoImpl implements EleveDao{
 					e.printStackTrace();
 				}
 			}
+		
+		
+		//QUITTER UNE SEANCE
+		
+		public void quitterSeance(int idEleve, int idSeance) {
+			try {
+				Connection connection = DataSourceProvider.getDataSource()
+						.getConnection();
+		
+				// Utiliser la connexion
+				PreparedStatement stmt = connection
+						.prepareStatement("DELETE FROM seance_eleve WHERE Eleve_id_Eleve= ? AND Seance_id_Seance=? ");
+				stmt.setInt(1, idEleve);
+				stmt.setInt(2, idSeance);
+				stmt.executeUpdate();
+		
+				// Fermer la connexion
+				stmt.close();
+				connection.close();
+		
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 
 		//CHERCHER UN ELEVE AVEC MAIL
 				public Eleve chercherEleveMail(String mail_Eleve) {

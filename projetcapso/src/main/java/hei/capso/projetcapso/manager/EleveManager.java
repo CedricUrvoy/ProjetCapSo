@@ -52,6 +52,11 @@ public class  EleveManager {
 		eleveDao.rejoindreSeance(idEleve, idSeance);
 	}	
 	
+	// QUITTER UNE SEANCE
+		public void quitterSeance(int idEleve, int idSeance) {
+			eleveDao.quitterSeance(idEleve, idSeance);
+		}	
+	
 	//RECHERCHER UN ELEVE AVEC L'EMAIL
 	public Eleve chercherEleveMail(String mail_Eleve) {
 		Eleve eleve = eleveDao.chercherEleveMail(mail_Eleve);

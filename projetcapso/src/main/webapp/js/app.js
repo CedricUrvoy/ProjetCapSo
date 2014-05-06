@@ -55,13 +55,21 @@ else if (bouton.name=="ANNULER2" )
      document.DForm2.action="javascript:hideDiv()";
      document.DForm2.submit();
 }
-else if (bouton.name=="REJOINDRE" )
+else if (bouton.name=="REJOINDRESEANCE" )
 {
 	var id = $('div.seance').attr('id');
 	console.log(id);
 	document.DForm2.action="rejoindreseance?idSeance="+id;
      document.DForm2.submit();
 }
+else if (bouton.name=="QUITTERSEANCE" )
+{
+	var id = $('div.seance').attr('id');
+	console.log(id);
+	document.DForm2.action="quitterseance?idSeance="+id;
+    document.DForm2.submit();
+}
+
 
 	//AFFICHAGE POP UP CREER SEANCE
 else if (bouton.name=="CREER" )

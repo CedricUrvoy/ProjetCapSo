@@ -36,8 +36,12 @@ $(document).ready(function()
 		
 		if(idGroupe!=0){
 			nomGroupe = this.innerHTML;
+			$("#rejoindre").val("Rejoindre");
+			$("#rejoindre").attr('name', "REJOINDRESEANCE");
 		}else{
 			nomGroupe='Personnel';
+			$("#rejoindre").val("Quitter");
+			$("#rejoindre").attr('name', "QUITTERSEANCE");
 		}
 
 		calendar.fullCalendar( 'addEventSource', {
