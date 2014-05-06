@@ -17,6 +17,9 @@
 		<!--FullCalendar Dependencies-->
 		<link href='fullcalendar/fullcalendar.css' rel='stylesheet' />
 		<link href='fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+		
+		<!-- DatePicker Dependencies -->
+		<link rel="stylesheet" type="text/css" href="datetimepicker/jquery.datetimepicker.css"/>
 	
 		<!--jQuery-->
 		<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
@@ -28,11 +31,15 @@
 		<script src='fullcalendar/fullcalendar.js'></script>
 		<script src='fullcalendar/lang/fr.js'></script>
 		
+		<!--  DateTimePicker -->
+		<script type="text/javascript" src="datetimepicker/jquery.datetimepicker.js"></script>
+		
 		<!-- Scripts JS -->
 		<script src="js/calendar.js"></script>		
 		<script src="js/app.js"></script>
+		
 	
- 
+ 		
 
 		
 	</head>
@@ -80,7 +87,9 @@
 							  			</c:forEach>
 						  			</datalist>
 						  		<label>Date début : </label>	
-
+								<input class="input" type="text" id="datetimepickerdebut"/>
+								<label>Date de fin : </label>	
+								<input class="input" type="text" id="datetimepickerfin"/>
 								<!--  <label>Date : </label>
 						        <input class="input" id="date" type="date"  name="date" placeholder="" required>
 						        <span class="horaire">
@@ -145,3 +154,14 @@
 		
      
 	</body>
+	
+<script>
+	$('#datetimepickerdebut').datetimepicker({
+		step:15,
+		mask:'9999/19/39 29:59'
+	});
+	$('#datetimepickerfin').datetimepicker({
+		step:15,
+		mask:'9999/19/39 29:59'
+	});
+</script>
