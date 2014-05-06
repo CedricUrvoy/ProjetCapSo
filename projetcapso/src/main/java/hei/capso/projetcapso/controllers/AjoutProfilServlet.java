@@ -27,15 +27,15 @@ public class AjoutProfilServlet extends HttpServlet{
 			throws ServletException, IOException {
 		
 		// Liste classes dans formulaire
-				List<Groupe> groupes = GroupeManager.getInstance().listerClasses();
+				List<Groupe> groupes = GroupeManager.getInstance().listerGroupeType("Classe");
 				req.setAttribute("groupes", groupes);
 				
 		// Liste domaines dans formulaire
-				List<Groupe> domaines = GroupeManager.getInstance().listerDomaines();
+				List<Groupe> domaines = GroupeManager.getInstance().listerGroupeType("Domaine");
 				req.setAttribute("domaines", domaines);
 				
 		// Liste promos dans formulaire
-				List<Groupe> promos = GroupeManager.getInstance().listerPromos();
+				List<Groupe> promos = GroupeManager.getInstance().listerGroupeType("Promo");
 				req.setAttribute("promos", promos);
 				
 		//AFFICHER LA PAGE

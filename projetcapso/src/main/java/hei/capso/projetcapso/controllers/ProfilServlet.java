@@ -40,27 +40,27 @@ public class ProfilServlet extends HttpServlet{
 			
 				
 		// Liste classes dans formulaire
-				List<Groupe> classe = GroupeManager.getInstance().listerClasses();
+				List<Groupe> classe = GroupeManager.getInstance().listerGroupeType("Classe");
 				req.setAttribute("classes", classe);
 				
 		// Liste domaines dans formulaire
-				List<Groupe> domaines = GroupeManager.getInstance().listerDomaines();
+				List<Groupe> domaines = GroupeManager.getInstance().listerGroupeType("Domaine");
 				req.setAttribute("domaines", domaines);
 				
 		// Liste classes dans formulaire
-				List<Groupe> promo = GroupeManager.getInstance().listerPromos();
+				List<Groupe> promo = GroupeManager.getInstance().listerGroupeType("Promo");
 				req.setAttribute("promos", promo);
 				
 		// classe de l'eleve
-				Groupe classeEleve = GroupeManager.getInstance().chercherClasseEleve(id_Eleve);
+				Groupe classeEleve = GroupeManager.getInstance().chercherTypeEleve(id_Eleve, "Classe");
 				req.setAttribute("classeEleve", classeEleve);
 
 		// domaine de l'eleve
-				Groupe domaineEleve = GroupeManager.getInstance().chercherDomaineEleve(id_Eleve);
+				Groupe domaineEleve = GroupeManager.getInstance().chercherTypeEleve(id_Eleve, "Domaine");
 				req.setAttribute("domaineEleve", domaineEleve);
 				
 		// promo de l'eleve
-				Groupe promoEleve = GroupeManager.getInstance().chercherPromoEleve(id_Eleve);
+				Groupe promoEleve = GroupeManager.getInstance().chercherTypeEleve(id_Eleve, "Promo");
 				req.setAttribute("promoEleve", promoEleve);
 				
 		//LISTER LES GROUPES de type groupe DE L'ELEVE

@@ -28,25 +28,16 @@ public class  GroupeManager {
 	}
 
 
-	public List<Groupe> listerClasses() {
-		List<Groupe> liste = groupeDao.listerClasses();
+	public List<Groupe> listerGroupeType(String type) {
+		List<Groupe> liste = groupeDao.listerGroupeType(type);
 		return liste;
 	}
 	
-	public List<Groupe> listerDomaines() {
-		List<Groupe> liste = groupeDao.listerDomaines();
-		return liste;
-	}
 	public List<Groupe> listerGroupes() {
 		List<Groupe> liste = groupeDao.listerGroupe();
 		return liste;
 	}
 	
-	public List<Groupe> listerPromos() {
-		List<Groupe> liste = groupeDao.listerPromo();
-		return liste;
-	}
-
 	public List<Groupe> listerGroupeEleve(Integer id) {
 		List<Groupe> liste = groupeDao.listerGroupeEleve(id);
 		return liste;
@@ -65,18 +56,9 @@ public class  GroupeManager {
 		return groupe;
 	}
 	
-	public Groupe chercherClasseEleve(Integer id_Eleve) {
-		Groupe groupe = groupeDao.listerClasseEleve(id_Eleve);
-		return groupe;
-	}
 	
-	public Groupe chercherDomaineEleve(Integer id_Eleve) {
-		Groupe groupe = groupeDao.listerDomaineEleve(id_Eleve);
-		return groupe;
-	}
-	
-	public Groupe chercherPromoEleve(Integer id_Eleve) {
-		Groupe groupe = groupeDao.listerPromoEleve(id_Eleve);
+	public Groupe chercherTypeEleve(Integer id_Eleve, String type) {
+		Groupe groupe = groupeDao.listerTypeEleve(id_Eleve, type);
 		return groupe;
 	}
 	

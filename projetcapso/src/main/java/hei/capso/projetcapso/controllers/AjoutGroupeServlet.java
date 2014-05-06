@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.junit.runner.Request;
+
 public class AjoutGroupeServlet extends HttpServlet{
 
 	
@@ -29,8 +31,14 @@ public class AjoutGroupeServlet extends HttpServlet{
 		Eleve eleve = (Eleve) session.getAttribute("sessionEleve");
 		req.setAttribute("eleve",eleve);
 		Integer id_Eleve = eleve.getId_Eleve();
-		
-	
+		System.out.print(GroupeManager.getInstance().chercherGroupeNom(req.getParameter("nom_Groupe"))!=null);
+		if (GroupeManager.getInstance().chercherGroupeNom(req.getParameter("nom_Groupe"))!=null)
+		{
+			String erreurGroupeCree = "Ce groupe existe déjà";
+			req.setAttribute("erreur", erreurGroupeCree);
+		}
+		else
+		{	
 		GroupeManager.getInstance().ajouterGroupe(
 				new Groupe(null, 
 						req.getParameter("nom_Groupe"),
@@ -38,7 +46,7 @@ public class AjoutGroupeServlet extends HttpServlet{
 		Groupe groupe = GroupeManager.getInstance().chercherGroupeNom(req.getParameter("nom_Groupe"));
 		Integer id_groupe = groupe.getId_Groupe();
 		EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_groupe);
-		
+		}
 		
 		response.sendRedirect("profil");
 	}

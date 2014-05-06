@@ -2,6 +2,9 @@
 <c:set var="pageSelectionnee" value="calendrier" scope="request"></c:set>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<script type="text/javascript">
+	
+	</script>
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -112,7 +115,7 @@
 						<form id="ajout" name="DFormRG" method="POST">
 						    <fieldset id="inputs_ajout">
 						    <label>Groupe à rejoindre</label>
-						    <input type=radio name="groupearejoindre" value="Classe" onclick="eteindre(); afficher('openclasse')">Classe
+						    <input type=radio name="groupearejoindre" value="Classe" onclick="eteindre(); afficher('openclasse')"; myFunction();>Classe
 						    <input type=radio name="groupearejoindre" value="Domaine" onclick="eteindre(); afficher('opendomaine')">Domaine
 						    <input type=radio name="groupearejoindre" value="Promo" onclick="eteindre(); afficher('openpromo')">Promo
 						    <input type=radio name="groupearejoindre" value="Autre" onclick="eteindre(); afficher('openautre')">Autre
@@ -174,3 +177,13 @@
 				</div>
 		</div>				        
 	</body>
+	
+	<script type="text/javascript">
+	function myFunction()
+	{
+	if(erreur!=null)
+		{
+		window.alert("Ce groupe est deja créé");
+		}
+	}
+	</script>
