@@ -143,7 +143,7 @@ else if (bouton.name=="ANNULERCHNAGER" )
 }
 
 
-//FORMULAIRE REJOINDRE SEANCE
+//FORMULAIRE REJOINDRE GROUPE
 
 function afficher(input)
 {
@@ -157,5 +157,11 @@ function eteindre()
     document.getElementById('openautre').style.display = "none";
 }
 
-
+function erreurGroupe(erreur)
+{
+if(erreur==true)
+	{
+	window.alert("Ce groupe est deja créé");
+	}
+}
 

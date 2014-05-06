@@ -34,8 +34,9 @@ public class AjoutGroupeServlet extends HttpServlet{
 		System.out.print(GroupeManager.getInstance().chercherGroupeNom(req.getParameter("nom_Groupe"))!=null);
 		if (GroupeManager.getInstance().chercherGroupeNom(req.getParameter("nom_Groupe"))!=null)
 		{
-			String erreurGroupeCree = "Ce groupe existe déjà";
+			String erreurGroupeCree = "true";
 			req.setAttribute("erreur", erreurGroupeCree);
+			System.out.print("cacac   "+req.getAttribute("erreur"));
 		}
 		else
 		{	

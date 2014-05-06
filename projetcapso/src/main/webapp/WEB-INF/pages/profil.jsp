@@ -2,9 +2,7 @@
 <c:set var="pageSelectionnee" value="calendrier" scope="request"></c:set>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<script type="text/javascript">
-	
-	</script>
+<% Boolean erreur = (Boolean) request.getAttribute("erreur") ;%>
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -29,6 +27,7 @@
 			<div id=identite>
 				<H2 class ="info_profil">${eleve.prenom_Eleve}</H2>
 				<H2 class ="info_profil">${eleve.nom_Eleve}</H2>
+				<H2 class ="info_profil">${erreur}</H2>
 			</div>
 			<div class="boite_profil" id="groupe">
 				<h1 class="titre">Groupes</h1>
@@ -73,7 +72,7 @@
 						         <input name="nom_Groupe" class="input" type="text"  >
 						     </fieldset>
 						    <fieldset id="boutons">
-						        <input type="Submit" class="turquoise-button" name="VALIDERAJOUTGROUPE" value="Valider" onclick="doAct(this);"> 
+						        <input type="Submit" class="turquoise-button" name="VALIDERAJOUTGROUPE" value="Valider" onclick="doAct(this); erreurGroupe('<%=erreur%>');"> 
 						        <input type="Submit" class="turquoise-button" name="ANNULERAJOUT" value="Annuler" onclick="doAct(this);">
 						    </fieldset>
 						</form>	
@@ -115,7 +114,7 @@
 						<form id="ajout" name="DFormRG" method="POST">
 						    <fieldset id="inputs_ajout">
 						    <label>Groupe à rejoindre</label>
-						    <input type=radio name="groupearejoindre" value="Classe" onclick="eteindre(); afficher('openclasse')"; myFunction();>Classe
+						    <input type=radio name="groupearejoindre" value="Classe" onclick="eteindre(); afficher('openclasse')">Classe
 						    <input type=radio name="groupearejoindre" value="Domaine" onclick="eteindre(); afficher('opendomaine')">Domaine
 						    <input type=radio name="groupearejoindre" value="Promo" onclick="eteindre(); afficher('openpromo')">Promo
 						    <input type=radio name="groupearejoindre" value="Autre" onclick="eteindre(); afficher('openautre')">Autre
@@ -150,7 +149,7 @@
 
 						     </fieldset>    
 						    <fieldset id="boutons">
-						        <input type="Submit" class="turquoise-button" name="REJOINDREOK" value="Rejoindre" onclick="doAct(this);"> 
+						        <input type="Submit" class="turquoise-button" name="REJOINDREOK" value="Rejoindre" onclick="doAct(this); erreurGroupe();"> 
 						        <input type="Submit" class="turquoise-button" name="ANNULERREJOINDRE" value="Annuler" onclick="doAct(this);">
 						    </fieldset>
 						</form>	
@@ -178,12 +177,11 @@
 		</div>				        
 	</body>
 	
+	
 	<script type="text/javascript">
-	function myFunction()
-	{
-	if(erreur!=null)
+	
+	if(erreurgroupe!=null)
 		{
 		window.alert("Ce groupe est deja créé");
 		}
-	}
 	</script>
