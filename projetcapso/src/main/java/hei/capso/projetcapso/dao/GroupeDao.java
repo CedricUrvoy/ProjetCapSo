@@ -22,7 +22,7 @@ public class GroupeDao {
 			Connection connection = DataSourceProvider.getDataSource()
 					.getConnection();
 			
-			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM groupe WHERE type_Groupe = ?");
+			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM groupe WHERE type_Groupe = ? ORDER BY nom_Groupe");
 			stmt.setString(1,type);
 			ResultSet results = stmt.executeQuery();
 			
