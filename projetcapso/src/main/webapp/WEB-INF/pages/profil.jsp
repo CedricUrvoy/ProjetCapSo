@@ -91,8 +91,8 @@
 						    <label>Groupe à quitter</label>
 						        <input class="input" type=text list=groupeQuitter name="quitterGroupe" >
 									<datalist id=groupeQuitter >
-									   <c:forEach var="groupe" items="${groupes}">
-											<option> ${groupe.nom_Groupe}
+									   <c:forEach var="groupesEleve" items="${groupesEleve}">
+											<option> ${groupesEleve.nom_Groupe}
 										</c:forEach>
 									</datalist>
 						         
