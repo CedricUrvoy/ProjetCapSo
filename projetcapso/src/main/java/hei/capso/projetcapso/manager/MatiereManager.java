@@ -2,6 +2,7 @@ package hei.capso.projetcapso.manager ;
 
 
 import hei.capso.projetcapso.dao.MatiereDao;
+import hei.capso.projetcapso.model.Groupe;
 import hei.capso.projetcapso.model.Matiere;
 
 import java.util.List;
@@ -36,5 +37,13 @@ public class  MatiereManager {
 	public Matiere chercherMatiereNom(String nom_Matiere) {
 		Matiere matiere = matiereDao.chercherMatiereNom(nom_Matiere);
 		return matiere;
+	}
+	
+	public void ajouterMatiere(Matiere matiere) {
+		matiereDao.ajouterMatiere(matiere);
+	}
+	
+	public void matiereGroupe(Integer id_Matiere,Integer id_Groupe) {
+		matiereDao.matiereGroupe(id_Matiere, id_Groupe);
 	}
 }

@@ -124,21 +124,39 @@ else if (bouton.name=="ANNULERREJOINDRE" )
 //CHANGER DE MOT DE PASSE
 else if (bouton.name=="MDP" )
 {
-	 eteindre();
+	
      document.DFormRG.action="javascript:showDiv('changermdp')";
      document.DFormRG.submit();
 }
 else if (bouton.name=="CHANGER" )
 {
-	 eteindre();
+	 
      document.DFormCMDP.action="changermdp";
      document.DFormCMDP.submit();
 }
-else if (bouton.name=="ANNULERCHNAGER" )
+else if (bouton.name=="ANNULERCHANGER" )
 {
-	 eteindre();
+	
      document.DFormCMDP.action="javascript:hideDiv()";
      document.DFormCMDP.submit();
+}
+//AJOUTER UNE MATIERE
+else if (bouton.name=="AJOUTMATIERE" )
+{
+	
+    document.DFormRG.action="javascript:showDiv('ajoutmatiere')";
+    document.DFormRG.submit();
+}
+else if (bouton.name=="AJOUTER" )
+{
+     document.DFormAM.action="ajoutmatiere";
+     document.DFormAM.submit();
+}
+else if (bouton.name=="ANNULERAJOUT" )
+{
+	 
+     document.DFormAM.action="javascript:hideDiv()";
+     document.DFormAM.submit();
 }
 }
 

@@ -2,6 +2,7 @@ package hei.capso.projetcapso.dao ;
 
 
 
+import hei.capso.projetcapso.model.Groupe;
 import hei.capso.projetcapso.model.Matiere;
 
 import java.sql.Connection;
@@ -72,5 +73,47 @@ public class MatiereDao {
 		}
 
 		return matiere;
+	}
+	//AJOUTER UNE MATIERE
+	public void ajouterMatiere(Matiere matiere) {
+		try {
+			Connection connection = DataSourceProvider.getDataSource()
+					.getConnection();
+
+			// Utiliser la connexion
+			PreparedStatement stmt = connection
+					.prepareStatement("INSERT INTO `matiere`(`nom_Matiere`) VALUES(?)");
+			stmt.setString(1, matiere.getNom_Matiere());
+			stmt.executeUpdate();
+
+			// Fermer la connexion
+			stmt.close();
+			connection.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	// LIER MATIERE ET GROUPE
+	public  void matiereGroupe(int id_Matiere, int id_Groupe) {
+		try {
+			Connection connection = DataSourceProvider.getDataSource()
+					.getConnection();
+
+			// Utiliser la connexion
+			PreparedStatement stmt = connection
+					.prepareStatement("INSERT INTO `groupe_matiere`(`Groupe_id_Groupe`,`Matiere_id_Matiere`) VALUES(?, ?)");
+			stmt.setInt(1, id_Groupe);
+			stmt.setInt(2, id_Matiere);
+			stmt.executeUpdate();
+
+			// Fermer la connexion
+			stmt.close();
+			connection.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

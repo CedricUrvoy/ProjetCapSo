@@ -39,7 +39,6 @@ public class RejoindreGroupeServlet extends HttpServlet {
 			if(GroupeManager.getInstance().chercherTypeEleve(id_Eleve, "Classe").getNom_Groupe()==null)
 			{
 				id_Groupe = Integer.parseInt(req.getParameter("classe"));
-				System.out.print(id_Groupe);
 				EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_Groupe);
 			}
 			else
@@ -47,7 +46,6 @@ public class RejoindreGroupeServlet extends HttpServlet {
 				Integer id_Classe = GroupeManager.getInstance().chercherTypeEleve(id_Eleve, "Classe").getId_Groupe();
 				id_Groupe = Integer.parseInt(req.getParameter("classe"));
 				GroupeManager.getInstance().quitterGroupe(id_Eleve, id_Classe);
-				System.out.print(id_Groupe);
 				EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_Groupe);
 				}
 		}
@@ -64,7 +62,6 @@ public class RejoindreGroupeServlet extends HttpServlet {
 				Integer id_Domaine = GroupeManager.getInstance().chercherTypeEleve(id_Eleve, "Domaine").getId_Groupe();
 				id_Groupe = Integer.parseInt(req.getParameter("domaine"));
 				GroupeManager.getInstance().quitterGroupe(id_Eleve, id_Domaine);
-				System.out.print(id_Groupe);
 				EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_Groupe);
 			}
 		}
@@ -80,7 +77,6 @@ public class RejoindreGroupeServlet extends HttpServlet {
 				Integer id_Promo = GroupeManager.getInstance().chercherTypeEleve(id_Eleve, "Promo").getId_Groupe();
 				id_Groupe = Integer.parseInt(req.getParameter("promo"));
 				GroupeManager.getInstance().quitterGroupe(id_Eleve, id_Promo);
-				System.out.print(id_Groupe);
 				EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_Groupe);
 			}
 		}

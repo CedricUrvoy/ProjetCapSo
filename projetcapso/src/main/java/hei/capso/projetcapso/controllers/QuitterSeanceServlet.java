@@ -18,8 +18,6 @@ import javax.servlet.http.HttpSession;
 
 public class QuitterSeanceServlet extends HttpServlet{
 
-
-
 	/**
 	 * 
 	 */

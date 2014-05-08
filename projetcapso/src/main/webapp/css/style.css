@@ -552,7 +552,13 @@ input.modif_group
 	left: 71%;
 	Top:600px;
 }
-
+.ajout_matiere
+{
+	position: absolute;
+	width : 300px;
+	left: 71%;
+	Top:550px;
+}
 .mdp
 {
 	width: 100%;

@@ -58,6 +58,9 @@
 			<input type="submit" value="Changer de mot de passe" class="turquoise-button modif_group mdp" name="MDP" onclick="doAct(this);">
 			
 			</div>
+			<div class= "ajout_matiere">
+			<input type="submit" value="Ajouter une matière" class="turquoise-button modif_group mdp" name="AJOUTMATIERE" onclick="doAct(this);">
+			</div>
 		</div>
 		
 		<!--Pop UP ajout groupe-->
@@ -170,11 +173,37 @@
 						    <label>Nouveau mot de passe</label>
 						    <input name="nouveaumdp" class="input" type="password"  id="nouveaumdp">
 						    <input type="Submit" class="turquoise-button" name="CHANGER" value="Valider" onclick="doAct(this);"> 
-						    <input type="Submit" class="turquoise-button" name="ANNULERCHNAGER" value="Annuler" onclick="doAct(this);">
+						    <input type="Submit" class="turquoise-button" name="ANNULERCHANGER" value="Annuler" onclick="doAct(this);">
 						</form>
 					</div>
 				</div>
-		</div>				        
+		</div>		
+		
+		<!--Pop UP Ajouter Matiere-->
+			<div class="hideshow" id="ajoutmatiere" style="visibility: hidden;">
+			    <div id="fade"></div> 
+		    	<div class="popup_block">
+			    	<div id="titrePopup">Ajouter une matière</div>
+					<div id="contentPopup">
+						<form id="ajout" name="DFormAM" method="POST">
+						    
+						    <label>Nom de la matière</label>
+						    <input name="nom_matiere" class="input" type="text"  id=nom_matiere>
+						    <label>Groupe de la matière</label>
+						    <select class="input"  name="groupeMatiere" id="groupeMatiere" >
+									   <c:forEach var="promo" items="${promos}">
+  				 							<option value="${promo.id_Groupe}"> ${promo.nom_Groupe}</option>
+  										</c:forEach>
+									   <c:forEach var="domaine" items="${domaines}">
+  				 							<option value="${domaine.id_Groupe}"> ${domaine.nom_Groupe}</option>
+  										</c:forEach>
+							</select>
+						    <input type="Submit" class="turquoise-button" name="AJOUTER" value="Ajouter" onclick="doAct(this);"> 
+						    <input type="Submit" class="turquoise-button" name="ANNULERAJOUT" value="Annuler" onclick="doAct(this);">
+						</form>
+					</div>
+				</div>
+		</div>			        
 	</body>
 	
 	
