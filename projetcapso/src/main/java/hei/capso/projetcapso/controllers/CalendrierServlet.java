@@ -43,7 +43,12 @@ public class CalendrierServlet extends HttpServlet{
 	req.setAttribute("groupes", groupes);
 		
 	//LISTER LES MATIERES
-	List<Matiere> matieres = MatiereManager.getInstance().listerMatiere();
+	String domaine = GroupeManager.getInstance().chercherTypeEleve(id_Eleve, "Domaine").getNom_Groupe();
+	System.out.print("lala "+domaine);
+	String promo = GroupeManager.getInstance().chercherTypeEleve(id_Eleve, "Promo").getNom_Groupe();	
+	System.out.print("lala "+promo);
+	List<Matiere> matieres = MatiereManager.getInstance().listerMatiere(promo,domaine);
+	System.out.print("matiere "+matieres);
 	req.setAttribute("matieres", matieres);
 		
 	RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/calendrier.jsp");

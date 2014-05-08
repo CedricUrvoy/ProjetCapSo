@@ -15,15 +15,17 @@ import java.util.List;
 public class MatiereDao {
 
 	
-	public List<Matiere> listerMatiere() {
+	public List<Matiere> listerMatiere(String nom_Promo,String nom_Domaine) {
 		List<Matiere> liste = new ArrayList<Matiere>();
 		try {
 			Connection connection = DataSourceProvider.getDataSource()
 					.getConnection();
 
-			Statement stmt = connection.createStatement();
-			ResultSet results = stmt.executeQuery("SELECT * FROM matiere ");
-
+			PreparedStatement stmt = connection.prepareStatement("SELECT matiere.nom_Matiere, matiere.id_Matiere, groupe_matiere.Groupe_id_Groupe, groupe_matiere.Matiere_id_Matiere, groupe.nom_Groupe, groupe.id_Groupe FROM groupe INNER JOIN groupe_matiere ON groupe_matiere.Groupe_id_Groupe = groupe.id_Groupe INNER JOIN matiere ON matiere.id_Matiere = groupe_matiere.Matiere_id_Matiere WHERE groupe.nom_Groupe = ? OR groupe.nom_Groupe =?");
+			stmt.setString(1,nom_Promo);
+			stmt.setString(2,nom_Domaine);
+			ResultSet results = stmt.executeQuery();
+			
 			while (results.next()) {
 				Matiere matiere = new Matiere(
 						results.getInt("id_Matiere"),

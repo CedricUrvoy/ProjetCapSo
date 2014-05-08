@@ -2,7 +2,7 @@
 <c:set var="pageSelectionnee" value="calendrier" scope="request"></c:set>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<% Boolean erreur = (Boolean) request.getAttribute("erreur") ;%>
+
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -72,7 +72,7 @@
 						         <input name="nom_Groupe" class="input" type="text"  >
 						     </fieldset>
 						    <fieldset id="boutons">
-						        <input type="Submit" class="turquoise-button" name="VALIDERAJOUTGROUPE" value="Valider" onclick="doAct(this); erreurGroupe('<%=erreur%>');"> 
+						        <input type="Submit" class="turquoise-button" name="VALIDERAJOUTGROUPE" value="Valider" onclick="doAct(this); myFonction();"> 
 						        <input type="Submit" class="turquoise-button" name="ANNULERAJOUT" value="Annuler" onclick="doAct(this);">
 						    </fieldset>
 						</form>	
@@ -179,9 +179,12 @@
 	
 	
 	<script type="text/javascript">
-	
-	if(erreurgroupe!=null)
+	<% Boolean erreur = (Boolean) request.getAttribute("erreur") ;%>
+	myFonction()
+	{
+	if(erreur==true)
 		{
 		window.alert("Ce groupe est deja créé");
 		}
+	}
 	</script>

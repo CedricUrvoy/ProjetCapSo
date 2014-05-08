@@ -28,8 +28,8 @@ public class  MatiereManager {
 	}
 
 
-	public List<Matiere> listerMatiere() {
-		List<Matiere> liste = matiereDao.listerMatiere();
+	public List<Matiere> listerMatiere(String nom_Promo,String nom_Domaine) {
+		List<Matiere> liste = matiereDao.listerMatiere(nom_Promo, nom_Domaine);
 		return liste;
 	}
 	
