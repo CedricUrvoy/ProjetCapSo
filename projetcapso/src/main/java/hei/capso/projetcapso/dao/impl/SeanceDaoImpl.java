@@ -12,6 +12,8 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mysql.jdbc.Statement;
+
 
 
 public class SeanceDaoImpl implements SeanceDao{
@@ -136,7 +138,9 @@ public class SeanceDaoImpl implements SeanceDao{
 	}
 
 	
-	public void addSeance(Seance seance) {
+	public int addSeance(Seance seance) {
+		
+		int idSeanceCree = 0;
 		
 		/**** Creation de la connexion ****/
 		
@@ -147,21 +151,27 @@ public class SeanceDaoImpl implements SeanceDao{
 			/**** Utilisation de la connexion ****/
 			
 			PreparedStatement stmt = connection.prepareStatement(""
-					+ "INSERT INTO Seance(date_Debut_Seance,date_Fin_Seance,lieu_Seance,info_Seance,Groupe_id_Groupe,Matiere_id_Matiere) VALUES (?,?,?,?,?,?)");
+					+ "INSERT INTO Seance(date_Debut_Seance,date_Fin_Seance,lieu_Seance,info_Seance,Groupe_id_Groupe,Matiere_id_Matiere) "
+					+ "VALUES (?,?,?,?,?,?)",Statement.RETURN_GENERATED_KEYS);
 			stmt.setTimestamp(1, new Timestamp (seance.getStart().getTime()));
 			stmt.setTimestamp(2, new Timestamp (seance.getEnd().getTime()));
 			stmt.setString(3,seance.getPlace());
 			stmt.setString(4, seance.getInfos());
 			stmt.setInt(5, seance.getIdGroupe());
 			stmt.setInt(6, seance.getIdMatiere());
-			stmt.executeUpdate();
+			stmt.executeUpdate( );
+			ResultSet rs =  stmt.getGeneratedKeys();
+			if (rs.next()){
+			    idSeanceCree=rs.getInt(1);
+			}
 		
 			/**** Fermer la connexion ****/
 			connection.close();
 		} catch (SQLException e){
 			e.printStackTrace();
-		}
-		
+		}		
+	
+		return idSeanceCree;
 	}
 	
 	public void modifSeance(int idSeance, Seance seance) {

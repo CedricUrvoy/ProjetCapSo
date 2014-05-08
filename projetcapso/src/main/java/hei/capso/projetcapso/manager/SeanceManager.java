@@ -32,8 +32,9 @@ public class SeanceManager {
 		return listeSeances;
 	}
 	
-	public void addSeance (Seance seance){
-		seanceDao.addSeance(seance);
+	public int addSeance (Seance seance){
+		int idSeance = seanceDao.addSeance(seance);
+		return idSeance;
 	}
 
 }

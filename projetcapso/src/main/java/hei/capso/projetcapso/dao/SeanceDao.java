@@ -13,7 +13,7 @@ public interface SeanceDao {
 	
 	public Seance getSeance (int idSeance);
 	
-	public void addSeance(Seance seance);
+	public int addSeance(Seance seance);
 	
 	public void modifSeance(int idSeance, Seance seance);
 	

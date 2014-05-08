@@ -55,15 +55,18 @@ public class CreerSeanceServlet extends HttpServlet{
 			System.err.println("Problème au parsing de la date.");
 		}
 		
+		int idSeance;
 		
-		SeanceManager.getInstance().addSeance(
+		idSeance = SeanceManager.getInstance().addSeance(
 				new Seance(null, matiere.getNom_Matiere(),dateDebut,dateFin, req.getParameter("place"), req.getParameter("infosSeance"), groupe.getId_Groupe(), matiere.getId_Matiere()));
 				
 		HttpSession session = req.getSession();
 		Eleve eleve = (Eleve) session.getAttribute("sessionEleve");
 		req.setAttribute("eleve",eleve);
 		
-		EleveManager.getInstance().rejoindreSeance(eleve.getId_Eleve(), 10);
+		System.out.print(idSeance);
+		
+		EleveManager.getInstance().rejoindreSeance(eleve.getId_Eleve(), idSeance);
 		
 		response.sendRedirect("calendrier");
 	}
