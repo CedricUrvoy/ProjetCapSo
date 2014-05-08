@@ -60,7 +60,6 @@ public class AjoutProfilServlet extends HttpServlet{
 						));
 	
 	Eleve eleve=EleveManager.getInstance().chercherEleveMail(request.getParameter("email_Eleve")+"@hei.fr");
-	System.out.print("marie 2 "+request.getParameter("email_Eleve")+"@hei.fr");
 	Integer id_Eleve = eleve.getId_Eleve();
 	
 	Integer id_Classe = Integer.parseInt(request.getParameter("classe"));

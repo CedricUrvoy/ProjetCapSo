@@ -57,11 +57,7 @@
 			<div class= "changement_mdp">
 			<input type="submit" value="Changer de mot de passe" class="turquoise-button modif_group mdp" name="MDP" onclick="doAct(this);">
 			
-			</div>
-			<div class= "ajout_matiere">
-			<input type="submit" value="Ajouter une matière" class="turquoise-button modif_group mdp" name="AJOUTMATIERE" onclick="doAct(this);">
-			</div>
-		</div>
+			
 		
 		<!--Pop UP ajout groupe-->
 			<div class="hideshow" id="creerGroupe" style="visibility: hidden;">

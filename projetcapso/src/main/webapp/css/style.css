@@ -561,7 +561,7 @@ input.modif_group
 	position: absolute;
 	width : 300px;
 	left: 71%;
-	Top:550px;
+	Top:100px;
 }
 .mdp
 {
@@ -658,3 +658,13 @@ a.active{
 	top:40%;
 }
 
+
+/**Style pageAdmin**/ 
+
+.ajout_matiere
+{
+	position: absolute;
+	width : 300px;
+	left: 71%;
+	Top:100px;
+}

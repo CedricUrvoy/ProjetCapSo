@@ -144,8 +144,8 @@ else if (bouton.name=="ANNULERCHANGER" )
 else if (bouton.name=="AJOUTMATIERE" )
 {
 	
-    document.DFormRG.action="javascript:showDiv('ajoutmatiere')";
-    document.DFormRG.submit();
+    document.DFormAdmin.action="javascript:showDiv('ajoutmatiere')";
+    document.DFormAdmin.submit();
 }
 else if (bouton.name=="AJOUTER" )
 {

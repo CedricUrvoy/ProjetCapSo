@@ -76,6 +76,19 @@
     <servlet-name>AjoutMatiere</servlet-name>
     <servlet-class>hei.capso.projetcapso.controllers.AjoutMatiereServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>PageAdmin</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.PageAdminServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GestionGroupes</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.GestionGroupesServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GestionProfils</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.GestionProfilsServlet</servlet-class>
+  </servlet>
+  
   <servlet-mapping>
     <servlet-name>Calendrier</servlet-name>
     <url-pattern>/calendrier</url-pattern>
@@ -162,6 +175,19 @@
     <servlet-name>AjoutMatiere</servlet-name>
     <url-pattern>/ajoutmatiere</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PageAdmin</servlet-name>
+    <url-pattern>/pageadmin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GestionGroupes</servlet-name>
+    <url-pattern>/gestiongroupes</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GestionProfils</servlet-name>
+    <url-pattern>/gestionprofils</url-pattern>
+  </servlet-mapping>
+  
   <welcome-file-list>
     <welcome-file>restriction</welcome-file>
   </welcome-file-list>

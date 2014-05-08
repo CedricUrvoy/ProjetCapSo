@@ -47,7 +47,7 @@ public class ProfilServlet extends HttpServlet{
 				List<Groupe> domaines = GroupeManager.getInstance().listerGroupeType("Domaine");
 				req.setAttribute("domaines", domaines);
 				
-		// Liste classes dans formulaire
+		// Liste promos dans formulaire
 				List<Groupe> promo = GroupeManager.getInstance().listerGroupeType("Promo");
 				req.setAttribute("promos", promo);
 				
