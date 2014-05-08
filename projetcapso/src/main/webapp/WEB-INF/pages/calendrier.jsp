@@ -23,22 +23,23 @@
 	
 		<!--jQuery-->
 		<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
-		<script src='js/jquery.min.js'></script>
-		<script src='js/jquery-ui.custom.min.js'></script>
+		<script type='text/javascript' src='js/jquery.min.js'></script>
+		<script type='text/javascript' src='js/jquery-ui.custom.min.js'></script>
 		
 		<!--FullCalendar-->
-		<script src='js/moment-with-langs.js'></script>
-		<script src='fullcalendar/fullcalendar.js'></script>
-		<script src='fullcalendar/lang/fr.js'></script>
+		<script type='text/javascript' src='js/moment-with-langs.js'></script>
+		<script type='text/javascript' src='fullcalendar/fullcalendar.js'></script>
+		<script type='text/javascript' src='fullcalendar/lang/fr.js'></script>
+		<script type='text/javascript' src='fullcalendar/gcal.js'></script>
+		
 		
 		<!--  DateTimePicker -->
 		<script type="text/javascript" src="datetimepicker/jquery.datetimepicker.js"></script>
 		
 		<!-- Scripts JS -->
-		<script src="js/calendar.js"></script>		
-		<script src="js/app.js"></script>
+		<script type='text/javascript' src="js/calendar.js"></script>		
+		<script type='text/javascript' src="js/app.js"></script>
 		
-	
  		
 
 		
@@ -77,7 +78,7 @@
 										<c:forEach var="matiere" items="${matieres}">
 						  				 	<option id="matiere_${matiere.id_Matiere}"> ${matiere.nom_Matiere}
 						  				</c:forEach>
-						  			</datalist></br>
+						  			</datalist>
 						  		<label>Groupe</label>
 						  		<input class="input" type="text" list=groupe name="groupe" >
 									<datalist id=groupe >

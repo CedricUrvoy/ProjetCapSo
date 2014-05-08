@@ -32,6 +32,8 @@ $(document).ready(function()
 	$("ul#listeGroupes").on("click",".cal_group", function() {
 		
 		calendar.fullCalendar( 'removeEventSource','affichageSeances');
+		calendar.fullCalendar( 'removeEventSource', {
+			url:'https://www.google.com/calendar/feeds/c0sqplv4h7o7fimmtovd24argb34q35r%40import.calendar.google.com/public/basic'});
 		idGroupe = this.id.substring(7);
 		
 		if(idGroupe!=0){
@@ -42,8 +44,11 @@ $(document).ready(function()
 			nomGroupe='Personnel';
 			$("#rejoindre").val("Quitter");
 			$("#rejoindre").attr('name', "QUITTERSEANCE");
+			
+			calendar.fullCalendar( 'addEventSource', {
+				url:'https://www.google.com/calendar/feeds/c0sqplv4h7o7fimmtovd24argb34q35r%40import.calendar.google.com/public/basic',
+				color:'#235383'});
 		}
-
 		calendar.fullCalendar( 'addEventSource', {
 				url: 'affichageSeances',
    				type:"GET",
@@ -55,6 +60,8 @@ $(document).ready(function()
 			$("#groupe_"+int).removeClass("active");
 		}
 		$("#groupe_"+idGroupe).addClass("active");
+		
+
 		
 		
 	});
@@ -125,12 +132,18 @@ $(document).ready(function()
 
 		/**** Recupere les evenements du calendrier perso ****/
 		
-		events: {
+		eventSources: [
+		    {
 			url: 'affichageSeances',
 	        type:"GET",
 	        data: {idGroupe:0},
 	        success: function(data) {console.log(data);return data;}
-		},
+	        },
+	        {
+	        	url:'https://www.google.com/calendar/feeds/c0sqplv4h7o7fimmtovd24argb34q35r%40import.calendar.google.com/public/basic',
+	        	color:'#235383'
+	        }
+			],
 		
 		/**** Infos sur l'evenement ****/
 		

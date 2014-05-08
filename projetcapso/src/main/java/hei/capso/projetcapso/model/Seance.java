@@ -9,13 +9,13 @@ public class Seance {
     public Date end;
     public String place;
     public String infos;
-    public int idGroupe;
-    public int idMatiere;
+    public Integer idGroupe;
+    public Integer idMatiere;
     public String nameGroupe;
 	
     
     public Seance(Integer id, String title, Date start, Date end, String place,
-			String infos, int idGroupe, int idMatiere) {
+			String infos, Integer idGroupe, Integer idMatiere) {
 		this.id = id;
 		this.title = title;
 		this.start = start;
@@ -28,7 +28,7 @@ public class Seance {
 
 
 	public Seance(Integer id, String title, Date start, Date end, String place,
-			String infos, int idGroupe, int idMatiere,String nameGroupe) {
+			String infos, Integer idGroupe, Integer idMatiere,String nameGroupe) {
 		this.id = id;
 		this.title = title;
 		this.start = start;
@@ -101,22 +101,22 @@ public class Seance {
 	}
 
 
-	public int getIdGroupe() {
+	public Integer getIdGroupe() {
 		return idGroupe;
 	}
 
 
-	public void setIdGroupe(int idGroupe) {
+	public void setIdGroupe(Integer idGroupe) {
 		this.idGroupe = idGroupe;
 	}
 
 
-	public int getIdMatiere() {
+	public Integer getIdMatiere() {
 		return idMatiere;
 	}
 
 
-	public void setIdMatiere(int idMatiere) {
+	public void setIdMatiere(Integer idMatiere) {
 		this.idMatiere = idMatiere;
 	}
 

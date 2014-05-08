@@ -22,6 +22,7 @@ public class SeanceDaoImpl implements SeanceDao{
 	public List<Seance> listerSeancePerso(int idEleve) {
 		
 		List<Seance> listeSeancePersonnel = new ArrayList<Seance>();
+		Integer groupe;
 		
 		try{
 			/**** Creation de la connexion ****/
@@ -33,11 +34,23 @@ public class SeanceDaoImpl implements SeanceDao{
 			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Seance "
 					+ "INNER JOIN Seance_Eleve ON Seance_id_Seance = id_Seance "
 					+ "INNER JOIN Matiere ON Matiere_id_Matiere = id_Matiere "
-					+ "INNER JOIN Groupe ON  Groupe_id_Groupe = id_Groupe "
+					+ "LEFT JOIN Groupe ON  Groupe_id_Groupe = id_Groupe "
 					+ "WHERE Eleve_id_Eleve=?");
 			stmt.setInt(1, idEleve);
 			ResultSet results = stmt.executeQuery();
 			while (results.next()){
+				
+				
+			Object idGroupeSeance = results.getObject("id_Groupe");
+			
+			if (idGroupeSeance != null)
+			{
+			groupe = results.getInt("id_Groupe");
+			}else{
+			groupe = null;
+			}
+				
+				
 				Seance seance = new Seance(
 						results.getInt("id_Seance"),
 						results.getString("nom_Matiere"),
@@ -45,7 +58,7 @@ public class SeanceDaoImpl implements SeanceDao{
 						results.getTimestamp("date_Fin_Seance"), 
 						results.getString("lieu_Seance"),
 						results.getString("info_Seance"),
-						results.getInt("id_Groupe"),
+						null,
 						results.getInt("id_Matiere"), 
 						results.getString("nom_Matiere"));
 				listeSeancePersonnel.add(seance);
@@ -60,7 +73,7 @@ public class SeanceDaoImpl implements SeanceDao{
 		return listeSeancePersonnel;
 	}
 		
-	public List<Seance> listerSeanceGroupe(int idGroupe) {
+	public List<Seance> listerSeanceGroupe(Integer idGroupe) {
 		
 		List<Seance> listeSeanceGroupe = new ArrayList<Seance>();
 				
@@ -74,7 +87,9 @@ public class SeanceDaoImpl implements SeanceDao{
 			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Seance INNER JOIN Matiere ON Matiere_id_Matiere = id_Matiere INNER JOIN Groupe ON  Groupe_id_Groupe = id_Groupe WHERE Groupe_id_Groupe=?");
 			stmt.setInt(1, idGroupe);
 			ResultSet results = stmt.executeQuery();
-			while (results.next()){
+			while (results.next()){;
+				
+				
 				Seance seance = new Seance(
 						results.getInt("id_Seance"),
 						results.getString("nom_Matiere"),
@@ -101,6 +116,7 @@ public class SeanceDaoImpl implements SeanceDao{
 	public Seance getSeance(int idSeance) {
 		
 		Seance seance = null;
+		Integer idGroupe = null;
 		
 		try{
 			/**** Creation de la connexion ****/
@@ -111,11 +127,21 @@ public class SeanceDaoImpl implements SeanceDao{
 			
 			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Seance"
 					+ "INNER JOIN Matiere ON Matiere_id_Matiere = id_Matiere"
-					+ "INNER JOIN Groupe ON  Groupe_id_Groupe = id_Groupe"
+					+ "LEFT JOIN Groupe ON  Groupe_id_Groupe = id_Groupe"
 					+ "Where id_Seance=?");
 			stmt.setInt(1, idSeance);
 			ResultSet results = stmt.executeQuery();
 			if (results.next()){
+				
+			Object idGroupeSeance = results.getObject("id_Groupe");
+			
+			if (idGroupeSeance != null)
+			{
+			idGroupe = results.getInt("id_Groupe");
+			}else{
+			idGroupe = null;
+			}
+				
 				 seance = new Seance(
 						results.getInt("id_Seance"),
 						results.getString("nom_Matiere"),
@@ -123,8 +149,8 @@ public class SeanceDaoImpl implements SeanceDao{
 						results.getDate("date_Fin_Seance"), 
 						results.getString("lieu_Seance"),
 						results.getString("info_Seance"),
-						results.getInt("id_Seance"),
-						results.getInt("id_Seance"), 
+						idGroupe,
+						results.getInt("id_Matiere"), 
 						results.getString("nom_Matiere"));
 			}
 			
@@ -157,7 +183,12 @@ public class SeanceDaoImpl implements SeanceDao{
 			stmt.setTimestamp(2, new Timestamp (seance.getEnd().getTime()));
 			stmt.setString(3,seance.getPlace());
 			stmt.setString(4, seance.getInfos());
-			stmt.setInt(5, seance.getIdGroupe());
+			if (seance.getIdGroupe()==null){
+				stmt.setNull(5,java.sql.Types.INTEGER);
+			}else{
+				stmt.setInt(5, seance.getIdGroupe());
+			}
+			
 			stmt.setInt(6, seance.getIdMatiere());
 			stmt.executeUpdate( );
 			ResultSet rs =  stmt.getGeneratedKeys();

@@ -9,7 +9,7 @@ public interface SeanceDao {
 	
 	public List<Seance> listerSeancePerso(int idEleve);
 	
-	public List<Seance>	listerSeanceGroupe(int idGroupe);
+	public List<Seance>	listerSeanceGroupe(Integer idGroupe);
 	
 	public Seance getSeance (int idSeance);
 	

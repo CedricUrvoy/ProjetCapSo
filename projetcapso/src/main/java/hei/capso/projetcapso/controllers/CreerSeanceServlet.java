@@ -36,8 +36,18 @@ public class CreerSeanceServlet extends HttpServlet{
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse response)
 			throws ServletException, IOException {
+	
 		
-		Groupe groupe = GroupeManager.getInstance().chercherGroupeNom(req.getParameter("groupe"));
+		Groupe groupe;
+		
+		if(req.getParameter("groupe").equals("Personnel")){
+			System.out.print("TESSSSSSSSSSSSSSSSSSSSSSSSSSSSSST");
+			groupe = new Groupe(null, null, null);
+		}else{
+			groupe = GroupeManager.getInstance().chercherGroupeNom(req.getParameter("groupe"));
+		}
+		
+		
 		Matiere matiere = MatiereManager.getInstance().chercherMatiereNom(req.getParameter("matiere"));
 		
 		DateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm");
