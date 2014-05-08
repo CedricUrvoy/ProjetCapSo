@@ -54,6 +54,7 @@
 			
 			<!--FullCalendar container div-->
 			<div id='calendar'></div>
+			<div id ='calendrierGoogle'>${eleve.calendrier_Eleve}</div>
 			
 			
 			<!-- Bouton d'ajout de seance -->

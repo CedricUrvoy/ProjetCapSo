@@ -7,7 +7,7 @@ public class Eleve {
 		private Integer id_Eleve;
 		private String nom_Eleve;
 		private String prenom_Eleve;
-		private String image_Eleve;
+		private String calendrier_Eleve;
 		private String email_Eleve;
 		private String password_eleve;
 		private Date date;
@@ -34,11 +34,11 @@ public class Eleve {
 		
 
 		public Eleve(Integer id_Eleve, String nom_Eleve, String prenom_Eleve,
-						String image_Eleve, String email_Eleve, String password_eleve) {
+						String calendrier_Eleve, String email_Eleve, String password_eleve) {
 					this.id_Eleve = id_Eleve;
 					this.nom_Eleve = nom_Eleve;
 					this.prenom_Eleve = prenom_Eleve;
-					this.image_Eleve = image_Eleve;
+					this.calendrier_Eleve = calendrier_Eleve;
 					this.email_Eleve = email_Eleve;
 					this.password_eleve = password_eleve;
 				}
@@ -90,23 +90,14 @@ public class Eleve {
 		}
 
 
-
-
-
-		public String getImage_Eleve() {
-			return image_Eleve;
+		public String getCalendrier_Eleve() {
+			return calendrier_Eleve;
 		}
 
 
-
-
-
-		public void setImage_Eleve(String image_Eleve) {
-			this.image_Eleve = image_Eleve;
+		public void setCalendrier_Eleve(String calendrier_Eleve) {
+			this.calendrier_Eleve = calendrier_Eleve;
 		}
-
-
-
 
 
 		public String getEmail_Eleve() {
@@ -114,15 +105,9 @@ public class Eleve {
 		}
 
 
-
-
-
 		public void setEmail_Eleve(String email_Eleve) {
 			this.email_Eleve = email_Eleve;
 		}
-
-
-
 
 
 		public String getPassword_eleve() {
@@ -130,23 +115,14 @@ public class Eleve {
 		}
 
 
-
-
-
 		public void setPassword_eleve(String password_eleve) {
 			this.password_eleve = password_eleve;
 		}
 
 
-
-
-
 		public Date getDate() {
 			return date;
 		}
-
-
-
 
 
 		public void setDate(Date date) {

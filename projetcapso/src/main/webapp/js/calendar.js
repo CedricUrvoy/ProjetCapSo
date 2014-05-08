@@ -29,11 +29,14 @@ $(document).ready(function()
 	var nomGroupe='Personnel';
 	$("#groupe_"+idGroupe).addClass("active");
 	
+	var calendrierGoogle = document.getElementById("calendrierGoogle");
+	console.log(calendrierGoogle.innerHTML);
+	
 	$("ul#listeGroupes").on("click",".cal_group", function() {
 		
 		calendar.fullCalendar( 'removeEventSource','affichageSeances');
 		calendar.fullCalendar( 'removeEventSource', {
-			url:'https://www.google.com/calendar/feeds/c0sqplv4h7o7fimmtovd24argb34q35r%40import.calendar.google.com/public/basic'});
+			url:calendrierGoogle.innerHTML});
 		idGroupe = this.id.substring(7);
 		
 		if(idGroupe!=0){
@@ -46,7 +49,7 @@ $(document).ready(function()
 			$("#rejoindre").attr('name', "QUITTERSEANCE");
 			
 			calendar.fullCalendar( 'addEventSource', {
-				url:'https://www.google.com/calendar/feeds/c0sqplv4h7o7fimmtovd24argb34q35r%40import.calendar.google.com/public/basic',
+				url:calendrierGoogle.innerHTML,
 				color:'#235383'});
 		}
 		calendar.fullCalendar( 'addEventSource', {
@@ -140,7 +143,7 @@ $(document).ready(function()
 	        success: function(data) {console.log(data);return data;}
 	        },
 	        {
-	        	url:'https://www.google.com/calendar/feeds/c0sqplv4h7o7fimmtovd24argb34q35r%40import.calendar.google.com/public/basic',
+	        	url:calendrierGoogle.innerHTML,
 	        	color:'#235383'
 	        }
 			],
