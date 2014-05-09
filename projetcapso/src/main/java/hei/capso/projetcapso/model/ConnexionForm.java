@@ -26,6 +26,7 @@ public final class ConnexionForm {
     	/* Récupération des champs du formulaire */
         String email = req.getParameter("email");
         String password = req.getParameter("password");
+        System.out.print(password);
         String passwordReel = null;
         
         List<Eleve> emailEleve = EleveManager.getInstance().listerEmailEleve();
@@ -40,6 +41,7 @@ public final class ConnexionForm {
           idEleve = validationEmail( email, emailEleve);
           Eleve elevePotentiel = EleveManager.getInstance().getEleve(idEleve);
           passwordReel = elevePotentiel.getPassword_eleve();
+          System.out.print(passwordReel);
           
         } catch ( Exception e ) {	
             setErreur( "email", e.getMessage() );
@@ -123,7 +125,7 @@ public final class ConnexionForm {
         }
         
         for (int i = 0; i < emailEleve.size(); i++) {
-			if (emailEleve.get(i).getEmail_Eleve().matches(email)){emailValide = true;return i+1;}
+			if (emailEleve.get(i).getEmail_Eleve().matches(email)){emailValide = true;return emailEleve.get(i).getId_Eleve();}
 		}
         
         if (emailValide==false){
