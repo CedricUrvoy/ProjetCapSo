@@ -13,6 +13,7 @@ import java.util.List;
 
 public class MatiereDaoImpl implements MatiereDao {
 
+	//LISTER LES MATIERES D'UNE PROMO ET D'UN DOMAINE
 	public List<Matiere> listerMatiere(String nom_Promo,String nom_Domaine) {
 		List<Matiere> liste = new ArrayList<Matiere>();
 		try {
@@ -43,6 +44,8 @@ public class MatiereDaoImpl implements MatiereDao {
 		return liste;
 	}
 	
+	
+	//RECHERCHER UNE MATIERE AVEC SON NOM
 	public Matiere chercherMatiereNom(String nom_Matiere) {
 		Matiere matiere = null;
 		try {
@@ -71,6 +74,8 @@ public class MatiereDaoImpl implements MatiereDao {
 
 		return matiere;
 	}
+	
+	
 	//AJOUTER UNE MATIERE
 	public void ajouterMatiere(Matiere matiere) {
 		try {
@@ -91,6 +96,7 @@ public class MatiereDaoImpl implements MatiereDao {
 			e.printStackTrace();
 		}
 	}
+	
 	
 	// LIER MATIERE ET GROUPE
 	public  void matiereGroupe(int id_Matiere, int id_Groupe) {
