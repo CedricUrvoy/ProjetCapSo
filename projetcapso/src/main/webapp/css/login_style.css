@@ -38,6 +38,8 @@ input.input
 	margin-top: 20px;
 	border:0px;
 }
+
+
 a.text_form 
 {	
 	text-decoration: none;
@@ -55,6 +57,11 @@ span.erreur{
 	display: block;
 }
 
+.administration{
+	width:50px;
+	margin: auto;
+	padding-top: 570px;
+}
 
 /**Page Création de profil**/ 
 
