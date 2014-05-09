@@ -9,13 +9,15 @@ import java.io.IOException;
 
 
 
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
+import com.google.gson.Gson;
 
 public class ElevesSeanceServlet extends HttpServlet{
 
@@ -25,17 +27,23 @@ public class ElevesSeanceServlet extends HttpServlet{
 	 * 
 	 */
 	private static final long serialVersionUID = -8486564529525204090L;
-
-	protected void doPost(HttpServletRequest req, HttpServletResponse response)
+	
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 	
 		
 		Integer idSeance = Integer.parseInt(req.getParameter("idSeance"));
 		
-		List<Eleve> listeElevesSeances = SeanceManager.getInstance().listeElevesSeance(idSeance);
+		List<Eleve> listeElevesSeance = SeanceManager.getInstance().listeElevesSeance(idSeance);
+
 		
-		System.out.print(listeElevesSeances);
+		Gson gson = new Gson(); 
+		String elevesJson = gson.toJson(listeElevesSeance);
 		
-		req.setAttribute("eleves",listeElevesSeances);
+		resp.setCharacterEncoding("UTF-8"); 
+		resp.setContentType("application/json");
+		PrintWriter out = resp.getWriter();
+		out.write(elevesJson);
+		System.out.print(elevesJson);
 	}
 }

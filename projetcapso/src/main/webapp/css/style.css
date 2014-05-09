@@ -159,6 +159,7 @@ a
 	display: none;
 }]
 
+
 	/**** Pop Up ***/
 
 
@@ -274,8 +275,12 @@ p.info_seance{
 	padding-top:10px;
 	background: #c1c1c1;
 	margin: auto;
+	
+	overflow: auto;
+	height-max:100px;
 	}
 }
+
 
 /***Page Blog***/
 

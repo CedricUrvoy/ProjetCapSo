@@ -53,6 +53,7 @@ else if (bouton.name=="ANNULER" )
 else if (bouton.name=="ANNULER2" )
 {
      document.DForm2.action="javascript:hideDiv()";
+     $("#eleves").html("");
      document.DForm2.submit();
 }
 else if (bouton.name=="REJOINDRESEANCE" )

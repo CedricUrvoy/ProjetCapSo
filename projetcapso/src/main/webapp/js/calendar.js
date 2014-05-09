@@ -159,17 +159,27 @@ $(document).ready(function()
 	    	$("#end").html(event.end.format(" HH:mm"));
 	    	$("#infosplace").html(event.place);
 	    	$("#infos").html(event.infos);
-	    	$.ajax({ 
+	    	var idSeance = event.id;
+	    	var eleves = new Array;
+	    	$.ajax(
+	    	{ 
 	    		url:"elevesSeance", 
 	    		type:"POST", 
-	    		data:{idSeance:event.id}
-	    		}).done(fonctionSucces)
-;
+	    		dataType:'json',
+	    		data:{idSeance:idSeance},
+	    		success:function(data){	
+	    			eleves=data;
+	    			console.log(eleves);
+	    			for(var i=0;i<eleves.length;i++) 
+	    			{
+	  	    		  var obj = eleves[i];
+	  	    		  $("#eleves").append("<p>"+obj.prenom_Eleve +" "+obj.nom_Eleve+"</p>");
+	    			};
+		    	}
+	    	});
 	    	showDiv('detailSeance');
 	    	
 	    }
-		
-		
 	});
 	
 

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+ 
+ <!-- Servlet Calendrier -->
+ 
   <servlet>
     <servlet-name>Calendrier</servlet-name>
     <servlet-class>hei.capso.projetcapso.controllers.CalendrierServlet</servlet-class>
@@ -9,52 +12,8 @@
     <servlet-class>hei.capso.projetcapso.controllers.AffichageSeancesServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>Blog</servlet-name>
-    <servlet-class>hei.capso.projetcapso.controllers.BlogServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>Article</servlet-name>
-    <servlet-class>hei.capso.projetcapso.controllers.ArticleServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>Profil</servlet-name>
-    <servlet-class>hei.capso.projetcapso.controllers.ProfilServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>AjoutProfil</servlet-name>
-    <servlet-class>hei.capso.projetcapso.controllers.AjoutProfilServlet</servlet-class>
-  </servlet>
-  <servlet>
     <servlet-name>AjoutSeance</servlet-name>
     <servlet-class>hei.capso.projetcapso.controllers.AjoutSeanceServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>AdminArticle</servlet-name>
-    <servlet-class>hei.capso.projetcapso.controllers.AdminArticleServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>Connexion</servlet-name>
-    <servlet-class>hei.capso.projetcapso.controllers.ConnexionServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>Deconnexion</servlet-name>
-    <servlet-class>hei.capso.projetcapso.controllers.DeconnexionServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>Restriction</servlet-name>
-    <servlet-class>hei.capso.projetcapso.controllers.RestrictionServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>AjoutGroupe</servlet-name>
-    <servlet-class>hei.capso.projetcapso.controllers.AjoutGroupeServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>RejoindreGroupe</servlet-name>
-    <servlet-class>hei.capso.projetcapso.controllers.RejoindreGroupeServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>QuitterGroupe</servlet-name>
-    <servlet-class>hei.capso.projetcapso.controllers.QuitterGroupeServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>RejoindreSeance</servlet-name>
@@ -69,8 +28,70 @@
     <servlet-class>hei.capso.projetcapso.controllers.CreerSeanceServlet</servlet-class>
   </servlet>
   <servlet>
+  	<servlet-name>ElevesSeance</servlet-name>
+  	<servlet-class>hei.capso.projetcapso.controllers.ElevesSeanceServlet</servlet-class>
+  </servlet>
+  
+ <!-- Servlet Blog --> 
+  
+  <servlet>
+    <servlet-name>Blog</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.BlogServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Article</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.ArticleServlet</servlet-class>
+  </servlet>
+  
+  <!-- Servlet Profil -->
+  
+  <servlet>
+    <servlet-name>Profil</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.ProfilServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AjoutProfil</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.AjoutProfilServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AjoutGroupe</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.AjoutGroupeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RejoindreGroupe</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.RejoindreGroupeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QuitterGroupe</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.QuitterGroupeServlet</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>ChangerMDP</servlet-name>
     <servlet-class>hei.capso.projetcapso.controllers.ChangerMDPServlet</servlet-class>
+  </servlet>
+  
+  
+  <!-- Servlet Connexion -->
+  
+  <servlet>
+    <servlet-name>Connexion</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.ConnexionServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Deconnexion</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.DeconnexionServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Restriction</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.RestrictionServlet</servlet-class>
+  </servlet>
+  
+  
+  <!-- Servlet Administration -->
+  
+  <servlet>
+    <servlet-name>AdminArticle</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.AdminArticleServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>AjoutMatiere</servlet-name>
@@ -93,6 +114,9 @@
     <servlet-class>hei.capso.projetcapso.controllers.SupprimerGroupeServlet</servlet-class>
   </servlet>
   
+  
+  <!-- Url Calendrier -->
+  
   <servlet-mapping>
     <servlet-name>Calendrier</servlet-name>
     <url-pattern>/calendrier</url-pattern>
@@ -102,62 +126,8 @@
     <url-pattern>/affichageSeances</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>Blog</servlet-name>
-    <url-pattern>/blog</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>Article</servlet-name>
-    <url-pattern>/article</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>Profil</servlet-name>
-    <url-pattern>/profil</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>AjoutProfil</servlet-name>
-    <url-pattern>/ajoutProfil</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
     <servlet-name>AjoutSeance</servlet-name>
     <url-pattern>/ajoutSeance</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>AdminArticle</servlet-name>
-    <url-pattern>/adminArticle</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>CalendrierPersoServlet</display-name>
-    <servlet-name>CalendrierPersoServlet</servlet-name>
-    <servlet-class>hei.capso.projetcapso.controllers.CalendrierPersoServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>CalendrierPersoServlet</servlet-name>
-    <url-pattern>/CalendrierPersoServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>Connexion</servlet-name>
-    <url-pattern>/connexion</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>Deconnexion</servlet-name>
-    <url-pattern>/deconnexion</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>Restriction</servlet-name>
-    <url-pattern>/restriction</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>AjoutGroupe</servlet-name>
-    <url-pattern>/ajoutgroupe</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>RejoindreGroupe</servlet-name>
-    <url-pattern>/rejoindregroupe</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>QuitterGroupe</servlet-name>
-    <url-pattern>/quittergroupe</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>RejoindreSeance</servlet-name>
@@ -172,8 +142,68 @@
     <url-pattern>/creerSeance</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+    <servlet-name>ElevesSeance</servlet-name>
+    <url-pattern>/elevesSeance</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Url Blog -->
+  
+   <servlet-mapping>
+    <servlet-name>Blog</servlet-name>
+    <url-pattern>/blog</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Article</servlet-name>
+    <url-pattern>/article</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Url Profil -->
+  
+  <servlet-mapping>
+    <servlet-name>Profil</servlet-name>
+    <url-pattern>/profil</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjoutProfil</servlet-name>
+    <url-pattern>/ajoutProfil</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjoutGroupe</servlet-name>
+    <url-pattern>/ajoutgroupe</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RejoindreGroupe</servlet-name>
+    <url-pattern>/rejoindregroupe</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QuitterGroupe</servlet-name>
+    <url-pattern>/quittergroupe</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
     <servlet-name>ChangerMDP</servlet-name>
     <url-pattern>/changermdp</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Url Connexion -->
+  
+  <servlet-mapping>
+    <servlet-name>Connexion</servlet-name>
+    <url-pattern>/connexion</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Deconnexion</servlet-name>
+    <url-pattern>/deconnexion</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Restriction</servlet-name>
+    <url-pattern>/restriction</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Url Admin -->
+  
+  <servlet-mapping>
+    <servlet-name>AdminArticle</servlet-name>
+    <url-pattern>/adminArticle</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>AjoutMatiere</servlet-name>
@@ -195,10 +225,15 @@
     <servlet-name>SupprimerGroupe</servlet-name>
     <url-pattern>/supprimergroupe</url-pattern>
   </servlet-mapping>
-  
+
+ <!-- Welcome File (Redirection par default) --> 
+ 
   <welcome-file-list>
     <welcome-file>restriction</welcome-file>
   </welcome-file-list>
+
+  <!-- Filtre -->
+  
   <filter>
     <filter-name>RestrictionFilter</filter-name>
     <filter-class>hei.capso.projetcapso.filters.RestrictionFilter</filter-class>
@@ -207,4 +242,5 @@
     <filter-name>RestrictionFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+  
 </web-app>
