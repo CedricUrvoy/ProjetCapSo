@@ -52,7 +52,7 @@
 				</form>
 			
 			</div>
-				
+			</div>	
 			<div class= "changement_mdp">
 			<input type="submit" value="Changer de mot de passe" class="turquoise-button modif_group mdp" name="MDP" onclick="doAct(this);">
 			</div>
@@ -87,12 +87,11 @@
 						<form id="ajout" name="DFormQG" method="POST">
 						    <fieldset id="inputs_ajout">
 						    <label>Groupe à quitter</label>
-						        <input class="input" type=text list=groupeQuitter name="quitterGroupe" >
-									<datalist id=groupeQuitter >
+						        <select class="input"  name="quitterGroupe" >
 									   <c:forEach var="groupesEleve" items="${groupesEleve}">
 											<option> ${groupesEleve.nom_Groupe}
 										</c:forEach>
-									</datalist>
+									</select>
 						    </fieldset>     
 						    <fieldset id="boutons">
 						        <input type="Submit" class="turquoise-button" name="QUITTERGROUPE" value="Quitter" onclick="doAct(this);"> 

@@ -326,4 +326,23 @@ public class GroupeDaoImpl implements GroupeDao{
 		}
 	}
 		
+	public void supprimerlienSeance(Integer id_Groupe){
+		try {
+			Connection connection = DataSourceProvider.getDataSource()
+					.getConnection();
+
+			// Utiliser la connexion
+			PreparedStatement stmt = connection
+					.prepareStatement("DELETE FROM seance WHERE Groupe_id_Groupe= ?");
+			stmt.setInt(1, id_Groupe);
+			stmt.executeUpdate();
+
+			// Fermer la connexion
+			stmt.close();
+			connection.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }

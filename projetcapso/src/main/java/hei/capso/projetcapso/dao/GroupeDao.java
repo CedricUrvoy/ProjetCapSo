@@ -27,6 +27,8 @@ public interface GroupeDao {
 	public void SupprimerGroupe(Integer id_Groupe);
 
 	public void SupprimerlienGroupe(Integer id_Groupe) 	;	
+	
+	public void supprimerlienSeance(Integer id_Groupe);
 
 }
 

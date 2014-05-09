@@ -80,4 +80,8 @@ public class  GroupeManager {
 	public void supprimerlienGroupe(Integer idGroupe) {
 		groupeDao.SupprimerlienGroupe(idGroupe);
 	}
+	
+	public void supprimerlienSeance(Integer idGroupe) {
+		groupeDao.supprimerlienSeance(idGroupe);
+	}
 }

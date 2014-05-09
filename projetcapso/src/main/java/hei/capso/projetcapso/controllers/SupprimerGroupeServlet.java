@@ -24,6 +24,7 @@ public class SupprimerGroupeServlet extends HttpServlet {
 		Integer idGroupe = Integer.parseInt(req.getParameter("id"));
 		
 		GroupeManager.getInstance().supprimerlienGroupe(idGroupe);
+		GroupeManager.getInstance().supprimerlienSeance(idGroupe);
 		GroupeManager.getInstance().supprimerGroupe(idGroupe);
 		
 		resp.sendRedirect("gestiongroupes");
