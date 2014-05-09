@@ -30,4 +30,10 @@ public interface EleveDao {
 	public Eleve chercherEleveMail(String mail_Eleve);
 	
 	public void ChangerMDP(Integer id_Eleve,  String password_Eleve) ;
+	
+	public void SupprimerProfil(Integer id_Eleve);
+	
+	public void SupprimerSeanceEleve(Integer id_Eleve);
+	
+	public void SupprimerGroupeEleve(Integer id_Eleve);
 }
