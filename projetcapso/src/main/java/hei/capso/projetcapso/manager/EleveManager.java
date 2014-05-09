@@ -71,5 +71,20 @@ public class  EleveManager {
 		public List<Eleve> listerEleve(){
 			return eleveDao.listerEleves();
 		}
+		
+	//Supprimer Eleve
+		public void SupprimerProfil(Integer id_Eleve) {
+			eleveDao.SupprimerProfil(id_Eleve);
+		}
 	
+	//Supprimer lien eleve seance
+		public void SupprimerSeanceEleve(Integer id_Eleve) {
+			eleveDao.SupprimerSeanceEleve(id_Eleve);
+		}
+		//Supprimer lien eleve groupe
+		public void SupprimerGroupeEleve(Integer id_Eleve) {
+					eleveDao.SupprimerGroupeEleve(id_Eleve);
+				}
+
+		
 }

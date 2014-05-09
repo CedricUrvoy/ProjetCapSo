@@ -294,5 +294,79 @@ public class EleveDaoImpl implements EleveDao{
 				}
 			}	
 	
+				// SUPPRIMER ELEVE
+				public void SupprimerProfil(Integer id_Eleve) {
+					
+					
+				try {
+					Connection connection = DataSourceProvider.getDataSource()
+							.getConnection();
 
+					// Utiliser la connexion
+					PreparedStatement stmt = connection
+							.prepareStatement("DELETE FROM eleve WHERE id_Eleve=?");
+					stmt.setInt(1, id_Eleve );
+					
+
+					stmt.executeUpdate();
+
+					// Fermer la connexion
+					stmt.close();
+					connection.close();
+
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}	
+
+				
+				// SUPPRIMER SEANCE ELEVE
+				public void SupprimerSeanceEleve(Integer id_Eleve) {
+					
+					
+				try {
+					Connection connection = DataSourceProvider.getDataSource()
+							.getConnection();
+
+					// Utiliser la connexion
+					PreparedStatement stmt = connection
+							.prepareStatement("DELETE FROM seance_eleve WHERE Eleve_id_Eleve =?");
+					stmt.setInt(1, id_Eleve );
+					
+
+					stmt.executeUpdate();
+
+					// Fermer la connexion
+					stmt.close();
+					connection.close();
+
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}	
+				
+				// SUPPRIMER GROUPE ELEVE
+				public void SupprimerGroupeEleve(Integer id_Eleve) {
+					
+					
+				try {
+					Connection connection = DataSourceProvider.getDataSource()
+							.getConnection();
+
+					// Utiliser la connexion
+					PreparedStatement stmt = connection
+							.prepareStatement("DELETE FROM eleve_groupe WHERE Eleve_id_Eleve =?");
+					stmt.setInt(1, id_Eleve );
+					
+
+					stmt.executeUpdate();
+
+					// Fermer la connexion
+					stmt.close();
+					connection.close();
+
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}	
 }
