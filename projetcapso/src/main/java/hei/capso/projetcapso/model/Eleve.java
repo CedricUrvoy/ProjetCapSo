@@ -30,6 +30,12 @@ public class Eleve {
 			this.email_Eleve = email_Eleve;
 		}
 		
+		public Eleve(Integer id_Eleve, String nom_Eleve, String prenom_Eleve) {
+			this.id_Eleve = id_Eleve;
+			this.nom_Eleve = nom_Eleve;
+			this.prenom_Eleve= prenom_Eleve;
+		}
+		
 		public Eleve( String password_eleve, Integer id_Eleve) {
 			this.id_Eleve = id_Eleve;
 			this.password_eleve = password_eleve;

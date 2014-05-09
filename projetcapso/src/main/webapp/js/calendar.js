@@ -159,6 +159,12 @@ $(document).ready(function()
 	    	$("#end").html(event.end.format(" HH:mm"));
 	    	$("#infosplace").html(event.place);
 	    	$("#infos").html(event.infos);
+	    	$.ajax({ 
+	    		url:"elevesSeance", 
+	    		type:"POST", 
+	    		data:{idSeance:event.id}
+	    		}).done(fonctionSucces)
+;
 	    	showDiv('detailSeance');
 	    	
 	    }

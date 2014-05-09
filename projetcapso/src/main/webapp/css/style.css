@@ -643,6 +643,7 @@ div.close
 
 a.cal_group:HOVER{
 	color:#24afb2;
+	cursor: pointer;
 }
 
 a.active{

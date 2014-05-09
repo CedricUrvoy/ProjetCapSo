@@ -4,6 +4,7 @@ import java.util.List;
 
 import hei.capso.projetcapso.dao.SeanceDao;
 import hei.capso.projetcapso.dao.impl.SeanceDaoImpl;
+import hei.capso.projetcapso.model.Eleve;
 import hei.capso.projetcapso.model.Seance;
 
 public class SeanceManager {
@@ -35,6 +36,11 @@ public class SeanceManager {
 	public int addSeance (Seance seance){
 		int idSeance = seanceDao.addSeance(seance);
 		return idSeance;
+	}
+	
+	public List<Eleve> listeElevesSeance(int idSeance){
+		List<Eleve> listeElevesSeance = seanceDao.listerElevesSeances(idSeance);
+		return listeElevesSeance;
 	}
 
 }

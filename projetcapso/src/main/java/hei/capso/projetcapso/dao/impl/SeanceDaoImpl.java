@@ -2,6 +2,7 @@ package hei.capso.projetcapso.dao.impl;
 
 import hei.capso.projetcapso.dao.DataSourceProvider;
 import hei.capso.projetcapso.dao.SeanceDao;
+import hei.capso.projetcapso.model.Eleve;
 import hei.capso.projetcapso.model.Seance;
 
 import java.sql.Connection;
@@ -231,5 +232,41 @@ public class SeanceDaoImpl implements SeanceDao{
 			e.printStackTrace();
 		}
 		
+	}
+
+	public List<Eleve> listerElevesSeances(Integer idSeance) {
+
+		List<Eleve> listeElevesSeances = new ArrayList<Eleve>();
+		
+		/**** Creation de la connexion ****/
+		
+		try
+		{
+			Connection connection = DataSourceProvider.getDataSource().getConnection();
+			
+			/**** Utilisation de la connexion ****/
+			
+
+			PreparedStatement stmt = connection.prepareStatement("SELECT id_Eleve, nom_Eleve , prenom_Eleve FROM Eleve INNER JOIN seance_eleve ON Eleve_id_Eleve = id_Eleve WHERE Seance_id_Seance=?");
+			stmt.setInt(1, idSeance);
+			ResultSet results = stmt.executeQuery();
+			while (results.next()){;
+				
+				
+				Eleve eleve = new Eleve(
+						results.getInt("id_Eleve"),
+						results.getString("nom_Eleve"),
+						results.getString("prenom_Eleve"));
+				listeElevesSeances.add(eleve);
+			}
+		
+			/**** Fermer la connexion ****/
+			connection.close();
+		} catch (SQLException e){
+			e.printStackTrace();
+		}
+		
+		
+		return listeElevesSeances;
 	}
 }

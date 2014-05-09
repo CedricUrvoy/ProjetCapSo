@@ -27,7 +27,7 @@
 		<script type='text/javascript' src='js/jquery-ui.custom.min.js'></script>
 		
 		<!--FullCalendar-->
-		<script type='text/javascript' src='js/moment-with-langs.js'></script>
+		<script type='text/javascript' src='fullcalendar/moment-with-langs.js'></script>
 		<script type='text/javascript' src='fullcalendar/fullcalendar.js'></script>
 		<script type='text/javascript' src='fullcalendar/lang/fr.js'></script>
 		<script type='text/javascript' src='fullcalendar/gcal.js'></script>
@@ -126,15 +126,22 @@
 						        	<label>Lieu : </label>
 						        <p class="info_seance" id="infosplace"></p>
 						        <label>Informations de la séance :</label>
-						        <p class="info_seance" id="infos"></p>		    
+						        <p class="info_seance" id="infos"></p>	
+						        <label>Eleves inscrits</label>
+						   	    <p class="info_seance" id="eleves"></p>	
 						    <fieldset class="boutons">
 						        <input type="Submit" class="turquoise-button" id="rejoindre" name="QUITTERSEANCE" value="Quitter" onclick="doAct(this);"> 
 						        <input type="Submit" class="turquoise-button" name="ANNULER2" value="Annuler" onclick="doAct(this);">
-						    </fieldset>
+						    </fieldset>	
 						</form>
 					</div>
 				</div>
 			</div>
+			
+			
+			
+			
+			
 		</div>
 
 		<jsp:include page="sidebar.jsp" />
