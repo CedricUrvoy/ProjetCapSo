@@ -26,6 +26,6 @@ public class SupprimerProfilServlet extends HttpServlet{
 		EleveManager.getInstance().SupprimerSeanceEleve(idEleve);
 		EleveManager.getInstance().SupprimerProfil(idEleve);
 		
-		resp.sendRedirect("gestiongroupes");
+		resp.sendRedirect("gestionprofils");
 	}
 }
