@@ -10,7 +10,6 @@
 		<meta name="votre profil" content="******" />
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-		<link rel="stylesheet" type="text/css" href="css/header-style.css"/>
 		<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
 		<script src="js/app.js"></script>
 	</head>
@@ -56,12 +55,12 @@
 				
 			<div class= "changement_mdp">
 			<input type="submit" value="Changer de mot de passe" class="turquoise-button modif_group mdp" name="MDP" onclick="doAct(this);">
-			
+			</div>
 			
 		
 		<!--Pop UP ajout groupe-->
 			<div class="hideshow" id="creerGroupe" style="visibility: hidden;">
-			    <div id="fade"></div> 
+			    <div class="fade"></div> 
 		    	<div class="popup_block">
 			    	<div id="titrePopup">Nouveau Groupe</div>
 					<div id="contentPopup">
@@ -81,7 +80,7 @@
 			
 			<!--Pop UP Quitter le groupe-->
 			<div class="hideshow" id="quitterGroupe" style="visibility: hidden;">
-			    <div id="fade"></div> 
+			    <div class="fade"></div> 
 		    	<div class="popup_block">
 			    	<div id="titrePopup">Quitter un Groupe</div>
 					<div id="contentPopup">
@@ -94,7 +93,7 @@
 											<option> ${groupesEleve.nom_Groupe}
 										</c:forEach>
 									</datalist>
-						         
+						    </fieldset>     
 						    <fieldset id="boutons">
 						        <input type="Submit" class="turquoise-button" name="QUITTERGROUPE" value="Quitter" onclick="doAct(this);"> 
 						        <input type="Submit" class="turquoise-button" name="ANNULERQUITTER" value="Annuler" onclick="doAct(this);">
@@ -106,7 +105,7 @@
 			
 			<!--Pop UP Rejoindre le groupe-->
 			<div class="hideshow" id="rejoindreGroupe" style="visibility: hidden;">
-			    <div id="fade"></div> 
+			    <div class="fade"></div> 
 		    	<div class="popup_block">
 			    	<div id="titrePopup">Rejoindre un Groupe</div>
 					<div id="contentPopup">
@@ -158,7 +157,7 @@
 			
 			<!--Pop UP Changer MDP-->
 			<div class="hideshow" id="changermdp" style="visibility: hidden;">
-			    <div id="fade"></div> 
+			    <div class="fade"></div> 
 		    	<div class="popup_block">
 			    	<div id="titrePopup">Changer de mot de passe </div>
 					<div id="contentPopup">
@@ -173,33 +172,7 @@
 						</form>
 					</div>
 				</div>
-		</div>		
-		
-		<!--Pop UP Ajouter Matiere-->
-			<div class="hideshow" id="ajoutmatiere" style="visibility: hidden;">
-			    <div id="fade"></div> 
-		    	<div class="popup_block">
-			    	<div id="titrePopup">Ajouter une matière</div>
-					<div id="contentPopup">
-						<form id="ajout" name="DFormAM" method="POST">
-						    
-						    <label>Nom de la matière</label>
-						    <input name="nom_matiere" class="input" type="text"  id=nom_matiere>
-						    <label>Groupe de la matière</label>
-						    <select class="input"  name="groupeMatiere" id="groupeMatiere" >
-									   <c:forEach var="promo" items="${promos}">
-  				 							<option value="${promo.id_Groupe}"> ${promo.nom_Groupe}</option>
-  										</c:forEach>
-									   <c:forEach var="domaine" items="${domaines}">
-  				 							<option value="${domaine.id_Groupe}"> ${domaine.nom_Groupe}</option>
-  										</c:forEach>
-							</select>
-						    <input type="Submit" class="turquoise-button" name="AJOUTER" value="Ajouter" onclick="doAct(this);"> 
-						    <input type="Submit" class="turquoise-button" name="ANNULERAJOUT" value="Annuler" onclick="doAct(this);">
-						</form>
-					</div>
-				</div>
-		</div>			        
+		</div>				        
 	</body>
 	
 	

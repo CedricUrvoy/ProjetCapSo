@@ -67,7 +67,7 @@
 			
 			<!--Pop UP ajout seance-->
 			<div class="hideshow" id="ajoutSeance" style="visibility: hidden;">
-			    <div id="fade"></div> 
+			    <div class="fade"></div> 
 		    	<div class="popup_block">
 			    	<div id="titrePopup">Nouvelle séance</div>
 					<div id="contentPopup">
@@ -112,7 +112,7 @@
 		<!--Pop UP detail seance-->
 			
 			<div class="hideshow" id="detailSeance" style="visibility: hidden;">
-			    <div id="fade"></div> 
+			    <div class="fade"></div> 
 		    	<div class="popup_block seance">
 			    	<div id="titrePopup"><p id="info_matiere"></p></div>
 					<div id="contentPopup">

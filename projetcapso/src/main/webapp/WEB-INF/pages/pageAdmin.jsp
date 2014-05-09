@@ -46,7 +46,7 @@
 	
 		<!--Pop UP Ajouter Matiere-->
 			<div class="hideshow" id="ajoutmatiere" style="visibility: hidden;">
-			    <div id="fade"></div> 
+			    <div class="fade"></div> 
 		    	<div class="popup_block">
 			    	<div id="titrePopup">Ajouter une matière</div>
 					<div id="contentPopup">

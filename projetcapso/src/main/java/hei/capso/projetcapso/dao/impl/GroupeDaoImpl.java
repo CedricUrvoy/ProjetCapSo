@@ -47,7 +47,6 @@ public class GroupeDaoImpl implements GroupeDao{
 	}
 
 	//LISTER LES GROUPES
-	@Override
 	public List<Groupe> listerGroupe() {
 		List<Groupe> liste = new ArrayList<Groupe>();
 		try {
@@ -79,7 +78,6 @@ public class GroupeDaoImpl implements GroupeDao{
 
 	
 	//LISTER GROUPE ELEVE
-	@Override
 	public List<Groupe> listerGroupeEleve(Integer id) {
 		List<Groupe> liste = new ArrayList<Groupe>();
 		try {
@@ -111,7 +109,6 @@ public class GroupeDaoImpl implements GroupeDao{
 	}
 
 	//AJOUTER GROUPE
-	@Override
 	public void ajouterGroupe(Groupe groupe) {
 		try {
 			Connection connection = DataSourceProvider.getDataSource()
@@ -134,7 +131,6 @@ public class GroupeDaoImpl implements GroupeDao{
 	}
 
 	//QUITTER UN GROUPE
-	@Override
 	public void quitterGroupe(Integer id_Eleve, Integer id_Groupe) {
 		try {
 			Connection connection = DataSourceProvider.getDataSource()
@@ -158,7 +154,6 @@ public class GroupeDaoImpl implements GroupeDao{
 	}
 
 	//CHERCHER UN GROUPE AVEC NOM 
-	@Override
 	public Groupe chercherGroupeNom(String nom_Groupe) {
 		Groupe groupecherche = null;
 		try {
@@ -191,7 +186,6 @@ public class GroupeDaoImpl implements GroupeDao{
 	}
 
 	//LISTER GROUPE TYPE ELEVE
-	@Override
 	public Groupe listerTypeEleve(Integer id, String type) {
 		Groupe groupe = new Groupe();
 		try {
@@ -224,7 +218,6 @@ public class GroupeDaoImpl implements GroupeDao{
 	}
 
 	//LISTER GROUPE ELEVE
-	@Override
 	public List<Groupe> listertypeGroupeEleve(Integer id) {
 		List<Groupe> liste = new ArrayList<Groupe>();
 		try {
@@ -257,7 +250,6 @@ public class GroupeDaoImpl implements GroupeDao{
 
 	
 	//COMPTER LE NOMBRE D'ELEVE PAR GROUPE
-	@Override
 	public List<Groupe> comptergroupeeleve() {
 		List<Groupe> liste = new ArrayList<Groupe>();
 		try {
@@ -291,7 +283,6 @@ public class GroupeDaoImpl implements GroupeDao{
 	}
 
 	//SUPPRIMER UN GROUPE
-	@Override
 	public void SupprimerGroupe(Integer id_Groupe) {
 		try {
 			Connection connection = DataSourceProvider.getDataSource()
@@ -315,7 +306,6 @@ public class GroupeDaoImpl implements GroupeDao{
 	
 	
 	//SUPPRIMER LES LIENS GROUPES & ELEVE
-	@Override
 	public void SupprimerlienGroupe(Integer id_Groupe) {
 		try {
 			Connection connection = DataSourceProvider.getDataSource()

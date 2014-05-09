@@ -39,6 +39,6 @@
 			</form>	
 		</div>
 	</div>
-	<div class="administration"><a class="text_form" href="">administration</a></div>
+	<div class="administration"><a class="text_form" href="pageadmin">administration</a></div>
 	
 	</body>
