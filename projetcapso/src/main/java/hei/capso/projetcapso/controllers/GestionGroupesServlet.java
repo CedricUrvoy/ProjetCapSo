@@ -25,13 +25,10 @@ public class GestionGroupesServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		
-		//Liste de tous les groupes de types "groupe"
-		List<Groupe> groupes = GroupeManager.getInstance().listerGroupeType("Groupe");
-		req.setAttribute("groupes", groupes);
-		
+
 		//Compter le nombre de membre par groupe
-		
+		List<Groupe> groupes = GroupeManager.getInstance().comptergroupeeleve();
+		req.setAttribute("groupes", groupes);
 		
 	// AFFICHE LA PAGE	
 	RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/gestionGroupes.jsp");

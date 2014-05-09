@@ -51,7 +51,7 @@
 				<td class="gestion">${eleve.prenom_Eleve}</td>
 				<td class="gestion">DATE</td>
 				<td class="gestion">
-					<input type="submit" value="Supprimer le profil" class="turquoise-button modif_group" name="SUPPROFIL" onclick="doAct(this);">
+					<a class="turquoise-button modif_group" href="supprimerprofil?id=${eleve.id_Eleve}" >Supprimer</a>
 				</td>
 			</tr>
 			</c:forEach>

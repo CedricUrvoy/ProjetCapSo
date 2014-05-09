@@ -67,9 +67,9 @@ public class  GroupeManager {
 		return liste;
 	}
 	
-	public Integer comptergroupeeleve(Integer idGroupe) {
-		Integer nbEleve = groupeDao.comptergroupeeleve(idGroupe);
-		return nbEleve;
+	public List<Groupe> comptergroupeeleve() {
+		 List<Groupe> liste = groupeDao.comptergroupeeleve();
+		return liste;
 	}
 	
 	public void supprimerGroupe(Integer idGroupe) {

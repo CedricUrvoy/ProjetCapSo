@@ -47,7 +47,7 @@ public class GroupeDao {
 		return liste;
 	}
 	
-
+ // LISTER LES GROUPES
 	public List<Groupe> listerGroupe() {
 		List<Groupe> liste = new ArrayList<Groupe>();
 		try {
@@ -185,7 +185,7 @@ public class GroupeDao {
 			return groupecherche;
 		}
 		
-				//LISTER Groupe TYPE ELEVE
+				//LISTER GROUPE TYPE ELEVE
 				public Groupe listerTypeEleve(Integer id,String type) {
 					Groupe groupe = new Groupe();
 					try {
@@ -250,18 +250,23 @@ public class GroupeDao {
 	}
 				
 				//COMPTER LE NOMBRE D'ELEVE PAR GROUPE
-		public Integer comptergroupeeleve(Integer idGroupe) {
-					Integer nbrEleve=null;
+		public List<Groupe> comptergroupeeleve() {
+			List<Groupe> liste = new ArrayList<Groupe>();
 		try {
 			Connection connection = DataSourceProvider.getDataSource()
 					.getConnection();
 
-			PreparedStatement stmt = connection.prepareStatement("SELECT COUNT(Groupe_id_Groupe) FROM eleve_groupe WHERE Groupe_id_Groupe=? ");
-			stmt.setInt(1,idGroupe);
-			ResultSet results = stmt.executeQuery();
 			
-			if (results.next()) {
-				nbrEleve=results.getInt(1);
+			Statement stmt = connection.createStatement();
+			ResultSet results = stmt.executeQuery("SELECT groupe.id_Groupe, groupe.nom_Groupe, COUNT( Groupe_id_Groupe ) AS nbEleve FROM eleve_groupe RIGHT JOIN groupe ON groupe.id_Groupe = eleve_groupe.Groupe_id_Groupe WHERE groupe.type_Groupe='Groupe' GROUP BY Groupe_id_Groupe ORDER BY nom_Groupe");
+			
+			
+			while (results.next()) {
+				Groupe domaine = new Groupe(
+						results.getInt("id_Groupe"),
+						results.getString("nom_Groupe"),
+						results.getInt("nbEleve"));
+				liste.add(domaine);
 				
 			}
 
@@ -274,7 +279,7 @@ public class GroupeDao {
 			e.printStackTrace();
 		}
 
-		return nbrEleve;
+		return liste;
 	}
 		
 		//SUPPRIMER UN GROUPE

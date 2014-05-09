@@ -43,7 +43,7 @@ public class AjoutGroupeServlet extends HttpServlet{
 		GroupeManager.getInstance().ajouterGroupe(
 				new Groupe(null, 
 						req.getParameter("nom_Groupe"),
-						null));
+						"Groupe"));
 		Groupe groupe = GroupeManager.getInstance().chercherGroupeNom(req.getParameter("nom_Groupe"));
 		Integer id_groupe = groupe.getId_Groupe();
 		EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_groupe);

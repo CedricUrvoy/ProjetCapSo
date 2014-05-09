@@ -47,9 +47,9 @@
 			<c:forEach var="groupe" items="${groupes}">
 			<tr class="gestion">
 				<td class="gestion">${groupe.nom_Groupe}</td>
-				<td class="gestion">Oranges</td>
+				<td class="gestion">${groupe.nbEleve}</td>
 				<td class="gestion">
-					<input type="submit" value="Supprimer le groupe" class="turquoise-button modif_group" name="SUPGROUPE" onclick="doAct(this)";>
+					<a class="turquoise-button modif_group" href="supprimergroupe?id=${groupe.id_Groupe}" >Supprimer</a>
 				</td>
 			</tr>
 			</c:forEach>

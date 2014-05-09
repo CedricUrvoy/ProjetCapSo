@@ -1,5 +1,7 @@
 package hei.capso.projetcapso.controllers;
 
+import hei.capso.projetcapso.manager.GroupeManager;
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -15,11 +17,15 @@ public class SupprimerGroupeServlet extends HttpServlet {
 	private static final long serialVersionUID = 422559256709149869L;
 
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
 		//SUPPRIMER UN GROUPE
+		Integer idGroupe = Integer.parseInt(req.getParameter("id"));
 		
+		GroupeManager.getInstance().supprimerlienGroupe(idGroupe);
+		GroupeManager.getInstance().supprimerGroupe(idGroupe);
 		
+		resp.sendRedirect("gestiongroupes");
 	}
 }

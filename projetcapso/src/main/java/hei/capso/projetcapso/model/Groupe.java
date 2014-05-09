@@ -7,6 +7,7 @@ public class Groupe {
 		private Integer id_Groupe;
 		private String nom_Groupe;
 		private String type_Groupe;
+		private Integer nbEleve;
 
 
 		//CONSTRUCTEUR
@@ -15,6 +16,14 @@ public class Groupe {
 			this.id_Groupe = id_Groupe;
 			this.nom_Groupe = nom_Groupe;
 			this.type_Groupe = type_Groupe;
+		}
+		
+		public Groupe(Integer id_Groupe, String nom_Groupe, Integer nbEleve) {
+			super();
+			this.id_Groupe = id_Groupe;
+			this.nom_Groupe = nom_Groupe;
+			this.nbEleve=nbEleve;
+			
 		}
 		
 		public Groupe() {
@@ -48,6 +57,14 @@ public class Groupe {
 
 		public void setType_Groupe(String type_Groupe) {
 			this.type_Groupe = type_Groupe;
+		}
+
+		public Integer getNbEleve() {
+			return nbEleve;
+		}
+
+		public void setNbEleve(Integer nbEleve) {
+			this.nbEleve = nbEleve;
 		}
 
 }

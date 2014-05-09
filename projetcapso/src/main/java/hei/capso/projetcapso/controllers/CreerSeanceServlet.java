@@ -42,7 +42,7 @@ public class CreerSeanceServlet extends HttpServlet{
 		
 		if(req.getParameter("groupe").equals("Personnel")){
 			System.out.print("TESSSSSSSSSSSSSSSSSSSSSSSSSSSSSST");
-			groupe = new Groupe(null, null, null);
+			groupe = new Groupe(null, "", "");
 		}else{
 			groupe = GroupeManager.getInstance().chercherGroupeNom(req.getParameter("groupe"));
 		}
