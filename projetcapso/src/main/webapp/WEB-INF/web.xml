@@ -31,17 +31,7 @@
   	<servlet-name>ElevesSeance</servlet-name>
   	<servlet-class>hei.capso.projetcapso.controllers.ElevesSeanceServlet</servlet-class>
   </servlet>
-  
- <!-- Servlet Blog --> 
-  
-  <servlet>
-    <servlet-name>Blog</servlet-name>
-    <servlet-class>hei.capso.projetcapso.controllers.BlogServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>Article</servlet-name>
-    <servlet-class>hei.capso.projetcapso.controllers.ArticleServlet</servlet-class>
-  </servlet>
+
   
   <!-- Servlet Profil -->
   
@@ -148,17 +138,6 @@
   <servlet-mapping>
     <servlet-name>ElevesSeance</servlet-name>
     <url-pattern>/elevesSeance</url-pattern>
-  </servlet-mapping>
-  
-  <!-- Url Blog -->
-  
-   <servlet-mapping>
-    <servlet-name>Blog</servlet-name>
-    <url-pattern>/blog</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>Article</servlet-name>
-    <url-pattern>/article</url-pattern>
   </servlet-mapping>
   
   <!-- Url Profil -->
