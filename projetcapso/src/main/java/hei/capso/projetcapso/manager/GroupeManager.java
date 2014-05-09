@@ -75,4 +75,8 @@ public class  GroupeManager {
 	public void supprimerGroupe(Integer idGroupe) {
 		groupeDao.SupprimerGroupe(idGroupe);
 	}
+	
+	public void supprimerlienGroupe(Integer idGroupe) {
+		groupeDao.SupprimerlienGroupe(idGroupe);
+	}
 }

@@ -137,9 +137,35 @@ public class EleveDaoImpl implements EleveDao{
 
 
 		public List<Eleve> listerEleves() {
-			// TODO Auto-generated method stub
-			return null;
-		}
+
+				List<Eleve> listeEleve = new ArrayList<Eleve>();
+				
+				try{
+					/**** Creation de la connexion ****/
+					
+					Connection connection = DataSourceProvider.getDataSource().getConnection();
+					
+					/**** Utilisation de la connection ****/
+					
+					PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Eleve ");
+					ResultSet results = stmt.executeQuery();
+					while (results.next()){
+						Eleve eleve = new Eleve(
+								results.getInt("id_Eleve"),
+								results.getString("nom_Eleve"),
+								results.getString("prenom_Eleve"));
+						listeEleve.add(eleve);
+					}
+					
+					/**** Fermer la connexion ****/
+					
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				return listeEleve	;
+			}
+		
 
 		//REJOINDRE UN GROUPE
 		

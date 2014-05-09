@@ -298,5 +298,25 @@ public class GroupeDao {
 	}
 }
 
+		//SUPPRIMER LES LIENS GROUPES & ELEVE
+				public void SupprimerlienGroupe(Integer id_Groupe) {
+			try {
+				Connection connection = DataSourceProvider.getDataSource()
+						.getConnection();
+
+				// Utiliser la connexion
+				PreparedStatement stmt = connection
+						.prepareStatement("DELETE FROM eleve_groupe WHERE Groupe_id_Groupe= ?");
+				stmt.setInt(1, id_Groupe);
+				stmt.executeUpdate();
+
+				// Fermer la connexion
+				stmt.close();
+				connection.close();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 				
 }

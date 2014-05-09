@@ -88,6 +88,10 @@
     <servlet-name>GestionProfils</servlet-name>
     <servlet-class>hei.capso.projetcapso.controllers.GestionProfilsServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>SupprimerGroupe</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.SupprimerGroupeServlet</servlet-class>
+  </servlet>
   
   <servlet-mapping>
     <servlet-name>Calendrier</servlet-name>
@@ -186,6 +190,10 @@
   <servlet-mapping>
     <servlet-name>GestionProfils</servlet-name>
     <url-pattern>/gestionprofils</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SupprimerGroupe</servlet-name>
+    <url-pattern>/supprimergroupe</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>

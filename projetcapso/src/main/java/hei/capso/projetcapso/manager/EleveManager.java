@@ -67,6 +67,9 @@ public class  EleveManager {
 		public void changerMDP(Integer id_Eleve, String password_Eleve) {
 			eleveDao.ChangerMDP(id_Eleve, password_Eleve);
 		}
-	
+		
+		public List<Eleve> listerEleve(){
+			return eleveDao.listerEleves();
+		}
 	
 }

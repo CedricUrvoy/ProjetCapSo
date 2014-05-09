@@ -691,28 +691,28 @@ table.tableau_gestion
 	border-spacing: 0;
 	margin: auto;
 } 
-td.gest_groupe, th.gest_groupe
+td.gestion, th.gestion
 { 
 	border: 1px solid solid transparent;
 	height: 30px; 
 	transition: all 0.3s; 
 }
 
-th.gest_groupe {
+th.gestion {
 background: #DFDFDF;
 font-weight: bold;
 }
 
-td.gest_groupe {
+td.gestion {
 background: #FAFAFA;
 text-align: center;
 }
 
-tr.gest_groupe:nth-child(even) td 
+tr.gestion:nth-child(even) td 
 { 
 	background: #F1F1F1; 
 }   
-tr.gest_groupe:nth-child(odd) td 
+tr.gestion:nth-child(odd) td 
 { 
 	background: #FEFEFE; 
 } 

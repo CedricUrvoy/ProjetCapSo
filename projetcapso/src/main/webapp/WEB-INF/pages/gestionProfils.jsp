@@ -35,7 +35,28 @@
 	
 	
 	<div id="gestion_groupe">
-	
+		<h1 class="big titre">Gestion des Profils</h1>
+		<div class="cadre">
+			<table class="tableau_gestion">
+			<tr class="gestion">
+				
+			    <th class="gestion">Nom</th>
+			    <th class="gestion">Prenom</th>
+			    <th class="gestion">Derniere séance</th>
+			    <th class="gestion">Supprimer</th>
+			</tr>
+			<c:forEach var="eleve" items="${eleves}">
+			<tr class="gestion">
+				<td class="gestion">${eleve.nom_Eleve}</td>
+				<td class="gestion">${eleve.prenom_Eleve}</td>
+				<td class="gestion">DATE</td>
+				<td class="gestion">
+					<input type="submit" value="Supprimer le profil" class="turquoise-button modif_group" name="SUPPROFIL" onclick="doAct(this);">
+				</td>
+			</tr>
+			</c:forEach>
+			</table>
+		</div>
 	</div>
 	
 

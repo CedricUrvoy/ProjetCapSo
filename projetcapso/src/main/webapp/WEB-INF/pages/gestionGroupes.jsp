@@ -38,17 +38,17 @@
 		<h1 class="big titre">Gestion des groupes</h1>
 		<div class="cadre">
 			<table class="tableau_gestion">
-			<tr class="gest_groupe">
+			<tr class="gestion">
 				
-			    <th class="gest_groupe">Nom du groupe</th>
-			    <th class="gest_groupe">Membres</th>
-			    <th class="gest_groupe">Supprimer</th>
+			    <th class="gestion">Nom du groupe</th>
+			    <th class="gestion">Membres</th>
+			    <th class="gestion">Supprimer</th>
 			</tr>
 			<c:forEach var="groupe" items="${groupes}">
-			<tr class="gest_groupe">
-				<td class="gest_groupe">${groupe.nom_Groupe}</td>
-				<td class="gest_groupe">Oranges</td>
-				<td class="gest_groupe">
+			<tr class="gestion">
+				<td class="gestion">${groupe.nom_Groupe}</td>
+				<td class="gestion">Oranges</td>
+				<td class="gestion">
 					<input type="submit" value="Supprimer le groupe" class="turquoise-button modif_group" name="SUPGROUPE" onclick="doAct(this)";>
 				</td>
 			</tr>

@@ -15,10 +15,14 @@ public class Eleve {
 		private Integer id_Domaine;
 		
 
-
-		
 		public Eleve() {
-			// TODO Auto-generated constructor stub
+			
+		}
+		
+		public Eleve(Integer id_Eleve, String nom_Eleve, String prenom_Eleve) {
+			this.id_Eleve = id_Eleve;
+			this.nom_Eleve = nom_Eleve;
+			this.prenom_Eleve = prenom_Eleve;
 		}
 		
 		public Eleve(Integer id_Eleve, String email_Eleve) {
