@@ -35,7 +35,26 @@
 	
 	
 	<div id="gestion_groupe">
-	
+		<h1 class="big titre">Gestion des groupes</h1>
+		<div class="cadre">
+			<table class="tableau_gestion">
+			<tr class="gest_groupe">
+				
+			    <th class="gest_groupe">Nom du groupe</th>
+			    <th class="gest_groupe">Membres</th>
+			    <th class="gest_groupe">Supprimer</th>
+			</tr>
+			<c:forEach var="groupe" items="${groupes}">
+			<tr class="gest_groupe">
+				<td class="gest_groupe">${groupe.nom_Groupe}</td>
+				<td class="gest_groupe">Oranges</td>
+				<td class="gest_groupe">
+					<input type="submit" value="Supprimer le groupe" class="turquoise-button modif_group" name="SUPGROUPE" onclick="doAct(this)";>
+				</td>
+			</tr>
+			</c:forEach>
+			</table>
+		</div>
 	</div>
 	
 

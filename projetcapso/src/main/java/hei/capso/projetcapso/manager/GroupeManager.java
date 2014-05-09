@@ -66,4 +66,13 @@ public class  GroupeManager {
 		List<Groupe> liste = groupeDao.listertypeGroupeEleve(id);
 		return liste;
 	}
+	
+	public Integer comptergroupeeleve(Integer idGroupe) {
+		Integer nbEleve = groupeDao.comptergroupeeleve(idGroupe);
+		return nbEleve;
+	}
+	
+	public void supprimerGroupe(Integer idGroupe) {
+		groupeDao.SupprimerGroupe(idGroupe);
+	}
 }

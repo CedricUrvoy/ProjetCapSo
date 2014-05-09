@@ -248,4 +248,55 @@ public class GroupeDao {
 
 		return liste;
 	}
+				
+				//COMPTER LE NOMBRE D'ELEVE PAR GROUPE
+		public Integer comptergroupeeleve(Integer idGroupe) {
+					Integer nbrEleve=null;
+		try {
+			Connection connection = DataSourceProvider.getDataSource()
+					.getConnection();
+
+			PreparedStatement stmt = connection.prepareStatement("SELECT COUNT(Groupe_id_Groupe) FROM eleve_groupe WHERE Groupe_id_Groupe=? ");
+			stmt.setInt(1,idGroupe);
+			ResultSet results = stmt.executeQuery();
+			
+			if (results.next()) {
+				nbrEleve=results.getInt(1);
+				
+			}
+
+			// Fermer la connexion
+			results.close();
+			stmt.close();
+			connection.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return nbrEleve;
+	}
+		
+		//SUPPRIMER UN GROUPE
+		public void SupprimerGroupe(Integer id_Groupe) {
+	try {
+		Connection connection = DataSourceProvider.getDataSource()
+				.getConnection();
+
+		// Utiliser la connexion
+		PreparedStatement stmt = connection
+				.prepareStatement("DELETE FROM groupe WHERE id_Groupe= ?");
+		stmt.setInt(1, id_Groupe);
+		stmt.executeUpdate();
+
+		// Fermer la connexion
+		stmt.close();
+		connection.close();
+
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+}
+
+				
 }

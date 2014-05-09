@@ -668,3 +668,52 @@ a.active{
 	left: 71%;
 	Top:100px;
 }
+
+/**Style gestionGroupes**/
+
+div.cadre
+{
+	width:80%;
+	height:500px;
+	margin:auto;
+	margin-top:50px;
+	padding-top:30px;
+	border : 5px;
+	border-style:solid;;
+	border-color:#24afb2;
+
+}
+
+table.tableau_gestion
+{ 
+	width: 90%; 
+	border-collapse: collapse; 
+	border-spacing: 0;
+	margin: auto;
+} 
+td.gest_groupe, th.gest_groupe
+{ 
+	border: 1px solid solid transparent;
+	height: 30px; 
+	transition: all 0.3s; 
+}
+
+th.gest_groupe {
+background: #DFDFDF;
+font-weight: bold;
+}
+
+td.gest_groupe {
+background: #FAFAFA;
+text-align: center;
+}
+
+tr.gest_groupe:nth-child(even) td 
+{ 
+	background: #F1F1F1; 
+}   
+tr.gest_groupe:nth-child(odd) td 
+{ 
+	background: #FEFEFE; 
+} 
+
