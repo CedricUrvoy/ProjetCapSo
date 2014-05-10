@@ -30,11 +30,15 @@ public class ChangerMDPServlet extends HttpServlet{
 		req.setAttribute("eleve",eleve);
 		Integer id_Eleve = eleve.getId_Eleve();
 		String ancienmdp = eleve.getPassword_eleve();
-		System.out.print("caca"+req.getParameter("nouveaumdp"));
+
+		
 		if (ancienmdp.equals(req.getParameter("ancienmdp")))
 		{
-			
 			EleveManager.getInstance().changerMDP(id_Eleve, req.getParameter("nouveaumdp") );
+		}
+		else
+		{
+			System.out.print("Vous n'avez pas rentré le bon mot de passe");
 		}
 
 		response.sendRedirect("profil");

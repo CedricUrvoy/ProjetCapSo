@@ -26,12 +26,12 @@ public class GestionGroupesServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 
-		//Compter le nombre de membre par groupe
+		//COMPTER LE NOMBRE DE MEMBRES PAR GROUPE
 		List<Groupe> groupes = GroupeManager.getInstance().comptergroupeeleve();
 		req.setAttribute("groupes", groupes);
 		
-	// AFFICHE LA PAGE	
-	RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/gestionGroupes.jsp");
-	view.forward(req, resp);
+		// AFFICHE LA PAGE	
+		RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/gestionGroupes.jsp");
+		view.forward(req, resp);
 	}
 }

@@ -34,6 +34,8 @@ public class RejoindreGroupeServlet extends HttpServlet {
 		
 		Integer id_Groupe = null;
 		
+		
+		/**rejoindre un groupe de type classe**/
 		if(req.getParameter("groupearejoindre").equals("Classe")){
 			
 			if(GroupeManager.getInstance().chercherTypeEleve(id_Eleve, "Classe").getNom_Groupe()==null)
@@ -49,7 +51,7 @@ public class RejoindreGroupeServlet extends HttpServlet {
 				EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_Groupe);
 				}
 		}
-		
+		/**rejoindre un groupe de type domaine**/
 		else if(req.getParameter("groupearejoindre").equals("Domaine")){
 			
 			if(GroupeManager.getInstance().chercherTypeEleve(id_Eleve,"Domaine").getNom_Groupe()==null)
@@ -65,7 +67,7 @@ public class RejoindreGroupeServlet extends HttpServlet {
 				EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_Groupe);
 			}
 		}
-		
+		/**rejoindre un groupe de type promo**/
 		else if(req.getParameter("groupearejoindre").equals("Promo")){
 			if(GroupeManager.getInstance().chercherTypeEleve(id_Eleve,"Promo").getNom_Groupe()==null)
 			{
@@ -80,12 +82,14 @@ public class RejoindreGroupeServlet extends HttpServlet {
 				EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_Groupe);
 			}
 		}
-		
+		/**rejoindre un groupe de type autre**/
 		else if(req.getParameter("groupearejoindre").equals("Autre")){
 			String nom_Groupe = req.getParameter("autre");
 			Groupe groupe = GroupeManager.getInstance().chercherGroupeNom(nom_Groupe);
 			if (groupe==null)
-			{System.out.print("LE nom n'existe pas");}
+			{
+				System.out.print("LE nom n'existe pas");
+			}
 			else if(groupe.getType_Groupe().equals("Classe") || groupe.getType_Groupe().equals("Domaine") || groupe.getType_Groupe().equals("Promo"))
 			{
 				System.out.print("Vous ne pouvez pas rejoindre ce groupe ici");

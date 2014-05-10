@@ -31,14 +31,14 @@ public class AjoutGroupeServlet extends HttpServlet{
 		Eleve eleve = (Eleve) session.getAttribute("sessionEleve");
 		req.setAttribute("eleve",eleve);
 		Integer id_Eleve = eleve.getId_Eleve();
-		System.out.print(GroupeManager.getInstance().chercherGroupeNom(req.getParameter("nom_Groupe"))!=null);
-		if (GroupeManager.getInstance().chercherGroupeNom(req.getParameter("nom_Groupe"))!=null)
+		
+		
+		if (GroupeManager.getInstance().chercherGroupeNom(req.getParameter("nom_Groupe"))!=null) // si le nom existe deja 
 		{
 			String erreurGroupeCree = "true";
 			req.setAttribute("erreur", erreurGroupeCree);
-			System.out.print("cacac   "+req.getAttribute("erreur"));
 		}
-		else
+		else // s'il extiste pas 
 		{	
 		GroupeManager.getInstance().ajouterGroupe(
 				new Groupe(null, 

@@ -1,6 +1,6 @@
 package hei.capso.projetcapso.controllers;
 
-import hei.capso.projetcapso.manager.EleveManager;
+
 import hei.capso.projetcapso.manager.GroupeManager;
 import hei.capso.projetcapso.model.Eleve;
 import hei.capso.projetcapso.model.Groupe;
@@ -30,7 +30,6 @@ public class QuitterGroupeServlet extends HttpServlet{
 		Integer id_Eleve = eleve.getId_Eleve();
 		String nom_groupe = req.getParameter("quitterGroupe");
 		Groupe groupe =GroupeManager.getInstance().chercherGroupeNom(nom_groupe);
-		System.out.print("marie"+groupe);
 		Integer id_Groupe = groupe.getId_Groupe();
 		
 		GroupeManager.getInstance().quitterGroupe(id_Eleve, id_Groupe);

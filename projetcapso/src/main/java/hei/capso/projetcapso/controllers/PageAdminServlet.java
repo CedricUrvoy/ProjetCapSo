@@ -23,11 +23,11 @@ public class PageAdminServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
-		// Liste domaines dans formulaire
+		// LISTES DES DOMAINES DANS FORMULAIRE
 		List<Groupe> domaines = GroupeManager.getInstance().listerGroupeType("Domaine");
 		req.setAttribute("domaines", domaines);
 		
-		// Liste promos dans formulaire
+		// LISTES DES PROMOS DANS FORMULAIRE
 		List<Groupe> promo = GroupeManager.getInstance().listerGroupeType("Promo");
 		req.setAttribute("promos", promo);	
 		

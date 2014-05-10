@@ -25,7 +25,7 @@ public class AjoutMatiereServlet extends HttpServlet {
 		
 		//AJOUTER UNE SEANCE
     	
-				if (MatiereManager.getInstance().chercherMatiereNom(req.getParameter("nom_matiere"))!=null)
+				if (MatiereManager.getInstance().chercherMatiereNom(req.getParameter("nom_matiere"))!=null) // si le nom existe deja 
 				{
 					System.out.print("le nom de la matiere existe déjà");
 				}
@@ -37,7 +37,6 @@ public class AjoutMatiereServlet extends HttpServlet {
 				
 				Integer id_Matiere  = MatiereManager.getInstance().chercherMatiereNom(req.getParameter("nom_matiere")).getId_Matiere();
 				Integer id_Groupe = Integer.parseInt(req.getParameter("groupeMatiere"));;
-				System.out.print("id_Groupe = "+id_Groupe);
 				MatiereManager.getInstance().matiereGroupe(id_Matiere, id_Groupe);
 				}
 				

@@ -27,7 +27,7 @@ public class QuitterSeanceServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
-	/*** Supprimer un élève de la seance ****/
+	//SUPPRIME UN ELEVE DE LA SEANCE
 		
 	HttpSession session = req.getSession();	
 	Eleve eleve = (Eleve) session.getAttribute("sessionEleve");	

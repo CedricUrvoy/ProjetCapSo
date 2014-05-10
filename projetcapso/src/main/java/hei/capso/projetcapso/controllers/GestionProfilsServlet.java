@@ -29,8 +29,8 @@ public class GestionProfilsServlet extends HttpServlet{
 		List<Eleve> eleves = EleveManager.getInstance().listerEleve();
 		req.setAttribute("eleves", eleves);
 		
-	// AFFICHE LA PAGE	
-	RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/gestionProfils.jsp");
-	view.forward(req, resp);
+		// AFFICHE LA PAGE	
+		RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/gestionProfils.jsp");
+		view.forward(req, resp);
 	}
 }

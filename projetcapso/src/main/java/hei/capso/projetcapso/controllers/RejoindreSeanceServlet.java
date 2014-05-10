@@ -30,7 +30,7 @@ public class RejoindreSeanceServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
-		//AJOUTER UN ELEVE
+		//REJOINDRE UNE SEANCE
 	HttpSession session = req.getSession();	
 	Eleve eleve = (Eleve) session.getAttribute("sessionEleve");	
 	

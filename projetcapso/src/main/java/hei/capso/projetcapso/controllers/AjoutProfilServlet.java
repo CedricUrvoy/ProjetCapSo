@@ -26,15 +26,15 @@ public class AjoutProfilServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
-		// Liste classes dans formulaire
+		// LISTES DES CLASSES DANS LE FORMULAIRE
 				List<Groupe> groupes = GroupeManager.getInstance().listerGroupeType("Classe");
 				req.setAttribute("groupes", groupes);
 				
-		// Liste domaines dans formulaire
+		// LISTES DES DOMAINES DANS LE FORMULAIRE
 				List<Groupe> domaines = GroupeManager.getInstance().listerGroupeType("Domaine");
 				req.setAttribute("domaines", domaines);
 				
-		// Liste promos dans formulaire
+		// LISTE DES PROMOS DANS LE FORMULAIRE
 				List<Groupe> promos = GroupeManager.getInstance().listerGroupeType("Promo");
 				req.setAttribute("promos", promos);
 				
@@ -47,9 +47,8 @@ public class AjoutProfilServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		
 		//AJOUTER UN ELEVE
-		
-		
 	EleveManager.getInstance().addEleve(
 			new Eleve(null, 
 						request.getParameter("nom_Eleve"), 
@@ -67,7 +66,6 @@ public class AjoutProfilServlet extends HttpServlet{
 	Integer id_Domaine = Integer.parseInt(request.getParameter("domaine"));
 		EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_Domaine);
 	Integer id_Promo = Integer.parseInt(request.getParameter("promo"));
-	System.out.print("marie 2 "+Integer.parseInt(request.getParameter("promo")));
 		EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_Promo);
 		
 		
