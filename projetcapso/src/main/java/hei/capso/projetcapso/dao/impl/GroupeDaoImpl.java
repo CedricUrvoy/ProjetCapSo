@@ -283,7 +283,7 @@ public class GroupeDaoImpl implements GroupeDao{
 	}
 
 	//SUPPRIMER UN GROUPE
-	public void SupprimerGroupe(Integer id_Groupe) {
+	public void supprimerGroupe(Integer id_Groupe) {
 		try {
 			Connection connection = DataSourceProvider.getDataSource()
 					.getConnection();
@@ -306,7 +306,7 @@ public class GroupeDaoImpl implements GroupeDao{
 	
 	
 	//SUPPRIMER LES LIENS GROUPES & ELEVE
-	public void SupprimerlienGroupe(Integer id_Groupe) {
+	public void supprimerlienGroupe(Integer id_Groupe) {
 		try {
 			Connection connection = DataSourceProvider.getDataSource()
 					.getConnection();

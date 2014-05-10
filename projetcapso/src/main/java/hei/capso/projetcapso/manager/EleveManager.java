@@ -65,7 +65,7 @@ public class  EleveManager {
 	
 	// Changer mot de passe
 		public void changerMDP(Integer id_Eleve, String password_Eleve) {
-			eleveDao.ChangerMDP(id_Eleve, password_Eleve);
+			eleveDao.changerMDP(id_Eleve, password_Eleve);
 		}
 		
 		public List<Eleve> listerEleve(){
@@ -73,17 +73,17 @@ public class  EleveManager {
 		}
 		
 	//Supprimer Eleve
-		public void SupprimerProfil(Integer id_Eleve) {
-			eleveDao.SupprimerProfil(id_Eleve);
+		public void supprimerProfil(Integer id_Eleve) {
+			eleveDao.supprimerProfil(id_Eleve);
 		}
 	
 	//Supprimer lien eleve seance
-		public void SupprimerSeanceEleve(Integer id_Eleve) {
-			eleveDao.SupprimerSeanceEleve(id_Eleve);
+		public void supprimerSeanceEleve(Integer id_Eleve) {
+			eleveDao.supprimerSeanceEleve(id_Eleve);
 		}
 		//Supprimer lien eleve groupe
-		public void SupprimerGroupeEleve(Integer id_Eleve) {
-					eleveDao.SupprimerGroupeEleve(id_Eleve);
+		public void supprimerGroupeEleve(Integer id_Eleve) {
+					eleveDao.supprimerGroupeEleve(id_Eleve);
 				}
 
 		

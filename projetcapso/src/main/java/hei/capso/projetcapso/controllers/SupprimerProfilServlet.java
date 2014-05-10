@@ -22,9 +22,9 @@ public class SupprimerProfilServlet extends HttpServlet{
 		
 		//SUPPRIMER UN PROFIL
 		Integer idEleve = Integer.parseInt(req.getParameter("id"));
-		EleveManager.getInstance().SupprimerGroupeEleve(idEleve);
-		EleveManager.getInstance().SupprimerSeanceEleve(idEleve);
-		EleveManager.getInstance().SupprimerProfil(idEleve);
+		EleveManager.getInstance().supprimerGroupeEleve(idEleve);
+		EleveManager.getInstance().supprimerSeanceEleve(idEleve);
+		EleveManager.getInstance().supprimerProfil(idEleve);
 		
 		resp.sendRedirect("gestionprofils");
 	}

@@ -74,11 +74,11 @@ public class  GroupeManager {
 	}
 	
 	public void supprimerGroupe(Integer idGroupe) {
-		groupeDao.SupprimerGroupe(idGroupe);
+		groupeDao.supprimerGroupe(idGroupe);
 	}
 	
 	public void supprimerlienGroupe(Integer idGroupe) {
-		groupeDao.SupprimerlienGroupe(idGroupe);
+		groupeDao.supprimerlienGroupe(idGroupe);
 	}
 	
 	public void supprimerlienSeance(Integer idGroupe) {

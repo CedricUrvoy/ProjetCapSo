@@ -269,7 +269,7 @@ public class EleveDaoImpl implements EleveDao{
 				}
 
 		// CHANGER LE MOT DE PASSE
-				public void ChangerMDP(Integer id_Eleve,  String password_Eleve) {
+				public void changerMDP(Integer id_Eleve,  String password_Eleve) {
 					
 					
 				try {
@@ -295,7 +295,7 @@ public class EleveDaoImpl implements EleveDao{
 			}	
 	
 				// SUPPRIMER ELEVE
-				public void SupprimerProfil(Integer id_Eleve) {
+				public void supprimerProfil(Integer id_Eleve) {
 					
 					
 				try {
@@ -321,7 +321,7 @@ public class EleveDaoImpl implements EleveDao{
 
 				
 				// SUPPRIMER SEANCE ELEVE
-				public void SupprimerSeanceEleve(Integer id_Eleve) {
+				public void supprimerSeanceEleve(Integer id_Eleve) {
 					
 					
 				try {
@@ -346,7 +346,7 @@ public class EleveDaoImpl implements EleveDao{
 			}	
 				
 				// SUPPRIMER GROUPE ELEVE
-				public void SupprimerGroupeEleve(Integer id_Eleve) {
+				public void supprimerGroupeEleve(Integer id_Eleve) {
 					
 					
 				try {

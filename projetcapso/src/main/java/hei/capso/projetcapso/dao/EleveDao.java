@@ -29,11 +29,11 @@ public interface EleveDao {
 	
 	public Eleve chercherEleveMail(String mail_Eleve);
 	
-	public void ChangerMDP(Integer id_Eleve,  String password_Eleve) ;
+	public void changerMDP(Integer id_Eleve,  String password_Eleve) ;
 	
-	public void SupprimerProfil(Integer id_Eleve);
+	public void supprimerProfil(Integer id_Eleve);
 	
-	public void SupprimerSeanceEleve(Integer id_Eleve);
+	public void supprimerSeanceEleve(Integer id_Eleve);
 	
-	public void SupprimerGroupeEleve(Integer id_Eleve);
+	public void supprimerGroupeEleve(Integer id_Eleve);
 }

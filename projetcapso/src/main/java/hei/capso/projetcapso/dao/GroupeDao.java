@@ -24,9 +24,9 @@ public interface GroupeDao {
 				
 	public List<Groupe> comptergroupeeleve();
 		
-	public void SupprimerGroupe(Integer id_Groupe);
+	public void supprimerGroupe(Integer id_Groupe);
 
-	public void SupprimerlienGroupe(Integer id_Groupe) 	;	
+	public void supprimerlienGroupe(Integer id_Groupe) 	;	
 	
 	public void supprimerlienSeance(Integer id_Groupe);
 
