@@ -12,9 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class RestrictionFilter implements Filter {
+public class RestrictionAdminFilter implements Filter {
     public static final String ACCES_CONNEXION  = "/connexion";
-    public static final String ATT_SESSION_USER = "sessionEleve";
     public static final String ATT_SESSION_ADMIN = "sessionAdmin";
 
     public void init( FilterConfig config ) throws ServletException {
@@ -61,7 +60,7 @@ public class RestrictionFilter implements Filter {
          * l'utilisateur n'est pas connecté.
          */
         
-        if ( session.getAttribute( ATT_SESSION_USER ) == null) {
+        if ( session.getAttribute( ATT_SESSION_ADMIN ) == null) {
             /* Redirection vers la page publique */
             request.getRequestDispatcher( ACCES_CONNEXION ).forward( request, response );
         } else {

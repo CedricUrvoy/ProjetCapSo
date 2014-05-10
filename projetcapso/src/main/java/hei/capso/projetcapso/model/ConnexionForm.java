@@ -69,47 +69,32 @@ public final class ConnexionForm {
     }
 
     
-    public int connecterAdmin( HttpServletRequest req ){
+    public Integer connecterAdmin( HttpServletRequest req ){
     	
     	/* Récupération des champs du formulaire */
         String email = req.getParameter("email");
         String password = req.getParameter("password");
         
-        List<Eleve> emailEleve = EleveManager.getInstance().listerEmailEleve();
-        
-        Integer idEleve = null;
-      
-        Eleve eleveConnexion = new Eleve();
-        Eleve eleve = null;
 
-        /* Validation du champ email. */
+        /* Validation de la connexion admin. */
         try {
-          idEleve = validationEmail( email, emailEleve);
-          Eleve elevePotentiel = EleveManager.getInstance().getEleve(idEleve);
+          validationAdmin( email, password);
           
         } catch ( Exception e ) {	
-            setErreur( "email", e.getMessage() );
-        }
-        eleveConnexion.setEmail_Eleve(email);
-        
-        /* Validation du champ mot de passe. */
-        try {
-            validationMotDePasse( password , "admin");
-        } catch ( Exception e ) {
             setErreur( "password", e.getMessage() );
+            
         }
-        eleveConnexion.setPassword_eleve(password);
 
         /* Initialisation du résultat global de la validation. */
         if ( erreurs.isEmpty() ) {
             resultat = "Succès de la connexion.";
-            eleve = EleveManager.getInstance().getEleve(idEleve);
+            return 1;
         } else {
             resultat = "Échec de la connexion.";
+            return null;
         }
-
-        
-		return 1;
+  
+		
     }
     
     
@@ -148,6 +133,12 @@ public final class ConnexionForm {
         } else {
             throw new Exception( "Merci de saisir votre mot de passe." );
         }
+    }
+    
+    private void validationAdmin (String email, String password) throws Exception {
+    	if(!password.matches("admin") || !email.matches("admin")){
+    	 throw new Exception("Vous n'êtes pas administrateur");
+    	}	   	
     }
 
     /*

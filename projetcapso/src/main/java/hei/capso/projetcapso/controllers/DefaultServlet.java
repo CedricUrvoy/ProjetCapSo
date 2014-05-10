@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-public class RestrictionServlet extends HttpServlet {
+public class DefaultServlet extends HttpServlet {
 
 
     /**
