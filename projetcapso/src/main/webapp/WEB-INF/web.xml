@@ -72,8 +72,12 @@
     <servlet-class>hei.capso.projetcapso.controllers.DeconnexionServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>Restriction</servlet-name>
-    <servlet-class>hei.capso.projetcapso.controllers.RestrictionServlet</servlet-class>
+    <servlet-name>Default</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.DefaultServlet</servlet-class>
+  </servlet>
+   <servlet>
+    <servlet-name>ConnexionAdmin</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.ConnexionAdminServlet</servlet-class>
   </servlet>
   
   
@@ -178,45 +182,49 @@
     <url-pattern>/deconnexion</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>Restriction</servlet-name>
-    <url-pattern>/restriction</url-pattern>
+    <servlet-name>Default</servlet-name>
+    <url-pattern>/default</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>ConnexionAdmin</servlet-name>
+    <url-pattern>/connexionadmin</url-pattern>
   </servlet-mapping>
   
   <!-- Url Admin -->
   
   <servlet-mapping>
     <servlet-name>AdminArticle</servlet-name>
-    <url-pattern>/adminArticle</url-pattern>
+    <url-pattern>/admin/adminArticle</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>AjoutMatiere</servlet-name>
-    <url-pattern>/ajoutmatiere</url-pattern>
+    <url-pattern>/admin/ajoutmatiere</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>PageAdmin</servlet-name>
-    <url-pattern>/pageadmin</url-pattern>
+    <url-pattern>/admin/pageadmin</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>GestionGroupes</servlet-name>
-    <url-pattern>/gestiongroupes</url-pattern>
+    <url-pattern>/admin/gestiongroupes</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>GestionProfils</servlet-name>
-    <url-pattern>/gestionprofils</url-pattern>
+    <url-pattern>/admin/gestionprofils</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>SupprimerGroupe</servlet-name>
-    <url-pattern>/supprimergroupe</url-pattern>
+    <url-pattern>/admin/supprimergroupe</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>SupprimerProfil</servlet-name>
-    <url-pattern>/supprimerprofil</url-pattern>
+    <url-pattern>/admin/supprimerprofil</url-pattern>
   </servlet-mapping>
 
  <!-- Welcome File (Redirection par default) --> 
  
   <welcome-file-list>
-    <welcome-file>restriction</welcome-file>
+    <welcome-file>default</welcome-file>
   </welcome-file-list>
 
   <!-- Filtre -->
@@ -225,9 +233,17 @@
     <filter-name>RestrictionFilter</filter-name>
     <filter-class>hei.capso.projetcapso.filters.RestrictionFilter</filter-class>
   </filter>
+  <filter>
+    <filter-name>RestrictionAdminFilter</filter-name>
+    <filter-class>hei.capso.projetcapso.filters.RestrictionAdminFilter</filter-class>
+  </filter>
   <filter-mapping>
     <filter-name>RestrictionFilter</filter-name>
     <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>RestrictionAdminFilter</filter-name>
+    <url-pattern>/admin/*</url-pattern>
   </filter-mapping>
   
 </web-app>

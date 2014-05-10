@@ -30,7 +30,7 @@ public class GestionProfilsServlet extends HttpServlet{
 		req.setAttribute("eleves", eleves);
 		
 		// AFFICHE LA PAGE	
-		RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/gestionProfils.jsp");
+		RequestDispatcher view = req.getRequestDispatcher("/WEB-INF/pages/admin/gestionProfils.jsp");
 		view.forward(req, resp);
 	}
 }

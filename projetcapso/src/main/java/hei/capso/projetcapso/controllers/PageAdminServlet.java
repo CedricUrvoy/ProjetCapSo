@@ -32,7 +32,7 @@ public class PageAdminServlet extends HttpServlet{
 		req.setAttribute("promos", promo);	
 		
 	// AFFICHE LA PAGE	
-	RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/pageAdmin.jsp");
+	RequestDispatcher view = req.getRequestDispatcher("/WEB-INF/pages/admin/pageAdmin.jsp");
 	view.forward(req, resp);
 	}
 

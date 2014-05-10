@@ -31,7 +31,7 @@ public class GestionGroupesServlet extends HttpServlet{
 		req.setAttribute("groupes", groupes);
 		
 		// AFFICHE LA PAGE	
-		RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/gestionGroupes.jsp");
+		RequestDispatcher view = req.getRequestDispatcher("/WEB-INF/pages/admin/gestionGroupes.jsp");
 		view.forward(req, resp);
 	}
 }

@@ -7,11 +7,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<<<<<<< HEAD:projetcapso/src/main/webapp/WEB-INF/pages/gestionProfils.jsp
 <link rel="stylesheet" type="text/css" href="css/header-style.css"/>
 <link rel="stylesheet" type="text/css" href="css/reset.css"/>
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <script src="js/app.js"></script>
 <title>Gestion des profils</title>
+=======
+<link rel="stylesheet" type="text/css" href="../css/header-style.css"/>
+<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+<script src="../js/app.js"></script>
+<title>GESTION DES PROFILS</title>
+>>>>>>> 8635e6849bd683b71549e904dbaa42313b6b175b:projetcapso/src/main/webapp/WEB-INF/pages/admin/gestionProfils.jsp
 </head>
 <body>
 
@@ -19,7 +27,7 @@
 		
 		<div class="menu centrer">
 			<div class="logo">
-				<img src="img/Logo.png" alt="nomDuSite" title="nomDuSite"/>
+				<img src="../img/Logo.png" alt="nomDuSite" title="nomDuSite"/>
 				<a href="calendrier">SoliCours</a>
 			</div>
 			<ul class= "onglet">
@@ -27,7 +35,7 @@
 				<li><a href="gestiongroupes" >GROUPES</a></li>
 				<li><a href="profil">PROFILS</a></li>
 				
-				<li><a href="deconnexion">DECONNEXION</a></li>
+				<li><a href="/projetcapso/deconnexion">DECONNEXION</a></li>
 				
 			</ul>
 		</div>
