@@ -12,13 +12,12 @@ public interface SeanceDao {
 	
 	public List<Seance>	listerSeanceGroupe(Integer idGroupe);
 	
-	public List<Eleve> listerElevesSeances(Integer idSeance);
+	public List<Eleve> listerElevesSeance(Integer idSeance);
 	
 	public Seance getSeance (int idSeance);
 	
 	public int addSeance(Seance seance);
 	
-	public void modifSeance(int idSeance, Seance seance);
 	
 	public void deleteSeance (int idSeance);
 	

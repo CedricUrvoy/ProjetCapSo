@@ -17,8 +17,8 @@ import java.util.List;
 
 public class EleveDaoImpl implements EleveDao{
 	
-	// FAIRE LA LISTE DES ELEVE
 	
+	// FAIRE LA LISTE DES ID ET MAIL DES ELEVES
 	public List<Eleve> listerIdEmailEleve() {
 
 		List<Eleve> listeEmailEleve = new ArrayList<Eleve>();
@@ -55,10 +55,11 @@ public class EleveDaoImpl implements EleveDao{
 	//AJOUTER ELEVE
 		public void addEleve(Eleve eleve) {
 			try {
+				/**** Creation de la connexion ****/
 				Connection connection = DataSourceProvider.getDataSource()
 						.getConnection();
 
-				// Utiliser la connexion
+				/**** Utilisation de la connection ****/
 				PreparedStatement stmt = connection
 						.prepareStatement("INSERT INTO `eleve`(`nom_Eleve`,`prenom_Eleve`,`password_Eleve`,`email_Eleve`) VALUES(?, ?, ?, ?)");
 				stmt.setString(1, eleve.getNom_Eleve());
@@ -68,7 +69,7 @@ public class EleveDaoImpl implements EleveDao{
 
 				stmt.executeUpdate();
 
-				// Fermer la connexion
+				/**** Fermer la connexion ****/
 				stmt.close();
 				connection.close();
 
@@ -78,7 +79,7 @@ public class EleveDaoImpl implements EleveDao{
 		}
 
 
-		// Recuperation des infos de l'eleve sans les groupes 
+		// RECUPERATION DES DONNEES D'UN ELEVE SANS SES GROUPES 
 
 		public Eleve getEleve(int idEleve) {
 			
@@ -112,28 +113,6 @@ public class EleveDaoImpl implements EleveDao{
 			}
 			return eleve;
 		}
-
-
-		public Eleve getEleveGroupe(int idEleve) {
-			
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		public void modifEleve(int idEleve, Eleve eleve) {
-			// TODO Auto-generated method stub
-			
-		}
-
-
-
-
-		public void deleteEleve(int idEleve) {
-			// TODO Auto-generated method stub
-			
-		}
-
-
 
 
 		public List<Eleve> listerEleves() {
@@ -171,17 +150,18 @@ public class EleveDaoImpl implements EleveDao{
 		
 		public  void rejoindreGroupe(int idEleve, int idGroupe) {
 			try {
+				/**** Creation de la connexion ****/
 				Connection connection = DataSourceProvider.getDataSource()
 						.getConnection();
 
-				// Utiliser la connexion
+				/**** Utilisation de la connection ****/
 				PreparedStatement stmt = connection
 						.prepareStatement("INSERT INTO `eleve_groupe`(`Eleve_id_Eleve`,`Groupe_id_Groupe`) VALUES(?, ?)");
 				stmt.setInt(1, idEleve);
 				stmt.setInt(2, idGroupe);
 				stmt.executeUpdate();
 
-				// Fermer la connexion
+				/**** Fermer la connexion ****/
 				stmt.close();
 				connection.close();
 
@@ -195,17 +175,18 @@ public class EleveDaoImpl implements EleveDao{
 
 		public void rejoindreSeance(int idEleve, int idSeance) {
 			try {
+				/**** Creation de la connexion ****/
 					Connection connection = DataSourceProvider.getDataSource()
 							.getConnection();
 		
-					// Utiliser la connexion
+					/**** Utilisation de la connection ****/
 					PreparedStatement stmt = connection
 							.prepareStatement("INSERT INTO `seance_eleve`(`Eleve_id_Eleve`,`Seance_id_Seance`) VALUES(?, ?)");
 					stmt.setInt(1, idEleve);
 					stmt.setInt(2, idSeance);
 					stmt.executeUpdate();
 		
-					// Fermer la connexion
+					/**** Fermer la connexion ****/
 					stmt.close();
 					connection.close();
 		
@@ -219,17 +200,18 @@ public class EleveDaoImpl implements EleveDao{
 		
 		public void quitterSeance(int idEleve, int idSeance) {
 			try {
+				/**** Creation de la connexion ****/
 				Connection connection = DataSourceProvider.getDataSource()
 						.getConnection();
 		
-				// Utiliser la connexion
+				/**** Utilisation de la connection ****/
 				PreparedStatement stmt = connection
 						.prepareStatement("DELETE FROM seance_eleve WHERE Eleve_id_Eleve= ? AND Seance_id_Seance=? ");
 				stmt.setInt(1, idEleve);
 				stmt.setInt(2, idSeance);
 				stmt.executeUpdate();
 		
-				// Fermer la connexion
+				/**** Fermer la connexion ****/
 				stmt.close();
 				connection.close();
 		
@@ -242,9 +224,11 @@ public class EleveDaoImpl implements EleveDao{
 				public Eleve chercherEleveMail(String mail_Eleve) {
 					Eleve elevecherche = null;
 					try {
+						/**** Creation de la connexion ****/
 						Connection connection = DataSourceProvider.getDataSource()
 								.getConnection();
-
+						
+						/**** Utilisation de la connection ****/
 						PreparedStatement stmt = connection.prepareStatement("SELECT eleve.email_Eleve, eleve.id_Eleve FROM eleve WHERE eleve.email_Eleve=?");
 						stmt.setString(1,mail_Eleve);
 						ResultSet results = stmt.executeQuery();
@@ -256,7 +240,7 @@ public class EleveDaoImpl implements EleveDao{
 							
 						}
 
-						// Fermer la connexion
+						/**** Fermer la connexion ****/
 						results.close();
 						stmt.close();
 						connection.close();
@@ -273,10 +257,11 @@ public class EleveDaoImpl implements EleveDao{
 					
 					
 				try {
+					/**** Creation de la connexion ****/
 					Connection connection = DataSourceProvider.getDataSource()
 							.getConnection();
 
-					// Utiliser la connexion
+					/**** Utilisation de la connection ****/
 					PreparedStatement stmt = connection
 							.prepareStatement("UPDATE eleve SET eleve.password_Eleve = ? WHERE eleve.id_Eleve = ?");
 					stmt.setString(1, password_Eleve);
@@ -285,7 +270,7 @@ public class EleveDaoImpl implements EleveDao{
 
 					stmt.executeUpdate();
 
-					// Fermer la connexion
+					/**** Fermer la connexion ****/
 					stmt.close();
 					connection.close();
 
@@ -299,10 +284,11 @@ public class EleveDaoImpl implements EleveDao{
 					
 					
 				try {
+					/**** Creation de la connexion ****/
 					Connection connection = DataSourceProvider.getDataSource()
 							.getConnection();
 
-					// Utiliser la connexion
+					/**** Utilisation de la connection ****/
 					PreparedStatement stmt = connection
 							.prepareStatement("DELETE FROM eleve WHERE id_Eleve=?");
 					stmt.setInt(1, id_Eleve );
@@ -310,7 +296,7 @@ public class EleveDaoImpl implements EleveDao{
 
 					stmt.executeUpdate();
 
-					// Fermer la connexion
+					/**** Fermer la connexion ****/
 					stmt.close();
 					connection.close();
 
@@ -325,10 +311,11 @@ public class EleveDaoImpl implements EleveDao{
 					
 					
 				try {
+					/**** Creation de la connexion ****/
 					Connection connection = DataSourceProvider.getDataSource()
 							.getConnection();
 
-					// Utiliser la connexion
+					/**** Utilisation de la connection ****/
 					PreparedStatement stmt = connection
 							.prepareStatement("DELETE FROM seance_eleve WHERE Eleve_id_Eleve =?");
 					stmt.setInt(1, id_Eleve );
@@ -336,7 +323,7 @@ public class EleveDaoImpl implements EleveDao{
 
 					stmt.executeUpdate();
 
-					// Fermer la connexion
+					/**** Fermer la connexion ****/
 					stmt.close();
 					connection.close();
 
@@ -350,10 +337,11 @@ public class EleveDaoImpl implements EleveDao{
 					
 					
 				try {
+					/**** Creation de la connexion ****/
 					Connection connection = DataSourceProvider.getDataSource()
 							.getConnection();
 
-					// Utiliser la connexion
+					/**** Utilisation de la connection ****/
 					PreparedStatement stmt = connection
 							.prepareStatement("DELETE FROM eleve_groupe WHERE Eleve_id_Eleve =?");
 					stmt.setInt(1, id_Eleve );
@@ -361,7 +349,7 @@ public class EleveDaoImpl implements EleveDao{
 
 					stmt.executeUpdate();
 
-					// Fermer la connexion
+					/**** Fermer la connexion ****/
 					stmt.close();
 					connection.close();
 

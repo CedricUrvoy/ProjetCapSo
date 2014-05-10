@@ -38,7 +38,7 @@ public class AjoutGroupeServlet extends HttpServlet{
 			String erreurGroupeCree = "true";
 			req.setAttribute("erreur", erreurGroupeCree);
 		}
-		else // s'il extiste pas 
+		else // s'il existe pas 
 		{	
 		GroupeManager.getInstance().ajouterGroupe(
 				new Groupe(null, 

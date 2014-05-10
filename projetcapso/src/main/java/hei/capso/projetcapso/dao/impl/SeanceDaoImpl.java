@@ -205,11 +205,7 @@ public class SeanceDaoImpl implements SeanceDao{
 	
 		return idSeanceCree;
 	}
-	
-	public void modifSeance(int idSeance, Seance seance) {
-		// TODO Auto-generated method stub
-		
-	}
+
 	
 	public void deleteSeance(int idSeance) {
 		
@@ -234,9 +230,9 @@ public class SeanceDaoImpl implements SeanceDao{
 		
 	}
 
-	public List<Eleve> listerElevesSeances(Integer idSeance) {
+	public List<Eleve> listerElevesSeance(Integer idSeance) {
 
-		List<Eleve> listeElevesSeances = new ArrayList<Eleve>();
+		List<Eleve> listeElevesSeance = new ArrayList<Eleve>();
 		
 		/**** Creation de la connexion ****/
 		
@@ -257,7 +253,7 @@ public class SeanceDaoImpl implements SeanceDao{
 						results.getInt("id_Eleve"),
 						results.getString("nom_Eleve"),
 						results.getString("prenom_Eleve"));
-				listeElevesSeances.add(eleve);
+				listeElevesSeance.add(eleve);
 			}
 		
 			/**** Fermer la connexion ****/
@@ -267,6 +263,6 @@ public class SeanceDaoImpl implements SeanceDao{
 		}
 		
 		
-		return listeElevesSeances;
+		return listeElevesSeance;
 	}
 }

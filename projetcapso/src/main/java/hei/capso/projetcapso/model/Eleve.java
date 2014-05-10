@@ -11,8 +11,6 @@ public class Eleve {
 		private String email_Eleve;
 		private String password_eleve;
 		private Date date;
-		private Integer id_Classe;
-		private Integer id_Domaine;
 		
 
 		public Eleve() {
@@ -134,21 +132,6 @@ public class Eleve {
 			this.date = date;
 		}
 
-		public Integer getId_Classe() {
-			return id_Classe;
-		}
-
-		public void setId_Classe(Integer id_Classe) {
-			this.id_Classe = id_Classe;
-		}
-
-		public Integer getId_Domaine() {
-			return id_Domaine;
-		}
-
-		public void setId_Domaine(Integer id_Domaine) {
-			this.id_Domaine = id_Domaine;
-		}
 		
 
 

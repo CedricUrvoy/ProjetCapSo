@@ -39,7 +39,7 @@ public class SeanceManager {
 	}
 	
 	public List<Eleve> listeElevesSeance(int idSeance){
-		List<Eleve> listeElevesSeance = seanceDao.listerElevesSeances(idSeance);
+		List<Eleve> listeElevesSeance = seanceDao.listerElevesSeance(idSeance);
 		return listeElevesSeance;
 	}
 
