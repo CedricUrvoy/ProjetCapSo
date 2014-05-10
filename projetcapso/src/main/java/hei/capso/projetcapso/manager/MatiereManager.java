@@ -3,7 +3,6 @@ package hei.capso.projetcapso.manager ;
 
 import hei.capso.projetcapso.dao.MatiereDao;
 import hei.capso.projetcapso.dao.impl.MatiereDaoImpl;
-import hei.capso.projetcapso.model.Groupe;
 import hei.capso.projetcapso.model.Matiere;
 
 import java.util.List;

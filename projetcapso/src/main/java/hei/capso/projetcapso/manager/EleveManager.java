@@ -6,7 +6,6 @@ import java.util.List;
 import hei.capso.projetcapso.dao.EleveDao;
 import hei.capso.projetcapso.dao.impl.EleveDaoImpl;
 import hei.capso.projetcapso.model.Eleve;
-import hei.capso.projetcapso.model.Groupe;
 
 
 public class  EleveManager {
@@ -27,12 +26,12 @@ public class  EleveManager {
 	private EleveManager() {
 	}
 	
-	/**** Lister les emails des eleves pour la connexion ****/
-	
+	//LISTER LES EMAILS DES ELEVES POUR LA CONNEXION
 	public List<Eleve> listerEmailEleve(){
 		return eleveDao.listerIdEmailEleve();
 	}
 	
+	// AVOIR UN ELEVE
 	public Eleve getEleve(int idEleve){
 		return eleveDao.getEleve(idEleve);
 	}
@@ -63,28 +62,29 @@ public class  EleveManager {
 		return eleve;
 	}
 	
-	// Changer mot de passe
+	// CHANGER MOT DE PASSE
 		public void changerMDP(Integer id_Eleve, String password_Eleve) {
 			eleveDao.changerMDP(id_Eleve, password_Eleve);
 		}
 		
+	//LISTER ELEVE
 		public List<Eleve> listerEleve(){
 			return eleveDao.listerEleves();
 		}
 		
-	//Supprimer Eleve
+	//SUPPRIMER ELEVE 
 		public void supprimerProfil(Integer id_Eleve) {
 			eleveDao.supprimerProfil(id_Eleve);
 		}
 	
-	//Supprimer lien eleve seance
+	//SUPPRIMER LIEN ENTRE ELEVE ET SEANCE
 		public void supprimerSeanceEleve(Integer id_Eleve) {
 			eleveDao.supprimerSeanceEleve(id_Eleve);
 		}
-		//Supprimer lien eleve groupe
+	//SUPPRIMER LIEN ELEVE GROUPE
 		public void supprimerGroupeEleve(Integer id_Eleve) {
-					eleveDao.supprimerGroupeEleve(id_Eleve);
-				}
+				eleveDao.supprimerGroupeEleve(id_Eleve);
+		}
 
 		
 }
