@@ -36,4 +36,5 @@ public interface EleveDao {
 	public void supprimerSeanceEleve(Integer id_Eleve);
 	
 	public void supprimerGroupeEleve(Integer id_Eleve);
+	
 }

@@ -61,7 +61,7 @@
 			<div id="boutonAjout" class="centrer">
 				<div class="centrerBouton">
 					<form action="javascript:showDiv('ajoutSeance')">
-					<input type="submit" value="Ajouter une Seance" class="turquoise-flat-button"></form>
+					<input type="submit" value="Ajouter une Séance" class="turquoise-flat-button"></form>
 				</div>
 			</div>
 			
@@ -127,7 +127,7 @@
 						        <p class="info_seance" id="infosplace"></p>
 						        <label>Informations de la séance :</label>
 						        <p class="info_seance" id="infos"></p>	
-						        <label>Eleves inscrits</label>
+						        <label>Elèves inscrits</label>
 						   	    <p class="info_seance" id="eleves"></p>	
 						    <fieldset class="boutons">
 						        <input type="Submit" class="turquoise-button" id="rejoindre" name="QUITTERSEANCE" value="Quitter" onclick="doAct(this);"> 

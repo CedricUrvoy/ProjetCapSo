@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="css/reset.css"/>
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <script src="js/app.js"></script>
-<title>GESTION DES PROFILS</title>
+<title>Gestion des profils</title>
 </head>
 <body>
 
@@ -41,8 +41,8 @@
 			<tr class="gestion">
 				
 			    <th class="gestion">Nom</th>
-			    <th class="gestion">Prenom</th>
-			    <th class="gestion">Derniere séance</th>
+			    <th class="gestion">Prénom</th>
+			    <th class="gestion">Dernière séance</th>
 			    <th class="gestion">Supprimer</th>
 			</tr>
 			<c:forEach var="eleve" items="${eleves}">

@@ -1,27 +1,3 @@
-/*function hideDiv(hideshow) { 
-    if (document.getElementById) { // DOM3 = IE5, NS6 
-        document.getElementById(hideshow).style.visibility = 'hidden'; 
-    } else { 
-        if (document.layers) { // Netscape 4 
-            document.hideshow.visibility = 'hidden'; 
-        } else { // IE 4 
-            document.all.hideshow.style.visibility = 'hidden'; 
-        } 
-    } 
-}
- 
-function showDiv() { 
-    if (document.getElementById) { // DOM3 = IE5, NS6 
-        document.getElementById(hideshow).style.visibility = 'visible'; 
-    } else { 
-        if (document.layers) { // Netscape 4 
-            document.hideshow.visibility = 'visible'; 
-        } else { // IE 4 
-            document.all.hideshow.style.visibility = 'visible'; 
-        } 
-    } 
-}*/
-
 var div;
 function hideDiv(){
     div.style.visibility = 'hidden';
@@ -153,7 +129,7 @@ else if (bouton.name=="AJOUTER" )
      document.DFormAM.action="ajoutmatiere";
      document.DFormAM.submit();
 }
-else if (bouton.name=="ANNULERAJOUT" )
+else if (bouton.name=="ANNULERAJOUTM" )
 {
 	 
      document.DFormAM.action="javascript:hideDiv()";

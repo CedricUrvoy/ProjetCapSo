@@ -64,7 +64,7 @@
   										</c:forEach>
 							</select>
 						    <input type="Submit" class="turquoise-button" name="AJOUTER" value="Ajouter" onclick="doAct(this);"> 
-						    <input type="Submit" class="turquoise-button" name="ANNULERAJOUT" value="Annuler" onclick="doAct(this);">
+						    <input type="Submit" class="turquoise-button" name="ANNULERAJOUTM" value="Annuler" onclick="doAct(this);">
 						</form>
 					</div>
 				</div>

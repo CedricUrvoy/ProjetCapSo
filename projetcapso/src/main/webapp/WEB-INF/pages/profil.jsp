@@ -68,6 +68,7 @@
 						    <fieldset  id="inputs_ajout">
 						    <label>Nom du groupe</label>
 						         <input name="nom_Groupe" class="input" type="text"  >
+						         <p>Evitez les accents ! </p>
 						     </fieldset>
 						    <fieldset id="boutons">
 						        <input type="Submit" class="turquoise-button" name="VALIDERAJOUTGROUPE" value="Valider" onclick="doAct(this); myFonction();"> 

@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="css/reset.css"/>
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <script src="js/app.js"></script>
-<title>GESTION DES GROUPES</title>
+<title>Gestion des groupes</title>
 </head>
 <body>
 
