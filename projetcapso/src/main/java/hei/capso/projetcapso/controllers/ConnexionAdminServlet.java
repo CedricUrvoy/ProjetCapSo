@@ -55,7 +55,7 @@ public class ConnexionAdminServlet extends HttpServlet {
         	this.getServletContext().getRequestDispatcher( "/WEB-INF/pages/loginAdmin.jsp" ).forward( req, resp );
         } else {
             /* Affichage de la page restreinte */
-        	resp.sendRedirect("/admin/pageadmin");
+        	resp.sendRedirect("admin/pageadmin");
         }
     }
 }

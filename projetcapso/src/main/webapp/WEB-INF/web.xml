@@ -194,11 +194,11 @@
   
   <servlet-mapping>
     <servlet-name>AdminArticle</servlet-name>
-    <url-pattern>/adminArticle</url-pattern>
+    <url-pattern>/admin/adminArticle</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>AjoutMatiere</servlet-name>
-    <url-pattern>/ajoutmatiere</url-pattern>
+    <url-pattern>/admin/ajoutmatiere</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>PageAdmin</servlet-name>
@@ -206,19 +206,19 @@
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>GestionGroupes</servlet-name>
-    <url-pattern>/gestiongroupes</url-pattern>
+    <url-pattern>/admin/gestiongroupes</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>GestionProfils</servlet-name>
-    <url-pattern>/gestionprofils</url-pattern>
+    <url-pattern>/admin/gestionprofils</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>SupprimerGroupe</servlet-name>
-    <url-pattern>/supprimergroupe</url-pattern>
+    <url-pattern>/admin/supprimergroupe</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>SupprimerProfil</servlet-name>
-    <url-pattern>/supprimerprofil</url-pattern>
+    <url-pattern>/admin/supprimerprofil</url-pattern>
   </servlet-mapping>
 
  <!-- Welcome File (Redirection par default) --> 
