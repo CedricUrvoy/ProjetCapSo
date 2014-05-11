@@ -370,7 +370,7 @@ public class EleveDaoImpl implements EleveDao{
 
 					/**** Utilisation de la connection ****/
 					PreparedStatement stmt = connection
-							.prepareStatement("UPDATE eleve SET image_Eleve = ? WHERE id_Eleve=?");
+							.prepareStatement("UPDATE eleve SET lienCalendrier_Eleve = ? WHERE id_Eleve=?");
 					stmt.setInt(2, id_Eleve );
 					stmt.setString(1, lienCalendrier );
 
