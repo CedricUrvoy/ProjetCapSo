@@ -161,9 +161,9 @@
 	    	<div class="popup_block">
 		    	<div id="titrePopup">Ajout Calendrier Google</div>
 				<div id="contentPopup">
-					<form id="ajout" name="DFormCMDP" method="POST">   
+					<form id="ajout" name="DFormAC" method="POST">   
 					    <label>Lien du Calendrier Google</label>
-					    <input name="liencalendrier" class="input" type="text"  id="liencalendrie">
+					    <input name="liencalendrier" class="input" type="text"  id="liencalendrier">
 					    <input type="Submit" class="turquoise-button" name="VALIDERCALENDRIER" value="Valider" onclick="doAct(this);"> 
 					    <input type="Submit" class="turquoise-button" name="ANNULERAJOUTERCALENDRIER" value="Annuler" onclick="doAct(this);">
 					</form>
@@ -177,7 +177,7 @@
 	    	<div class="popup_block">
 		    	<div id="titrePopup">Changer de mot de passe </div>
 				<div id="contentPopup">
-					<form id="ajout" name="DFormAC" method="POST">   
+					<form id="ajout" name="DFormCMDP" method="POST">   
 					    <label>Ancien mot de passe</label>
 					    <input name="ancienmdp" class="input" type="password"  id="ancienmdp">
 					    <label>Nouveau mot de passe</label>

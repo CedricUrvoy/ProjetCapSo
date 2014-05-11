@@ -4,8 +4,6 @@ package hei.capso.projetcapso.dao.impl;
 import hei.capso.projetcapso.dao.DataSourceProvider;
 import hei.capso.projetcapso.dao.EleveDao;
 import hei.capso.projetcapso.model.Eleve;
-import hei.capso.projetcapso.model.Groupe;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -357,6 +355,37 @@ public class EleveDaoImpl implements EleveDao{
 					e.printStackTrace();
 				}
 			}
+
+
+
+
+				public void ajouterCalendrier(Integer id_Eleve,
+						String lienCalendrier) {
+
+					try {
+						/**** Creation de la connexion ****/
+						Connection connection = DataSourceProvider.getDataSource()
+								.getConnection();
+
+						/**** Utilisation de la connection ****/
+						PreparedStatement stmt = connection
+								.prepareStatement("UPDATE eleve SET image_eleve = ? WHERE id_Eleve=?");
+						stmt.setInt(2, id_Eleve );
+						stmt.setString(1, lienCalendrier );
+
+						stmt.executeUpdate();
+
+						/**** Fermer la connexion ****/
+						stmt.close();
+						connection.close();
+
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				
+					
+					
+				}
 
 
 

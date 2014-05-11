@@ -103,8 +103,8 @@ else if (bouton.name=="ANNULERREJOINDRE" )
 
 else if (bouton.name=="AJOUTERCALENDRIER" )
 {
-     document.DFormAC.action="javascript:showDiv('ajouterCalendrier')";
-     document.DFormAC.submit();
+     document.DFormModifGroupe.action="javascript:showDiv('ajouterCalendrier')";
+     document.DFormModifGroupe.submit();
 }
 else if (bouton.name=="VALIDERCALENDRIER" )
 {
@@ -122,7 +122,7 @@ else if (bouton.name=="ANNULERAJOUTCALENDRIER" )
 else if (bouton.name=="MDP" )
 {
 	
-     document.DFormRG.action="javascript:showDiv('changermdp')";
+     document.action="javascript:showDiv('changermdp')";
      document.DFormRG.submit();
 }
 else if (bouton.name=="CHANGER" )

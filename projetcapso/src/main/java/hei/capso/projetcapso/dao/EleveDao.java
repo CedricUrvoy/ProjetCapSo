@@ -31,4 +31,6 @@ public interface EleveDao {
 	
 	public void supprimerGroupeEleve(Integer id_Eleve);
 	
+	public void ajouterCalendrier (Integer id_Eleve, String lienCalendrier);
+	
 }

@@ -85,6 +85,12 @@ public class  EleveManager {
 		public void supprimerGroupeEleve(Integer id_Eleve) {
 				eleveDao.supprimerGroupeEleve(id_Eleve);
 		}
+		
+	// AJOUTER CALENDRIER ELEVE
+		
+		public void ajoutCalendrier(Integer id_Eleve, String lienCalendrier){
+			eleveDao.ajouterCalendrier(id_Eleve, lienCalendrier);
+		}
 
 		
 }
