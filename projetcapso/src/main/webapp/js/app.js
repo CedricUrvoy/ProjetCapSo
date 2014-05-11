@@ -86,6 +86,7 @@ else if (bouton.name=="REJOINDREGROUPE" )
      document.DFormModifGroupe.action="javascript:showDiv('rejoindreGroupe')";
      document.DFormModifGroupe.submit();
 }
+
 else if (bouton.name=="REJOINDREOK" )
 {
      document.DFormRG.action="rejoindregroupe";
@@ -97,6 +98,25 @@ else if (bouton.name=="ANNULERREJOINDRE" )
      document.DFormRG.action="javascript:hideDiv()";
      document.DFormRG.submit();
 }
+
+// AFFICHAGE POP UP AJOUTER CALENDRIER
+
+else if (bouton.name=="AJOUTERCALENDRIER" )
+{
+     document.DFormAC.action="javascript:showDiv('ajouterCalendrier')";
+     document.DFormAC.submit();
+}
+else if (bouton.name=="VALIDERCALENDRIER" )
+{
+     document.DFormAC.action="ajoutCalendrier";
+     document.DFormAC.submit();
+}
+else if (bouton.name=="ANNULERAJOUTCALENDRIER" )
+{
+     document.DFormAC.action="javascript:hideDiv()";
+     document.DFormAC.submit();
+}
+
 
 //CHANGER DE MOT DE PASSE
 else if (bouton.name=="MDP" )

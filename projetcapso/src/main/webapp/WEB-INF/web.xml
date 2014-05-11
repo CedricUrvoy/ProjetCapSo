@@ -59,6 +59,10 @@
     <servlet-name>ChangerMDP</servlet-name>
     <servlet-class>hei.capso.projetcapso.controllers.ChangerMDPServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>AjouterCalendrier</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.AjouterCalendrierServlet</servlet-class>
+  </servlet>
   
   
   <!-- Servlet Connexion -->
@@ -169,6 +173,10 @@
   <servlet-mapping>
     <servlet-name>ChangerMDP</servlet-name>
     <url-pattern>/changermdp</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjouterCalendrier</servlet-name>
+    <url-pattern>/ajouterCalendrier</url-pattern>
   </servlet-mapping>
   
   <!-- Url Connexion -->

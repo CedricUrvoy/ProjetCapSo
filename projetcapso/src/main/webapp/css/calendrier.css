@@ -1,0 +1,172 @@
+/**** Calendrier ****/
+
+#calendar{
+	width: 1000px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+
+	/**** Affichage Ajouter Event ****/
+ 
+.centrerBouton{
+ 	width:200px;
+ 	margin: auto;
+ 	margin-top: 20px;
+ } 
+.turquoise-flat-button {
+ 
+  
+  padding: 0;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #24afb2;
+  border: 0;
+  border-bottom: 2px solid #229fa2;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #229fa2;
+  box-shadow: inset 0 -2px #229fa2;
+  
+  
+  width: 200px;
+  height: 70px;
+  margin:auto;
+}
+.turquoise-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+#calendrierGoogle{
+	display: none;
+}
+
+/**Style sideBar**/ 
+
+div.sidebar
+{
+	background-color: #55606e;
+
+	position: fixed;
+	z-index: 10;
+	top:75px;
+	bottom: 55px;
+}
+
+div.open
+{
+	display :none;
+	width: 200px;
+	z-index: 10;
+}
+
+div.close
+{
+	width: 50px;
+	z-index: 9;
+}
+
+.close:hover .open
+{
+	display: block;
+}
+#img_side
+{
+	margin-left: 5%;
+	margin-top: 5%;
+	overflow:hidden;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius:50px;
+    width:80px;
+    height:80px;
+}
+
+#identite_side
+{
+	margin-left: 3%;
+	position: absolute;
+	top: 15px;
+	left: 50%;
+}
+
+.profil_sidebar{
+	color:#24afb2;
+	font-size: 1.5em;
+}
+
+#groupe_side
+{
+	position:relative;
+	margin-left: 10%;
+	margin-right:20%;
+	margin-top: 10%;
+}
+
+.li_sidebar{
+	display: block;
+	padding: 5%;
+	border-bottom:1px solid #435060 ;
+}
+
+.cal_group
+{
+	color:#ffffff;
+	font-size: 150%;
+}
+
+a.cal_group:HOVER{
+	color:#24afb2;
+	cursor: pointer;
+}
+
+a.active{
+	color:#24afb2;
+}
+
+#chevron
+{
+	color : white;
+	font-size: 300%;
+	position: absolute;
+	right: 5%;
+	top:40%;
+}
+
+
+/**** Popup Ajout Seance ****/
+	
+.horaire{
+	width: 40%;
+	margin:auto;
+	display: inline-flex;
+	}
+}
+#infosSeance{
+	margin-bottom:20px;
+	text-align: left;
+}
+
+	/**** Popup infos Seance ****/
+
+p.info_seance{
+	color: #ffffff;
+	font-size: 20px;
+	width:90%;
+	min-height:30px;
+
+	text-align: center;
+	padding-top:10px;
+	background: #c1c1c1;
+	margin: auto;
+	
+	overflow: auto;
+	max-height:150px;
+	}
+}
+
+

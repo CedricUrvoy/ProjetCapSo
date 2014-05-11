@@ -30,7 +30,7 @@ public class DefaultServlet extends HttpServlet {
         	resp.sendRedirect( "connexion" );
         } else {
             /* Affichage de la page restreinte */
-            this.getServletContext().getRequestDispatcher( "/WEB-INF/pages/calendrier.jsp" ).forward( req, resp );
+        	resp.sendRedirect( "calendrier" );
         }
     }
 }

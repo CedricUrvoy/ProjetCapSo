@@ -13,6 +13,7 @@
 		<!-- Fichiers styles -->
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/calendrier.css"/>
 
 		<!--FullCalendar Dependencies-->
 		<link href='fullcalendar/fullcalendar.css' rel='stylesheet' />
@@ -45,7 +46,7 @@
 		
 	</head>
 
-	<body>
+	<body >
 		<jsp:include page="header.jsp" />
 		<div class=content>
 			
@@ -138,13 +139,13 @@
 				</div>
 			</div>
 			
-			
+			<jsp:include page="sidebar.jsp" />
 			
 			
 			
 		</div>
 
-		<jsp:include page="sidebar.jsp" />
+		
 
 		<jsp:include page="footer.jsp" />
 		
