@@ -20,7 +20,7 @@
 		<link href='../fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
 		
 		<!-- DatePicker Dependencies -->
-		<link rel="stylesheet" type="text/css" href="datetimepicker/jquery.datetimepicker.css"/>
+		<link rel="stylesheet" type="text/css" href="../datetimepicker/jquery.datetimepicker.css"/>
 	
 		<!--jQuery-->
 		<script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
