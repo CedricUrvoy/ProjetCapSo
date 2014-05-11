@@ -8,15 +8,15 @@
 		<meta charset="utf-8" />
 		<title>Profil</title>
 		<meta name="votre profil" content="******" />
-		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-		<link rel="stylesheet" type="text/css" href="css/profil.css"/>
-		<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
-		<script src="js/app.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/profil.css"/>
+		<script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
+		<script src="../js/app.js"></script>
 	</head>
 
 	<body>
-		<jsp:include page="header.jsp" />
+		<jsp:include page="../header.jsp" />
 		
 		<div class="content">
 			<div class="header_profil">
@@ -200,7 +200,7 @@
 			</div>
 		</div>				
 
-		<jsp:include page="footer.jsp" />
+		<jsp:include page="../footer.jsp" />
 		        
 	</body>
 	

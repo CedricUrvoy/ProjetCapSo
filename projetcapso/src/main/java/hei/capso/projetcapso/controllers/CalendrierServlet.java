@@ -48,7 +48,7 @@ public class CalendrierServlet extends HttpServlet{
 	List<Matiere> matieres = MatiereManager.getInstance().listerMatiere(promo,domaine);
 	req.setAttribute("matieres", matieres);
 		
-	RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/calendrier.jsp");
+	RequestDispatcher view = req.getRequestDispatcher("/WEB-INF/pages/utilisateur/calendrier.jsp");
 	view.forward(req, resp);
 	}
 }

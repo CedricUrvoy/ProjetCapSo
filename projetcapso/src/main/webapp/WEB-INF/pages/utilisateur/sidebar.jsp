@@ -3,7 +3,7 @@
 	<div class="sidebar close" >
 		<p id="chevron">&gt</p>
 		<div class="sidebar open">
-		<img id="img_side" alt="" src="img/Calendrier.png">
+		<img id="img_side" alt="" src="../img/Calendrier.png">
 		<div id="identite_side">
 			<H2 class ="profil_sidebar">${sessionScope.sessionEleve.prenom_Eleve}</H2>
 			<H2 class ="profil_sidebar">${sessionScope.sessionEleve.nom_Eleve}</H2>

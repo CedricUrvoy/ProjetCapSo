@@ -19,14 +19,13 @@
 			<div id="contentPopup">
 				<form id="ajout" method="post" action="ajoutProfil">
 				    <fieldset id="inputs_ajout">
-				    	<label>Nom : </label>
+						<label>Prénom : </label>
+				        <input class="input" id="prenom" type="text" placeholder="Prénom" name="prenom_Eleve" required>
+				        <label>Nom : </label>
 				        <input class="input" id="nom" type="text" placeholder="Nom" name="nom_Eleve" autofocus required>
-						 <label>Prénom : </label>
-				        <input class="input" id="prenom" type="text" placeholder="Prénom" name="prenom_Eleve" required></br>
 				        <label>Mail : </label>
 				        <input class="input inputmail" id="mail" type="text" placeholder="prenom.nom" name="email_Eleve" required>
 				        <p id="emailHei">@ hei.fr</p>
-				        </br>
 				        <label>Mot de passe : </label>
 				        <input class="input" id="password" type="password" placeholder="Mot de passe" name="password_Eleve" required>
 				    </fieldset>

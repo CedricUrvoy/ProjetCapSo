@@ -11,35 +11,35 @@
 		
 		
 		<!-- Fichiers styles -->
-		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-		<link rel="stylesheet" type="text/css" href="css/calendrier.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/calendrier.css"/>
 
 		<!--FullCalendar Dependencies-->
-		<link href='fullcalendar/fullcalendar.css' rel='stylesheet' />
-		<link href='fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+		<link href='../fullcalendar/fullcalendar.css' rel='stylesheet' />
+		<link href='../fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
 		
 		<!-- DatePicker Dependencies -->
 		<link rel="stylesheet" type="text/css" href="datetimepicker/jquery.datetimepicker.css"/>
 	
 		<!--jQuery-->
-		<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
-		<script type='text/javascript' src='js/jquery.min.js'></script>
-		<script type='text/javascript' src='js/jquery-ui.custom.min.js'></script>
+		<script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
+		<script type='text/javascript' src='../js/jquery.min.js'></script>
+		<script type='text/javascript' src='../js/jquery-ui.custom.min.js'></script>
 		
 		<!--FullCalendar-->
-		<script type='text/javascript' src='fullcalendar/moment-with-langs.js'></script>
-		<script type='text/javascript' src='fullcalendar/fullcalendar.js'></script>
-		<script type='text/javascript' src='fullcalendar/lang/fr.js'></script>
-		<script type='text/javascript' src='fullcalendar/gcal.js'></script>
+		<script type='text/javascript' src='../fullcalendar/moment-with-langs.js'></script>
+		<script type='text/javascript' src='../fullcalendar/fullcalendar.js'></script>
+		<script type='text/javascript' src='../fullcalendar/lang/fr.js'></script>
+		<script type='text/javascript' src='../fullcalendar/gcal.js'></script>
 		
 		
 		<!--  DateTimePicker -->
-		<script type="text/javascript" src="datetimepicker/jquery.datetimepicker.js"></script>
+		<script type="text/javascript" src="../datetimepicker/jquery.datetimepicker.js"></script>
 		
 		<!-- Scripts JS -->
-		<script type='text/javascript' src="js/calendar.js"></script>		
-		<script type='text/javascript' src="js/app.js"></script>
+		<script type='text/javascript' src="../js/calendar.js"></script>		
+		<script type='text/javascript' src="../js/app.js"></script>
 		
  		
 
@@ -47,7 +47,7 @@
 	</head>
 
 	<body >
-		<jsp:include page="header.jsp" />
+		<jsp:include page="../header.jsp" />
 		<div class=content>
 			
 			<h1 class="big titre" id="titreCalendrier">Calendrier - Personnel</h1>
@@ -147,7 +147,7 @@
 
 		
 
-		<jsp:include page="footer.jsp" />
+		<jsp:include page="../footer.jsp" />
 		
      
 	</body>

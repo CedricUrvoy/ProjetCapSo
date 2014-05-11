@@ -121,38 +121,38 @@
   
   <servlet-mapping>
     <servlet-name>Calendrier</servlet-name>
-    <url-pattern>/calendrier</url-pattern>
+    <url-pattern>/utilisateur/calendrier</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>AffichageSeances</servlet-name>
-    <url-pattern>/affichageSeances</url-pattern>
+    <url-pattern>/utilisateur/affichageSeances</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>AjoutSeance</servlet-name>
-    <url-pattern>/ajoutSeance</url-pattern>
+    <url-pattern>/utilisateur/ajoutSeance</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>RejoindreSeance</servlet-name>
-    <url-pattern>/rejoindreseance</url-pattern>
+    <url-pattern>/utilisateur/rejoindreseance</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>QuitterSeance</servlet-name>
-    <url-pattern>/quitterseance</url-pattern>
+    <url-pattern>/utilisateur/quitterseance</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>CreerSeance</servlet-name>
-    <url-pattern>/creerSeance</url-pattern>
+    <url-pattern>/utilisateur/creerSeance</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ElevesSeance</servlet-name>
-    <url-pattern>/elevesSeance</url-pattern>
+    <url-pattern>/utilisateur/elevesSeance</url-pattern>
   </servlet-mapping>
   
   <!-- Url Profil -->
   
   <servlet-mapping>
     <servlet-name>Profil</servlet-name>
-    <url-pattern>/profil</url-pattern>
+    <url-pattern>/utilisateur/profil</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>AjoutProfil</servlet-name>
@@ -160,23 +160,23 @@
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>AjoutGroupe</servlet-name>
-    <url-pattern>/ajoutgroupe</url-pattern>
+    <url-pattern>/utilisateur/ajoutgroupe</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>RejoindreGroupe</servlet-name>
-    <url-pattern>/rejoindregroupe</url-pattern>
+    <url-pattern>/utilisateur/rejoindregroupe</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>QuitterGroupe</servlet-name>
-    <url-pattern>/quittergroupe</url-pattern>
+    <url-pattern>/utilisateur/quittergroupe</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ChangerMDP</servlet-name>
-    <url-pattern>/changermdp</url-pattern>
+    <url-pattern>/utilisateur/changermdp</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>AjoutCalendrier</servlet-name>
-    <url-pattern>/ajoutCalendrier</url-pattern>
+    <url-pattern>/utilisateur/ajoutCalendrier</url-pattern>
   </servlet-mapping>
   
   <!-- Url Connexion -->
@@ -247,7 +247,7 @@
   </filter>
   <filter-mapping>
     <filter-name>RestrictionFilter</filter-name>
-    <url-pattern>/*</url-pattern>
+    <url-pattern>/utilisateur/*</url-pattern>
   </filter-mapping>
   <filter-mapping>
     <filter-name>RestrictionAdminFilter</filter-name>

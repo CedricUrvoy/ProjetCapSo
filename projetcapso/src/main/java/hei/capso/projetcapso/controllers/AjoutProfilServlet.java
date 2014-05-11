@@ -69,6 +69,6 @@ public class AjoutProfilServlet extends HttpServlet{
 		EleveManager.getInstance().rejoindreGroupe(id_Eleve, id_Promo);
 		
 		
-		response.sendRedirect("calendrier");
+		response.sendRedirect("utilisateur/calendrier");
 	}
 }

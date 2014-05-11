@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class RestrictionAdminFilter implements Filter {
-    public static final String ACCES_CONNEXION  = "/connexion";
     public static final String ATT_SESSION_ADMIN = "sessionAdmin";
 
     public void init( FilterConfig config ) throws ServletException {
@@ -62,7 +61,7 @@ public class RestrictionAdminFilter implements Filter {
         
         if ( session.getAttribute( ATT_SESSION_ADMIN ) == null) {
             /* Redirection vers la page publique */
-            request.getRequestDispatcher( ACCES_CONNEXION ).forward( request, response );
+        	response.sendRedirect("/projetcapso/connexion");
         } else {
 			/* Affichage de la page restreinte */
             chain.doFilter( request, response );

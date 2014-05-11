@@ -68,7 +68,7 @@ public class ProfilServlet extends HttpServlet{
 				req.setAttribute("groupesEleve", groupesEleve);
 				
 	//AFFICHE LA PAGE
-	RequestDispatcher view = req.getRequestDispatcher("WEB-INF/pages/profil.jsp");
+	RequestDispatcher view = req.getRequestDispatcher("/WEB-INF/pages/utilisateur/profil.jsp");
 	view.forward(req, resp);
 
 	}
