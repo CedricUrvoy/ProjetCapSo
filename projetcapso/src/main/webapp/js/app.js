@@ -111,7 +111,7 @@ else if (bouton.name=="VALIDERCALENDRIER" )
      document.DFormAC.action="ajoutCalendrier";
      document.DFormAC.submit();
 }
-else if (bouton.name=="ANNULERAJOUTCALENDRIER" )
+else if (bouton.name=="ANNULERAJOUTERCALENDRIER" )
 {
      document.DFormAC.action="javascript:hideDiv()";
      document.DFormAC.submit();
