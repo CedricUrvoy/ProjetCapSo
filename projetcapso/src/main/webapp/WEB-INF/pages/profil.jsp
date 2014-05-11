@@ -32,7 +32,7 @@
 					</div>
 					<div class="groupe">
 						<h2 class="groupe_perso classe">Classe :</h2>
-						<a class="nom_groupe">${classeEleve.nom_Groupe}</a>
+						<a onClick="afficherListeMembres('divacacher');" href="profil?id=${ClasseEleve.id_Groupe}"class="nom_groupe">${classeEleve.nom_Groupe} </a>
 					</div>
 					<div class="groupe">
 						<h2 class="groupe_perso domaine">Domaine :</h2>
@@ -72,7 +72,7 @@
 					         <p>Evitez les accents ! </p>
 					     </fieldset>
 					    <fieldset id="boutons">
-					        <input type="Submit" class="turquoise-button" name="VALIDERAJOUTGROUPE" value="Valider" onclick="doAct(this); myFonction();"> 
+					        <input type="Submit" class="turquoise-button" name="VALIDERAJOUTGROUPE" value="Valider" onclick="doAct(this);"> 
 					        <input type="Submit" class="turquoise-button" name="ANNULERAJOUT" value="Annuler" onclick="doAct(this);">
 					    </fieldset>
 					</form>	
@@ -185,6 +185,17 @@
 					    <input type="Submit" class="turquoise-button" name="CHANGER" value="Valider" onclick="doAct(this);"> 
 					    <input type="Submit" class="turquoise-button" name="ANNULERCHANGER" value="Annuler" onclick="doAct(this);">
 					</form>
+				</div>
+			</div>
+		</div>		
+		
+		<!--Pop UP Liste des membres d'un groupe-->
+		<div class="hideshow"  id="divacacher" style="visibility: hidden; display: none; ">
+		    <div class="fade"></div> 
+	    	<div class="popup_block">
+		    	<div id="titrePopup">Membre de ${groupe.nom_Groupe} </div>
+				<div id="contentPopup">
+					<li> ${eleve.nom_Eleve} ${eleve.prenom_Eleve}</li>
 				</div>
 			</div>
 		</div>				

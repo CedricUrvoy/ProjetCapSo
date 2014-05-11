@@ -10,6 +10,7 @@ import java.util.List;
 
 import hei.capso.projetcapso.dao.DataSourceProvider;
 import hei.capso.projetcapso.dao.GroupeDao;
+import hei.capso.projetcapso.model.Eleve;
 import hei.capso.projetcapso.model.Groupe;
 
 public class GroupeDaoImpl implements GroupeDao{
@@ -363,4 +364,39 @@ public class GroupeDaoImpl implements GroupeDao{
 			e.printStackTrace();
 		}
 	}
+
+	@Override
+	public List<Eleve> listeMembreGroupe(Integer idGroupe) {
+		List<Eleve> liste = new ArrayList<Eleve>();
+		try {
+			/**** Creation de la connexion ****/
+			Connection connection = DataSourceProvider.getDataSource()
+					.getConnection();
+
+			/**** Utilisation de la connection ****/
+			PreparedStatement stmt = connection.prepareStatement("SELECT eleve . * , eleve_groupe . * , groupe.id_groupe FROM groupe INNER JOIN eleve_groupe ON eleve_groupe.Groupe_id_Groupe = groupe.id_Groupe INNER JOIN eleve ON eleve_groupe.Eleve_id_Eleve = eleve.id_Eleve WHERE id_Groupe =?");
+			stmt.setInt(1,idGroupe);
+			ResultSet results = stmt.executeQuery();
+			
+			while (results.next()) {
+				Eleve eleve = new Eleve(
+						results.getInt("id_Eleve"),
+						results.getString("nom_Eleve"),
+						results.getString("prenom_Eleve"));
+				liste.add(eleve);
+				
+			}
+
+			/**** Fermer la connexion ****/
+			results.close();
+			stmt.close();
+			connection.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return liste;
+	}
+	
 }

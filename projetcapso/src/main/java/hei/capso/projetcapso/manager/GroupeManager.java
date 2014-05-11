@@ -3,6 +3,7 @@ package hei.capso.projetcapso.manager ;
 
 import hei.capso.projetcapso.dao.GroupeDao;
 import hei.capso.projetcapso.dao.impl.GroupeDaoImpl;
+import hei.capso.projetcapso.model.Eleve;
 import hei.capso.projetcapso.model.Groupe;
 
 import java.util.List;
@@ -83,5 +84,8 @@ public class  GroupeManager {
 	
 	public void supprimerlienSeance(Integer idGroupe) {
 		groupeDao.supprimerlienSeance(idGroupe);
+	}
+	public List<Eleve> listeMembreGroupe(Integer idGroupe) {
+		return groupeDao.listeMembreGroupe(idGroupe);
 	}
 }

@@ -1,5 +1,6 @@
 package hei.capso.projetcapso.dao ;
 
+import hei.capso.projetcapso.model.Eleve;
 import hei.capso.projetcapso.model.Groupe;
 
 import java.util.List;
@@ -29,6 +30,8 @@ public interface GroupeDao {
 	public void supprimerlienGroupe(Integer id_Groupe) 	;	
 	
 	public void supprimerlienSeance(Integer id_Groupe);
+	
+	public List<Eleve> listeMembreGroupe(Integer idGroupe);
 
 }
 
