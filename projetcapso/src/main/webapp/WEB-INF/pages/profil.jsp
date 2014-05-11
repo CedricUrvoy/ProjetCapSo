@@ -193,11 +193,10 @@
 		        
 	</body>
 	
-	
+
+<%String erreur= (String)(request.getAttribute("erreur"));%>
 	<script type="text/javascript">
-	<% Boolean erreur = (Boolean) request.getAttribute("erreur") ;%>
-	myFonction()
-	{
+	myFonction(){
 	if(erreur==true)
 		{
 		window.alert("Ce groupe est deja créé");
