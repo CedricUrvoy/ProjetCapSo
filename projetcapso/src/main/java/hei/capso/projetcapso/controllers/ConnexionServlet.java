@@ -1,9 +1,11 @@
 package hei.capso.projetcapso.controllers;
 
+import hei.capso.projetcapso.manager.EleveManager;
 import hei.capso.projetcapso.model.ConnexionForm;
 import hei.capso.projetcapso.model.Eleve;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -42,6 +44,7 @@ public class ConnexionServlet extends HttpServlet {
          */
         if ( form.getErreurs().isEmpty() ) {
             session.setAttribute( "sessionEleve", eleve );
+            EleveManager.getInstance().derniereConnexion(eleve.getId_Eleve(), new Date());
         } else {
             session.setAttribute( "sessionEleve", null );
         }

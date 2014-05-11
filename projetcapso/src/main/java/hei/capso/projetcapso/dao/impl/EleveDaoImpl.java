@@ -4,7 +4,9 @@ package hei.capso.projetcapso.dao.impl;
 import hei.capso.projetcapso.dao.DataSourceProvider;
 import hei.capso.projetcapso.dao.EleveDao;
 import hei.capso.projetcapso.model.Eleve;
+
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -359,9 +361,38 @@ public class EleveDaoImpl implements EleveDao{
 
 
 
-				public void ajouterCalendrier(Integer id_Eleve,
-						String lienCalendrier) {
+				public void ajouterCalendrier(Integer id_Eleve,String lienCalendrier) {
 
+				try {
+					/**** Creation de la connexion ****/
+					Connection connection = DataSourceProvider.getDataSource()
+							.getConnection();
+
+					/**** Utilisation de la connection ****/
+					PreparedStatement stmt = connection
+							.prepareStatement("UPDATE eleve SET image_Eleve = ? WHERE id_Eleve=?");
+					stmt.setInt(2, id_Eleve );
+					stmt.setString(1, lienCalendrier );
+
+					stmt.executeUpdate();
+
+					/**** Fermer la connexion ****/
+					stmt.close();
+					connection.close();
+
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				
+					
+					
+			}
+
+
+
+
+				public void derniereConnexion(Integer id_Eleve,java.util.Date derniereConnexion) {
+					
 					try {
 						/**** Creation de la connexion ****/
 						Connection connection = DataSourceProvider.getDataSource()
@@ -369,9 +400,9 @@ public class EleveDaoImpl implements EleveDao{
 
 						/**** Utilisation de la connection ****/
 						PreparedStatement stmt = connection
-								.prepareStatement("UPDATE eleve SET image_eleve = ? WHERE id_Eleve=?");
+								.prepareStatement("UPDATE eleve SET derniereConnexion_Eleve = ? WHERE id_Eleve=?");
 						stmt.setInt(2, id_Eleve );
-						stmt.setString(1, lienCalendrier );
+						stmt.setDate(1, new Date(derniereConnexion.getTime()));
 
 						stmt.executeUpdate();
 
@@ -382,12 +413,7 @@ public class EleveDaoImpl implements EleveDao{
 					} catch (SQLException e) {
 						e.printStackTrace();
 					}
-				
-					
 					
 				}
-
-
-
 
 }

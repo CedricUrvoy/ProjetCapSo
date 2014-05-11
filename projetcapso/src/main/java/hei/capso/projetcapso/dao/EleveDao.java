@@ -2,6 +2,7 @@ package hei.capso.projetcapso.dao;
 
 import hei.capso.projetcapso.model.Eleve;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -32,5 +33,7 @@ public interface EleveDao {
 	public void supprimerGroupeEleve(Integer id_Eleve);
 	
 	public void ajouterCalendrier (Integer id_Eleve, String lienCalendrier);
+	
+	public void derniereConnexion(Integer id_Eleve,Date derniereConnexion);
 	
 }

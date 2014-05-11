@@ -1,6 +1,8 @@
 package hei.capso.projetcapso.manager ;
 
 
+
+import java.util.Date;
 import java.util.List;
 
 import hei.capso.projetcapso.dao.EleveDao;
@@ -90,6 +92,12 @@ public class  EleveManager {
 		
 		public void ajoutCalendrier(Integer id_Eleve, String lienCalendrier){
 			eleveDao.ajouterCalendrier(id_Eleve, lienCalendrier);
+		}
+		
+	// DERNIERE CONNEXION
+		
+		public void derniereConnexion(Integer id_Eleve, Date derniereConnexion){
+			eleveDao.derniereConnexion(id_Eleve, derniereConnexion);			
 		}
 
 		
