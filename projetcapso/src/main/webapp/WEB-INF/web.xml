@@ -115,7 +115,10 @@
     <servlet-name>SupprimerProfil</servlet-name>
     <servlet-class>hei.capso.projetcapso.controllers.SupprimerProfilServlet</servlet-class>
   </servlet>
-  
+  <servlet>
+    <servlet-name>SupprimerMatiere</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.SupprimerMatiereServlet</servlet-class>
+  </servlet>
   
   <!-- Url Calendrier -->
   
@@ -227,6 +230,10 @@
   <servlet-mapping>
     <servlet-name>SupprimerProfil</servlet-name>
     <url-pattern>/admin/supprimerprofil</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SupprimerMatiere</servlet-name>
+    <url-pattern>/admin/supprimermatiere</url-pattern>
   </servlet-mapping>
 
  <!-- Welcome File (Redirection par default) --> 

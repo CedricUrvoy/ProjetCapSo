@@ -29,12 +29,13 @@
 		<div class="menu centrer">
 			<div class="logo">
 				<img src="../img/Logo.png" alt="nomDuSite" title="nomDuSite"/>
-				<a href="pageadmin">SoliCours</a>
+				<a >SoliCours</a>
 			</div>
 			<ul class= "onglet">
 				
+				<li><a href="gestionmatiere" >MATIERES</a></li>
 				<li><a href="gestiongroupes" >GROUPES</a></li>
-				<li><a href="profil">PROFILS</a></li>
+				<li><a href="gestionprofils">PROFILS</a></li>
 				
 				<li><a href="/projetcapso/deconnexion">DECONNEXION</a></li>
 				
