@@ -48,7 +48,8 @@ $(document).ready(function()
 			
 			calendar.fullCalendar( 'addEventSource', {
 				url:calendrierGoogle.innerHTML,
-				color:'#235383'});
+				color:'#235383',
+				ignoreTimezone:false});
 		}
 		calendar.fullCalendar( 'addEventSource', {
 				url: 'affichageSeances',
@@ -83,15 +84,10 @@ $(document).ready(function()
 
 		defaultView: 'agendaWeek',
 		
-		height: 500,
+		height: 600,
 		
 		
-		
-		
-		/*
-			selectHelper will add helpers for selectable.
-		*/
-		selectable: false, // Permet la selection d'une datetime sur le calendrier
+		selectable: true, // Permet la selection d'une datetime sur le calendrier
 		selectHelper: true, //Permet un affichage lors de la selection
 		
 		
@@ -100,8 +96,13 @@ $(document).ready(function()
 		select: function(start, end, allDay)
 		{
 			
-			
-			var title = prompt('Event Title:');
+		    document.DFormAjout.submit();
+			$('#datetimepickerdebut').val(start.format("YYYY/MM/DD HH:mm"));
+			$('#datetimepickerfin').val(end.format("YYYY/MM/DD HH:mm"));
+		    
+		    
+		    
+			var title = null;
 
 			if (title)
 			{

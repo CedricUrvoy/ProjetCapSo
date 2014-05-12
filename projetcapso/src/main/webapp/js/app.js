@@ -48,7 +48,7 @@ else if (bouton.name=="QUITTERSEANCE" )
 }
 
 
-	//AFFICHAGE POP UP CREER SEANCE
+	//AFFICHAGE POP UP CREER GROUPE
 else if (bouton.name=="CREER" )
 {
      document.DFormModifGroupe.action="javascript:showDiv('creerGroupe')";
