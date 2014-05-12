@@ -40,7 +40,7 @@ public class AjoutMatiereServlet extends HttpServlet {
 				MatiereManager.getInstance().matiereGroupe(id_Matiere, id_Groupe);
 				}
 				
-				response.sendRedirect("pageadmin");
+				response.sendRedirect("gestionmatiere");
 			}
 	}
 	

@@ -75,20 +75,18 @@
 						<form id="ajout" name="DForm" method="POST">
 						    <fieldset id="inputs_ajout">
 						    	<label>Matière</label>
-						         <input class="input" type="text" list=matiere name="matiere" >
-									<datalist id=matiere >
+						         <select class="input"  list=matiere name="matiere" >
 										<c:forEach var="matiere" items="${matieres}">
 						  				 	<option id="matiere_${matiere.id_Matiere}"> ${matiere.nom_Matiere}
 						  				</c:forEach>
-						  			</datalist>
+						  			</select>
 						  		<label>Groupe</label>
-						  		<input class="input" type="text" list=groupe name="groupe" >
-									<datalist id=groupe >
+						  		<select class="input"  list=groupe name="groupe" >
 												<option id="groupe_0"> Personnel
 							  			<c:forEach var="groupe" items="${groupes}">
 							  				 	<option id="groupe_${groupe.id_Groupe}"> ${groupe.nom_Groupe}
 							  			</c:forEach>
-						  			</datalist>
+						  			</select>
 						  		<label>Date début : </label>	
 								<input class="input horaire" type="text" id="datetimepickerdebut" name="datetimepickerdebut"/>
 								<label>Date de fin : </label>	
