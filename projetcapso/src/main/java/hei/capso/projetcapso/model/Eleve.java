@@ -130,15 +130,15 @@ public class Eleve {
 			this.password_eleve = password_eleve;
 		}
 
-
-		public Date getDate() {
+		public Date getDerniereConnexion_Eleve() {
 			return derniereConnexion_Eleve;
 		}
 
-
-		public void setDate(Date derniereConnexion_Eleve) {
+		public void setDerniereConnexion_Eleve(Date derniereConnexion_Eleve) {
 			this.derniereConnexion_Eleve = derniereConnexion_Eleve;
 		}
+
+
 
 		
 

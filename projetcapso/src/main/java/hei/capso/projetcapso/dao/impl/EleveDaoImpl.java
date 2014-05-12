@@ -126,7 +126,7 @@ public class EleveDaoImpl implements EleveDao{
 					
 					/**** Utilisation de la connection ****/
 					
-					PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Eleve ");
+					PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Eleve ORDER BY derniereConnexion_Eleve ");
 					ResultSet results = stmt.executeQuery();
 					while (results.next()){
 						Eleve eleve = new Eleve(

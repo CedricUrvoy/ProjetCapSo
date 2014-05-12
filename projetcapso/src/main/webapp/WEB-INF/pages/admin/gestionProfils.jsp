@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="pageSelectionnee" value="calendrier" scope="request"></c:set>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -57,7 +58,7 @@
 			<tr class="gestion">
 				<td class="gestion">${eleve.nom_Eleve}</td>
 				<td class="gestion">${eleve.prenom_Eleve}</td>
-				<td class="gestion">${eleve.derniereConnexion_Eleve}</td>
+				<td class="gestion"><fmt:formatDate pattern="dd MMMM yyyy" value="${eleve.derniereConnexion_Eleve}" /></td>
 				<td class="gestion">
 					<a class="turquoise-button modif_group" href="supprimerprofil?id=${eleve.id_Eleve}" >Supprimer</a>
 				</td>
