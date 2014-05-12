@@ -2,12 +2,14 @@ package hei.capso.projetcapso.dao.impl;
 
 import hei.capso.projetcapso.dao.DataSourceProvider;
 import hei.capso.projetcapso.dao.MatiereDao;
+import hei.capso.projetcapso.model.Groupe;
 import hei.capso.projetcapso.model.Matiere;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -125,4 +127,36 @@ public class MatiereDaoImpl implements MatiereDao {
 			e.printStackTrace();
 		}
 	}
+
+
+	@Override
+	public List<Matiere> listerToutesMatieres() {
+			
+		List<Matiere> liste = new ArrayList<Matiere>();
+			try {
+				/**** Creation de la connexion ****/
+				Connection connection = DataSourceProvider.getDataSource()
+						.getConnection();
+
+				/**** Utilisation de la connection ****/
+				Statement stmt = connection.createStatement();
+				ResultSet results = stmt.executeQuery("SELECT * FROM matiere");
+
+				while (results.next()) {
+					Matiere matiere = new Matiere(
+							results.getInt("id_Matiere"),
+							results.getString("nom_Matiere"));
+					liste.add(matiere);
+				}
+				/**** Fermer la connexion ****/
+				results.close();
+				stmt.close();
+				connection.close();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+			return liste;
+		}
 }

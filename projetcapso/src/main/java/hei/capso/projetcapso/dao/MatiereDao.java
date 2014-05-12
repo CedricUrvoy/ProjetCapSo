@@ -14,4 +14,6 @@ public interface MatiereDao {
 	public void ajouterMatiere(Matiere matiere);
 	
 	public  void matiereGroupe(int idMatiere, int idGroupe);
+	
+	public List<Matiere> listerToutesMatieres();
 }

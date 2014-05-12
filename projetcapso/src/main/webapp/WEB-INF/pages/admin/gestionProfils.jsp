@@ -43,7 +43,7 @@
 	</nav>
 	
 	
-	<div id="gestion_groupe">
+	<div id="gestion_profil">
 		<h1 class="big titre">Gestion des Profils</h1>
 		<div class="cadre">
 			<table class="tableau_gestion">

@@ -1,7 +1,9 @@
 package hei.capso.projetcapso.controllers;
 
 import hei.capso.projetcapso.manager.GroupeManager;
+import hei.capso.projetcapso.manager.MatiereManager;
 import hei.capso.projetcapso.model.Groupe;
+import hei.capso.projetcapso.model.Matiere;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class PageAdminServlet extends HttpServlet{
+public class GestionMatieresServlet extends HttpServlet{
 
 	/**
 	 * 
@@ -31,8 +33,12 @@ public class PageAdminServlet extends HttpServlet{
 		List<Groupe> promo = GroupeManager.getInstance().listerGroupeType("Promo");
 		req.setAttribute("promos", promo);	
 		
+		//LISTE DES MATIERES
+		List<Matiere> matiere = MatiereManager.getInstance().listertoutesMatiere();
+		req.setAttribute("matieres", matiere);
+		
 	// AFFICHE LA PAGE	
-	RequestDispatcher view = req.getRequestDispatcher("/WEB-INF/pages/admin/pageAdmin.jsp");
+	RequestDispatcher view = req.getRequestDispatcher("/WEB-INF/pages/admin/gestionMatieres.jsp");
 	view.forward(req, resp);
 	}
 

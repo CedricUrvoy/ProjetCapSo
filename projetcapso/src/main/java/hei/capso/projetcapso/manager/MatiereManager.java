@@ -46,4 +46,8 @@ public class  MatiereManager {
 	public void matiereGroupe(Integer idMatiere,Integer idGroupe) {
 		matiereDao.matiereGroupe(idMatiere, idGroupe);
 	}
+	
+	public List<Matiere> listertoutesMatiere(){
+		return matiereDao.listerToutesMatieres();
+	}
 }

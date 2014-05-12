@@ -96,8 +96,8 @@
     <servlet-class>hei.capso.projetcapso.controllers.AjoutMatiereServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>PageAdmin</servlet-name>
-    <servlet-class>hei.capso.projetcapso.controllers.PageAdminServlet</servlet-class>
+    <servlet-name>GestionMatiere</servlet-name>
+    <servlet-class>hei.capso.projetcapso.controllers.GestionMatieresServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>GestionGroupes</servlet-name>
@@ -209,8 +209,8 @@
     <url-pattern>/admin/ajoutmatiere</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>PageAdmin</servlet-name>
-    <url-pattern>/admin/pageadmin</url-pattern>
+    <servlet-name>GestionMatiere</servlet-name>
+    <url-pattern>/admin/gestionmatiere</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>GestionGroupes</servlet-name>

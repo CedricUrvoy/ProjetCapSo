@@ -242,12 +242,12 @@ a:HOVER{
 
 
 
-/**Style pageAdmin**/ 
+/**Style gestionmatiere**/ 
 
 .ajout_matiere
 {
 	position: absolute;
-	width : 300px;
+	width : 400px;
 	left: 71%;
 	Top:100px;
 }
@@ -264,6 +264,7 @@ div.cadre
 	border : 5px;
 	border-style:solid;;
 	border-color:#24afb2;
+	overflow: auto;
 
 }
 

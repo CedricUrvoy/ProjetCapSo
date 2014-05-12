@@ -33,6 +33,28 @@
 		</div>
 	</nav>
 	
+	
+	<div id="gestion_groupe">
+		<h1 class="big titre">Gestion des Matières</h1>
+		<div class="cadre">
+			<table class="tableau_gestion">
+			<tr class="gestion">
+				
+			    <th class="gestion">Nom</th>
+			    <th class="gestion">Supprimer</th>
+			</tr>
+			<c:forEach var="matiere" items="${matieres}">
+			<tr class="gestion">
+				<td class="gestion">${matiere.nom_Matiere}</td>
+				<td class="gestion">
+					<a class="turquoise-button modif_group" href="supprimermatiere?id=${matiere.id_Matiere}" >Supprimer</a>
+				</td>
+			</tr>
+			</c:forEach>
+			</table>
+		</div>
+	</div>
+	
 			<form method="POST" name="DFormAdmin">
 				<div class= "ajout_matiere">
 					<input type="submit" value="Ajouter une matière" class="turquoise-button modif_group mdp" name="AJOUTMATIERE" onclick="doAct(this);">
