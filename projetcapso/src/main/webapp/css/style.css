@@ -247,9 +247,9 @@ a:HOVER{
 .ajout_matiere
 {
 	position: absolute;
-	width : 400px;
-	left: 71%;
-	Top:100px;
+	width : 200px;
+	left: 60%;
+	Top:15%;
 }
 
 /**Style gestionGroupes**/

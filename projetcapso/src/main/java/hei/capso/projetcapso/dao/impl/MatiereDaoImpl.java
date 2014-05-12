@@ -159,4 +159,54 @@ public class MatiereDaoImpl implements MatiereDao {
 
 			return liste;
 		}
-}
+
+
+	@Override
+	public void supprimerMatiere(Integer idMatiere) {
+			try {
+				/**** Creation de la connexion ****/
+				Connection connection = DataSourceProvider.getDataSource()
+						.getConnection();
+
+				/**** Utilisation de la connection ****/
+				PreparedStatement stmt = connection
+						.prepareStatement("DELETE FROM matiere WHERE id_Matiere= ?");
+				stmt.setInt(1, idMatiere);
+				stmt.executeUpdate();
+
+				/**** Fermer la connexion ****/
+				stmt.close();
+				connection.close();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+		}
+
+
+	@Override
+	public void supprimerLienMatiereGroupe(Integer idMatiere) {
+		try {
+			/**** Creation de la connexion ****/
+			Connection connection = DataSourceProvider.getDataSource()
+					.getConnection();
+
+			/**** Utilisation de la connection ****/
+			PreparedStatement stmt = connection
+					.prepareStatement("DELETE FROM groupe_matiere WHERE Matiere_id_Matiere= ?");
+			stmt.setInt(1, idMatiere);
+			stmt.executeUpdate();
+
+			/**** Fermer la connexion ****/
+			stmt.close();
+			connection.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+		
+	}
+

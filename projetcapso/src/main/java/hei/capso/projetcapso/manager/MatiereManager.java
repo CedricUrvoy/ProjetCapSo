@@ -50,4 +50,12 @@ public class  MatiereManager {
 	public List<Matiere> listertoutesMatiere(){
 		return matiereDao.listerToutesMatieres();
 	}
+	
+	public void supprimerMatiere(Integer idMatiere) {
+		matiereDao.supprimerMatiere(idMatiere);
+	}
+	
+	public void supprimerLienMatiereGroupe(Integer idMatiere) {
+		matiereDao.supprimerLienMatiereGroupe(idMatiere);
+	}
 }

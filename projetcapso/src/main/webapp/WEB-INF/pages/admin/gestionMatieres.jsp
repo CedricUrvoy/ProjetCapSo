@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
 <link rel="stylesheet" type="text/css" href="../css/style.css"/>
 <script src="../js/app.js"></script>
-<title>PAGE ADMIN</title>
+<title>Gestion des matières</title>
 </head>
 <body>
 
@@ -57,7 +57,7 @@
 	
 			<form method="POST" name="DFormAdmin">
 				<div class= "ajout_matiere">
-					<input type="submit" value="Ajouter une matière" class="turquoise-button modif_group mdp" name="AJOUTMATIERE" onclick="doAct(this);">
+					<input type="submit" value="Ajouter une matière" class="turquoise-button ajout_matiere" name="AJOUTMATIERE" onclick="doAct(this);">
 				</div>
 			</form>
 		

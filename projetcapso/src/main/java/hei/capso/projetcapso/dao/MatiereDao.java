@@ -16,4 +16,8 @@ public interface MatiereDao {
 	public  void matiereGroupe(int idMatiere, int idGroupe);
 	
 	public List<Matiere> listerToutesMatieres();
+	
+	public void supprimerMatiere(Integer idMatiere);
+	
+	public void supprimerLienMatiereGroupe(Integer idMatiere);
 }

@@ -1,5 +1,8 @@
 package hei.capso.projetcapso.controllers;
 
+import hei.capso.projetcapso.manager.GroupeManager;
+import hei.capso.projetcapso.manager.MatiereManager;
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -16,11 +19,17 @@ public class SupprimerMatiereServlet extends HttpServlet {
 
 	
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 
+		//SUPPRIMER MATIERE
+		Integer idMatiere = Integer.parseInt(req.getParameter("id"));
 		
+		MatiereManager.getInstance().supprimerMatiere(idMatiere);
+		MatiereManager.getInstance().supprimerLienMatiereGroupe(idMatiere);
+	
 		
+		resp.sendRedirect("gestionmatiere");
 }
 	
 }
