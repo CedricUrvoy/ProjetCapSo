@@ -172,6 +172,8 @@ function eteindre()
     document.getElementById('openautre').style.display = "none";
 }
 
+
+//Pour l'instant ne sert pas 
 function erreurGroupe(erreur)
 {
 if(erreur==true)

@@ -29,7 +29,7 @@
 		<div class="menu centrer">
 			<div class="logo">
 				<img src="../img/Logo.png" alt="nomDuSite" title="nomDuSite"/>
-				<a href="calendrier">SoliCours</a>
+				<a href="pageadmin">SoliCours</a>
 			</div>
 			<ul class= "onglet">
 				
