@@ -7,30 +7,28 @@
 
 $(document).ready(function()
 {
-	/*
-		date store today date.
-		d store today date.
-		m store current month.
-		y store current year.
-	*/
+	/* Date d'aujourd'hui */
+
 	var date = new Date();
 	var d = date.getDate();
 	var m = date.getMonth();
 	var y = date.getFullYear();
 	
-	/*
-		Initialize fullCalendar and store into variable.
-		Why in variable?
-		Because doing so we can use it inside other function.
-		In order to modify its option later.
-	*/
-	
+	/* Variable permettant de recuperer le groupe actuel */
+
 	var idGroupe = 0;
 	var nomGroupe='Personnel';
 	$("#groupe_"+idGroupe).addClass("active");
 	
+	/* Variable permettant de recuperer le calendrier Google si celui a été ajouté */
+	
 	var calendrierGoogle = document.getElementById("calendrierGoogle");
 	console.log(calendrierGoogle.innerHTML);
+	
+	
+	/* Fonction permettant au click sur un groupe de changer la source des evenements
+	 * afin  d'afficher le calendrier correspondant
+	 */ 
 	
 	$("ul#listeGroupes").on("click",".cal_group", function() {
 		
@@ -85,34 +83,26 @@ $(document).ready(function()
 
 		defaultView: 'agendaWeek',
 		
-		height: 600,
+		height: 500,
 		
 		
-		/**** Gestion de l'ajout d'un event automatique ****/
 		
 		
 		/*
-			selectable:true will enable user to select datetime slot
 			selectHelper will add helpers for selectable.
 		*/
-		selectable: false,
-		selectHelper: true,
-		/*
-			when user select timeslot this option code will execute.
-			It has three arguments. Start,end and allDay.
-			Start means starting time of event.
-			End means ending time of event.
-			allDay means if events is for entire day or not.
-		*/
+		selectable: false, // Permet la selection d'une datetime sur le calendrier
+		selectHelper: true, //Permet un affichage lors de la selection
+		
+		
+		/*** Permet la recuperation des debut et fin de l'evenement lors d'une selection ***/
+		
 		select: function(start, end, allDay)
 		{
-			/*
-				after selection user will be promted for enter title for event.
-			*/
+			
+			
 			var title = prompt('Event Title:');
-			/*
-				if title is enterd calendar will add title and event into fullCalendar.
-			*/
+
 			if (title)
 			{
 				calendar.fullCalendar('renderEvent',
