@@ -29,13 +29,13 @@ public class  MatiereManager {
 	}
 
 
-	public List<Matiere> listerMatiere(String nom_Promo,String nom_Domaine) {
-		List<Matiere> liste = matiereDao.listerMatiere(nom_Promo, nom_Domaine);
+	public List<Matiere> listerMatiere(String nomPromo,String nomDomaine) {
+		List<Matiere> liste = matiereDao.listerMatiere(nomPromo, nomDomaine);
 		return liste;
 	}
 	
-	public Matiere chercherMatiereNom(String nom_Matiere) {
-		Matiere matiere = matiereDao.chercherMatiereNom(nom_Matiere);
+	public Matiere chercherMatiereNom(String nomMatiere) {
+		Matiere matiere = matiereDao.chercherMatiereNom(nomMatiere);
 		return matiere;
 	}
 	
@@ -43,7 +43,7 @@ public class  MatiereManager {
 		matiereDao.ajouterMatiere(matiere);
 	}
 	
-	public void matiereGroupe(Integer id_Matiere,Integer id_Groupe) {
-		matiereDao.matiereGroupe(id_Matiere, id_Groupe);
+	public void matiereGroupe(Integer idMatiere,Integer idGroupe) {
+		matiereDao.matiereGroupe(idMatiere, idGroupe);
 	}
 }

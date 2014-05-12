@@ -14,7 +14,7 @@ import java.util.List;
 public class MatiereDaoImpl implements MatiereDao {
 
 	//LISTER LES MATIERES D'UNE PROMO ET D'UN DOMAINE
-	public List<Matiere> listerMatiere(String nom_Promo,String nom_Domaine) {
+	public List<Matiere> listerMatiere(String nomPromo,String nomDomaine) {
 		List<Matiere> liste = new ArrayList<Matiere>();
 		try {
 			/**** Creation de la connexion ****/
@@ -23,8 +23,8 @@ public class MatiereDaoImpl implements MatiereDao {
 
 			/**** Utilisation de la connection ****/
 			PreparedStatement stmt = connection.prepareStatement("SELECT matiere.nom_Matiere, matiere.id_Matiere, groupe_matiere.Groupe_id_Groupe, groupe_matiere.Matiere_id_Matiere, groupe.nom_Groupe, groupe.id_Groupe FROM groupe INNER JOIN groupe_matiere ON groupe_matiere.Groupe_id_Groupe = groupe.id_Groupe INNER JOIN matiere ON matiere.id_Matiere = groupe_matiere.Matiere_id_Matiere WHERE groupe.nom_Groupe = ? OR groupe.nom_Groupe =?");
-			stmt.setString(1,nom_Promo);
-			stmt.setString(2,nom_Domaine);
+			stmt.setString(1,nomPromo);
+			stmt.setString(2,nomDomaine);
 			ResultSet results = stmt.executeQuery();
 			
 			while (results.next()) {
@@ -48,7 +48,7 @@ public class MatiereDaoImpl implements MatiereDao {
 	
 	
 	//RECHERCHER UNE MATIERE AVEC SON NOM
-	public Matiere chercherMatiereNom(String nom_Matiere) {
+	public Matiere chercherMatiereNom(String nomMatiere) {
 		Matiere matiere = null;
 		try {
 			/**** Creation de la connexion ****/
@@ -57,7 +57,7 @@ public class MatiereDaoImpl implements MatiereDao {
 
 			/**** Utilisation de la connection ****/
 			PreparedStatement stmt = connection.prepareStatement("SELECT nom_Matiere, id_Matiere FROM matiere WHERE nom_Matiere=?");
-			stmt.setString(1,nom_Matiere);
+			stmt.setString(1,nomMatiere);
 			ResultSet results = stmt.executeQuery();
 			
 			if(results.next()){
@@ -104,7 +104,7 @@ public class MatiereDaoImpl implements MatiereDao {
 	
 	
 	// LIER MATIERE ET GROUPE
-	public  void matiereGroupe(int id_Matiere, int id_Groupe) {
+	public  void matiereGroupe(int idMatiere, int idGroupe) {
 		try {
 			/**** Creation de la connexion ****/
 			Connection connection = DataSourceProvider.getDataSource()
@@ -113,8 +113,8 @@ public class MatiereDaoImpl implements MatiereDao {
 			/**** Utilisation de la connection ****/
 			PreparedStatement stmt = connection
 					.prepareStatement("INSERT INTO `groupe_matiere`(`Groupe_id_Groupe`,`Matiere_id_Matiere`) VALUES(?, ?)");
-			stmt.setInt(1, id_Groupe);
-			stmt.setInt(2, id_Matiere);
+			stmt.setInt(1, idGroupe);
+			stmt.setInt(2, idMatiere);
 			stmt.executeUpdate();
 
 			/**** Fermer la connexion ****/

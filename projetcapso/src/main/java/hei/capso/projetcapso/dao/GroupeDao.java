@@ -11,25 +11,25 @@ public interface GroupeDao {
 	
 	public List<Groupe> listerGroupe();
 		
-	public List<Groupe> listerGroupeEleve(Integer id);
+	public List<Groupe> listerGroupeEleve(Integer idEleve);
 	
 	public void ajouterGroupe(Groupe groupe);
 		
-	public void quitterGroupe(Integer id_Eleve,Integer id_Groupe);
+	public void quitterGroupe(Integer idEleve,Integer idGroupe);
 		
-	public Groupe chercherGroupeNom(String nom_Groupe);
+	public Groupe chercherGroupeNom(String nomGroupe);
 		
-	public Groupe listerTypeEleve(Integer id,String type);
+	public Groupe listerTypeEleve(Integer idEleve,String type);
 				
-	public List<Groupe> listertypeGroupeEleve(Integer id);
+	public List<Groupe> listertypeGroupeEleve(Integer idEleve);
 				
 	public List<Groupe> comptergroupeeleve();
 		
-	public void supprimerGroupe(Integer id_Groupe);
+	public void supprimerGroupe(Integer idGroupe);
 
-	public void supprimerlienGroupe(Integer id_Groupe) 	;	
+	public void supprimerlienGroupe(Integer idGroupe) 	;	
 	
-	public void supprimerlienSeance(Integer id_Groupe);
+	public void supprimerlienSeance(Integer idGroupe);
 	
 	public List<Eleve> listeMembreGroupe(Integer idGroupe);
 

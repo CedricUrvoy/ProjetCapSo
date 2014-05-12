@@ -22,18 +22,18 @@ public interface EleveDao {
 	
 	public void quitterSeance (int idEleve, int idSeance);
 	
-	public Eleve chercherEleveMail(String mail_Eleve);
+	public Eleve chercherEleveMail(String mailEleve);
 	
-	public void changerMDP(Integer id_Eleve,  String password_Eleve) ;
+	public void changerMDP(Integer idEleve,  String passwordEleve) ;
 	
-	public void supprimerProfil(Integer id_Eleve);
+	public void supprimerProfil(Integer idEleve);
 	
-	public void supprimerSeanceEleve(Integer id_Eleve);
+	public void supprimerSeanceEleve(Integer idEleve);
 	
-	public void supprimerGroupeEleve(Integer id_Eleve);
+	public void supprimerGroupeEleve(Integer idEleve);
 	
-	public void ajouterCalendrier (Integer id_Eleve, String lienCalendrier);
+	public void ajouterCalendrier (Integer idEleve, String lienCalendrier);
 	
-	public void derniereConnexion(Integer id_Eleve,Date derniereConnexion);
+	public void derniereConnexion(Integer idEleve,Date derniereConnexion);
 	
 }

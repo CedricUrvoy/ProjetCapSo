@@ -7,11 +7,11 @@ import java.util.List;
 public interface MatiereDao {
 
 	
-	public List<Matiere> listerMatiere(String nom_Promo,String nom_Domaine);
+	public List<Matiere> listerMatiere(String nomPromo,String nomDomaine);
 	
-	public Matiere chercherMatiereNom(String nom_Matiere);
+	public Matiere chercherMatiereNom(String nomMatiere);
 	
 	public void ajouterMatiere(Matiere matiere);
 	
-	public  void matiereGroupe(int id_Matiere, int id_Groupe);
+	public  void matiereGroupe(int idMatiere, int idGroupe);
 }

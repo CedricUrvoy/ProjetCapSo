@@ -83,7 +83,7 @@ public class GroupeDaoImpl implements GroupeDao{
 
 	
 	//LISTER GROUPE ELEVE
-	public List<Groupe> listerGroupeEleve(Integer id) {
+	public List<Groupe> listerGroupeEleve(Integer idEleve) {
 		List<Groupe> liste = new ArrayList<Groupe>();
 		try {
 			/**** Creation de la connexion ****/
@@ -92,7 +92,7 @@ public class GroupeDaoImpl implements GroupeDao{
 
 			/**** Utilisation de la connection ****/
 			PreparedStatement stmt = connection.prepareStatement("SELECT groupe.id_Groupe, groupe.nom_Groupe, groupe.type_Groupe, eleve.id_Eleve FROM eleve INNER JOIN eleve_groupe ON eleve_groupe.Eleve_id_Eleve = eleve.id_Eleve INNER JOIN groupe ON groupe.id_Groupe = eleve_groupe.Groupe_id_Groupe WHERE id_Eleve =? ORDER BY groupe.nom_Groupe");
-			stmt.setInt(1,id);
+			stmt.setInt(1,idEleve);
 			ResultSet results = stmt.executeQuery();
 			
 			while (results.next()) {
@@ -139,7 +139,7 @@ public class GroupeDaoImpl implements GroupeDao{
 	}
 
 	//QUITTER UN GROUPE
-	public void quitterGroupe(Integer id_Eleve, Integer id_Groupe) {
+	public void quitterGroupe(Integer idEleve, Integer idGroupe) {
 		try {
 			/**** Creation de la connexion ****/
 			Connection connection = DataSourceProvider.getDataSource()
@@ -148,8 +148,8 @@ public class GroupeDaoImpl implements GroupeDao{
 			/**** Utilisation de la connection ****/
 			PreparedStatement stmt = connection
 					.prepareStatement("DELETE FROM eleve_groupe WHERE Eleve_id_Eleve= ? AND Groupe_id_Groupe=? ");
-			stmt.setInt(1, id_Eleve);
-			stmt.setInt(2, id_Groupe);
+			stmt.setInt(1, idEleve);
+			stmt.setInt(2, idGroupe);
 			stmt.executeUpdate();
 
 			// Fermer la connexion
@@ -163,7 +163,7 @@ public class GroupeDaoImpl implements GroupeDao{
 	}
 
 	//CHERCHER UN GROUPE AVEC NOM 
-	public Groupe chercherGroupeNom(String nom_Groupe) {
+	public Groupe chercherGroupeNom(String nomGroupe) {
 		Groupe groupecherche = null;
 		try {
 			/**** Creation de la connexion ****/
@@ -172,7 +172,7 @@ public class GroupeDaoImpl implements GroupeDao{
 
 			/**** Utilisation de la connection ****/
 			PreparedStatement stmt = connection.prepareStatement("SELECT groupe.nom_Groupe, groupe.id_Groupe, groupe.type_Groupe FROM groupe WHERE groupe.nom_Groupe=?");
-			stmt.setString(1,nom_Groupe);
+			stmt.setString(1,nomGroupe);
 			ResultSet results = stmt.executeQuery();
 			
 			if(results.next()){
@@ -197,7 +197,7 @@ public class GroupeDaoImpl implements GroupeDao{
 	}
 
 	//LISTER GROUPE TYPE ELEVE
-	public Groupe listerTypeEleve(Integer id, String type) {
+	public Groupe listerTypeEleve(Integer idEleve, String type) {
 		Groupe groupe = new Groupe();
 		try {
 			/**** Creation de la connexion ****/
@@ -206,7 +206,7 @@ public class GroupeDaoImpl implements GroupeDao{
 
 			/**** Utilisation de la connection ****/
 			PreparedStatement stmt = connection.prepareStatement("SELECT groupe.id_Groupe, groupe.nom_Groupe, groupe.type_Groupe, eleve.id_Eleve FROM eleve INNER JOIN eleve_groupe ON eleve_groupe.Eleve_id_Eleve = eleve.id_Eleve INNER JOIN groupe ON groupe.id_Groupe = eleve_groupe.Groupe_id_Groupe WHERE id_Eleve =? AND groupe.type_Groupe=?");
-			stmt.setInt(1,id);
+			stmt.setInt(1,idEleve);
 			stmt.setString(2,type);
 			ResultSet results = stmt.executeQuery();
 			
@@ -231,7 +231,7 @@ public class GroupeDaoImpl implements GroupeDao{
 	}
 
 	//LISTER GROUPE ELEVE
-	public List<Groupe> listertypeGroupeEleve(Integer id) {
+	public List<Groupe> listertypeGroupeEleve(Integer idEleve) {
 		List<Groupe> liste = new ArrayList<Groupe>();
 		try {
 			/**** Creation de la connexion ****/
@@ -240,7 +240,7 @@ public class GroupeDaoImpl implements GroupeDao{
 
 			/**** Utilisation de la connection ****/
 			PreparedStatement stmt = connection.prepareStatement("SELECT groupe.id_Groupe, groupe.nom_Groupe, groupe.type_Groupe, eleve.id_Eleve FROM eleve INNER JOIN eleve_groupe ON eleve_groupe.Eleve_id_Eleve = eleve.id_Eleve INNER JOIN groupe ON groupe.id_Groupe = eleve_groupe.Groupe_id_Groupe WHERE id_Eleve =? AND type_Groupe='Groupe'");
-			stmt.setInt(1,id);
+			stmt.setInt(1,idEleve);
 			ResultSet results = stmt.executeQuery();
 			
 			while (results.next()) {
@@ -299,7 +299,7 @@ public class GroupeDaoImpl implements GroupeDao{
 	}
 
 	//SUPPRIMER UN GROUPE
-	public void supprimerGroupe(Integer id_Groupe) {
+	public void supprimerGroupe(Integer idGroupe) {
 		try {
 			/**** Creation de la connexion ****/
 			Connection connection = DataSourceProvider.getDataSource()
@@ -308,7 +308,7 @@ public class GroupeDaoImpl implements GroupeDao{
 			/**** Utilisation de la connection ****/
 			PreparedStatement stmt = connection
 					.prepareStatement("DELETE FROM groupe WHERE id_Groupe= ?");
-			stmt.setInt(1, id_Groupe);
+			stmt.setInt(1, idGroupe);
 			stmt.executeUpdate();
 
 			/**** Fermer la connexion ****/
@@ -323,7 +323,7 @@ public class GroupeDaoImpl implements GroupeDao{
 	
 	
 	//SUPPRIMER LES LIENS GROUPES & ELEVE
-	public void supprimerlienGroupe(Integer id_Groupe) {
+	public void supprimerlienGroupe(Integer idGroupe) {
 		try {
 			/**** Creation de la connexion ****/
 			Connection connection = DataSourceProvider.getDataSource()
@@ -332,7 +332,7 @@ public class GroupeDaoImpl implements GroupeDao{
 			/**** Utilisation de la connection ****/
 			PreparedStatement stmt = connection
 					.prepareStatement("DELETE FROM eleve_groupe WHERE Groupe_id_Groupe= ?");
-			stmt.setInt(1, id_Groupe);
+			stmt.setInt(1, idGroupe);
 			stmt.executeUpdate();
 
 			/**** Fermer la connexion ****/
@@ -344,7 +344,7 @@ public class GroupeDaoImpl implements GroupeDao{
 		}
 	}
 		
-	public void supprimerlienSeance(Integer id_Groupe){
+	public void supprimerlienSeance(Integer idGroupe){
 		try {
 			/**** Creation de la connexion ****/
 			Connection connection = DataSourceProvider.getDataSource()
@@ -353,7 +353,7 @@ public class GroupeDaoImpl implements GroupeDao{
 			/**** Utilisation de la connection ****/
 			PreparedStatement stmt = connection
 					.prepareStatement("DELETE FROM seance WHERE Groupe_id_Groupe= ?");
-			stmt.setInt(1, id_Groupe);
+			stmt.setInt(1, idGroupe);
 			stmt.executeUpdate();
 
 			/**** Fermer la connexion ****/

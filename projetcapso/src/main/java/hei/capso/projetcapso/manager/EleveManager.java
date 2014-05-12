@@ -44,8 +44,8 @@ public class  EleveManager {
 	}
 	
 	// REJOINDRE UN GROUPE
-	public void rejoindreGroupe(int idEleve, int id_groupe) {
-		eleveDao.rejoindreGroupe(idEleve, id_groupe);
+	public void rejoindreGroupe(int idEleve, int idGroupe) {
+		eleveDao.rejoindreGroupe(idEleve, idGroupe);
 	}
 		
 	// REJOINDRE UNE SEANCE
@@ -59,14 +59,14 @@ public class  EleveManager {
 		}	
 	
 	//RECHERCHER UN ELEVE AVEC L'EMAIL
-	public Eleve chercherEleveMail(String mail_Eleve) {
-		Eleve eleve = eleveDao.chercherEleveMail(mail_Eleve);
+	public Eleve chercherEleveMail(String mailEleve) {
+		Eleve eleve = eleveDao.chercherEleveMail(mailEleve);
 		return eleve;
 	}
 	
 	// CHANGER MOT DE PASSE
-		public void changerMDP(Integer id_Eleve, String password_Eleve) {
-			eleveDao.changerMDP(id_Eleve, password_Eleve);
+		public void changerMDP(Integer idEleve, String passwordEleve) {
+			eleveDao.changerMDP(idEleve, passwordEleve);
 		}
 		
 	//LISTER ELEVE
@@ -75,29 +75,29 @@ public class  EleveManager {
 		}
 		
 	//SUPPRIMER ELEVE 
-		public void supprimerProfil(Integer id_Eleve) {
-			eleveDao.supprimerProfil(id_Eleve);
+		public void supprimerProfil(Integer idEleve) {
+			eleveDao.supprimerProfil(idEleve);
 		}
 	
 	//SUPPRIMER LIEN ENTRE ELEVE ET SEANCE
-		public void supprimerSeanceEleve(Integer id_Eleve) {
-			eleveDao.supprimerSeanceEleve(id_Eleve);
+		public void supprimerSeanceEleve(Integer idEleve) {
+			eleveDao.supprimerSeanceEleve(idEleve);
 		}
 	//SUPPRIMER LIEN ELEVE GROUPE
-		public void supprimerGroupeEleve(Integer id_Eleve) {
-				eleveDao.supprimerGroupeEleve(id_Eleve);
+		public void supprimerGroupeEleve(Integer idEleve) {
+				eleveDao.supprimerGroupeEleve(idEleve);
 		}
 		
 	// AJOUTER CALENDRIER ELEVE
 		
-		public void ajoutCalendrier(Integer id_Eleve, String lienCalendrier){
-			eleveDao.ajouterCalendrier(id_Eleve, lienCalendrier);
+		public void ajoutCalendrier(Integer idEleve, String lienCalendrier){
+			eleveDao.ajouterCalendrier(idEleve, lienCalendrier);
 		}
 		
 	// DERNIERE CONNEXION
 		
-		public void derniereConnexion(Integer id_Eleve, Date derniereConnexion){
-			eleveDao.derniereConnexion(id_Eleve, derniereConnexion);			
+		public void derniereConnexion(Integer idEleve, Date derniereConnexion){
+			eleveDao.derniereConnexion(idEleve, derniereConnexion);			
 		}
 
 		

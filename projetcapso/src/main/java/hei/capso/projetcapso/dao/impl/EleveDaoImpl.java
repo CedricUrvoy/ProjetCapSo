@@ -221,7 +221,7 @@ public class EleveDaoImpl implements EleveDao{
 		}
 
 		//CHERCHER UN ELEVE AVEC MAIL
-				public Eleve chercherEleveMail(String mail_Eleve) {
+				public Eleve chercherEleveMail(String mailEleve) {
 					Eleve elevecherche = null;
 					try {
 						/**** Creation de la connexion ****/
@@ -230,7 +230,7 @@ public class EleveDaoImpl implements EleveDao{
 						
 						/**** Utilisation de la connection ****/
 						PreparedStatement stmt = connection.prepareStatement("SELECT eleve.email_Eleve, eleve.id_Eleve FROM eleve WHERE eleve.email_Eleve=?");
-						stmt.setString(1,mail_Eleve);
+						stmt.setString(1,mailEleve);
 						ResultSet results = stmt.executeQuery();
 						
 						if(results.next()){
@@ -253,7 +253,7 @@ public class EleveDaoImpl implements EleveDao{
 				}
 
 		// CHANGER LE MOT DE PASSE
-				public void changerMDP(Integer id_Eleve,  String password_Eleve) {
+				public void changerMDP(Integer idEleve,  String passwordEleve) {
 					
 					
 				try {
@@ -264,8 +264,8 @@ public class EleveDaoImpl implements EleveDao{
 					/**** Utilisation de la connection ****/
 					PreparedStatement stmt = connection
 							.prepareStatement("UPDATE eleve SET eleve.password_Eleve = ? WHERE eleve.id_Eleve = ?");
-					stmt.setString(1, password_Eleve);
-					stmt.setInt(2, id_Eleve );
+					stmt.setString(1, passwordEleve);
+					stmt.setInt(2, idEleve );
 					
 
 					stmt.executeUpdate();
@@ -280,7 +280,7 @@ public class EleveDaoImpl implements EleveDao{
 			}	
 	
 				// SUPPRIMER ELEVE
-				public void supprimerProfil(Integer id_Eleve) {
+				public void supprimerProfil(Integer idEleve) {
 					
 					
 				try {
@@ -291,7 +291,7 @@ public class EleveDaoImpl implements EleveDao{
 					/**** Utilisation de la connection ****/
 					PreparedStatement stmt = connection
 							.prepareStatement("DELETE FROM eleve WHERE id_Eleve=?");
-					stmt.setInt(1, id_Eleve );
+					stmt.setInt(1, idEleve );
 					
 
 					stmt.executeUpdate();
@@ -307,7 +307,7 @@ public class EleveDaoImpl implements EleveDao{
 
 				
 				// SUPPRIMER SEANCE ELEVE
-				public void supprimerSeanceEleve(Integer id_Eleve) {
+				public void supprimerSeanceEleve(Integer idEleve) {
 					
 					
 				try {
@@ -318,7 +318,7 @@ public class EleveDaoImpl implements EleveDao{
 					/**** Utilisation de la connection ****/
 					PreparedStatement stmt = connection
 							.prepareStatement("DELETE FROM seance_eleve WHERE Eleve_id_Eleve =?");
-					stmt.setInt(1, id_Eleve );
+					stmt.setInt(1, idEleve );
 					
 
 					stmt.executeUpdate();
@@ -333,7 +333,7 @@ public class EleveDaoImpl implements EleveDao{
 			}	
 				
 				// SUPPRIMER GROUPE ELEVE
-				public void supprimerGroupeEleve(Integer id_Eleve) {
+				public void supprimerGroupeEleve(Integer idEleve) {
 					
 					
 				try {
@@ -344,7 +344,7 @@ public class EleveDaoImpl implements EleveDao{
 					/**** Utilisation de la connection ****/
 					PreparedStatement stmt = connection
 							.prepareStatement("DELETE FROM eleve_groupe WHERE Eleve_id_Eleve =?");
-					stmt.setInt(1, id_Eleve );
+					stmt.setInt(1, idEleve );
 					
 
 					stmt.executeUpdate();
@@ -361,7 +361,7 @@ public class EleveDaoImpl implements EleveDao{
 
 
 
-				public void ajouterCalendrier(Integer id_Eleve,String lienCalendrier) {
+				public void ajouterCalendrier(Integer idEleve,String lienCalendrier) {
 
 				try {
 					/**** Creation de la connexion ****/
@@ -371,7 +371,7 @@ public class EleveDaoImpl implements EleveDao{
 					/**** Utilisation de la connection ****/
 					PreparedStatement stmt = connection
 							.prepareStatement("UPDATE eleve SET lienCalendrier_Eleve = ? WHERE id_Eleve=?");
-					stmt.setInt(2, id_Eleve );
+					stmt.setInt(2, idEleve );
 					stmt.setString(1, lienCalendrier );
 
 					stmt.executeUpdate();
@@ -391,7 +391,7 @@ public class EleveDaoImpl implements EleveDao{
 
 
 
-				public void derniereConnexion(Integer id_Eleve,java.util.Date derniereConnexion) {
+				public void derniereConnexion(Integer idEleve,java.util.Date derniereConnexion) {
 					
 					try {
 						/**** Creation de la connexion ****/
@@ -401,7 +401,7 @@ public class EleveDaoImpl implements EleveDao{
 						/**** Utilisation de la connection ****/
 						PreparedStatement stmt = connection
 								.prepareStatement("UPDATE eleve SET derniereConnexion_Eleve = ? WHERE id_Eleve=?");
-						stmt.setInt(2, id_Eleve );
+						stmt.setInt(2, idEleve );
 						stmt.setDate(1, new Date(derniereConnexion.getTime()));
 
 						stmt.executeUpdate();

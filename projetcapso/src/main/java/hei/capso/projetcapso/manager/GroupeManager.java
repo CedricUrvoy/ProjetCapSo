@@ -40,8 +40,8 @@ public class  GroupeManager {
 		return liste;
 	}
 	
-	public List<Groupe> listerGroupeEleve(Integer id) {
-		List<Groupe> liste = groupeDao.listerGroupeEleve(id);
+	public List<Groupe> listerGroupeEleve(Integer idEleve) {
+		List<Groupe> liste = groupeDao.listerGroupeEleve(idEleve);
 		return liste;
 	}
 	
@@ -49,23 +49,23 @@ public class  GroupeManager {
 		groupeDao.ajouterGroupe(groupe);
 	}
 	
-	public void quitterGroupe(int id_Eleve, int id_Groupe) {
-		groupeDao.quitterGroupe(id_Eleve, id_Groupe);
+	public void quitterGroupe(int idEleve, int idGroupe) {
+		groupeDao.quitterGroupe(idEleve, idGroupe);
 	}
 	
-	public Groupe chercherGroupeNom(String nom_Groupe) {
-		Groupe groupe = groupeDao.chercherGroupeNom(nom_Groupe);
+	public Groupe chercherGroupeNom(String nomGroupe) {
+		Groupe groupe = groupeDao.chercherGroupeNom(nomGroupe);
 		return groupe;
 	}
 	
 	
-	public Groupe chercherTypeEleve(Integer id_Eleve, String type) {
-		Groupe groupe = groupeDao.listerTypeEleve(id_Eleve, type);
+	public Groupe chercherTypeEleve(Integer idEleve, String type) {
+		Groupe groupe = groupeDao.listerTypeEleve(idEleve, type);
 		return groupe;
 	}
 	
-	public List<Groupe> listertypeGroupeEleve(Integer id) {
-		List<Groupe> liste = groupeDao.listertypeGroupeEleve(id);
+	public List<Groupe> listertypeGroupeEleve(Integer idEleve) {
+		List<Groupe> liste = groupeDao.listertypeGroupeEleve(idEleve);
 		return liste;
 	}
 	
