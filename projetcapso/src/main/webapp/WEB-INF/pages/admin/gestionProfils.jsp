@@ -7,19 +7,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<<<<<<< HEAD:projetcapso/src/main/webapp/WEB-INF/pages/gestionProfils.jsp
+
 <link rel="stylesheet" type="text/css" href="css/header-style.css"/>
 <link rel="stylesheet" type="text/css" href="css/reset.css"/>
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <script src="js/app.js"></script>
 <title>Gestion des profils</title>
-=======
+
 <link rel="stylesheet" type="text/css" href="../css/header-style.css"/>
 <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
 <link rel="stylesheet" type="text/css" href="../css/style.css"/>
 <script src="../js/app.js"></script>
 <title>GESTION DES PROFILS</title>
->>>>>>> 8635e6849bd683b71549e904dbaa42313b6b175b:projetcapso/src/main/webapp/WEB-INF/pages/admin/gestionProfils.jsp
+
 </head>
 <body>
 
