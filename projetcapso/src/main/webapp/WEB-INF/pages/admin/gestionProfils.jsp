@@ -57,7 +57,7 @@
 			<tr class="gestion">
 				<td class="gestion">${eleve.nom_Eleve}</td>
 				<td class="gestion">${eleve.prenom_Eleve}</td>
-				<td class="gestion">DATE</td>
+				<td class="gestion">${eleve.derniereConnexion_Eleve}</td>
 				<td class="gestion">
 					<a class="turquoise-button modif_group" href="supprimerprofil?id=${eleve.id_Eleve}" >Supprimer</a>
 				</td>

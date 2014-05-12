@@ -10,7 +10,7 @@ public class Eleve {
 		private String calendrier_Eleve;
 		private String email_Eleve;
 		private String password_eleve;
-		private Date date;
+		private Date derniereConnexion_Eleve;
 		
 
 		public Eleve() {
@@ -21,6 +21,14 @@ public class Eleve {
 			this.id_Eleve = id_Eleve;
 			this.nom_Eleve = nom_Eleve;
 			this.prenom_Eleve = prenom_Eleve;
+		}
+		
+		public Eleve(Integer id_Eleve, String nom_Eleve, String prenom_Eleve, Date derniereConnexion_Eleve) {
+			this.id_Eleve = id_Eleve;
+			this.nom_Eleve = nom_Eleve;
+			this.prenom_Eleve = prenom_Eleve;
+			this.derniereConnexion_Eleve = derniereConnexion_Eleve;
+			
 		}
 		
 		public Eleve(Integer id_Eleve, String email_Eleve) {
@@ -124,12 +132,12 @@ public class Eleve {
 
 
 		public Date getDate() {
-			return date;
+			return derniereConnexion_Eleve;
 		}
 
 
-		public void setDate(Date date) {
-			this.date = date;
+		public void setDate(Date derniereConnexion_Eleve) {
+			this.derniereConnexion_Eleve = derniereConnexion_Eleve;
 		}
 
 		

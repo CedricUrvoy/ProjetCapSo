@@ -132,7 +132,8 @@ public class EleveDaoImpl implements EleveDao{
 						Eleve eleve = new Eleve(
 								results.getInt("id_Eleve"),
 								results.getString("nom_Eleve"),
-								results.getString("prenom_Eleve"));
+								results.getString("prenom_Eleve"),
+								results.getDate("derniereConnexion_Eleve"));
 						listeEleve.add(eleve);
 					}
 					
