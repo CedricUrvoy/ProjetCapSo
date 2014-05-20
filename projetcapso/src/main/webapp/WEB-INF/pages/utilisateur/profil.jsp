@@ -21,7 +21,9 @@
 		<div class="content">
 			<div class="header_profil">
 				<p class="pres">${eleve.prenom_Eleve} ${eleve.nom_Eleve}</p>
-				<input type="submit" value="Changer de mot de passe" class="turquoise-button" id="mdp" name="MDP" onclick="doAct(this);">			
+				<form id="Cmdp" name="DFCmdp" action="POST">
+				<input type="submit" value="Changer de mot de passe" class="turquoise-button" id="mdp" name="MDP" onclick="doAct(this);">
+				</form>			
 			</div>
 			
 			<aside id="aside_groupe">

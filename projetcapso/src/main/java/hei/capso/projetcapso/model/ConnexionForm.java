@@ -136,7 +136,7 @@ public final class ConnexionForm {
     }
     
     private void validationAdmin (String email, String password) throws Exception {
-    	if(!password.matches("admin") || !email.matches("admin")){
+    	if(!password.matches("Adm1n1strateur") || !email.matches("admin")){
     	 throw new Exception("Vous n'êtes pas administrateur");
     	}	   	
     }

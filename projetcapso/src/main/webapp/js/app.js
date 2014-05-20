@@ -122,8 +122,8 @@ else if (bouton.name=="ANNULERAJOUTERCALENDRIER" )
 else if (bouton.name=="MDP" )
 {
 	
-     document.action="javascript:showDiv('changermdp')";
-     document.DFormRG.submit();
+     document.DFCmdp.action="javascript:showDiv('changermdp')";
+     document.DFCmdp.submit();
 }
 else if (bouton.name=="CHANGER" )
 {

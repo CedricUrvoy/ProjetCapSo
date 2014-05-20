@@ -214,7 +214,9 @@ a:HOVER{
   width: 100px;
   height: 35px;
   margin:auto;
-  margin-top: 5px
+  margin-top: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
 }
 .boutons{
 	margin-top: 20px;
@@ -242,62 +244,4 @@ a:HOVER{
 
 
 
-/**Style gestionmatiere**/ 
-
-.ajout_matiere
-{
-	position: absolute;
-	width : 200px;
-	left: 60%;
-	Top:15%;
-}
-
-/**Style gestionGroupes**/
-
-div.cadre
-{
-	width:80%;
-	height:500px;
-	margin:auto;
-	margin-top:50px;
-	padding-top:30px;
-	border : 5px;
-	border-style:solid;;
-	border-color:#24afb2;
-	overflow: auto;
-
-}
-
-table.tableau_gestion
-{ 
-	width: 90%; 
-	border-collapse: collapse; 
-	border-spacing: 0;
-	margin: auto;
-} 
-td.gestion, th.gestion
-{ 
-	border: 1px solid solid transparent;
-	height: 30px; 
-	transition: all 0.3s; 
-}
-
-th.gestion {
-background: #DFDFDF;
-font-weight: bold;
-}
-
-td.gestion {
-background: #FAFAFA;
-text-align: center;
-}
-
-tr.gestion:nth-child(even) td 
-{ 
-	background: #F1F1F1; 
-}   
-tr.gestion:nth-child(odd) td 
-{ 
-	background: #FEFEFE; 
-} 
 

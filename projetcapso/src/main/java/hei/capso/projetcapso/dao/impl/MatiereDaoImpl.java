@@ -2,7 +2,6 @@ package hei.capso.projetcapso.dao.impl;
 
 import hei.capso.projetcapso.dao.DataSourceProvider;
 import hei.capso.projetcapso.dao.MatiereDao;
-import hei.capso.projetcapso.model.Groupe;
 import hei.capso.projetcapso.model.Matiere;
 
 import java.sql.Connection;
@@ -129,7 +128,6 @@ public class MatiereDaoImpl implements MatiereDao {
 	}
 
 
-	@Override
 	public List<Matiere> listerToutesMatieres() {
 			
 		List<Matiere> liste = new ArrayList<Matiere>();
@@ -161,7 +159,6 @@ public class MatiereDaoImpl implements MatiereDao {
 		}
 
 
-	@Override
 	public void supprimerMatiere(Integer idMatiere) {
 			try {
 				/**** Creation de la connexion ****/
@@ -185,7 +182,6 @@ public class MatiereDaoImpl implements MatiereDao {
 		}
 
 
-	@Override
 	public void supprimerLienMatiereGroupe(Integer idMatiere) {
 		try {
 			/**** Creation de la connexion ****/
